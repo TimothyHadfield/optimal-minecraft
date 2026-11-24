@@ -15,9 +15,10 @@ Tim's Minecraft site: main page → **Farms** (`farms/`: record of farms, tricks
 | Farms data | `farms/farms.json` 82 records: n 1–27 ianxofour, 101–142 basic manual farms, 201–213 other YouTubers (core items only, deduped by mechanism + item; copies listed in `sources`) |
 | Plan overlay | `farms/plan.json`: per `farm:<n>` / `trick:<id>`: stage, milestone (deep-mining / nether / end), icon, short, steps, prereqs [{ref, rating 1–5, why}], raw, and for farms `rank` + `core` (15 core) |
 | Core 15 (rank order) | 27 day-1 iron, 202 auto cobble, 5 tree, 19 gold, 203 villager crops, 213 raid (1.21.2+), 8 obsidian, 15 shulker, 17 wither skel, 208 mob (1.21), 24 trading hall, 12 bartering, 18 slime, 1 concrete, 14 guardian. Replaced ones (125, 101, 22, 23) rank right after |
-| Tricks | 51 in `farms/tricks.json`, drawn SVG pictures |
+| Tricks | 51 in `farms/tricks.json`, real video frames `pics/trick-<id>.jpg` (picOf default) |
+| Core (2026-11-24 latest) | 18 core: Tim's build order + 214 max gold (C5 llama-aggro, rank 18, end). Chart (chartfit merged): 18 nodes, 25 lines, **1 crossing**, 0 box hits, boxes 59 px at 1440 |
 | Trades | `farms/trades.json`, Java 26.3 (13 professions / 183 trades, wandering trader 100, 8 experimental tables) |
-| Pictures | `farms/pics/`: farm-<n>.jpg real video frames (1–27, 201–213; #26 and #211 weak), basic-<slug>.svg, trick-<id>.svg. Icons `farms/icons/<id>.png` (~418, minecraft.wiki) |
+| Pictures | `farms/pics/`: ALL real video frames, no drawn pictures (Tim: "0 farms or tasks have images that are built by you"). farm-<n>.jpg (1–27, 201–214), basic-<slug>.jpg, trick-<id>.jpg; sources per picture in scratchpad map.json only (not kept). Weak: 26, 211, beetroot, melon, tree, spruce (Bedrock), berries (Bedrock), iron golem, composter, moss, lava-lake-portal (no portal), elytra-rockets, seed-map (Console), spawn-chunk, hero-of-village. Icons `farms/icons/<id>.png` (~418, minecraft.wiki) |
 | CHART | Core farms only, all prereq links between them (rating 2–5, red→green, 5 thicker), milestone bands, hover/tap preview, 1×/2×/3× icon rule within same-icon groups. 2026-11-24 chartfit: laptop shape (column only as wide as its widest box, gaps 76 in a band / 96 across a milestone, 7 rows, build-order `rank` left→right in a band). CHART_STATS: 17 nodes, 22 lines, 0 crossings, 0 box hits, 0 bends, 1 order swap, 1472×738, boxes 61 px at 1440×900, 54 px at 1280×800, 47 px on phone |
 | Fonts | Inter (text) + Pixelify Sans (headings/tabs) |
 | Tests | No suite. phone-view WebKit 393 px + desktop (2026-11-24, local + live redirect) |
@@ -48,7 +49,8 @@ None.
 - 2026-10-16 · pinned React 18.3.1 / Babel 7.29.9; input sync fix; import validation.
 - 2026-11-24 · Materials source order: on-screen list first, Litematica count cross-check, transcript.
 - 2026-11-24 · 3 milestones only: Deep mining, Nether, Beat the End.
-- 2026-11-24 · Drawn SVG pictures for tricks and basic farms (no real screenshots available).
+- ~~2026-11-24 · Drawn SVG pictures for tricks and basic farms~~ → replaced same day by real YouTube frames (4 agents).
+- 2026-11-24 · Suggested to Tim (not built, he said "don't change anything yet"): add enderman XP farm + creeper/gunpowder farm, fold turtle egg into simple gold, drop wither rose first if trimming.
 - 2026-11-24 · Importance rank chosen by Claude from Tim's list (day-1 iron, cobblestone, wood, gold, auto wheat, raid, obsidian, shulker, wither skeleton, mob first).
 - 2026-11-24 · "Auto wheat" slot filled by a villager carrot/potato farm (203): no separate auto-wheat design found worth adding.
 - 2026-11-24 · Repo renamed craft-horse → optimal-minecraft; new `craft-horse` repo forwards old links.

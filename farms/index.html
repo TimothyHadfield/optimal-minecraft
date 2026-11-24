@@ -128,7 +128,7 @@ function stageOf(e) {
 }
 const nameOf = e => e.n != null ? (e.n > 100 ? e.title : e.title.replace(/^Minecraft Elegance:\s*/i, '').replace(/\s*(\(|,| - |\bJava\b).*$/, '')) : e.name;
 const iconOf = e => plan(e).icon || e.icon || (e.outputs || []).map(o => o.item).find(x => itemId(x)) || ((e.materials || [])[0] || {}).item || '';
-const picOf = e => plan(e).pic || e.pic || (e.n != null ? `pics/farm-${e.n}.jpg` : `pics/trick-${e.id}.svg`);
+const picOf = e => plan(e).pic || e.pic || (e.n != null ? `pics/farm-${e.n}.jpg` : `pics/trick-${e.id}.jpg`);
 const shortOf = e => plan(e).short || e.short || e.what || '';
 const byKey = k => k.startsWith('farm:') ? FARMS.find(f => 'farm:' + f.n === k) : TRICKS.find(t => 'trick:' + t.id === k);
 

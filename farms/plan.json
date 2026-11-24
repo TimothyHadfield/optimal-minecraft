@@ -59,7 +59,7 @@
     "water_bucket": 2,
     "diorite": 1
    },
-   "rank": 20,
+   "rank": 21,
    "core": false
   },
   "farm:2": {
@@ -112,7 +112,7 @@
     "coal": 1,
     "granite": 1
    },
-   "rank": 41,
+   "rank": 42,
    "core": false
   },
   "farm:3": {
@@ -170,7 +170,7 @@
     "cobweb": 3,
     "turtle_egg": 2
    },
-   "rank": 31,
+   "rank": 32,
    "core": false
   },
   "farm:4": {
@@ -209,7 +209,7 @@
     "coal": 2,
     "water_bucket": 1
    },
-   "rank": 32,
+   "rank": 33,
    "core": false
   },
   "farm:5": {
@@ -307,7 +307,7 @@
     "netherrack": 2,
     "water_bucket": 2
    },
-   "rank": 55,
+   "rank": 56,
    "core": false
   },
   "farm:7": {
@@ -345,7 +345,7 @@
     "lava_bucket": 1,
     "looting_iii_sword": 1
    },
-   "rank": 44,
+   "rank": 45,
    "core": false
   },
   "farm:8": {
@@ -429,7 +429,7 @@
     "gold_ingot": 82,
     "redstone": 14
    },
-   "rank": 42,
+   "rank": 43,
    "core": false
   },
   "farm:10": {
@@ -491,7 +491,7 @@
     "slime_ball": 2,
     "ender_pearl": 1
    },
-   "rank": 40,
+   "rank": 41,
    "core": false
   },
   "farm:11": {
@@ -658,7 +658,7 @@
     "nether_star": 1,
     "lava_bucket": 1
    },
-   "rank": 69,
+   "rank": 70,
    "core": false
   },
   "farm:14": {
@@ -707,7 +707,7 @@
     "quartz": 2,
     "ender_pearl": 1
    },
-   "rank": 21,
+   "rank": 22,
    "core": false
   },
   "farm:15": {
@@ -816,7 +816,7 @@
     "oxeye_daisy": 31,
     "quartz": 3
    },
-   "rank": 33,
+   "rank": 34,
    "core": false
   },
   "farm:17": {
@@ -916,7 +916,7 @@
     "pumpkin": 1,
     "slime_ball": 1
    },
-   "rank": 19,
+   "rank": 20,
    "core": false
   },
   "farm:19": {
@@ -992,7 +992,7 @@
     "coal": 1,
     "lava_bucket": 1
    },
-   "rank": 43,
+   "rank": 44,
    "core": false
   },
   "farm:21": {
@@ -1008,7 +1008,7 @@
    ],
    "prereqs": [],
    "raw": {},
-   "rank": 82,
+   "rank": 83,
    "core": false
   },
   "farm:22": {
@@ -1052,7 +1052,7 @@
     "quartz": 1,
     "lava_bucket": 1
    },
-   "rank": 23,
+   "rank": 24,
    "core": false
   },
   "farm:23": {
@@ -1105,7 +1105,7 @@
     "gold_ingot": 4,
     "water_bucket": 1
    },
-   "rank": 24,
+   "rank": 25,
    "core": false
   },
   "farm:24": {
@@ -1183,7 +1183,7 @@
     "obsidian": 1,
     "water_bucket": 1
    },
-   "rank": 54,
+   "rank": 55,
    "core": false
   },
   "farm:26": {
@@ -1233,7 +1233,7 @@
     "slime_ball": 8,
     "obsidian": 2
    },
-   "rank": 68,
+   "rank": 69,
    "core": false
   },
   "farm:27": {
@@ -1293,7 +1293,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 47,
+   "rank": 48,
    "core": false
   },
   "farm:103": {
@@ -1312,7 +1312,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 48,
+   "rank": 49,
    "core": false
   },
   "farm:104": {
@@ -1331,7 +1331,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 67,
+   "rank": 68,
    "core": false
   },
   "farm:105": {
@@ -1350,7 +1350,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 49,
+   "rank": 50,
    "core": false
   },
   "farm:106": {
@@ -1369,7 +1369,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 50,
+   "rank": 51,
    "core": false
   },
   "farm:107": {
@@ -1404,7 +1404,7 @@
    "raw": {
     "bamboo": 20
    },
-   "rank": 63,
+   "rank": 64,
    "core": false
   },
   "farm:109": {
@@ -1422,7 +1422,7 @@
     "sand": 10,
     "cactus": 10
    },
-   "rank": 70,
+   "rank": 71,
    "core": false
   },
   "farm:110": {
@@ -1440,7 +1440,7 @@
     "kelp": 10,
     "water_bucket": 2
    },
-   "rank": 51,
+   "rank": 52,
    "core": false
   },
   "farm:111": {
@@ -1458,7 +1458,7 @@
     "cocoa_beans": 24,
     "jungle_log": 12
    },
-   "rank": 81,
+   "rank": 82,
    "core": false
   },
   "farm:112": {
@@ -1475,7 +1475,7 @@
    "raw": {
     "sweet_berries": 28
    },
-   "rank": 71,
+   "rank": 72,
    "core": false
   },
   "farm:113": {
@@ -1493,7 +1493,7 @@
     "soul_sand": 36,
     "nether_wart": 36
    },
-   "rank": 45,
+   "rank": 46,
    "core": false
   },
   "farm:114": {
@@ -1512,7 +1512,7 @@
     "red_mushroom": 4,
     "brown_mushroom": 4
    },
-   "rank": 72,
+   "rank": 73,
    "core": false
   },
   "farm:115": {
@@ -1530,7 +1530,7 @@
     "oak_sapling": 10,
     "coal": 3
    },
-   "rank": 46,
+   "rank": 47,
    "core": false
   },
   "farm:116": {
@@ -1548,7 +1548,7 @@
     "spruce_sapling": 4,
     "bone_meal": 3
    },
-   "rank": 56,
+   "rank": 57,
    "core": false
   },
   "farm:117": {
@@ -1595,7 +1595,7 @@
    "raw": {
     "carrot": 20
    },
-   "rank": 57,
+   "rank": 58,
    "core": false
   },
   "farm:119": {
@@ -1620,7 +1620,7 @@
     "wheat": 4,
     "iron_ingot": 2
    },
-   "rank": 58,
+   "rank": 59,
    "core": false
   },
   "farm:120": {
@@ -1644,7 +1644,7 @@
     "oak_log": 15,
     "wheat_seeds": 10
    },
-   "rank": 35,
+   "rank": 36,
    "core": false
   },
   "farm:121": {
@@ -1675,7 +1675,7 @@
     "oak_log": 18,
     "wheat_seeds": 8
    },
-   "rank": 59,
+   "rank": 60,
    "core": false
   },
   "farm:122": {
@@ -1699,7 +1699,7 @@
     "oak_log": 14,
     "carrot": 10
    },
-   "rank": 73,
+   "rank": 74,
    "core": false
   },
   "farm:123": {
@@ -1721,7 +1721,7 @@
     "iron_ingot": 2,
     "coal": 1
    },
-   "rank": 60,
+   "rank": 61,
    "core": false
   },
   "farm:124": {
@@ -1738,7 +1738,7 @@
    "raw": {
     "string": 2
    },
-   "rank": 61,
+   "rank": 62,
    "core": false
   },
   "farm:125": {
@@ -1757,7 +1757,7 @@
     "lava_bucket": 1,
     "water_bucket": 1
    },
-   "rank": 22,
+   "rank": 23,
    "core": false
   },
   "farm:126": {
@@ -1782,7 +1782,7 @@
     "soul_soil": 1,
     "blue_ice": 1
    },
-   "rank": 74,
+   "rank": 75,
    "core": false
   },
   "farm:127": {
@@ -1800,7 +1800,7 @@
     "cobblestone": 201,
     "water_bucket": 2
    },
-   "rank": 62,
+   "rank": 63,
    "core": false
   },
   "farm:128": {
@@ -1824,7 +1824,7 @@
     "cobblestone": 901,
     "water_bucket": 8
    },
-   "rank": 38,
+   "rank": 39,
    "core": false
   },
   "farm:129": {
@@ -1855,7 +1855,7 @@
     "oak_log": 6,
     "water_bucket": 1
    },
-   "rank": 39,
+   "rank": 40,
    "core": false
   },
   "farm:130": {
@@ -1881,7 +1881,7 @@
     "sand": 8,
     "iron_ingot": 5
    },
-   "rank": 34,
+   "rank": 35,
    "core": false
   },
   "farm:131": {
@@ -1905,7 +1905,7 @@
     "iron_ingot": 10,
     "oak_log": 9
    },
-   "rank": 52,
+   "rank": 53,
    "core": false
   },
   "farm:132": {
@@ -1924,7 +1924,7 @@
     "sand": 6,
     "pumpkin": 1
    },
-   "rank": 65,
+   "rank": 66,
    "core": false
   },
   "farm:133": {
@@ -1948,7 +1948,7 @@
     "water_bucket": 2,
     "silk_touch_pickaxe": 1
    },
-   "rank": 64,
+   "rank": 65,
    "core": false
   },
   "farm:134": {
@@ -1972,7 +1972,7 @@
     "bone_meal": 64,
     "sunflower": 4
    },
-   "rank": 75,
+   "rank": 76,
    "core": false
   },
   "farm:135": {
@@ -1990,7 +1990,7 @@
     "cobblestone": 16,
     "glow_berries": 8
    },
-   "rank": 76,
+   "rank": 77,
    "core": false
   },
   "farm:136": {
@@ -2014,7 +2014,7 @@
     "end_stone": 5,
     "chorus_flower": 5
    },
-   "rank": 77,
+   "rank": 78,
    "core": false
   },
   "farm:137": {
@@ -2050,7 +2050,7 @@
     "string": 6,
     "slime_ball": 5
    },
-   "rank": 78,
+   "rank": 79,
    "core": false
   },
   "farm:139": {
@@ -2070,7 +2070,7 @@
     "copper_ingot": 1,
     "feather": 1
    },
-   "rank": 79,
+   "rank": 80,
    "core": false
   },
   "farm:140": {
@@ -2087,7 +2087,7 @@
    "raw": {
     "water_bucket": 2
    },
-   "rank": 66,
+   "rank": 67,
    "core": false
   },
   "farm:141": {
@@ -2107,7 +2107,7 @@
     "lava_bucket": 1,
     "pointed_dripstone": 1
    },
-   "rank": 53,
+   "rank": 54,
    "core": false
   },
   "farm:142": {
@@ -2131,7 +2131,7 @@
     "cobblestone": 25,
     "moss_block": 1
    },
-   "rank": 80,
+   "rank": 81,
    "core": false
   },
   "trick:lava-cast-portal": {
@@ -3446,7 +3446,7 @@
     "water_bucket": 2,
     "dirt": 64
    },
-   "rank": 18,
+   "rank": 19,
    "core": false
   },
   "farm:204": {
@@ -3498,7 +3498,7 @@
     "dirt": 16,
     "egg": 64
    },
-   "rank": 28,
+   "rank": 29,
    "core": false
   },
   "farm:205": {
@@ -3548,7 +3548,7 @@
     "water_bucket": 1,
     "wheat": 40
    },
-   "rank": 29,
+   "rank": 30,
    "core": false
   },
   "farm:206": {
@@ -3595,7 +3595,7 @@
     "sugar_cane": 19,
     "water_bucket": 1
    },
-   "rank": 30,
+   "rank": 31,
    "core": false
   },
   "farm:207": {
@@ -3647,7 +3647,7 @@
     "kelp": 16,
     "water_bucket": 1
    },
-   "rank": 36,
+   "rank": 37,
    "core": false
   },
   "farm:208": {
@@ -3742,7 +3742,7 @@
     "white_wool": 5,
     "water_bucket": 2
    },
-   "rank": 26,
+   "rank": 27,
    "core": false
   },
   "farm:210": {
@@ -3784,7 +3784,7 @@
     "oak_log": 12,
     "lava_bucket": 4
    },
-   "rank": 25,
+   "rank": 26,
    "core": false
   },
   "farm:211": {
@@ -3839,7 +3839,7 @@
     "quartz": 2,
     "name_tag": 1
    },
-   "rank": 27,
+   "rank": 28,
    "core": false
   },
   "farm:212": {
@@ -3889,7 +3889,7 @@
     "melon_seeds": 40,
     "water_bucket": 1
    },
-   "rank": 37,
+   "rank": 38,
    "core": false
   },
   "farm:213": {
@@ -3951,6 +3951,74 @@
     "ominous_bottle": 1
    },
    "rank": 15,
+   "core": true
+  },
+  "farm:214": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "gold_ingot",
+   "short": "Llama-aggro roof gold farm, about 960 gold blocks/hour.",
+   "steps": [
+    "Find nether wastes, climb onto roof",
+    "Build chest, hopper and kill chamber",
+    "Glass pipe and 16 magma platforms",
+    "Boat pigmen, llamas and wolves in modules",
+    "Build double beacon, AFK with autoclicker"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "whole farm sits on the roof"
+    },
+    {
+     "ref": "farm:19",
+     "rating": 4,
+     "why": "258 gold for 256 powered rails"
+    },
+    {
+     "ref": "farm:201",
+     "rating": 4,
+     "why": "about 2,000 iron, mostly beacon base"
+    },
+    {
+     "ref": "trick:wither-cage",
+     "rating": 4,
+     "why": "two nether stars for beacons"
+    },
+    {
+     "ref": "farm:137",
+     "rating": 3,
+     "why": "6 turtle eggs lure the pigmen"
+    }
+   ],
+   "raw": {
+    "magma_block": 8640,
+    "sand": 2378,
+    "iron_ingot": 1988,
+    "oak_log": 386,
+    "dirt": 320,
+    "gold_ingot": 258,
+    "cobblestone": 222,
+    "soul_soil": 149,
+    "ice": 135,
+    "redstone": 120,
+    "string": 117,
+    "wheat": 27,
+    "slime_ball": 24,
+    "obsidian": 14,
+    "turtle_egg": 6,
+    "oak_leaves": 5,
+    "quartz": 5,
+    "honey_bottle": 4,
+    "nether_star": 2,
+    "ender_pearl": 2,
+    "lava_bucket": 1,
+    "warped_stem": 1,
+    "blaze_powder": 1,
+    "flint": 1
+   },
+   "rank": 18,
    "core": true
   }
  }
