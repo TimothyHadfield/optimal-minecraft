@@ -1,0 +1,3097 @@
+{
+ "milestones": [
+  {
+   "id": "deep-mining",
+   "name": "Deep mining",
+   "icon": "diamond_pickaxe",
+   "short": "Diamonds, redstone, lapis, obsidian, iron gear."
+  },
+  {
+   "id": "nether",
+   "name": "Nether",
+   "icon": "netherrack",
+   "short": "Quartz, blaze rods, soul sand, Nether roof."
+  },
+  {
+   "id": "end",
+   "name": "Beat the End",
+   "icon": "elytra",
+   "short": "End access, elytra, shulkers, End stone."
+  }
+ ],
+ "entries": {
+  "farm:1": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "concrete_powder",
+   "short": "Dupes sand, gravel and concrete through the End portal.",
+   "steps": [
+    "Build the duper by the stronghold portal",
+    "Build the catcher on the End platform",
+    "Load one powder colour per module",
+    "Collect concrete from the chests"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:108",
+     "rating": 2,
+     "why": "12 scaffolding"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "about 30 iron for hoppers"
+    }
+   ],
+   "raw": {
+    "cobblestone": 207,
+    "oak_log": 52,
+    "redstone": 50,
+    "sand": 39,
+    "gravel": 32,
+    "iron_ingot": 28,
+    "obsidian": 25,
+    "bamboo": 12,
+    "ender_pearl": 12,
+    "string": 11,
+    "quartz": 9,
+    "blaze_rod": 6,
+    "water_bucket": 2,
+    "diorite": 1
+   }
+  },
+  "farm:2": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "concrete_powder",
+   "short": "Huge sand and concrete duper; older versions too.",
+   "steps": [
+    "Kill the dragon first",
+    "Break exit-portal bedrock",
+    "Build duper at the exit portal",
+    "Build catcher at world spawn",
+    "Load powder, collect concrete"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:25",
+     "rating": 4,
+     "why": "exit portal must be active"
+    },
+    {
+     "ref": "trick:bedrock-breaking",
+     "rating": 4,
+     "why": "removes exit portal bedrock"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "about 65 iron"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 2,
+     "why": "64 scaffolding to build"
+    }
+   ],
+   "raw": {
+    "cobblestone": 345,
+    "redstone": 103,
+    "iron_ingot": 68,
+    "sand": 68,
+    "bamboo": 64,
+    "oak_log": 56,
+    "gunpowder": 55,
+    "gravel": 24,
+    "oak_leaves": 14,
+    "quartz": 13,
+    "mud": 12,
+    "string": 11,
+    "coal": 1,
+    "granite": 1
+   }
+  },
+  "farm:3": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "wither_skeleton_skull",
+   "short": "Fortress farm: skulls, blaze rods, coal, bones.",
+   "steps": [
+    "Find a fortress in soul sand valley",
+    "Build brick spawn platform over fortress",
+    "Kill chamber above the Nether roof",
+    "Bring 12 wolves and Looting III"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "kill chamber sits on the roof"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 3,
+     "why": "about 500 cobble for slabs"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 3,
+     "why": "about 290 scaffolding"
+    },
+    {
+     "ref": "trick:librarian-reroll",
+     "rating": 3,
+     "why": "Looting III sword"
+    },
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 2,
+     "why": "6 invisibility potions"
+    }
+   ],
+   "raw": {
+    "nether_bricks": 1122,
+    "cobblestone": 543,
+    "bamboo": 288,
+    "obsidian": 103,
+    "iron_ingot": 52,
+    "sand": 49,
+    "string": 48,
+    "oak_log": 40,
+    "redstone": 30,
+    "wolves": 12,
+    "potion_of_invisibility": 6,
+    "soul_sand": 3,
+    "quartz": 3,
+    "cobweb": 3,
+    "turtle_egg": 2
+   }
+  },
+  "farm:4": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "white_wool",
+   "short": "Cheap wool farm: sheep eat grass, dispensers shear.",
+   "steps": [
+    "Breed and dye 12 sheep",
+    "Pen them on grass",
+    "Dispensers with shears under them",
+    "Hopper collects into a chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:119",
+     "rating": 2,
+     "why": "12 sheep to start"
+    },
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "wheat to breed sheep"
+    }
+   ],
+   "raw": {
+    "oak_leaves": 99,
+    "dirt": 64,
+    "cobblestone": 18,
+    "oak_log": 15,
+    "sand": 12,
+    "sheep": 12,
+    "iron_ingot": 10,
+    "string": 6,
+    "redstone": 5,
+    "coal": 2,
+    "water_bucket": 1
+   }
+  },
+  "farm:5": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "oak_log",
+   "short": "Bone-meal tree farm for every wood type.",
+   "steps": [
+    "Build the dirt pad and machine",
+    "Feed saplings and bone meal",
+    "TNT breaks the logs",
+    "Hoppers sort logs into chests"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:131",
+     "rating": 4,
+     "why": "eats lots of bone meal"
+    },
+    {
+     "ref": "farm:128",
+     "rating": 3,
+     "why": "bones for more bone meal"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "about 65 iron for hoppers"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 2,
+     "why": "51 scaffolding"
+    }
+   ],
+   "raw": {
+    "dirt": 668,
+    "cobblestone": 180,
+    "grass_block": 146,
+    "iron_ingot": 65,
+    "bamboo": 59,
+    "oak_log": 53,
+    "redstone": 48,
+    "string": 10,
+    "quartz": 6,
+    "water_bucket": 5,
+    "gunpowder": 5,
+    "sand": 4,
+    "crimson_nylium": 2,
+    "obsidian": 2,
+    "soul_sand": 1,
+    "white_wool": 1,
+    "podzol": 1
+   }
+  },
+  "farm:6": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "lever",
+   "short": "Switch hostile spawns off with trapped silverfish.",
+   "steps": [
+    "Find an unused stronghold spawner",
+    "Trap silverfish in minecarts",
+    "Chunk loader on the Nether roof",
+    "Flip the lever to toggle"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 4,
+     "why": "chunk loader on the roof"
+    },
+    {
+     "ref": "trick:seed-map-planning",
+     "rating": 2,
+     "why": "find the stronghold"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 32,
+    "obsidian": 20,
+    "cobblestone": 19,
+    "sand": 19,
+    "bamboo": 6,
+    "oak_log": 5,
+    "string": 4,
+    "redstone": 3,
+    "netherrack": 2,
+    "water_bucket": 2
+   }
+  },
+  "farm:7": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "copper_ingot",
+   "short": "Drowned copper farm built in the End.",
+   "steps": [
+    "Get to the End",
+    "Bring zombies through the portal",
+    "Build spawn pads and kill spot",
+    "Kill drowned with Looting III"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:boat-mob-transport",
+     "rating": 3,
+     "why": "bring zombies to the End"
+    },
+    {
+     "ref": "trick:librarian-reroll",
+     "rating": 3,
+     "why": "Looting III sword"
+    }
+   ],
+   "raw": {
+    "cobblestone": 39,
+    "redstone": 12,
+    "iron_ingot": 12,
+    "end_stone": 11,
+    "oak_log": 6,
+    "string": 3,
+    "gold_ingot": 2,
+    "quartz": 2,
+    "lava_bucket": 1,
+    "looting_iii_sword": 1
+   }
+  },
+  "farm:8": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "obsidian",
+   "short": "Wither breaks the End platform: 32k obsidian/hour.",
+   "steps": [
+    "Build loaders in stronghold and End",
+    "Trap snow golem and silverfish",
+    "Summon the wither in the End",
+    "Collect obsidian, then kill wither"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:17",
+     "rating": 3,
+     "why": "3 wither skulls"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "about 135 iron"
+    },
+    {
+     "ref": "trick:boat-mob-transport",
+     "rating": 2,
+     "why": "mobs ride in boats"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 134,
+    "oak_log": 86,
+    "cobblestone": 85,
+    "dirt": 16,
+    "wheat_seeds": 14,
+    "magma_block": 11,
+    "obsidian": 10,
+    "sand": 10,
+    "end_stone": 8,
+    "soul_sand": 8,
+    "snowball": 8,
+    "redstone": 6,
+    "string": 6,
+    "water_bucket": 5,
+    "flint": 4,
+    "feather": 4,
+    "coal": 4,
+    "wither_skeleton_skull": 3,
+    "white_wool": 3,
+    "pumpkin": 2,
+    "lava_bucket": 1
+   }
+  },
+  "farm:9": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "villager_trades",
+   "short": "Lock cheap villager prices with long rail trips.",
+   "steps": [
+    "Lay a long powered rail line",
+    "Ride villagers far out and back",
+    "Trade while prices stay locked",
+    "Keep away from spawn chunks"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:19",
+     "rating": 3,
+     "why": "82 gold for powered rails"
+    },
+    {
+     "ref": "farm:24",
+     "rating": 3,
+     "why": "villagers with good trades"
+    }
+   ],
+   "raw": {
+    "gold_ingot": 82,
+    "redstone": 14
+   }
+  },
+  "farm:10": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ghast_tear",
+   "short": "Huge looting ghast farm: tears and gunpowder.",
+   "steps": [
+    "Pick a soul sand valley on roof",
+    "Build spawning portals on the roof",
+    "Kill chamber high above",
+    "Portal elevator in the sky"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "whole farm is on the roof"
+    },
+    {
+     "ref": "farm:8",
+     "rating": 4,
+     "why": "about 1,940 obsidian"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 4,
+     "why": "about 8,300 smooth stone"
+    },
+    {
+     "ref": "trick:furnace-array",
+     "rating": 3,
+     "why": "smelt 8,000 stone"
+    },
+    {
+     "ref": "farm:1",
+     "rating": 3,
+     "why": "sand for 1,335 glass"
+    }
+   ],
+   "raw": {
+    "cobblestone": 8358,
+    "obsidian": 1940,
+    "sand": 1337,
+    "bamboo": 120,
+    "iron_ingot": 102,
+    "flint": 64,
+    "redstone": 38,
+    "oak_log": 37,
+    "string": 32,
+    "quartz": 4,
+    "coal": 2,
+    "glowstone": 2,
+    "slime_ball": 2,
+    "ender_pearl": 1
+   }
+  },
+  "farm:11": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "wither_rose",
+   "short": "Wither under the exit portal kills snow golems: roses.",
+   "steps": [
+    "Kill the dragon",
+    "Dig chamber under the exit portal",
+    "Summon and trap the wither",
+    "Feed it snow golems",
+    "Collect wither roses"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:25",
+     "rating": 4,
+     "why": "dragon must be dead"
+    },
+    {
+     "ref": "farm:105",
+     "rating": 4,
+     "why": "64 carved pumpkins"
+    },
+    {
+     "ref": "farm:132",
+     "rating": 3,
+     "why": "512 snowballs for 128 blocks"
+    },
+    {
+     "ref": "farm:17",
+     "rating": 3,
+     "why": "3 wither skulls"
+    }
+   ],
+   "raw": {
+    "snowball": 512,
+    "pumpkin": 64,
+    "cobblestone": 29,
+    "iron_ingot": 18,
+    "redstone": 6,
+    "string": 6,
+    "oak_log": 6,
+    "diamond": 5,
+    "soul_sand": 4,
+    "wither_skeleton_skull": 3,
+    "quartz": 1
+   }
+  },
+  "farm:12": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ender_pearl",
+   "short": "Mass piglin bartering: pearls, string, obsidian.",
+   "steps": [
+    "Build in a crimson forest",
+    "Piglin trap below the roof",
+    "AFK above the roof",
+    "Fill shulkers with gold to barter"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:19",
+     "rating": 5,
+     "why": "needs a steady gold supply"
+    },
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "AFK spot on the roof"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 4,
+     "why": "about 215 iron for 43 hoppers"
+    },
+    {
+     "ref": "farm:15",
+     "rating": 3,
+     "why": "15 shulker boxes of gold"
+    },
+    {
+     "ref": "farm:105",
+     "rating": 3,
+     "why": "128 carved pumpkins"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 217,
+    "oak_log": 203,
+    "cobblestone": 175,
+    "pumpkin": 128,
+    "redstone": 127,
+    "shulker_shell": 30,
+    "quartz": 16,
+    "warped_fungus": 4,
+    "string": 3,
+    "slime_ball": 1,
+    "turtle_egg": 1
+   }
+  },
+  "farm:13": {
+   "stage": "late",
+   "milestone": "nether",
+   "icon": "emerald",
+   "short": "Stacking raid farm: emeralds, totems, witch drops.",
+   "steps": [
+    "Find open ocean, far from land",
+    "Build platform, beacon and kill line",
+    "Bring 5 villagers",
+    "Drink bad omen, AFK"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:22",
+     "rating": 5,
+     "why": "about 1,480 emeralds for blocks"
+    },
+    {
+     "ref": "trick:wither-cage",
+     "rating": 4,
+     "why": "nether star for the beacon"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "about 150 iron"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 3,
+     "why": "224 scaffolding"
+    },
+    {
+     "ref": "farm:140",
+     "rating": 3,
+     "why": "hundreds of water buckets"
+    }
+   ],
+   "raw": {
+    "cobblestone": 1590,
+    "emerald": 1476,
+    "water_bucket": 947,
+    "sand": 398,
+    "bamboo": 224,
+    "redstone": 169,
+    "bone_meal": 167,
+    "iron_ingot": 143,
+    "oak_log": 127,
+    "string": 45,
+    "quartz": 24,
+    "soul_sand": 17,
+    "andesite": 12,
+    "slime_ball": 10,
+    "magma_block": 7,
+    "coal": 3,
+    "obsidian": 3,
+    "copper_ingot": 3,
+    "nether_star": 1,
+    "lava_bucket": 1
+   }
+  },
+  "farm:14": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "prismarine_shard",
+   "short": "Guardian farm: fast XP and prismarine, no draining.",
+   "steps": [
+    "Find an ocean monument",
+    "Kill chamber high in the sky",
+    "Nether portal elevator above roof",
+    "Bring milk for mining fatigue"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "elevator above the roof"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 4,
+     "why": "about 200 iron"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 3,
+     "why": "about 400 scaffolding"
+    }
+   ],
+   "raw": {
+    "bamboo": 400,
+    "sand": 226,
+    "cobblestone": 209,
+    "oak_log": 200,
+    "iron_ingot": 200,
+    "soul_sand": 196,
+    "obsidian": 122,
+    "string": 67,
+    "redstone": 42,
+    "wheat_seeds": 38,
+    "lily_pad": 12,
+    "slime_ball": 11,
+    "water_bucket": 4,
+    "coal": 4,
+    "quartz": 2,
+    "ender_pearl": 1
+   }
+  },
+  "farm:15": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "shulker_shell",
+   "short": "Shulker farm: endless shells for shulker boxes.",
+   "steps": [
+    "Kill the dragon, open a gateway",
+    "Rail a shulker out of an End city",
+    "Build duplication chamber at spawn",
+    "Grind on the Nether roof"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:end-gateway-hub",
+     "rating": 5,
+     "why": "reach End cities"
+    },
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "grinder on the roof"
+    },
+    {
+     "ref": "farm:8",
+     "rating": 3,
+     "why": "about 380 obsidian"
+    },
+    {
+     "ref": "farm:1",
+     "rating": 3,
+     "why": "about 2,500 sand"
+    }
+   ],
+   "raw": {
+    "sand": 2567,
+    "obsidian": 377,
+    "cobblestone": 157,
+    "iron_ingot": 56,
+    "oak_log": 26,
+    "white_wool": 6,
+    "gold_ingot": 5,
+    "bamboo": 4,
+    "soul_sand": 2,
+    "redstone": 2,
+    "string": 1,
+    "slime_ball": 1,
+    "shulker": 1
+   }
+  },
+  "farm:16": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "honey_bottle",
+   "short": "Big automated honey farm with 64 hives.",
+   "steps": [
+    "Breed bees into 64 hives",
+    "Dispensers bottle the honey",
+    "Clock runs the dispensers",
+    "Hoppers collect bottles"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:27",
+     "rating": 4,
+     "why": "about 340 iron for hoppers"
+    },
+    {
+     "ref": "farm:123",
+     "rating": 4,
+     "why": "192 honeycomb for hives"
+    },
+    {
+     "ref": "farm:128",
+     "rating": 3,
+     "why": "192 string for 64 bows"
+    }
+   ],
+   "raw": {
+    "cobblestone": 1232,
+    "redstone": 404,
+    "iron_ingot": 340,
+    "oak_log": 267,
+    "end_stone": 198,
+    "string": 192,
+    "honeycomb": 192,
+    "dirt": 31,
+    "oxeye_daisy": 31,
+    "quartz": 3
+   }
+  },
+  "farm:17": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "wither_skeleton_skull",
+   "short": "Wither skeleton farm: 135 skulls/hour, no spawn-proofing.",
+   "steps": [
+    "Find fortress in soul sand valley",
+    "Build brick platform on the fortress",
+    "Kill chamber near the roof",
+    "Iron golem lures the skeletons"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "kill chamber at the roof"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 2,
+     "why": "about 300 cobble"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "4 iron blocks for a golem"
+    },
+    {
+     "ref": "farm:137",
+     "rating": 2,
+     "why": "4 turtle eggs"
+    }
+   ],
+   "raw": {
+    "nether_bricks": 896,
+    "netherrack": 320,
+    "cobblestone": 272,
+    "sand": 88,
+    "obsidian": 58,
+    "iron_ingot": 39,
+    "redstone": 36,
+    "oak_log": 13,
+    "turtle_egg": 4,
+    "cobweb": 3,
+    "diamond": 3,
+    "string": 2,
+    "pumpkin": 1,
+    "ender_pearl": 1,
+    "flint": 1,
+    "slime_ball": 1
+   }
+  },
+  "farm:18": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "slime_ball",
+   "short": "Looting slime farm in a swamp.",
+   "steps": [
+    "Clear a flat swamp area",
+    "Build pads, AFK 127 above",
+    "Nether portal elevator",
+    "Golem, wolves and cats help"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 4,
+     "why": "elevator portal near the roof"
+    },
+    {
+     "ref": "trick:librarian-reroll",
+     "rating": 3,
+     "why": "Looting III sword"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "iron golem"
+    },
+    {
+     "ref": "farm:137",
+     "rating": 2,
+     "why": "4 turtle eggs"
+    }
+   ],
+   "raw": {
+    "sand": 121,
+    "iron_ingot": 56,
+    "cobblestone": 34,
+    "oak_log": 16,
+    "turtle_egg": 4,
+    "string": 2,
+    "pumpkin": 1,
+    "slime_ball": 1
+   }
+  },
+  "farm:19": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "gold_ingot",
+   "short": "Easy gold and XP farm: 360 gold blocks/hour.",
+   "steps": [
+    "Dig rooms in nether wastes",
+    "Kill chamber above the roof",
+    "Sky bridge in the overworld",
+    "Turtle egg lures piglins"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 5,
+     "why": "kill chamber on the roof"
+    }
+   ],
+   "raw": {
+    "sand": 96,
+    "obsidian": 54,
+    "oak_log": 22,
+    "cobblestone": 7,
+    "diamond": 3,
+    "turtle_egg": 1,
+    "ender_pearl": 1,
+    "iron_ingot": 1,
+    "flint": 1,
+    "gold_ingot": 1,
+    "carrot": 1
+   }
+  },
+  "farm:20": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ominous_bottle",
+   "short": "Stores raid captains for bad omen on demand.",
+   "steps": [
+    "Build the AFK raid farm first",
+    "Platform above the drop shaft",
+    "Catch captains in boats",
+    "Kill one for bad omen"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:22",
+     "rating": 5,
+     "why": "built on top of it"
+    },
+    {
+     "ref": "farm:102",
+     "rating": 2,
+     "why": "carrots for 64 golden carrots"
+    }
+   ],
+   "raw": {
+    "sand": 160,
+    "carrot": 64,
+    "gold_ingot": 57,
+    "oak_log": 12,
+    "dirt": 8,
+    "cobblestone": 4,
+    "diamond": 2,
+    "coal": 1,
+    "lava_bucket": 1
+   }
+  },
+  "farm:21": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lead",
+   "short": "Dolphin tows you across oceans: very fast.",
+   "steps": [
+    "Find a dolphin in warm ocean",
+    "Put it on a lead",
+    "Swim behind it",
+    "Keep the coast on your left"
+   ],
+   "prereqs": [],
+   "raw": {}
+  },
+  "farm:22": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "emerald",
+   "short": "AFK raid farm on the ocean: 3000 emeralds/hour.",
+   "steps": [
+    "Find open ocean far from land",
+    "Build the platform and drop shaft",
+    "Bring one villager in a boat",
+    "Get bad omen, AFK"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:125",
+     "rating": 3,
+     "why": "about 700 cobblestone"
+    },
+    {
+     "ref": "trick:boat-mob-transport",
+     "rating": 3,
+     "why": "villager by boat"
+    },
+    {
+     "ref": "farm:140",
+     "rating": 2,
+     "why": "67 water buckets"
+    }
+   ],
+   "raw": {
+    "cobblestone": 701,
+    "sand": 192,
+    "water_bucket": 67,
+    "redstone": 23,
+    "oak_log": 16,
+    "iron_ingot": 6,
+    "string": 3,
+    "coal": 2,
+    "soul_sand": 1,
+    "quartz": 1,
+    "lava_bucket": 1
+   }
+  },
+  "farm:23": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "gunpowder",
+   "short": "Mob farm: gunpowder, bones, string, arrows.",
+   "steps": [
+    "Pick low flat desert near ocean",
+    "Build scaffolding spawn floors",
+    "Minecarts carry mobs to kill spot",
+    "AFK and collect drops"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:108",
+     "rating": 5,
+     "why": "3,360 scaffolding = 3,360 bamboo"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 3,
+     "why": "about 800 cobblestone"
+    },
+    {
+     "ref": "trick:furnace-array",
+     "rating": 3,
+     "why": "smelt about 600 stone"
+    },
+    {
+     "ref": "farm:128",
+     "rating": 3,
+     "why": "about 560 string"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "about 100 iron"
+    }
+   ],
+   "raw": {
+    "bamboo": 3360,
+    "cobblestone": 794,
+    "string": 563,
+    "redstone": 98,
+    "iron_ingot": 98,
+    "oak_log": 27,
+    "quartz": 26,
+    "coal": 9,
+    "gold_ingot": 4,
+    "water_bucket": 1
+   }
+  },
+  "farm:24": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "villager",
+   "short": "Trading hall with a built-in villager breeder.",
+   "steps": [
+    "Build near a village bell",
+    "Breed villagers with food",
+    "Move them into trading cells",
+    "Cure zombie villagers later"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 3,
+     "why": "carrots to breed villagers"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "move villagers in"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "iron trades for emeralds"
+    }
+   ],
+   "raw": {}
+  },
+  "farm:25": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "dragon_egg",
+   "short": "Trap the dragon on a water block, kill it fast.",
+   "steps": [
+    "Set spawn by the stronghold",
+    "Pillar to Y145 above portal",
+    "Place obsidian and water on top",
+    "Shoot or punch the stuck dragon"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:120",
+     "rating": 2,
+     "why": "feathers for 84 arrows"
+    },
+    {
+     "ref": "trick:respawn-anchor-bed",
+     "rating": 2,
+     "why": "bed by the portal"
+    }
+   ],
+   "raw": {
+    "dirt": 259,
+    "sand": 64,
+    "flint": 21,
+    "feather": 21,
+    "iron_ingot": 3,
+    "string": 3,
+    "obsidian": 1,
+    "water_bucket": 1
+   }
+  },
+  "farm:26": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "trident",
+   "short": "Drowned trident farm in a river biome.",
+   "steps": [
+    "Find a long straight river",
+    "Build spawn floors over it",
+    "Honey blocks move the drowned",
+    "Kill drowned for tridents"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:16",
+     "rating": 4,
+     "why": "96 honey blocks = 384 bottles"
+    },
+    {
+     "ref": "farm:18",
+     "rating": 3,
+     "why": "or slime blocks instead"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 3,
+     "why": "192 scaffolding"
+    },
+    {
+     "ref": "farm:133",
+     "rating": 3,
+     "why": "80 ice"
+    }
+   ],
+   "raw": {
+    "honey_bottle": 384,
+    "cobblestone": 208,
+    "bamboo": 192,
+    "ice": 80,
+    "string": 32,
+    "redstone": 24,
+    "coal": 20,
+    "oak_log": 9,
+    "quartz": 8,
+    "iron_ingot": 8,
+    "slime_ball": 8,
+    "obsidian": 2
+   }
+  },
+  "farm:27": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "iron_ingot",
+   "short": "Day-one iron farm from three villagers and a zombie.",
+   "steps": [
+    "Find a village on flat ground",
+    "Lure 3 villagers with beds",
+    "Trap a zombie in a boat",
+    "Lava kills golems, collect iron"
+   ],
+   "prereqs": [],
+   "raw": {
+    "white_wool": 18,
+    "oak_log": 9,
+    "coal": 2,
+    "water_bucket": 1,
+    "lava_bucket": 1
+   }
+  },
+  "farm:101": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "wheat",
+   "short": "Basic wheat field for bread and breeding.",
+   "steps": [
+    "Till a 9x9 plot, water centre",
+    "Plant seeds and light it",
+    "Harvest when grown, replant"
+   ],
+   "prereqs": [],
+   "raw": {
+    "wheat_seeds": 80,
+    "water_bucket": 1,
+    "oak_log": 1
+   }
+  },
+  "farm:102": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "carrot",
+   "short": "Basic carrot field.",
+   "steps": [
+    "Till a 9x9 plot, water centre",
+    "Plant seeds and light it",
+    "Harvest when grown, replant"
+   ],
+   "prereqs": [],
+   "raw": {
+    "carrot": 80,
+    "water_bucket": 1,
+    "oak_log": 1
+   }
+  },
+  "farm:103": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "potato",
+   "short": "Basic potato field.",
+   "steps": [
+    "Till a 9x9 plot, water centre",
+    "Plant seeds and light it",
+    "Harvest when grown, replant"
+   ],
+   "prereqs": [],
+   "raw": {
+    "potato": 80,
+    "water_bucket": 1,
+    "oak_log": 1
+   }
+  },
+  "farm:104": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "beetroot",
+   "short": "Basic beetroot field.",
+   "steps": [
+    "Till a 9x9 plot, water centre",
+    "Plant seeds and light it",
+    "Harvest when grown, replant"
+   ],
+   "prereqs": [],
+   "raw": {
+    "beetroot_seeds": 80,
+    "water_bucket": 1,
+    "oak_log": 1
+   }
+  },
+  "farm:105": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "pumpkin",
+   "short": "Rows of pumpkin stems.",
+   "steps": [
+    "Till rows next to water",
+    "Plant seeds, leave gaps",
+    "Harvest pumpkins, keep stems"
+   ],
+   "prereqs": [],
+   "raw": {
+    "pumpkin_seeds": 18,
+    "water_bucket": 2,
+    "oak_log": 1
+   }
+  },
+  "farm:106": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "melon",
+   "short": "Rows of melon stems.",
+   "steps": [
+    "Till rows next to water",
+    "Plant seeds, leave gaps",
+    "Harvest melons, keep stems"
+   ],
+   "prereqs": [],
+   "raw": {
+    "melon_seeds": 18,
+    "water_bucket": 2,
+    "oak_log": 1
+   }
+  },
+  "farm:107": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "sugar_cane",
+   "short": "Sugar cane by water: paper and books.",
+   "steps": [
+    "Plant cane next to water",
+    "Let it grow 3 tall",
+    "Cut the top two"
+   ],
+   "prereqs": [],
+   "raw": {
+    "sugar_cane": 16,
+    "water_bucket": 2
+   }
+  },
+  "farm:108": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bamboo",
+   "short": "Fast bamboo for scaffolding and fuel.",
+   "steps": [
+    "Get bamboo from a jungle",
+    "Plant on grass or sand",
+    "Cut above the bottom block"
+   ],
+   "prereqs": [],
+   "raw": {
+    "bamboo": 20
+   }
+  },
+  "farm:109": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cactus",
+   "short": "Simple cactus patch on sand.",
+   "steps": [
+    "Plant cactus on sand",
+    "No blocks touching its sides",
+    "Break the top pieces"
+   ],
+   "prereqs": [],
+   "raw": {
+    "sand": 10,
+    "cactus": 10
+   }
+  },
+  "farm:110": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "kelp",
+   "short": "Underwater kelp for dried kelp fuel.",
+   "steps": [
+    "Plant kelp in deep water",
+    "Let it grow up",
+    "Cut above the bottom"
+   ],
+   "prereqs": [],
+   "raw": {
+    "kelp": 10,
+    "water_bucket": 2
+   }
+  },
+  "farm:111": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cocoa_beans",
+   "short": "Cocoa beans on jungle logs.",
+   "steps": [
+    "Stack jungle logs",
+    "Place beans on the sides",
+    "Harvest when orange"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cocoa_beans": 24,
+    "jungle_log": 12
+   }
+  },
+  "farm:112": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "sweet_berries",
+   "short": "Sweet berry bushes for food.",
+   "steps": [
+    "Plant berries on grass",
+    "Wait for red berries",
+    "Right-click to pick"
+   ],
+   "prereqs": [],
+   "raw": {
+    "sweet_berries": 28
+   }
+  },
+  "farm:113": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "nether_wart",
+   "short": "Nether wart for every potion.",
+   "steps": [
+    "Bring wart from a fortress",
+    "Plant on soul sand",
+    "Harvest when red, replant"
+   ],
+   "prereqs": [],
+   "raw": {
+    "soul_sand": 36,
+    "nether_wart": 36
+   }
+  },
+  "farm:114": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "red_mushroom",
+   "short": "Dark room mushroom patch.",
+   "steps": [
+    "Build a dark cobble room",
+    "Plant red and brown mushrooms",
+    "Let them spread, harvest"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 120,
+    "red_mushroom": 4,
+    "brown_mushroom": 4
+   }
+  },
+  "farm:115": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "oak_log",
+   "short": "Plant and chop oak or birch trees.",
+   "steps": [
+    "Plant saplings in a grid",
+    "Light it with torches",
+    "Chop trees, replant saplings"
+   ],
+   "prereqs": [],
+   "raw": {
+    "oak_sapling": 10,
+    "coal": 3
+   }
+  },
+  "farm:116": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "spruce_log",
+   "short": "Giant 2x2 spruce trees: lots of logs.",
+   "steps": [
+    "Plant 4 spruce saplings square",
+    "Bone-meal them",
+    "Chop the giant tree"
+   ],
+   "prereqs": [],
+   "raw": {
+    "spruce_sapling": 4,
+    "bone_meal": 3
+   }
+  },
+  "farm:117": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "beef",
+   "short": "Cow pen for beef and leather.",
+   "steps": [
+    "Fence a small pen",
+    "Breed cows with wheat",
+    "Kill adults, keep two"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "wheat to breed cows"
+    }
+   ],
+   "raw": {
+    "wheat": 20,
+    "oak_log": 2
+   }
+  },
+  "farm:118": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "porkchop",
+   "short": "Pig pen for porkchops.",
+   "steps": [
+    "Fence a small pen",
+    "Breed pigs with carrots",
+    "Kill adults, keep two"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 2,
+     "why": "carrots to breed pigs"
+    }
+   ],
+   "raw": {
+    "carrot": 20
+   }
+  },
+  "farm:119": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "white_wool",
+   "short": "Sheep pen: shear for wool.",
+   "steps": [
+    "Fence a grass pen",
+    "Breed sheep with wheat",
+    "Shear, wait for regrowth"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "wheat to breed sheep"
+    }
+   ],
+   "raw": {
+    "oak_log": 15,
+    "wheat": 4,
+    "iron_ingot": 2
+   }
+  },
+  "farm:120": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "feather",
+   "short": "Chicken pen for eggs and feathers.",
+   "steps": [
+    "Fence a pen",
+    "Breed chickens with seeds",
+    "Collect eggs and feathers"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "seeds to breed chickens"
+    }
+   ],
+   "raw": {
+    "oak_log": 15,
+    "wheat_seeds": 10
+   }
+  },
+  "farm:121": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "egg",
+   "short": "Hoppers collect eggs from penned chickens.",
+   "steps": [
+    "Put 8 chickens on hoppers",
+    "Hoppers feed one chest",
+    "Empty the chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:120",
+     "rating": 3,
+     "why": "8 chickens"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "40 iron for hoppers"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 40,
+    "sand": 24,
+    "oak_log": 18,
+    "wheat_seeds": 8
+   }
+  },
+  "farm:122": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "rabbit_hide",
+   "short": "Rabbit pen for hide and lucky feet.",
+   "steps": [
+    "Fence a pen",
+    "Breed rabbits with carrots",
+    "Kill adults for drops"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 2,
+     "why": "carrots to breed rabbits"
+    }
+   ],
+   "raw": {
+    "oak_log": 14,
+    "carrot": 10
+   }
+  },
+  "farm:123": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "honey_bottle",
+   "short": "Beehive with a campfire: honey and combs.",
+   "steps": [
+    "Lead bees to a hive",
+    "Campfire under the hive",
+    "Bottle honey, shear combs"
+   ],
+   "prereqs": [],
+   "raw": {
+    "poppy": 6,
+    "oak_log": 5,
+    "sand": 4,
+    "honeycomb": 3,
+    "iron_ingot": 2,
+    "coal": 1
+   }
+  },
+  "farm:124": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cod",
+   "short": "Fishing spot: fish, books, saddles.",
+   "steps": [
+    "Find water open to the sky",
+    "Cast and wait",
+    "Reel in when it bobs"
+   ],
+   "prereqs": [],
+   "raw": {
+    "string": 2
+   }
+  },
+  "farm:125": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cobblestone",
+   "short": "Lava and water cobblestone generator.",
+   "steps": [
+    "Dig a channel",
+    "Pour lava one side, water other",
+    "Mine the cobble that forms"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 10,
+    "lava_bucket": 1,
+    "water_bucket": 1
+   }
+  },
+  "farm:126": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "basalt",
+   "short": "Basalt generator from lava, soul soil, blue ice.",
+   "steps": [
+    "Soul soil under the gap",
+    "Lava one side, blue ice other",
+    "Mine the basalt"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:133",
+     "rating": 3,
+     "why": "81 ice for blue ice"
+    }
+   ],
+   "raw": {
+    "lava_bucket": 1,
+    "soul_soil": 1,
+    "blue_ice": 1
+   }
+  },
+  "farm:127": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "rotten_flesh",
+   "short": "Grinder on a dungeon spawner.",
+   "steps": [
+    "Find a dungeon spawner",
+    "Water pushes mobs to one spot",
+    "Kill mobs for drops"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 201,
+    "water_bucket": 2
+   }
+  },
+  "farm:128": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bone",
+   "short": "Dark room mob farm: bones, string, flesh.",
+   "steps": [
+    "Build dark floors high up",
+    "Water pushes mobs to a hole",
+    "Kill them at the bottom"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:125",
+     "rating": 3,
+     "why": "about 900 cobblestone"
+    }
+   ],
+   "raw": {
+    "cobblestone": 901,
+    "water_bucket": 8
+   }
+  },
+  "farm:129": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "villager_spawn_egg",
+   "short": "Simple villager breeder.",
+   "steps": [
+    "Bring two villagers",
+    "Add beds and a farmer",
+    "Give carrots, collect babies"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 3,
+     "why": "carrots to breed"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "bring two villagers"
+    }
+   ],
+   "raw": {
+    "white_wool": 18,
+    "carrot": 12,
+    "oak_log": 6,
+    "water_bucket": 1
+   }
+  },
+  "farm:130": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "iron_ingot",
+   "short": "Basic iron golem farm.",
+   "steps": [
+    "Pen 3 villagers with beds",
+    "Scare them with a zombie",
+    "Kill golems, collect iron"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "bring 3 villagers"
+    }
+   ],
+   "raw": {
+    "white_wool": 9,
+    "oak_log": 8,
+    "sand": 8,
+    "iron_ingot": 5
+   }
+  },
+  "farm:131": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bone_meal",
+   "short": "Composter turns spare crops into bone meal.",
+   "steps": [
+    "Hopper into a composter",
+    "Hopper out to a chest",
+    "Feed it seeds and crops"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "seeds to compost"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 10,
+    "oak_log": 9
+   }
+  },
+  "farm:132": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "snowball",
+   "short": "Snow golem makes endless snowballs.",
+   "steps": [
+    "Build a snow golem",
+    "Trap it in glass",
+    "Shovel the snow trail"
+   ],
+   "prereqs": [],
+   "raw": {
+    "snowball": 8,
+    "sand": 6,
+    "pumpkin": 1
+   }
+  },
+  "farm:133": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "ice",
+   "short": "Freeze water, mine ice with Silk Touch.",
+   "steps": [
+    "Find a cold biome",
+    "Make a big shallow pool",
+    "Mine ice with Silk Touch"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:enchanting-setup",
+     "rating": 3,
+     "why": "Silk Touch pickaxe"
+    }
+   ],
+   "raw": {
+    "water_bucket": 2,
+    "silk_touch_pickaxe": 1
+   }
+  },
+  "farm:134": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "yellow_dye",
+   "short": "Bone-meal flowers for dyes.",
+   "steps": [
+    "Plant tall flowers",
+    "Bone-meal them",
+    "Craft flowers into dye"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:131",
+     "rating": 3,
+     "why": "64 bone meal"
+    }
+   ],
+   "raw": {
+    "bone_meal": 64,
+    "sunflower": 4
+   }
+  },
+  "farm:135": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "glow_berries",
+   "short": "Glow berry vines under a ceiling.",
+   "steps": [
+    "Get berries from lush caves",
+    "Plant under stone ceiling",
+    "Pick berries"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 16,
+    "glow_berries": 8
+   }
+  },
+  "farm:136": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "chorus_fruit",
+   "short": "Chorus plants on end stone.",
+   "steps": [
+    "Get chorus flowers from islands",
+    "Plant on end stone",
+    "Break the plant, keep flower"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:end-gateway-hub",
+     "rating": 5,
+     "why": "flowers on outer islands"
+    }
+   ],
+   "raw": {
+    "end_stone": 5,
+    "chorus_flower": 5
+   }
+  },
+  "farm:137": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "turtle_egg",
+   "short": "Breed turtles for eggs and scutes.",
+   "steps": [
+    "Find turtles on a beach",
+    "Feed them seagrass",
+    "Babies drop scutes as they grow"
+   ],
+   "prereqs": [],
+   "raw": {
+    "seagrass": 10,
+    "iron_ingot": 2
+   }
+  },
+  "farm:138": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ochre_froglight",
+   "short": "Frogs eat magma cubes: froglights.",
+   "steps": [
+    "Bring frogs to basalt deltas",
+    "Lead them near magma cubes",
+    "Collect froglights"
+   ],
+   "prereqs": [],
+   "raw": {
+    "string": 6,
+    "slime_ball": 5
+   }
+  },
+  "farm:139": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "armadillo_scute",
+   "short": "Brush armadillos for scutes.",
+   "steps": [
+    "Fence armadillos in savanna",
+    "Breed with spider eyes",
+    "Brush them for scutes"
+   ],
+   "prereqs": [],
+   "raw": {
+    "oak_log": 11,
+    "spider_eye": 4,
+    "copper_ingot": 1,
+    "feather": 1
+   }
+  },
+  "farm:140": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "water_bucket",
+   "short": "Infinite water source.",
+   "steps": [
+    "Dig a 2x2 hole",
+    "Pour two buckets",
+    "Scoop water forever"
+   ],
+   "prereqs": [],
+   "raw": {
+    "water_bucket": 2
+   }
+  },
+  "farm:141": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lava_bucket",
+   "short": "Dripstone drips lava into cauldrons.",
+   "steps": [
+    "Lava above a block",
+    "Pointed dripstone under it",
+    "Cauldron below fills slowly"
+   ],
+   "prereqs": [],
+   "raw": {
+    "iron_ingot": 7,
+    "cobblestone": 3,
+    "lava_bucket": 1,
+    "pointed_dripstone": 1
+   }
+  },
+  "farm:142": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "moss_block",
+   "short": "Bone-meal moss to spread it.",
+   "steps": [
+    "Place moss in a stone pad",
+    "Bone-meal the centre moss",
+    "Break new moss, keep centre"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:131",
+     "rating": 2,
+     "why": "bone meal to spread"
+    }
+   ],
+   "raw": {
+    "cobblestone": 25,
+    "moss_block": 1
+   }
+  },
+  "trick:lava-cast-portal": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lava_bucket",
+   "short": "Pour lava into a mold: Nether portal, no diamonds.",
+   "steps": [
+    "Find a surface lava pool",
+    "Build a mold for the frame",
+    "Pour lava, then water over it",
+    "Light it with flint and steel"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 20,
+    "iron_ingot": 4,
+    "water_bucket": 1,
+    "flint": 1
+   }
+  },
+  "trick:portal-linking-8to1": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "compass",
+   "short": "Divide by 8 to link portals exactly.",
+   "steps": [
+    "Note overworld X and Z",
+    "Divide both by 8",
+    "Build the Nether portal there"
+   ],
+   "prereqs": [],
+   "raw": {
+    "obsidian": 10
+   }
+  },
+  "trick:nether-roof-portal": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "obsidian",
+   "short": "Portal on the flat, safe Nether roof.",
+   "steps": [
+    "Break the bedrock ceiling once",
+    "Build a portal on the roof",
+    "Use the roof as highway"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:bedrock-breaking",
+     "rating": 5,
+     "why": "only way through the ceiling"
+    }
+   ],
+   "raw": {
+    "obsidian": 10,
+    "cobblestone": 8,
+    "gunpowder": 5,
+    "sand": 4,
+    "iron_ingot": 2,
+    "redstone": 2,
+    "oak_log": 2
+   }
+  },
+  "trick:bedrock-breaking": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bedrock",
+   "short": "Pistons and TNT delete a bedrock block.",
+   "steps": [
+    "Place piston on the bedrock",
+    "Light TNT next to it",
+    "Click the piston fast"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 9,
+    "gunpowder": 5,
+    "sand": 4,
+    "oak_log": 3,
+    "iron_ingot": 2,
+    "redstone": 2,
+    "obsidian": 1
+   }
+  },
+  "trick:lava-lake-portal": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "lava_bucket",
+   "short": "Portal by a lava sea for bulk fuel.",
+   "steps": [
+    "Find a Nether lava sea",
+    "Portal right next to it",
+    "Scoop many lava buckets"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:portal-linking-8to1",
+     "rating": 3,
+     "why": "portal in the right spot"
+    },
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 3,
+     "why": "fire resistance"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 48,
+    "obsidian": 10
+   }
+  },
+  "trick:dripstone-lava-generator": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "pointed_dripstone",
+   "short": "Dripstone fills cauldrons with lava.",
+   "steps": [
+    "Lava above a block",
+    "Pointed dripstone under it",
+    "Cauldron below fills slowly"
+   ],
+   "prereqs": [],
+   "raw": {
+    "iron_ingot": 7,
+    "pointed_dripstone": 1,
+    "lava_bucket": 1
+   }
+  },
+  "trick:infinite-water-source": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "water_bucket",
+   "short": "Two buckets make endless water.",
+   "steps": [
+    "Dig a 2x2 hole",
+    "Pour two buckets",
+    "Scoop water forever"
+   ],
+   "prereqs": [],
+   "raw": {
+    "water_bucket": 2
+   }
+  },
+  "trick:early-horse": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "saddle",
+   "short": "Tame and saddle a horse early.",
+   "steps": [
+    "Find horses in plains",
+    "Mount until it is tamed",
+    "Saddle it, keep it home"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:124",
+     "rating": 2,
+     "why": "fishing can catch saddles"
+    }
+   ],
+   "raw": {
+    "string": 2,
+    "gold_ingot": 2,
+    "carrot": 2,
+    "saddle": 1,
+    "slime_ball": 1
+   }
+  },
+  "trick:water-skiing": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lead",
+   "short": "Dolphin tows you across oceans.",
+   "steps": [
+    "Find a dolphin",
+    "Put it on a lead",
+    "Swim behind it"
+   ],
+   "prereqs": [],
+   "raw": {
+    "string": 4,
+    "slime_ball": 1
+   }
+  },
+  "trick:ice-boat-highway": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "blue_ice",
+   "short": "Boat on blue ice: fastest Nether road.",
+   "steps": [
+    "Lay a 1-wide blue ice track",
+    "Wall both sides",
+    "Ride a boat along it"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:133",
+     "rating": 4,
+     "why": "lots of ice for blue ice"
+    },
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 3,
+     "why": "best built on the roof"
+    }
+   ],
+   "raw": {
+    "oak_log": 2,
+    "blue_ice": 1
+   }
+  },
+  "trick:nether-hub": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "netherrack",
+   "short": "One Nether hub linking every portal.",
+   "steps": [
+    "Build a central hub",
+    "Tunnel to each portal",
+    "Label each tunnel"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:portal-linking-8to1",
+     "rating": 4,
+     "why": "portals must link right"
+    }
+   ],
+   "raw": {
+    "coal": 16,
+    "obsidian": 10,
+    "oak_log": 2
+   }
+  },
+  "trick:elytra-rockets": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "elytra",
+   "short": "Fly anywhere with elytra and rockets.",
+   "steps": [
+    "Find elytra on an End ship",
+    "Craft many rockets",
+    "Boost while gliding"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:end-gateway-hub",
+     "rating": 5,
+     "why": "End ships hold elytra"
+    },
+    {
+     "ref": "farm:23",
+     "rating": 4,
+     "why": "gunpowder for rockets"
+    }
+   ],
+   "raw": {
+    "gunpowder": 64,
+    "sugar_cane": 64,
+    "elytra": 1
+   }
+  },
+  "trick:end-gateway-hub": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "end_crystal",
+   "short": "Open End gateways to reach outer islands.",
+   "steps": [
+    "Kill the dragon",
+    "Respawn it with 4 crystals",
+    "Pearl into a gateway"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:25",
+     "rating": 4,
+     "why": "fast dragon kills"
+    }
+   ],
+   "raw": {
+    "sand": 28,
+    "ender_pearl": 6,
+    "ghast_tear": 4,
+    "blaze_rod": 2
+   }
+  },
+  "trick:dragon-death-trap": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "dragon_egg",
+   "short": "Trap the dragon on water, kill it fast.",
+   "steps": [
+    "Pillar to Y145 above portal",
+    "Obsidian with water on top",
+    "Shoot the stuck dragon"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:120",
+     "rating": 2,
+     "why": "feathers for 80 arrows"
+    },
+    {
+     "ref": "trick:respawn-anchor-bed",
+     "rating": 2,
+     "why": "bed by the portal"
+    }
+   ],
+   "raw": {
+    "dirt": 195,
+    "flint": 20,
+    "feather": 20,
+    "sand": 8,
+    "string": 3,
+    "obsidian": 1,
+    "water_bucket": 1
+   }
+  },
+  "trick:lazy-mob-switch": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "lever",
+   "short": "Toggle hostile spawns with trapped silverfish.",
+   "steps": [
+    "Trap silverfish from a spawner",
+    "Keep them in a lazy chunk",
+    "Toggle the chunk loader"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 4,
+     "why": "chunk loader on the roof"
+    },
+    {
+     "ref": "trick:seed-map-planning",
+     "rating": 2,
+     "why": "find the stronghold"
+    }
+   ],
+   "raw": {
+    "obsidian": 20,
+    "iron_ingot": 5,
+    "oak_log": 2
+   }
+  },
+  "trick:voidless-void-trading": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "villager_trades",
+   "short": "Rail villagers far away to lock prices.",
+   "steps": [
+    "Lay a long rail line",
+    "Ride the villager out and back",
+    "Trade while prices stay low"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:24",
+     "rating": 3,
+     "why": "villagers with good trades"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "about 45 iron for rails"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 53,
+    "gold_ingot": 10,
+    "redstone": 2
+   }
+  },
+  "trick:trading-hall": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lectern",
+   "short": "Villagers in cells, all trades in one hall.",
+   "steps": [
+    "Build 1x1 cells in a row",
+    "Put a job block in each",
+    "Move villagers in"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "move villagers in"
+    },
+    {
+     "ref": "farm:129",
+     "rating": 3,
+     "why": "breed more villagers"
+    }
+   ],
+   "raw": {
+    "sand": 64,
+    "sugar_cane": 9,
+    "leather": 3,
+    "oak_log": 2
+   }
+  },
+  "trick:librarian-reroll": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "enchanted_book",
+   "short": "Break and replace lecterns until Mending shows.",
+   "steps": [
+    "Find an untraded villager",
+    "Place a lectern",
+    "Break and replace until right book"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:107",
+     "rating": 2,
+     "why": "sell paper for emeralds"
+    }
+   ],
+   "raw": {
+    "emerald": 38,
+    "sugar_cane": 12,
+    "leather": 4,
+    "oak_log": 2
+   }
+  },
+  "trick:zombie-cure-discount": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "golden_apple",
+   "short": "Cure zombie villagers for huge discounts.",
+   "steps": [
+    "Let a zombie infect a villager",
+    "Throw weakness potion",
+    "Feed a golden apple"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 4,
+     "why": "brew the weakness potion"
+    },
+    {
+     "ref": "trick:boat-mob-transport",
+     "rating": 2,
+     "why": "bring a zombie"
+    }
+   ],
+   "raw": {
+    "gold_ingot": 8,
+    "apple": 1,
+    "splash_potion": 1
+   }
+  },
+  "trick:villager-transport": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "oak_boat",
+   "short": "Move villagers in boats or minecarts.",
+   "steps": [
+    "Push villager into a boat",
+    "Drag the boat on land",
+    "Break it at the cell"
+   ],
+   "prereqs": [],
+   "raw": {
+    "oak_log": 2
+   }
+  },
+  "trick:enchanting-setup": {
+   "stage": "early",
+   "milestone": "deep-mining",
+   "icon": "enchanting_table",
+   "short": "Table plus 15 bookshelves for level 30.",
+   "steps": [
+    "Mine diamonds and obsidian",
+    "Craft the table",
+    "Ring it with 15 bookshelves"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:107",
+     "rating": 4,
+     "why": "135 sugar cane for books"
+    },
+    {
+     "ref": "farm:117",
+     "rating": 3,
+     "why": "45 leather for books"
+    },
+    {
+     "ref": "trick:deepslate-diamond-level",
+     "rating": 3,
+     "why": "diamonds for the table"
+    }
+   ],
+   "raw": {
+    "sugar_cane": 138,
+    "lapis_lazuli": 64,
+    "leather": 46,
+    "oak_log": 23,
+    "obsidian": 4,
+    "diamond": 2
+   }
+  },
+  "trick:netherite-template-dupe": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "netherite_upgrade_smithing_template",
+   "short": "Copy the netherite template; skip more bastions.",
+   "steps": [
+    "Get one template from a bastion",
+    "Add 7 diamonds and netherrack",
+    "Craft two templates"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:deepslate-diamond-level",
+     "rating": 3,
+     "why": "7 diamonds per copy"
+    }
+   ],
+   "raw": {
+    "diamond": 7,
+    "netherite_upgrade_smithing_template": 1,
+    "netherrack": 1
+   }
+  },
+  "trick:bed-mining-debris": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "red_bed",
+   "short": "Blow up Nether walls with beds for debris.",
+   "steps": [
+    "Mine at Y15 in the Nether",
+    "Place a bed, click it",
+    "Grab the ancient debris"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 4,
+     "why": "fire resistance for safety"
+    },
+    {
+     "ref": "farm:4",
+     "rating": 3,
+     "why": "48 wool for 16 beds"
+    }
+   ],
+   "raw": {
+    "gunpowder": 80,
+    "sand": 64,
+    "white_wool": 48,
+    "oak_log": 12
+   }
+  },
+  "trick:deepslate-diamond-level": {
+   "stage": "early",
+   "milestone": "deep-mining",
+   "icon": "diamond",
+   "short": "Branch-mine at Y -58 for diamonds.",
+   "steps": [
+    "Dig down to Y -58",
+    "Mine long branches 3 apart",
+    "Use Fortune III if you can"
+   ],
+   "prereqs": [],
+   "raw": {
+    "coal": 16,
+    "iron_ingot": 3,
+    "oak_log": 2
+   }
+  },
+  "trick:bad-omen-raid": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "ominous_bottle",
+   "short": "Ominous bottle starts a raid on demand.",
+   "steps": [
+    "Kill a raid captain",
+    "Drink the ominous bottle",
+    "Walk into a village"
+   ],
+   "prereqs": [],
+   "raw": {
+    "ominous_bottle": 1
+   }
+  },
+  "trick:ominous-trial-chamber": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "ominous_bottle",
+   "short": "Trial chambers: keys, vaults, wind charges.",
+   "steps": [
+    "Find a trial chamber",
+    "Beat spawners for keys",
+    "Open vaults for loot"
+   ],
+   "prereqs": [],
+   "raw": {
+    "ominous_bottle": 1
+   }
+  },
+  "trick:mlg-water-bucket": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "water_bucket",
+   "short": "Place water before landing: no fall damage.",
+   "steps": [
+    "Hold a water bucket",
+    "Aim at the ground",
+    "Place just before landing"
+   ],
+   "prereqs": [],
+   "raw": {
+    "water_bucket": 1
+   }
+  },
+  "trick:respawn-anchor-bed": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "respawn_anchor",
+   "short": "Set spawn with a bed or anchor.",
+   "steps": [
+    "Sleep in a bed at each base",
+    "Craft an anchor from crying obsidian",
+    "Charge it with glowstone"
+   ],
+   "prereqs": [],
+   "raw": {
+    "glowstone": 7,
+    "crying_obsidian": 6,
+    "white_wool": 3,
+    "oak_log": 1
+   }
+  },
+  "trick:ender-chest-shulker": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "shulker_box",
+   "short": "Shulkers in an ender chest: huge carry space.",
+   "steps": [
+    "Get shulker shells",
+    "Fill shulker boxes",
+    "Store them in an ender chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:end-gateway-hub",
+     "rating": 5,
+     "why": "shulkers live in End cities"
+    },
+    {
+     "ref": "farm:15",
+     "rating": 3,
+     "why": "endless shulker shells"
+    }
+   ],
+   "raw": {
+    "obsidian": 8,
+    "shulker_shell": 2,
+    "oak_log": 2,
+    "ender_pearl": 1,
+    "blaze_rod": 1
+   }
+  },
+  "trick:sorting-system": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "hopper",
+   "short": "Hopper sorter puts each item in its chest.",
+   "steps": [
+    "Run a hopper line",
+    "Comparator filter per item",
+    "Add an overflow chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:27",
+     "rating": 4,
+     "why": "5 iron per hopper"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 10,
+    "oak_log": 9,
+    "redstone": 4,
+    "cobblestone": 3,
+    "quartz": 1
+   }
+  },
+  "trick:pearl-stasis": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ender_pearl",
+   "short": "Floating pearl teleports you home on trigger.",
+   "steps": [
+    "Soul sand bubble column",
+    "Throw a pearl into it",
+    "Flip the trapdoor to return"
+   ],
+   "prereqs": [],
+   "raw": {
+    "soul_sand": 1,
+    "water_bucket": 1,
+    "oak_log": 1,
+    "ender_pearl": 1
+   }
+  },
+  "trick:bubble-elevator": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "soul_sand",
+   "short": "Soul sand bubble column lifts you up.",
+   "steps": [
+    "Soul sand at the bottom",
+    "Fill the column with water",
+    "Swim in to go up"
+   ],
+   "prereqs": [],
+   "raw": {
+    "sand": 4,
+    "soul_sand": 1,
+    "kelp": 1
+   }
+  },
+  "trick:spawn-chunk-placement": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bed",
+   "short": "Spawn chunks keep small farms always running.",
+   "steps": [
+    "Find world spawn",
+    "Build compact farms there",
+    "They run when you are away"
+   ],
+   "prereqs": [],
+   "raw": {}
+  },
+  "trick:afk-fishing": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "fishing_rod",
+   "short": "AFK fishing for books, saddles, Mending.",
+   "steps": [
+    "Open water by a wall",
+    "Hold right-click with a rod",
+    "Hoppers collect the catch"
+   ],
+   "prereqs": [],
+   "raw": {
+    "iron_ingot": 10,
+    "oak_log": 5,
+    "string": 2
+   }
+  },
+  "trick:furnace-array": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "furnace",
+   "short": "Hopper-fed row of furnaces smelts fast.",
+   "steps": [
+    "Row of furnaces",
+    "Hoppers feed input and fuel",
+    "Output into one chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:27",
+     "rating": 4,
+     "why": "about 160 iron for hoppers"
+    },
+    {
+     "ref": "trick:dried-kelp-fuel",
+     "rating": 3,
+     "why": "fuel"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 2,
+     "why": "cobble for furnaces"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 160,
+    "cobblestone": 128,
+    "oak_log": 70
+   }
+  },
+  "trick:dried-kelp-fuel": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "dried_kelp_block",
+   "short": "Dried kelp blocks: free, renewable fuel.",
+   "steps": [
+    "Smelt kelp into dried kelp",
+    "Craft 9 into a block",
+    "Each block smelts 20 items"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:110",
+     "rating": 4,
+     "why": "lots of kelp"
+    }
+   ],
+   "raw": {
+    "kelp": 64
+   }
+  },
+  "trick:beacon-haste": {
+   "stage": "late",
+   "milestone": "nether",
+   "icon": "beacon",
+   "short": "Beacon with Haste II for instant mining.",
+   "steps": [
+    "Kill the wither for a star",
+    "Build a full iron pyramid",
+    "Pick Haste II"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:27",
+     "rating": 5,
+     "why": "about 1,480 iron for blocks"
+    },
+    {
+     "ref": "trick:wither-cage",
+     "rating": 4,
+     "why": "nether star"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 1476,
+    "sand": 5,
+    "obsidian": 3,
+    "nether_star": 1
+   }
+  },
+  "trick:wither-cage": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "nether_star",
+   "short": "Trap the wither so it cannot escape.",
+   "steps": [
+    "Get 3 wither skulls",
+    "Spawn it under bedrock",
+    "Kill it with Smite"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:17",
+     "rating": 3,
+     "why": "3 wither skulls"
+    }
+   ],
+   "raw": {
+    "soul_sand": 4,
+    "wither_skeleton_skull": 3
+   }
+  },
+  "trick:boat-mob-transport": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "minecart",
+   "short": "Move mobs in boats or minecarts.",
+   "steps": [
+    "Push the mob into a boat",
+    "Drag or ride it along",
+    "Break the boat at the goal"
+   ],
+   "prereqs": [],
+   "raw": {
+    "string": 4,
+    "oak_log": 2,
+    "slime_ball": 1
+   }
+  },
+  "trick:strider-lava-travel": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "warped_fungus_on_a_stick",
+   "short": "Ride a strider across lava seas.",
+   "steps": [
+    "Saddle a strider",
+    "Hold fungus on a stick",
+    "Steer it over lava"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:124",
+     "rating": 2,
+     "why": "fishing can catch saddles"
+    }
+   ],
+   "raw": {
+    "string": 2,
+    "saddle": 1,
+    "warped_fungus": 1
+   }
+  },
+  "trick:happy-ghast-platform": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "dried_ghast",
+   "short": "Grow a happy ghast: flying build platform.",
+   "steps": [
+    "Find a dried ghast",
+    "Put it in water",
+    "Feed snowballs, add a harness"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:132",
+     "rating": 2,
+     "why": "snowballs to feed it"
+    }
+   ],
+   "raw": {
+    "snowball": 16,
+    "dried_ghast": 1,
+    "harness": 1
+   }
+  },
+  "trick:trident-riptide": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "trident",
+   "short": "Riptide trident launches you in rain or water.",
+   "steps": [
+    "Get a trident from drowned",
+    "Enchant it with Riptide",
+    "Throw while in rain or water"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:enchanting-setup",
+     "rating": 3,
+     "why": "Riptide from the table"
+    }
+   ],
+   "raw": {
+    "trident": 1
+   }
+  },
+  "trick:wind-charge-mobility": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "wind_charge",
+   "short": "Wind charges for big jumps and safe falls.",
+   "steps": [
+    "Get charges from breezes",
+    "Throw at your feet",
+    "Fly up or soften falls"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:ominous-trial-chamber",
+     "rating": 5,
+     "why": "only breezes drop wind charges"
+    }
+   ],
+   "raw": {
+    "wind_charge": 16
+   }
+  },
+  "trick:fire-res-brewing": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "potion_of_fire_resistance",
+   "short": "Brewing stand for fire resistance and more.",
+   "steps": [
+    "Get blaze rods and wart",
+    "Build a brewing stand",
+    "Brew awkward, then magma cream"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:113",
+     "rating": 4,
+     "why": "wart for every potion"
+    }
+   ],
+   "raw": {
+    "nether_wart": 16,
+    "blaze_rod": 5,
+    "cobblestone": 3
+   }
+  },
+  "trick:spawnproof-perimeter": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "torch",
+   "short": "Light the base so mobs stay away.",
+   "steps": [
+    "Light every dark spot",
+    "Use slabs or carpet",
+    "Check with F3 light levels"
+   ],
+   "prereqs": [],
+   "raw": {
+    "coal": 16,
+    "oak_log": 2
+   }
+  },
+  "trick:cartographer-maps": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "filled_map",
+   "short": "Buy maps to monuments and mansions.",
+   "steps": [
+    "Find a cartographer",
+    "Trade emeralds for maps",
+    "Follow the map marker"
+   ],
+   "prereqs": [],
+   "raw": {
+    "emerald": 14,
+    "iron_ingot": 4,
+    "redstone": 1
+   }
+  },
+  "trick:seed-map-planning": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "map",
+   "short": "Seed map shows structures before you travel.",
+   "steps": [
+    "Get the world seed",
+    "Open Chunkbase",
+    "Mark strongholds, villages, slime chunks"
+   ],
+   "prereqs": [],
+   "raw": {
+    "ender_pearl": 2,
+    "blaze_rod": 1
+   }
+  },
+  "trick:hero-of-village": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bell",
+   "short": "Win a raid for cheap village trades.",
+   "steps": [
+    "Get bad omen",
+    "Defend your trading village",
+    "Buy in bulk while it lasts"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:bad-omen-raid",
+     "rating": 5,
+     "why": "starts the raid"
+    },
+    {
+     "ref": "trick:trading-hall",
+     "rating": 3,
+     "why": "trades to discount"
+    }
+   ],
+   "raw": {
+    "ominous_bottle": 1
+   }
+  },
+  "trick:lodestone-compass": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "lodestone",
+   "short": "Compasses that point to your bases.",
+   "steps": [
+    "Craft and place a lodestone",
+    "Use a compass on it",
+    "It points there anywhere"
+   ],
+   "prereqs": [],
+   "raw": {
+    "cobblestone": 8,
+    "iron_ingot": 5,
+    "redstone": 1
+   }
+  },
+  "trick:elytra-towing": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "elytra",
+   "short": "Tow a friend on a lead while flying.",
+   "steps": [
+    "Get dolphin's grace in water",
+    "Leash a saddled pig or friend",
+    "Take off from the water"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:elytra-rockets",
+     "rating": 4,
+     "why": "elytra and rockets"
+    },
+    {
+     "ref": "trick:water-skiing",
+     "rating": 3,
+     "why": "dolphin's grace start"
+    }
+   ],
+   "raw": {
+    "string": 2,
+    "elytra": 1,
+    "slime_ball": 1,
+    "saddle": 1
+   }
+  },
+  "trick:tnt-duper-quarry": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "tnt",
+   "short": "Slime TNT duper clears huge areas.",
+   "steps": [
+    "Build slime and coral duper",
+    "Mount it on a flying machine",
+    "Let it bore through land"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:18",
+     "rating": 3,
+     "why": "36 slime balls for blocks"
+    }
+   ],
+   "raw": {
+    "slime_ball": 36,
+    "cobblestone": 12,
+    "gunpowder": 5,
+    "sand": 4,
+    "redstone": 4,
+    "quartz": 2,
+    "brain_coral_fan": 1
+   }
+  }
+ }
+}
