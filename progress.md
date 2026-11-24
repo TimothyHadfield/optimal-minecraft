@@ -12,16 +12,15 @@ Tim's Minecraft site: main page → **Farms** (`farms/`: record of farms, tricks
 | Live | https://timothyhadfield.github.io/optimal-minecraft/ (main), /farms/, /horses/. Old https://timothyhadfield.github.io/craft-horse/... forwards (separate repo `craft-horse`, index.html + 404.html, path kept) |
 | Main page | 2026-11-24: one icon card per section (`SECTIONS` array) |
 | Horses | Calculator, stable, breeding, backup. Moved to `horses/` 2026-11-24; localStorage kept (per origin) |
-| Farms data | `farms/farms.json` 82 records: n 1–27 ianxofour, 101–142 basic manual farms, 201–213 other YouTubers (core items only, deduped by mechanism + item; copies listed in `sources`) |
-| Plan overlay | `farms/plan.json`: per `farm:<n>` / `trick:<id>`: stage, milestone (deep-mining / nether / end), icon, short, steps, prereqs [{ref, rating 1–5, why}], raw, and for farms `rank` + `core` (15 core) |
-| Core 15 (rank order) | 27 day-1 iron, 202 auto cobble, 5 tree, 19 gold, 203 villager crops, 213 raid (1.21.2+), 8 obsidian, 15 shulker, 17 wither skel, 208 mob (1.21), 24 trading hall, 12 bartering, 18 slime, 1 concrete, 14 guardian. Replaced ones (125, 101, 22, 23) rank right after |
-| Tricks | 51 in `farms/tricks.json`, real video frames `pics/trick-<id>.jpg` (picOf default) |
-| Core (2026-11-24 latest) | 18 core: Tim's build order + 214 max gold (C5 llama-aggro, rank 18, end). Chart (chartfit merged): 18 nodes, 25 lines, **1 crossing**, 0 box hits, boxes 59 px at 1440 |
+| Farms data | `farms/farms.json` 83 records: n 1–27 ianxofour, 101–142 basic manual farms, 201–214 other YouTubers (core items only, deduped by mechanism + item; copies listed in `sources`). 214 = max gold (C5 llama-aggro via Shulkercraft, ~960 gold blocks/h) |
+| Plan overlay | `farms/plan.json`: per `farm:<n>` / `trick:<id>`: stage, milestone (deep-mining / nether / end), icon, short, steps, prereqs [{ref, rating 1–5, why}], raw, and for farms `rank` + `core` |
+| Core 18 (rank order = Tim's build order) | no milestone: 27 day-1 iron, 101 wheat, 117 cow, 107 sugar cane, 24 trading hall · deep-mining: 202 cobble, 208 mob · nether: 5 tree, 137 turtle egg, 19 gold, 12 bartering, 17 wither skel · end: 8 obsidian, 11 wither rose, 213 raid, 15 shulker, 201 max iron, 214 max gold |
+| Tricks | 51 in `farms/tricks.json`, real video frames `pics/trick-<id>.jpg` (picOf default in farms/index.html) |
 | Trades | `farms/trades.json`, Java 26.3 (13 professions / 183 trades, wandering trader 100, 8 experimental tables) |
 | Pictures | `farms/pics/`: ALL real video frames, no drawn pictures (Tim: "0 farms or tasks have images that are built by you"). farm-<n>.jpg (1–27, 201–214), basic-<slug>.jpg, trick-<id>.jpg; sources per picture in scratchpad map.json only (not kept). Weak: 26, 211, beetroot, melon, tree, spruce (Bedrock), berries (Bedrock), iron golem, composter, moss, lava-lake-portal (no portal), elytra-rockets, seed-map (Console), spawn-chunk, hero-of-village. Icons `farms/icons/<id>.png` (~418, minecraft.wiki) |
-| CHART | Core farms only, all prereq links between them (rating 2–5, red→green, 5 thicker), milestone bands, hover/tap preview, 1×/2×/3× icon rule within same-icon groups. 2026-11-24 chartfit: laptop shape (column only as wide as its widest box, gaps 76 in a band / 96 across a milestone, 7 rows, build-order `rank` left→right in a band). CHART_STATS: 17 nodes, 22 lines, 0 crossings, 0 box hits, 0 bends, 1 order swap, 1472×738, boxes 61 px at 1440×900, 54 px at 1280×800, 47 px on phone |
+| CHART | Core farms only, all prereq links between them (rating 2–5, red→green, 5 thicker), milestone bands, hover/tap preview, 1×/2×/3× icon rule within same-icon groups. 2026-11-24 chartfit: laptop shape (column only as wide as its widest box, gaps 76 in a band / 96 across a milestone, 7 rows, build-order `rank` left→right in a band). CHART_STATS with 214 (2026-11-24, phone-view desktop 1440): 18 nodes, 25 lines, **1 crossing** (tree→wood line crosses turtle egg→wither skel), 0 box hits, 0 bends, 3 order swaps, boxes 59 px |
 | Fonts | Inter (text) + Pixelify Sans (headings/tabs) |
-| Tests | No suite. phone-view WebKit 393 px + desktop (2026-11-24, local + live redirect) |
+| Tests | No suite. 2026-11-24 late: python check that all 83 farms + 51 tricks resolve to an existing non-SVG picture; phone-view WebKit 393 px tricks list + 1440 farms: 0 failed requests, 0 broken images. Live 2e3ed28 |
 
 ## Authorized next steps
 None.
@@ -32,7 +31,9 @@ None.
 - (2026-11-24) Prereqs: "Rate each prereque on a scale from 1-5 on how necessary it is"; consider difficulty of the prereq farm and how many items are needed, and ingredients of ingredients.
 - (2026-11-24) Chart: "Represent each farm as a small box with the core item ... and nothing else"; hover shows "only the core details"; lines "as simple and clear as possible"; low prereq red, high green; "There's only maybe 15 very important farms so those are all the boxes ... Let's not even put skills right now".
 - (2026-11-24) Other YouTubers: "only make the very core ones and be very careful that nothing repeats ... Very random farms ... (cocao, tridents, etc.) don't need to be added".
-- (2026-11-24) Tim's build order (core list): day-1 iron · 1x1 cow · 9x9 wheat · simple sugar cane · simple trading hall · [deep mining] · cobblestone · mob · [Nether and fortress] · versatile wood · turtle egg · simple gold · bartering · wither skeleton · [end dragon] · obsidian · wither rose · raid · shulker · max iron · max gold. Then: "you don't need to follow that explicitly and I'm sure theres some improvements". Applied in plan.json (core 17, wheat moved before cow; max gold = research pending as farm 214).
+- (2026-11-24) Tim's build order (core list): day-1 iron · 1x1 cow · 9x9 wheat · simple sugar cane · simple trading hall · [deep mining] · cobblestone · mob · [Nether and fortress] · versatile wood · turtle egg · simple gold · bartering · wither skeleton · [end dragon] · obsidian · wither rose · raid · shulker · max iron · max gold. Then: "you don't need to follow that explicitly and I'm sure theres some improvements". Applied in plan.json (core 18, wheat moved before cow; max gold = farm 214).
+- (2026-11-24) "change the minecraft farm images so that 0 farms or tasks have images that are built by you and instead are all actual screenshots of the farm". Done.
+- (2026-11-24) "do you think there are big improvements ... Maybe replace one farm with another, or add something ... Don't change anything yet just talk to me." Answered (see Decisions); awaiting his pick.
 - (2026-11-24) "rename the repository to just optimal minecraft"; "a main page, a farm page, and a horse page ... you don't see any "horse" and "farm" bars at the top".
 
 ## Traps
@@ -43,7 +44,9 @@ None.
 - New core farms change the chart; `corelayout.js` searched 0 crossings for today's set but a test set with one extra core farm gave 1 crossing.
 - CHART_STATS `ms`: ~0.5 s in Chrome, 3–6 s in phone-view's WebKit (Playwright WebKit on Windows has no JIT; not a real-iPhone number).
 - The local folder is still named `Craft_Horse` (project memory is keyed to the path); repo is optimal-minecraft.
-- Research tools: `tools/litecount.py`, `tools/farm-research-brief.md`, `tools/get-icons.py`, `tools/gen-trick-pics.py`. Merge script for new farm batches lived in the scratchpad (`merge_others.py`): append records, plan entries, prereq changes, then re-rank.
+- Research tools: `tools/litecount.py`, `tools/farm-research-brief.md`, `tools/get-icons.py`, `tools/gen-trick-pics.py` (makes drawn SVGs: obsolete, don't use; Tim wants real screenshots only).
+- Picture method (agents): yt-dlp clip → ffmpeg frames → pick by eye → 640×360 JPEG q85, no overlays/facecams. Source URLs per picture were in scratchpad `realpics/*/map.json` (temporary, not in repo).
+- Stale worktree `C:/Users/timha/AppData/Local/Temp/claude/wt/craft-horse-chartfit` (merged; remove failed on OneDrive lock, weekly sweep). Merge script for new farm batches lived in the scratchpad (`merge_others.py`): append records, plan entries, prereq changes, then re-rank.
 
 ## Decisions
 - 2026-10-16 · pinned React 18.3.1 / Babel 7.29.9; input sync fix; import validation.
