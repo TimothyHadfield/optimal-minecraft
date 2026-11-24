@@ -31,6 +31,7 @@ None.
 - (2026-11-24) Prereqs: "Rate each prereque on a scale from 1-5 on how necessary it is"; consider difficulty of the prereq farm and how many items are needed, and ingredients of ingredients.
 - (2026-11-24) Chart: "Represent each farm as a small box with the core item ... and nothing else"; hover shows "only the core details"; lines "as simple and clear as possible"; low prereq red, high green; "There's only maybe 15 very important farms so those are all the boxes ... Let's not even put skills right now".
 - (2026-11-24) Other YouTubers: "only make the very core ones and be very careful that nothing repeats ... Very random farms ... (cocao, tridents, etc.) don't need to be added".
+- (2026-11-24) Tim's build order (core list): day-1 iron · 1x1 cow · 9x9 wheat · simple sugar cane · simple trading hall · [deep mining] · cobblestone · mob · [Nether and fortress] · versatile wood · turtle egg · simple gold · bartering · wither skeleton · [end dragon] · obsidian · wither rose · raid · shulker · max iron · max gold. Then: "you don't need to follow that explicitly and I'm sure theres some improvements". Applied in plan.json (core 17, wheat moved before cow; max gold = research pending as farm 214).
 - (2026-11-24) "rename the repository to just optimal minecraft"; "a main page, a farm page, and a horse page ... you don't see any "horse" and "farm" bars at the top".
 
 ## Traps
