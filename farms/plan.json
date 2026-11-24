@@ -4,17 +4,17 @@
    "id": "deep-mining",
    "name": "Deep mining",
    "icon": "diamond_pickaxe",
-   "short": "Diamonds, redstone, lapis, obsidian, iron gear."
+   "short": "Redstone, diamonds, lapis, lava, obsidian."
   },
   {
    "id": "nether",
-   "name": "Nether",
+   "name": "Nether & fortress",
    "icon": "netherrack",
-   "short": "Quartz, blaze rods, soul sand, Nether roof."
+   "short": "Blaze rods, wart, soul sand, magma, quartz."
   },
   {
    "id": "end",
-   "name": "Beat the End",
+   "name": "End dragon",
    "icon": "elytra",
    "short": "End access, elytra, shulkers, End stone."
   }
@@ -59,8 +59,8 @@
     "water_bucket": 2,
     "diorite": 1
    },
-   "rank": 14,
-   "core": true
+   "rank": 20,
+   "core": false
   },
   "farm:2": {
    "stage": "late",
@@ -112,7 +112,7 @@
     "coal": 1,
     "granite": 1
    },
-   "rank": 39,
+   "rank": 41,
    "core": false
   },
   "farm:3": {
@@ -170,7 +170,7 @@
     "cobweb": 3,
     "turtle_egg": 2
    },
-   "rank": 27,
+   "rank": 31,
    "core": false
   },
   "farm:4": {
@@ -209,7 +209,7 @@
     "coal": 2,
     "water_bucket": 1
    },
-   "rank": 28,
+   "rank": 32,
    "core": false
   },
   "farm:5": {
@@ -243,6 +243,11 @@
      "ref": "farm:108",
      "rating": 2,
      "why": "51 scaffolding"
+    },
+    {
+     "ref": "farm:208",
+     "rating": 4,
+     "why": "bone meal grows the trees"
     }
    ],
    "raw": {
@@ -264,7 +269,7 @@
     "white_wool": 1,
     "podzol": 1
    },
-   "rank": 3,
+   "rank": 8,
    "core": true
   },
   "farm:6": {
@@ -302,7 +307,7 @@
     "netherrack": 2,
     "water_bucket": 2
    },
-   "rank": 54,
+   "rank": 55,
    "core": false
   },
   "farm:7": {
@@ -340,7 +345,7 @@
     "lava_bucket": 1,
     "looting_iii_sword": 1
    },
-   "rank": 43,
+   "rank": 44,
    "core": false
   },
   "farm:8": {
@@ -394,7 +399,7 @@
     "pumpkin": 2,
     "lava_bucket": 1
    },
-   "rank": 7,
+   "rank": 13,
    "core": true
   },
   "farm:9": {
@@ -424,7 +429,7 @@
     "gold_ingot": 82,
     "redstone": 14
    },
-   "rank": 40,
+   "rank": 42,
    "core": false
   },
   "farm:10": {
@@ -486,7 +491,7 @@
     "slime_ball": 2,
     "ender_pearl": 1
    },
-   "rank": 38,
+   "rank": 40,
    "core": false
   },
   "farm:11": {
@@ -519,8 +524,8 @@
     },
     {
      "ref": "farm:17",
-     "rating": 3,
-     "why": "3 wither skulls"
+     "rating": 4,
+     "why": "wither skulls for the withers"
     }
    ],
    "raw": {
@@ -536,12 +541,12 @@
     "wither_skeleton_skull": 3,
     "quartz": 1
    },
-   "rank": 42,
-   "core": false
+   "rank": 14,
+   "core": true
   },
   "farm:12": {
-   "stage": "late",
-   "milestone": "end",
+   "stage": "mid",
+   "milestone": "nether",
    "icon": "ender_pearl",
    "short": "Mass piglin bartering: pearls, string, obsidian.",
    "steps": [
@@ -567,19 +572,9 @@
      "why": "about 215 iron for 43 hoppers"
     },
     {
-     "ref": "farm:15",
-     "rating": 3,
-     "why": "15 shulker boxes of gold"
-    },
-    {
      "ref": "farm:105",
      "rating": 3,
      "why": "128 carved pumpkins"
-    },
-    {
-     "ref": "farm:201",
-     "rating": 3,
-     "why": "over 200 iron for hoppers"
     }
    ],
    "raw": {
@@ -595,7 +590,7 @@
     "slime_ball": 1,
     "turtle_egg": 1
    },
-   "rank": 12,
+   "rank": 11,
    "core": true
   },
   "farm:13": {
@@ -663,7 +658,7 @@
     "nether_star": 1,
     "lava_bucket": 1
    },
-   "rank": 68,
+   "rank": 69,
    "core": false
   },
   "farm:14": {
@@ -712,8 +707,8 @@
     "quartz": 2,
     "ender_pearl": 1
    },
-   "rank": 15,
-   "core": true
+   "rank": 21,
+   "core": false
   },
   "farm:15": {
    "stage": "late",
@@ -746,6 +741,11 @@
      "ref": "farm:1",
      "rating": 3,
      "why": "about 2,500 sand"
+    },
+    {
+     "ref": "farm:12",
+     "rating": 4,
+     "why": "377 obsidian from bartering"
     }
    ],
    "raw": {
@@ -763,7 +763,7 @@
     "slime_ball": 1,
     "shulker": 1
    },
-   "rank": 8,
+   "rank": 16,
    "core": true
   },
   "farm:16": {
@@ -816,7 +816,7 @@
     "oxeye_daisy": 31,
     "quartz": 3
    },
-   "rank": 29,
+   "rank": 33,
    "core": false
   },
   "farm:17": {
@@ -848,8 +848,8 @@
     },
     {
      "ref": "farm:137",
-     "rating": 2,
-     "why": "4 turtle eggs"
+     "rating": 4,
+     "why": "turtle eggs lure the skeletons"
     }
    ],
    "raw": {
@@ -870,7 +870,7 @@
     "flint": 1,
     "slime_ball": 1
    },
-   "rank": 9,
+   "rank": 12,
    "core": true
   },
   "farm:18": {
@@ -916,8 +916,8 @@
     "pumpkin": 1,
     "slime_ball": 1
    },
-   "rank": 13,
-   "core": true
+   "rank": 19,
+   "core": false
   },
   "farm:19": {
    "stage": "mid",
@@ -935,6 +935,11 @@
      "ref": "trick:nether-roof-portal",
      "rating": 5,
      "why": "kill chamber on the roof"
+    },
+    {
+     "ref": "farm:137",
+     "rating": 4,
+     "why": "turtle eggs lure the piglins"
     }
    ],
    "raw": {
@@ -950,7 +955,7 @@
     "gold_ingot": 1,
     "carrot": 1
    },
-   "rank": 4,
+   "rank": 10,
    "core": true
   },
   "farm:20": {
@@ -987,7 +992,7 @@
     "coal": 1,
     "lava_bucket": 1
    },
-   "rank": 41,
+   "rank": 43,
    "core": false
   },
   "farm:21": {
@@ -1047,7 +1052,7 @@
     "quartz": 1,
     "lava_bucket": 1
    },
-   "rank": 18,
+   "rank": 23,
    "core": false
   },
   "farm:23": {
@@ -1100,7 +1105,7 @@
     "gold_ingot": 4,
     "water_bucket": 1
    },
-   "rank": 19,
+   "rank": 24,
    "core": false
   },
   "farm:24": {
@@ -1129,10 +1134,20 @@
      "ref": "farm:27",
      "rating": 3,
      "why": "iron trades for emeralds"
+    },
+    {
+     "ref": "farm:107",
+     "rating": 3,
+     "why": "paper for books and trades"
+    },
+    {
+     "ref": "farm:117",
+     "rating": 3,
+     "why": "leather for books"
     }
    ],
    "raw": {},
-   "rank": 11,
+   "rank": 5,
    "core": true
   },
   "farm:25": {
@@ -1168,7 +1183,7 @@
     "obsidian": 1,
     "water_bucket": 1
    },
-   "rank": 53,
+   "rank": 54,
    "core": false
   },
   "farm:26": {
@@ -1218,7 +1233,7 @@
     "slime_ball": 8,
     "obsidian": 2
    },
-   "rank": 67,
+   "rank": 68,
    "core": false
   },
   "farm:27": {
@@ -1259,8 +1274,8 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 17,
-   "core": false
+   "rank": 2,
+   "core": true
   },
   "farm:102": {
    "stage": "early",
@@ -1278,7 +1293,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 46,
+   "rank": 47,
    "core": false
   },
   "farm:103": {
@@ -1297,7 +1312,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 47,
+   "rank": 48,
    "core": false
   },
   "farm:104": {
@@ -1316,7 +1331,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 66,
+   "rank": 67,
    "core": false
   },
   "farm:105": {
@@ -1335,7 +1350,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 48,
+   "rank": 49,
    "core": false
   },
   "farm:106": {
@@ -1354,7 +1369,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 49,
+   "rank": 50,
    "core": false
   },
   "farm:107": {
@@ -1372,8 +1387,8 @@
     "sugar_cane": 16,
     "water_bucket": 2
    },
-   "rank": 33,
-   "core": false
+   "rank": 4,
+   "core": true
   },
   "farm:108": {
    "stage": "early",
@@ -1389,7 +1404,7 @@
    "raw": {
     "bamboo": 20
    },
-   "rank": 62,
+   "rank": 63,
    "core": false
   },
   "farm:109": {
@@ -1407,7 +1422,7 @@
     "sand": 10,
     "cactus": 10
    },
-   "rank": 69,
+   "rank": 70,
    "core": false
   },
   "farm:110": {
@@ -1425,7 +1440,7 @@
     "kelp": 10,
     "water_bucket": 2
    },
-   "rank": 50,
+   "rank": 51,
    "core": false
   },
   "farm:111": {
@@ -1460,7 +1475,7 @@
    "raw": {
     "sweet_berries": 28
    },
-   "rank": 70,
+   "rank": 71,
    "core": false
   },
   "farm:113": {
@@ -1478,7 +1493,7 @@
     "soul_sand": 36,
     "nether_wart": 36
    },
-   "rank": 44,
+   "rank": 45,
    "core": false
   },
   "farm:114": {
@@ -1497,7 +1512,7 @@
     "red_mushroom": 4,
     "brown_mushroom": 4
    },
-   "rank": 71,
+   "rank": 72,
    "core": false
   },
   "farm:115": {
@@ -1515,7 +1530,7 @@
     "oak_sapling": 10,
     "coal": 3
    },
-   "rank": 45,
+   "rank": 46,
    "core": false
   },
   "farm:116": {
@@ -1533,7 +1548,7 @@
     "spruce_sapling": 4,
     "bone_meal": 3
    },
-   "rank": 55,
+   "rank": 56,
    "core": false
   },
   "farm:117": {
@@ -1549,16 +1564,16 @@
    "prereqs": [
     {
      "ref": "farm:101",
-     "rating": 2,
-     "why": "wheat to breed cows"
+     "rating": 4,
+     "why": "wheat breeds the cows"
     }
    ],
    "raw": {
     "wheat": 20,
     "oak_log": 2
    },
-   "rank": 31,
-   "core": false
+   "rank": 3,
+   "core": true
   },
   "farm:118": {
    "stage": "early",
@@ -1580,7 +1595,7 @@
    "raw": {
     "carrot": 20
    },
-   "rank": 56,
+   "rank": 57,
    "core": false
   },
   "farm:119": {
@@ -1605,7 +1620,7 @@
     "wheat": 4,
     "iron_ingot": 2
    },
-   "rank": 57,
+   "rank": 58,
    "core": false
   },
   "farm:120": {
@@ -1629,7 +1644,7 @@
     "oak_log": 15,
     "wheat_seeds": 10
    },
-   "rank": 32,
+   "rank": 35,
    "core": false
   },
   "farm:121": {
@@ -1660,7 +1675,7 @@
     "oak_log": 18,
     "wheat_seeds": 8
    },
-   "rank": 58,
+   "rank": 59,
    "core": false
   },
   "farm:122": {
@@ -1684,7 +1699,7 @@
     "oak_log": 14,
     "carrot": 10
    },
-   "rank": 72,
+   "rank": 73,
    "core": false
   },
   "farm:123": {
@@ -1706,7 +1721,7 @@
     "iron_ingot": 2,
     "coal": 1
    },
-   "rank": 59,
+   "rank": 60,
    "core": false
   },
   "farm:124": {
@@ -1723,7 +1738,7 @@
    "raw": {
     "string": 2
    },
-   "rank": 60,
+   "rank": 61,
    "core": false
   },
   "farm:125": {
@@ -1742,7 +1757,7 @@
     "lava_bucket": 1,
     "water_bucket": 1
    },
-   "rank": 16,
+   "rank": 22,
    "core": false
   },
   "farm:126": {
@@ -1767,7 +1782,7 @@
     "soul_soil": 1,
     "blue_ice": 1
    },
-   "rank": 73,
+   "rank": 74,
    "core": false
   },
   "farm:127": {
@@ -1785,7 +1800,7 @@
     "cobblestone": 201,
     "water_bucket": 2
    },
-   "rank": 61,
+   "rank": 62,
    "core": false
   },
   "farm:128": {
@@ -1809,7 +1824,7 @@
     "cobblestone": 901,
     "water_bucket": 8
    },
-   "rank": 36,
+   "rank": 38,
    "core": false
   },
   "farm:129": {
@@ -1840,7 +1855,7 @@
     "oak_log": 6,
     "water_bucket": 1
    },
-   "rank": 37,
+   "rank": 39,
    "core": false
   },
   "farm:130": {
@@ -1866,7 +1881,7 @@
     "sand": 8,
     "iron_ingot": 5
    },
-   "rank": 30,
+   "rank": 34,
    "core": false
   },
   "farm:131": {
@@ -1890,7 +1905,7 @@
     "iron_ingot": 10,
     "oak_log": 9
    },
-   "rank": 51,
+   "rank": 52,
    "core": false
   },
   "farm:132": {
@@ -1909,7 +1924,7 @@
     "sand": 6,
     "pumpkin": 1
    },
-   "rank": 64,
+   "rank": 65,
    "core": false
   },
   "farm:133": {
@@ -1933,7 +1948,7 @@
     "water_bucket": 2,
     "silk_touch_pickaxe": 1
    },
-   "rank": 63,
+   "rank": 64,
    "core": false
   },
   "farm:134": {
@@ -1957,7 +1972,7 @@
     "bone_meal": 64,
     "sunflower": 4
    },
-   "rank": 74,
+   "rank": 75,
    "core": false
   },
   "farm:135": {
@@ -1975,7 +1990,7 @@
     "cobblestone": 16,
     "glow_berries": 8
    },
-   "rank": 75,
+   "rank": 76,
    "core": false
   },
   "farm:136": {
@@ -1999,12 +2014,12 @@
     "end_stone": 5,
     "chorus_flower": 5
    },
-   "rank": 76,
+   "rank": 77,
    "core": false
   },
   "farm:137": {
-   "stage": "early",
-   "milestone": null,
+   "stage": "mid",
+   "milestone": "nether",
    "icon": "turtle_egg",
    "short": "Breed turtles for eggs and scutes.",
    "steps": [
@@ -2017,8 +2032,8 @@
     "seagrass": 10,
     "iron_ingot": 2
    },
-   "rank": 77,
-   "core": false
+   "rank": 9,
+   "core": true
   },
   "farm:138": {
    "stage": "mid",
@@ -2072,7 +2087,7 @@
    "raw": {
     "water_bucket": 2
    },
-   "rank": 65,
+   "rank": 66,
    "core": false
   },
   "farm:141": {
@@ -2092,7 +2107,7 @@
     "lava_bucket": 1,
     "pointed_dripstone": 1
    },
-   "rank": 52,
+   "rank": 53,
    "core": false
   },
   "farm:142": {
@@ -3277,8 +3292,8 @@
    }
   },
   "farm:201": {
-   "stage": "mid",
-   "milestone": "nether",
+   "stage": "late",
+   "milestone": "end",
    "icon": "iron_ingot",
    "short": "12-villager tower iron farm, about 1,000 iron/hour.",
    "steps": [
@@ -3313,6 +3328,11 @@
      "ref": "trick:infinite-water-source",
      "rating": 3,
      "why": "13 water buckets"
+    },
+    {
+     "ref": "farm:24",
+     "rating": 3,
+     "why": "villagers from the breeder"
     }
    ],
    "raw": {
@@ -3329,12 +3349,12 @@
     "soul_sand": 1,
     "name_tag": 1
    },
-   "rank": 20,
-   "core": false
+   "rank": 17,
+   "core": true
   },
   "farm:202": {
-   "stage": "mid",
-   "milestone": "nether",
+   "stage": "early",
+   "milestone": "deep-mining",
    "icon": "cobblestone",
    "short": "TNT-duper cobble generator, 28,800 cobblestone/hour AFK.",
    "steps": [
@@ -3359,6 +3379,11 @@
      "ref": "trick:spawn-chunk-placement",
      "rating": 2,
      "why": "unloading mid-run can blow it up"
+    },
+    {
+     "ref": "farm:24",
+     "rating": 2,
+     "why": "mason sells the quartz"
     }
    ],
    "raw": {
@@ -3373,7 +3398,7 @@
     "water_bucket": 2,
     "lava_bucket": 1
    },
-   "rank": 2,
+   "rank": 6,
    "core": true
   },
   "farm:203": {
@@ -3421,8 +3446,8 @@
     "water_bucket": 2,
     "dirt": 64
    },
-   "rank": 5,
-   "core": true
+   "rank": 18,
+   "core": false
   },
   "farm:204": {
    "stage": "mid",
@@ -3473,7 +3498,7 @@
     "dirt": 16,
     "egg": 64
    },
-   "rank": 24,
+   "rank": 28,
    "core": false
   },
   "farm:205": {
@@ -3523,7 +3548,7 @@
     "water_bucket": 1,
     "wheat": 40
    },
-   "rank": 25,
+   "rank": 29,
    "core": false
   },
   "farm:206": {
@@ -3570,7 +3595,7 @@
     "sugar_cane": 19,
     "water_bucket": 1
    },
-   "rank": 26,
+   "rank": 30,
    "core": false
   },
   "farm:207": {
@@ -3622,12 +3647,12 @@
     "kelp": 16,
     "water_bucket": 1
    },
-   "rank": 34,
+   "rank": 36,
    "core": false
   },
   "farm:208": {
-   "stage": "mid",
-   "milestone": null,
+   "stage": "early",
+   "milestone": "deep-mining",
    "icon": "bone",
    "short": "Dark tower: mobs walk off trapdoors and fall.",
    "steps": [
@@ -3638,11 +3663,6 @@
     "Roof it, AFK below, swing sword"
    ],
    "prereqs": [
-    {
-     "ref": "farm:125",
-     "rating": 4,
-     "why": "about 1400 cobblestone"
-    },
     {
      "ref": "farm:115",
      "rating": 4,
@@ -3657,6 +3677,11 @@
      "ref": "farm:4",
      "rating": 2,
      "why": "24 wool for spider carpets"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 4,
+     "why": "1,400+ cobblestone"
     }
    ],
    "raw": {
@@ -3666,7 +3691,7 @@
     "white_wool": 24,
     "water_bucket": 1
    },
-   "rank": 10,
+   "rank": 7,
    "core": true
   },
   "farm:209": {
@@ -3717,7 +3742,7 @@
     "white_wool": 5,
     "water_bucket": 2
    },
-   "rank": 22,
+   "rank": 26,
    "core": false
   },
   "farm:210": {
@@ -3759,7 +3784,7 @@
     "oak_log": 12,
     "lava_bucket": 4
    },
-   "rank": 21,
+   "rank": 25,
    "core": false
   },
   "farm:211": {
@@ -3814,7 +3839,7 @@
     "quartz": 2,
     "name_tag": 1
    },
-   "rank": 23,
+   "rank": 27,
    "core": false
   },
   "farm:212": {
@@ -3864,12 +3889,12 @@
     "melon_seeds": 40,
     "water_bucket": 1
    },
-   "rank": 35,
+   "rank": 37,
    "core": false
   },
   "farm:213": {
-   "stage": "mid",
-   "milestone": "nether",
+   "stage": "late",
+   "milestone": "end",
    "icon": "emerald",
    "short": "1.21.2+ raid farm: emeralds, totems, redstone per ominous bottle.",
    "steps": [
@@ -3899,6 +3924,11 @@
      "ref": "trick:ominous-trial-chamber",
      "rating": 3,
      "why": "extra ominous bottles from ominous vaults"
+    },
+    {
+     "ref": "farm:208",
+     "rating": 3,
+     "why": "192 bone meal"
     }
    ],
    "raw": {
@@ -3920,7 +3950,7 @@
     "kelp": 1,
     "ominous_bottle": 1
    },
-   "rank": 6,
+   "rank": 15,
    "core": true
   }
  }
