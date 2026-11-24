@@ -112,7 +112,7 @@
     "coal": 1,
     "granite": 1
    },
-   "rank": 26,
+   "rank": 39,
    "core": false
   },
   "farm:3": {
@@ -170,7 +170,7 @@
     "cobweb": 3,
     "turtle_egg": 2
    },
-   "rank": 16,
+   "rank": 27,
    "core": false
   },
   "farm:4": {
@@ -209,7 +209,7 @@
     "coal": 2,
     "water_bucket": 1
    },
-   "rank": 17,
+   "rank": 28,
    "core": false
   },
   "farm:5": {
@@ -302,7 +302,7 @@
     "netherrack": 2,
     "water_bucket": 2
    },
-   "rank": 41,
+   "rank": 54,
    "core": false
   },
   "farm:7": {
@@ -340,7 +340,7 @@
     "lava_bucket": 1,
     "looting_iii_sword": 1
    },
-   "rank": 30,
+   "rank": 43,
    "core": false
   },
   "farm:8": {
@@ -424,7 +424,7 @@
     "gold_ingot": 82,
     "redstone": 14
    },
-   "rank": 27,
+   "rank": 40,
    "core": false
   },
   "farm:10": {
@@ -463,6 +463,11 @@
      "ref": "farm:1",
      "rating": 3,
      "why": "sand for 1,335 glass"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 4,
+     "why": "needs about 8,400 cobblestone"
     }
    ],
    "raw": {
@@ -481,7 +486,7 @@
     "slime_ball": 2,
     "ender_pearl": 1
    },
-   "rank": 25,
+   "rank": 38,
    "core": false
   },
   "farm:11": {
@@ -531,7 +536,7 @@
     "wither_skeleton_skull": 3,
     "quartz": 1
    },
-   "rank": 29,
+   "rank": 42,
    "core": false
   },
   "farm:12": {
@@ -570,6 +575,11 @@
      "ref": "farm:105",
      "rating": 3,
      "why": "128 carved pumpkins"
+    },
+    {
+     "ref": "farm:201",
+     "rating": 3,
+     "why": "over 200 iron for hoppers"
     }
    ],
    "raw": {
@@ -624,6 +634,11 @@
      "ref": "farm:140",
      "rating": 3,
      "why": "hundreds of water buckets"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 3,
+     "why": "about 1,600 cobblestone"
     }
    ],
    "raw": {
@@ -648,7 +663,7 @@
     "nether_star": 1,
     "lava_bucket": 1
    },
-   "rank": 55,
+   "rank": 68,
    "core": false
   },
   "farm:14": {
@@ -777,6 +792,16 @@
      "ref": "farm:128",
      "rating": 3,
      "why": "192 string for 64 bows"
+    },
+    {
+     "ref": "farm:201",
+     "rating": 3,
+     "why": "340 iron for hoppers"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 3,
+     "why": "about 1,200 cobblestone"
     }
    ],
    "raw": {
@@ -791,7 +816,7 @@
     "oxeye_daisy": 31,
     "quartz": 3
    },
-   "rank": 18,
+   "rank": 29,
    "core": false
   },
   "farm:17": {
@@ -962,7 +987,7 @@
     "coal": 1,
     "lava_bucket": 1
    },
-   "rank": 28,
+   "rank": 41,
    "core": false
   },
   "farm:21": {
@@ -978,7 +1003,7 @@
    ],
    "prereqs": [],
    "raw": {},
-   "rank": 69,
+   "rank": 82,
    "core": false
   },
   "farm:22": {
@@ -1022,8 +1047,8 @@
     "quartz": 1,
     "lava_bucket": 1
    },
-   "rank": 6,
-   "core": true
+   "rank": 18,
+   "core": false
   },
   "farm:23": {
    "stage": "mid",
@@ -1075,8 +1100,8 @@
     "gold_ingot": 4,
     "water_bucket": 1
    },
-   "rank": 10,
-   "core": true
+   "rank": 19,
+   "core": false
   },
   "farm:24": {
    "stage": "early",
@@ -1143,7 +1168,7 @@
     "obsidian": 1,
     "water_bucket": 1
    },
-   "rank": 40,
+   "rank": 53,
    "core": false
   },
   "farm:26": {
@@ -1193,7 +1218,7 @@
     "slime_ball": 8,
     "obsidian": 2
    },
-   "rank": 54,
+   "rank": 67,
    "core": false
   },
   "farm:27": {
@@ -1234,8 +1259,8 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 5,
-   "core": true
+   "rank": 17,
+   "core": false
   },
   "farm:102": {
    "stage": "early",
@@ -1253,7 +1278,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 33,
+   "rank": 46,
    "core": false
   },
   "farm:103": {
@@ -1272,7 +1297,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 34,
+   "rank": 47,
    "core": false
   },
   "farm:104": {
@@ -1291,7 +1316,7 @@
     "water_bucket": 1,
     "oak_log": 1
    },
-   "rank": 53,
+   "rank": 66,
    "core": false
   },
   "farm:105": {
@@ -1310,7 +1335,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 35,
+   "rank": 48,
    "core": false
   },
   "farm:106": {
@@ -1329,7 +1354,7 @@
     "water_bucket": 2,
     "oak_log": 1
    },
-   "rank": 36,
+   "rank": 49,
    "core": false
   },
   "farm:107": {
@@ -1347,7 +1372,7 @@
     "sugar_cane": 16,
     "water_bucket": 2
    },
-   "rank": 22,
+   "rank": 33,
    "core": false
   },
   "farm:108": {
@@ -1364,7 +1389,7 @@
    "raw": {
     "bamboo": 20
    },
-   "rank": 49,
+   "rank": 62,
    "core": false
   },
   "farm:109": {
@@ -1382,7 +1407,7 @@
     "sand": 10,
     "cactus": 10
    },
-   "rank": 56,
+   "rank": 69,
    "core": false
   },
   "farm:110": {
@@ -1400,7 +1425,7 @@
     "kelp": 10,
     "water_bucket": 2
    },
-   "rank": 37,
+   "rank": 50,
    "core": false
   },
   "farm:111": {
@@ -1418,7 +1443,7 @@
     "cocoa_beans": 24,
     "jungle_log": 12
    },
-   "rank": 68,
+   "rank": 81,
    "core": false
   },
   "farm:112": {
@@ -1435,7 +1460,7 @@
    "raw": {
     "sweet_berries": 28
    },
-   "rank": 57,
+   "rank": 70,
    "core": false
   },
   "farm:113": {
@@ -1453,7 +1478,7 @@
     "soul_sand": 36,
     "nether_wart": 36
    },
-   "rank": 31,
+   "rank": 44,
    "core": false
   },
   "farm:114": {
@@ -1472,7 +1497,7 @@
     "red_mushroom": 4,
     "brown_mushroom": 4
    },
-   "rank": 58,
+   "rank": 71,
    "core": false
   },
   "farm:115": {
@@ -1490,7 +1515,7 @@
     "oak_sapling": 10,
     "coal": 3
    },
-   "rank": 32,
+   "rank": 45,
    "core": false
   },
   "farm:116": {
@@ -1508,7 +1533,7 @@
     "spruce_sapling": 4,
     "bone_meal": 3
    },
-   "rank": 42,
+   "rank": 55,
    "core": false
   },
   "farm:117": {
@@ -1532,7 +1557,7 @@
     "wheat": 20,
     "oak_log": 2
    },
-   "rank": 20,
+   "rank": 31,
    "core": false
   },
   "farm:118": {
@@ -1555,7 +1580,7 @@
    "raw": {
     "carrot": 20
    },
-   "rank": 43,
+   "rank": 56,
    "core": false
   },
   "farm:119": {
@@ -1580,7 +1605,7 @@
     "wheat": 4,
     "iron_ingot": 2
    },
-   "rank": 44,
+   "rank": 57,
    "core": false
   },
   "farm:120": {
@@ -1604,7 +1629,7 @@
     "oak_log": 15,
     "wheat_seeds": 10
    },
-   "rank": 21,
+   "rank": 32,
    "core": false
   },
   "farm:121": {
@@ -1635,7 +1660,7 @@
     "oak_log": 18,
     "wheat_seeds": 8
    },
-   "rank": 45,
+   "rank": 58,
    "core": false
   },
   "farm:122": {
@@ -1659,7 +1684,7 @@
     "oak_log": 14,
     "carrot": 10
    },
-   "rank": 59,
+   "rank": 72,
    "core": false
   },
   "farm:123": {
@@ -1681,7 +1706,7 @@
     "iron_ingot": 2,
     "coal": 1
    },
-   "rank": 46,
+   "rank": 59,
    "core": false
   },
   "farm:124": {
@@ -1698,7 +1723,7 @@
    "raw": {
     "string": 2
    },
-   "rank": 47,
+   "rank": 60,
    "core": false
   },
   "farm:125": {
@@ -1717,8 +1742,8 @@
     "lava_bucket": 1,
     "water_bucket": 1
    },
-   "rank": 2,
-   "core": true
+   "rank": 16,
+   "core": false
   },
   "farm:126": {
    "stage": "mid",
@@ -1742,7 +1767,7 @@
     "soul_soil": 1,
     "blue_ice": 1
    },
-   "rank": 60,
+   "rank": 73,
    "core": false
   },
   "farm:127": {
@@ -1760,7 +1785,7 @@
     "cobblestone": 201,
     "water_bucket": 2
    },
-   "rank": 48,
+   "rank": 61,
    "core": false
   },
   "farm:128": {
@@ -1784,7 +1809,7 @@
     "cobblestone": 901,
     "water_bucket": 8
    },
-   "rank": 23,
+   "rank": 36,
    "core": false
   },
   "farm:129": {
@@ -1815,7 +1840,7 @@
     "oak_log": 6,
     "water_bucket": 1
    },
-   "rank": 24,
+   "rank": 37,
    "core": false
   },
   "farm:130": {
@@ -1841,7 +1866,7 @@
     "sand": 8,
     "iron_ingot": 5
    },
-   "rank": 19,
+   "rank": 30,
    "core": false
   },
   "farm:131": {
@@ -1865,7 +1890,7 @@
     "iron_ingot": 10,
     "oak_log": 9
    },
-   "rank": 38,
+   "rank": 51,
    "core": false
   },
   "farm:132": {
@@ -1884,7 +1909,7 @@
     "sand": 6,
     "pumpkin": 1
    },
-   "rank": 51,
+   "rank": 64,
    "core": false
   },
   "farm:133": {
@@ -1908,7 +1933,7 @@
     "water_bucket": 2,
     "silk_touch_pickaxe": 1
    },
-   "rank": 50,
+   "rank": 63,
    "core": false
   },
   "farm:134": {
@@ -1932,7 +1957,7 @@
     "bone_meal": 64,
     "sunflower": 4
    },
-   "rank": 61,
+   "rank": 74,
    "core": false
   },
   "farm:135": {
@@ -1950,7 +1975,7 @@
     "cobblestone": 16,
     "glow_berries": 8
    },
-   "rank": 62,
+   "rank": 75,
    "core": false
   },
   "farm:136": {
@@ -1974,7 +1999,7 @@
     "end_stone": 5,
     "chorus_flower": 5
    },
-   "rank": 63,
+   "rank": 76,
    "core": false
   },
   "farm:137": {
@@ -1992,7 +2017,7 @@
     "seagrass": 10,
     "iron_ingot": 2
    },
-   "rank": 64,
+   "rank": 77,
    "core": false
   },
   "farm:138": {
@@ -2010,7 +2035,7 @@
     "string": 6,
     "slime_ball": 5
    },
-   "rank": 65,
+   "rank": 78,
    "core": false
   },
   "farm:139": {
@@ -2030,7 +2055,7 @@
     "copper_ingot": 1,
     "feather": 1
    },
-   "rank": 66,
+   "rank": 79,
    "core": false
   },
   "farm:140": {
@@ -2047,7 +2072,7 @@
    "raw": {
     "water_bucket": 2
    },
-   "rank": 52,
+   "rank": 65,
    "core": false
   },
   "farm:141": {
@@ -2067,7 +2092,7 @@
     "lava_bucket": 1,
     "pointed_dripstone": 1
    },
-   "rank": 39,
+   "rank": 52,
    "core": false
   },
   "farm:142": {
@@ -2091,7 +2116,7 @@
     "cobblestone": 25,
     "moss_block": 1
    },
-   "rank": 67,
+   "rank": 80,
    "core": false
   },
   "trick:lava-cast-portal": {
@@ -2346,6 +2371,16 @@
      "ref": "farm:23",
      "rating": 4,
      "why": "gunpowder for rockets"
+    },
+    {
+     "ref": "farm:209",
+     "rating": 4,
+     "why": "gunpowder for every rocket"
+    },
+    {
+     "ref": "farm:206",
+     "rating": 3,
+     "why": "paper for every rocket"
     }
    ],
    "raw": {
@@ -2641,6 +2676,11 @@
      "ref": "farm:4",
      "rating": 3,
      "why": "48 wool for 16 beds"
+    },
+    {
+     "ref": "farm:209",
+     "rating": 3,
+     "why": "TNT needs lots of gunpowder"
     }
    ],
    "raw": {
@@ -2924,6 +2964,11 @@
      "ref": "trick:wither-cage",
      "rating": 4,
      "why": "nether star"
+    },
+    {
+     "ref": "farm:201",
+     "rating": 4,
+     "why": "about 1,500 iron for the pyramid"
     }
    ],
    "raw": {
@@ -3230,6 +3275,653 @@
     "quartz": 2,
     "brain_coral_fan": 1
    }
+  },
+  "farm:201": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "iron_ingot",
+   "short": "12-villager tower iron farm, about 1,000 iron/hour.",
+   "steps": [
+    "Build 16x16 tower with lava kill chamber",
+    "Make four 3-bed villager cells",
+    "Load 12 villagers into the cells",
+    "Pacify and nametag a pillager on top",
+    "Dispense water, collect iron AFK"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:villager-transport",
+     "rating": 4,
+     "why": "12 villagers up a tall tower"
+    },
+    {
+     "ref": "trick:boat-mob-transport",
+     "rating": 4,
+     "why": "pillager pacified and lifted in boat"
+    },
+    {
+     "ref": "farm:4",
+     "rating": 3,
+     "why": "52 wool for beds and carpet"
+    },
+    {
+     "ref": "trick:afk-fishing",
+     "rating": 3,
+     "why": "name tag for the pillager"
+    },
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 3,
+     "why": "13 water buckets"
+    }
+   ],
+   "raw": {
+    "sand": 216,
+    "cobblestone": 150,
+    "white_wool": 52,
+    "oak_log": 32,
+    "string": 27,
+    "quartz": 24,
+    "iron_ingot": 15,
+    "water_bucket": 13,
+    "lava_bucket": 2,
+    "redstone": 1,
+    "soul_sand": 1,
+    "name_tag": 1
+   },
+   "rank": 20,
+   "core": false
+  },
+  "farm:202": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "cobblestone",
+   "short": "TNT-duper cobble generator, 28,800 cobblestone/hour AFK.",
+   "steps": [
+    "Ring 4 double chests with 12 hoppers",
+    "Waterlogged leaves around a lava centre",
+    "Build slab TNT duper 8 blocks up",
+    "Repeater clock with lever lock",
+    "Keep chunk loaded, AFK nearby"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "62 iron, mostly 12 hoppers"
+    },
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 2,
+     "why": "water for leaves and duper"
+    },
+    {
+     "ref": "trick:spawn-chunk-placement",
+     "rating": 2,
+     "why": "unloading mid-run can blow it up"
+    }
+   ],
+   "raw": {
+    "cobblestone": 68,
+    "iron_ingot": 62,
+    "oak_log": 44,
+    "redstone": 29,
+    "oak_leaves": 8,
+    "gunpowder": 5,
+    "sand": 4,
+    "quartz": 2,
+    "water_bucket": 2,
+    "lava_bucket": 1
+   },
+   "rank": 2,
+   "core": true
+  },
+  "farm:203": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "carrot",
+   "short": "Farmer villager harvests carrots; hopper minecarts catch them.",
+   "steps": [
+    "Glass ring, water, carpet over holes",
+    "Composter, glowstone and bed in middle",
+    "Till and plant carrots or potatoes",
+    "Hopper minecarts under trapdoor, chests below",
+    "Second villager behind minecarts, farmer inside"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 4,
+     "why": "206 carrots to plant"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "41 iron for hoppers, minecarts"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "bring two villagers to farm"
+    },
+    {
+     "ref": "farm:129",
+     "rating": 2,
+     "why": "breed villagers if none nearby"
+    }
+   ],
+   "raw": {
+    "carrot": 206,
+    "sand": 96,
+    "white_wool": 9,
+    "cobblestone": 3,
+    "oak_log": 22,
+    "iron_ingot": 41,
+    "glowstone_dust": 4,
+    "water_bucket": 2,
+    "dirt": 64
+   },
+   "rank": 5,
+   "core": true
+  },
+  "farm:204": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "cooked_chicken",
+   "short": "Egg dispensers hatch chickens; lava cooks the grown ones.",
+   "steps": [
+    "Stack dispensers with hoppers feeding them",
+    "Comparator and observer clock behind dispensers",
+    "Glass and trapdoor cell, lava on top",
+    "Throw eggs in to hatch breeders",
+    "Double chest collects cooked chicken"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:121",
+     "rating": 4,
+     "why": "64 eggs to start"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "20 iron for hoppers"
+    },
+    {
+     "ref": "farm:101",
+     "rating": 2,
+     "why": "128 wheat seeds"
+    },
+    {
+     "ref": "farm:208",
+     "rating": 2,
+     "why": "string for dispenser bows"
+    }
+   ],
+   "raw": {
+    "cobblestone": 61,
+    "andesite": 4,
+    "redstone": 22,
+    "quartz": 6,
+    "iron_ingot": 20,
+    "string": 12,
+    "oak_log": 19,
+    "sand": 6,
+    "white_wool": 2,
+    "lava_bucket": 2,
+    "wheat_seeds": 128,
+    "dirt": 16,
+    "egg": 64
+   },
+   "rank": 24,
+   "core": false
+  },
+  "farm:205": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "cooked_beef",
+   "short": "Breed cows on top; button-fired lava cooks the grown babies.",
+   "steps": [
+    "Double chest with 3 hoppers",
+    "3 lava dispensers, note blocks, observers",
+    "Glass chambers with signs on sides",
+    "Breeder pit with water dispenser above",
+    "Lure 20 cows, breed with wheat",
+    "Press the button to cook adults"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:101",
+     "rating": 4,
+     "why": "wheat to breed cows"
+    },
+    {
+     "ref": "farm:117",
+     "rating": 3,
+     "why": "starting herd of cows"
+    },
+    {
+     "ref": "farm:208",
+     "rating": 2,
+     "why": "string for dispenser bows"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "15 iron for hoppers"
+    }
+   ],
+   "raw": {
+    "iron_ingot": 15,
+    "cobblestone": 60,
+    "string": 12,
+    "redstone": 10,
+    "quartz": 5,
+    "oak_log": 12,
+    "sand": 6,
+    "lava_bucket": 3,
+    "water_bucket": 1,
+    "wheat": 40
+   },
+   "rank": 25,
+   "core": false
+  },
+  "farm:206": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "sugar_cane",
+   "short": "Observers and pistons harvest cane into a hopper minecart.",
+   "steps": [
+    "Lay powered rails under a sand row",
+    "Waterlog stairs beside the sand",
+    "Pistons and observers above each cane",
+    "Glass box, then add hopper minecart"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:107",
+     "rating": 3,
+     "why": "19 starter cane"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "40 iron for pistons, cart"
+    },
+    {
+     "ref": "farm:19",
+     "rating": 2,
+     "why": "18 gold for powered rails"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 2,
+     "why": "nearly 300 cobblestone"
+    }
+   ],
+   "raw": {
+    "sand": 101,
+    "cobblestone": 287,
+    "redstone": 95,
+    "quartz": 20,
+    "iron_ingot": 40,
+    "gold_ingot": 18,
+    "oak_log": 24,
+    "sugar_cane": 19,
+    "water_bucket": 1
+   },
+   "rank": 26,
+   "core": false
+  },
+  "farm:207": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "kelp",
+   "short": "Observers and pistons cut kelp into hoppers.",
+   "steps": [
+    "Double chest fed by 8 hoppers",
+    "Piston and observer rows both sides",
+    "Fence gates 4 high, glass walls",
+    "Water on observers, plant kelp"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 3,
+     "why": "refill 16 water buckets"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "56 iron for hoppers, pistons"
+    },
+    {
+     "ref": "farm:5",
+     "rating": 2,
+     "why": "about 66 logs, fence gates"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 2,
+     "why": "about 300 cobblestone"
+    },
+    {
+     "ref": "farm:110",
+     "rating": 2,
+     "why": "16 starter kelp"
+    }
+   ],
+   "raw": {
+    "cobblestone": 316,
+    "sand": 14,
+    "oak_log": 66,
+    "iron_ingot": 56,
+    "redstone": 64,
+    "quartz": 16,
+    "dirt": 19,
+    "kelp": 16,
+    "water_bucket": 1
+   },
+   "rank": 34,
+   "core": false
+  },
+  "farm:208": {
+   "stage": "mid",
+   "milestone": null,
+   "icon": "bone",
+   "short": "Dark tower: mobs walk off trapdoors and fall.",
+   "steps": [
+    "Tower up to y 250 over ocean",
+    "Hoppers, chest, water funnel at bottom",
+    "Nine 3x3 platforms per layer",
+    "Open trapdoors on every edge",
+    "Roof it, AFK below, swing sword"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:125",
+     "rating": 4,
+     "why": "about 1400 cobblestone"
+    },
+    {
+     "ref": "farm:115",
+     "rating": 4,
+     "why": "about 200 logs for trapdoors"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "45 iron for hoppers"
+    },
+    {
+     "ref": "farm:4",
+     "rating": 2,
+     "why": "24 wool for spider carpets"
+    }
+   ],
+   "raw": {
+    "cobblestone": 1432,
+    "oak_log": 197,
+    "iron_ingot": 45,
+    "white_wool": 24,
+    "water_bucket": 1
+   },
+   "rank": 10,
+   "core": true
+  },
+  "farm:209": {
+   "stage": "mid",
+   "milestone": null,
+   "icon": "gunpowder",
+   "short": "Snow golems lure creepers into a kill hole.",
+   "steps": [
+    "Find deep ocean, tower up",
+    "Collection chests and kill room",
+    "Snow golems fenced in the centre",
+    "Huge slab platform, trapdoor roof",
+    "AFK under the slab with Looting"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:115",
+     "rating": 4,
+     "why": "about 640 logs for trapdoors"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 4,
+     "why": "2100 building blocks"
+    },
+    {
+     "ref": "farm:132",
+     "rating": 3,
+     "why": "32 snow blocks for golems"
+    },
+    {
+     "ref": "farm:105",
+     "rating": 2,
+     "why": "16 pumpkins for golems"
+    }
+   ],
+   "raw": {
+    "cobblestone": 2200,
+    "oak_log": 676,
+    "bamboo": 102,
+    "string": 17,
+    "snow_block": 32,
+    "pumpkin": 16,
+    "sand": 16,
+    "coal": 6,
+    "iron_ingot": 16,
+    "redstone": 1,
+    "white_wool": 5,
+    "water_bucket": 2
+   },
+   "rank": 22,
+   "core": false
+  },
+  "farm:210": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "blaze_rod",
+   "short": "Glass cube on a blaze spawner, 1100 rods/hour.",
+   "steps": [
+    "Find a fortress blaze spawner",
+    "Glass platform 6 blocks below",
+    "Glass cube walls and roof",
+    "Hopper kill room under the hole",
+    "Lava in the four corners",
+    "AFK with a Looting sword"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:furnace-array",
+     "rating": 3,
+     "why": "smelt 574 glass fast"
+    },
+    {
+     "ref": "trick:enchanting-setup",
+     "rating": 3,
+     "why": "Looting III sword"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 2,
+     "why": "32 iron for hoppers, buckets"
+    }
+   ],
+   "raw": {
+    "sand": 574,
+    "cobblestone": 127,
+    "dirt": 64,
+    "iron_ingot": 32,
+    "vine": 16,
+    "oak_log": 12,
+    "lava_bucket": 4
+   },
+   "rank": 21,
+   "core": false
+  },
+  "farm:211": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ender_pearl",
+   "short": "End platform farm: 0-30 levels in a minute, pearls.",
+   "steps": [
+    "Go out over the End void",
+    "Build the stacked stone ring layers",
+    "Leaf column and carpet, as shown",
+    "Name-tagged endermite in a minecart",
+    "Endermen fall, one-hit them",
+    "Hoppers collect the pearls"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:dragon-death-trap",
+     "rating": 4,
+     "why": "End access, kill the dragon"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 3,
+     "why": "about 1360 cobblestone"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "75 iron, mostly hoppers"
+    },
+    {
+     "ref": "trick:afk-fishing",
+     "rating": 3,
+     "why": "name tag for the endermite"
+    },
+    {
+     "ref": "farm:4",
+     "rating": 2,
+     "why": "86 wool for carpet"
+    }
+   ],
+   "raw": {
+    "cobblestone": 1362,
+    "white_wool": 86,
+    "oak_leaves": 128,
+    "iron_ingot": 75,
+    "dirt": 64,
+    "ender_pearl": 32,
+    "oak_log": 31,
+    "redstone": 10,
+    "quartz": 2,
+    "name_tag": 1
+   },
+   "rank": 23,
+   "core": false
+  },
+  "farm:212": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "melon_slice",
+   "short": "Observers fire pistons on grown melons; minecart collects.",
+   "steps": [
+    "Dig a 10x10 pit, rails underneath",
+    "Checkerboard dirt and farmland, plant seeds",
+    "Pistons down over fruit spots",
+    "Observers on stems, redstone on top",
+    "Add hopper minecart and double chest"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:106",
+     "rating": 3,
+     "why": "first melon for 40 seeds"
+    },
+    {
+     "ref": "farm:27",
+     "rating": 3,
+     "why": "93 iron for pistons, rails"
+    },
+    {
+     "ref": "farm:202",
+     "rating": 3,
+     "why": "600 cobblestone for observers, blocks"
+    },
+    {
+     "ref": "farm:19",
+     "rating": 2,
+     "why": "24 gold for powered rails"
+    }
+   ],
+   "raw": {
+    "cobblestone": 600,
+    "dirt": 80,
+    "sand": 76,
+    "iron_ingot": 93,
+    "redstone": 192,
+    "quartz": 41,
+    "gold_ingot": 24,
+    "glowstone_dust": 20,
+    "oak_log": 43,
+    "melon_seeds": 40,
+    "water_bucket": 1
+   },
+   "rank": 35,
+   "core": false
+  },
+  "farm:213": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "emerald",
+   "short": "1.21.2+ raid farm: emeralds, totems, redstone per ominous bottle.",
+   "steps": [
+    "Pillar up with villager in a boat",
+    "Composter 97 blocks above spawn platform",
+    "Sensor-and-piston platform, portal for ravagers",
+    "Cobble shafts: mob drop and elevator",
+    "Drink ominous bottle, hit armor stand"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:bad-omen-raid",
+     "rating": 5,
+     "why": "ominous bottles start every raid"
+    },
+    {
+     "ref": "trick:enchanting-setup",
+     "rating": 4,
+     "why": "Looting III, Sweeping Edge sword"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "villager up the pillar by boat"
+    },
+    {
+     "ref": "trick:ominous-trial-chamber",
+     "rating": 3,
+     "why": "extra ominous bottles from ominous vaults"
+    }
+   ],
+   "raw": {
+    "dirt": 320,
+    "bone_meal": 192,
+    "oak_log": 21,
+    "cobblestone": 28,
+    "iron_ingot": 22,
+    "redstone": 22,
+    "obsidian": 12,
+    "string": 4,
+    "amethyst_shard": 3,
+    "water_bucket": 2,
+    "lava_bucket": 2,
+    "sculk_sensor": 1,
+    "slime_ball": 1,
+    "soul_sand": 1,
+    "flint": 1,
+    "kelp": 1,
+    "ominous_bottle": 1
+   },
+   "rank": 6,
+   "core": true
   }
  }
 }

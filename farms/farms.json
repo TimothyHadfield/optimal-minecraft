@@ -11280,6 +11280,3555 @@
    ],
    "confidence": "medium: standard community design; rates are estimates",
    "pic": "pics/basic-moss.svg"
+  },
+  {
+   "n": 201,
+   "id": "iron-gnembon-4cell",
+   "title": "Fast, Efficient Iron Farm for 26.3 java Minecraft Servers: a Tutorial",
+   "creator": "Saignus (design by gnembon)",
+   "url": "https://www.youtube.com/watch?v=TZ3NOlgj6x0",
+   "date": "2026-02-13",
+   "edition": "Java",
+   "versions": "1.16+ (description: 'any minecraft java version above 1.16'; tutorial filmed and rate-tested in 26.3)",
+   "version_notes": "Design is gnembon's 4-cell farm from 'Iron Farm Changes, new Farm Design App, and a new 9000/hr Farm for Minecraft 1.16.2 [Fun Farms 34]' (2020-08-15). Still working in 26.3 per this 2026 tutorial (measured 528 ingots in 30 min). Uses a nametagged pillager as the scarer instead of a zombie. Not for Bedrock (inferred: Java golem-spawning rules).",
+   "category": "farm",
+   "farm_type": "iron",
+   "outputs": [
+    {
+     "item": "iron_ingot",
+     "rate_per_hour": 1056,
+     "conditions": "12 villagers, 1 pillager, lava-blade kill; measured 528 ingots (8 1/4 stacks) in 30 minutes",
+     "source": "description; video 19:41-20:26"
+    },
+    {
+     "item": "poppy",
+     "rate_per_hour": null,
+     "conditions": "golems also drop poppies; rate not stated",
+     "source": "(inferred, golem drops)"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": "0:42",
+    "items": [
+     {
+      "item": "glass",
+      "count": 192,
+      "note": "3 stacks; tooltip '192 = 3 x 64'. Any non-spawnable block; fences also work for the walls (spoken 6:34, 19:00)"
+     },
+     {
+      "item": "smooth_stone_slab",
+      "count": 120,
+      "note": "spawning platform"
+     },
+     {
+      "item": "smooth_stone",
+      "count": 83,
+      "note": "any solid block (spoken 2:47)"
+     },
+     {
+      "item": "string",
+      "count": 24,
+      "note": "placed on the beds"
+     },
+     {
+      "item": "white_carpet",
+      "count": 24,
+      "note": "on top of the string"
+     },
+     {
+      "item": "oak_sign",
+      "count": 17,
+      "note": "kill-chamber edges"
+     },
+     {
+      "item": "water_bucket",
+      "count": 13,
+      "note": "he shows 7 in his inventory; 2 + an infinite water source is enough (spoken 1:07)"
+     },
+     {
+      "item": "white_bed",
+      "count": 12,
+      "note": "pillows must point toward the centre glass block (spoken 7:20)"
+     },
+     {
+      "item": "daylight_detector",
+      "count": 8,
+      "note": "ring around the pillager's fence pen; part of the on/off switch"
+     },
+     {
+      "item": "iron_chain",
+      "count": 8,
+      "note": "Litematica shows 'Iron Chain' (renamed from chain in recent versions)"
+     },
+     {
+      "item": "birch_fence",
+      "count": 4,
+      "note": "pillager pen; any fence"
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest for output"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 2,
+      "note": "lava blade in the kill chamber"
+     },
+     {
+      "item": "dispenser",
+      "count": 1,
+      "note": "holds a water bucket; on/off switch"
+     },
+     {
+      "item": "hopper",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "oak_button",
+      "count": 1,
+      "note": "any button; fires the dispenser to turn the farm off"
+     },
+     {
+      "item": "soul_sand",
+      "count": 1,
+      "note": "under the pillager"
+     },
+     {
+      "item": "redstone",
+      "count": 1,
+      "note": "STRUCK THROUGH on screen by the editor: not needed"
+     }
+    ],
+    "notes": "Read from a Litematica 'Area Analysis' material list (frames f02 and f06 at about 0:45-0:57; identical in both). All names are printed as text, so high confidence. Spoken extras not in the list (0:58-1:46): 12 villagers, 1 pillager, a name tag, a boat (to pacify the pillager until its crossbow breaks, ~15 min), maybe a piston + button to lift the boat, extra carpets, and a couple of stacks of temporary blocks. Footprint 16 x 16 x 25 high, plus clear space above. The autocrafter / filter shown in the video is NOT in the list (schematic only on his Discord)."
+   },
+   "materials_litematic": {
+    "file": "Iron_Fram_Adil_Gamez.litematic (same gnembon design by Adil Gamez, https://www.mediafire.com/file/lliki4mvhpc5lho/Iron_Fram_Adil_Gamez.litematic/file; counted with litecount.py)",
+    "items": {
+     "glass": 193,
+     "smooth_stone": 156,
+     "acacia_fence": 52,
+     "string": 24,
+     "orange_carpet": 24,
+     "red_bed": 12,
+     "chain": 8,
+     "water_bucket": 7,
+     "grass": 6,
+     "oak_sign": 6,
+     "chest": 2,
+     "hopper": 2,
+     "lava_bucket": 2,
+     "torch": 1,
+     "andesite_wall": 1
+    },
+    "entities": {
+     "villager": 12,
+     "pillager": 1
+    }
+   },
+   "materials_variants": [
+    {
+     "name": "Surface version (video 18:14): sink the kill chamber ~15 blocks down a shaft, simpler kill (2 water buckets + lava blade into hoppers), path blocks 8-9 blocks around; fences can replace the glass walls",
+     "items": [
+      {
+       "item": "water_bucket",
+       "count": 2
+      },
+      {
+       "item": "lava_bucket",
+       "count": null
+      },
+      {
+       "item": "ladder",
+       "count": null,
+       "note": "to reach the collection room; count not stated"
+      }
+     ]
+    },
+    {
+     "name": "Adil Gamez build of the same design (no dispenser switch, fence walls)",
+     "items": [
+      {
+       "item": "acacia_fence",
+       "count": 52
+      },
+      {
+       "item": "smooth_stone",
+       "count": 156
+      },
+      {
+       "item": "glass",
+       "count": 193
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere; tower is 25 high so build away from other villagers/golem spawn spots. Keep the space above clear and non-spawnable. Over water in the video.",
+    "mobs": [
+     "12 villagers (3 per corner cell; walked up a dirt stair at dusk, or by minecart / boat + happy ghast)",
+     "1 pillager (pacified in a boat until its crossbow breaks, then name-tagged and pushed into the fence pen at the top)"
+    ],
+    "stage": "mid (needs Nether for quartz in daylight detectors and the soul sand)",
+    "tools": [
+     "name_tag",
+     "boat",
+     "piston + button (optional, for lifting the boat 13 blocks at a time)"
+    ],
+    "hard_materials": [
+     {
+      "item": "white_bed",
+      "count": 12,
+      "why_hard": "36 wool",
+      "farm_that_helps": "wool farm (n4) or sheep"
+     },
+     {
+      "item": "daylight_detector",
+      "count": 8,
+      "why_hard": "24 nether quartz",
+      "farm_that_helps": "Nether trip (quartz)"
+     },
+     {
+      "item": "name_tag",
+      "count": 1,
+      "why_hard": "not craftable: fishing, librarian trade or chest loot",
+      "farm_that_helps": "AFK fishing"
+     },
+     {
+      "item": "soul_sand",
+      "count": 1,
+      "why_hard": "Nether only",
+      "farm_that_helps": "Nether trip"
+     },
+     {
+      "item": "villager",
+      "count": 12,
+      "why_hard": "12 villagers to move up a 20+ block tower",
+      "farm_that_helps": "villager breeder (n129)"
+     }
+    ]
+   },
+   "afk_spot": "not stated; stay within simulation distance so the villagers and golem spawning tick (inferred). Pillar up 20 blocks from the harvesting mechanism so villagers don't see the golems burn and slow spawns (editor's note chapter 4:47).",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "<Untitled Chapter 1>"
+    },
+    {
+     "t": "0:20",
+     "title": "Dimensions"
+    },
+    {
+     "t": "0:42",
+     "title": "Bill of Materials"
+    },
+    {
+     "t": "2:10",
+     "title": "Block by Block Build Tutorial"
+    },
+    {
+     "t": "4:47",
+     "title": "EDITORS NOTE: Pillar up 20 blocks from the harvesting mechanism to ensure the farm won't slow down over time from villagers 'seeing' the golems as they burn, which slows down new spawns"
+    },
+    {
+     "t": "11:54",
+     "title": "Getting the Villagers in Place"
+    },
+    {
+     "t": "13:08",
+     "title": "Getting the Pillager in Place"
+    },
+    {
+     "t": "15:48",
+     "title": "NOTE - I suggested using carpets in the video - Shoveling all temp dirt blocks into path blocks would also work"
+    },
+    {
+     "t": "18:14",
+     "title": "Building the Farm Closer to the Ground"
+    },
+    {
+     "t": "19:41",
+     "title": "Test and Rates"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "gnembon's original video description (https://youtu.be/_O6q53zmCMY) has a world download (not fetched)"
+    },
+    {
+     "kind": "litematic",
+     "url": "https://www.mediafire.com/file/lliki4mvhpc5lho/Iron_Fram_Adil_Gamez.litematic/file"
+    }
+   ],
+   "gotchas": [
+    "Bed pillows must point in toward the centre glass block of each cell or it won't work.",
+    "Click water onto the glass, not the slabs: right-clicking a slab waterlogs it and slows the flush.",
+    "You may need to remove some temporary dirt pillar blocks for the flush water to flow right.",
+    "Make sure no golem is up top when you bring the pillager in, or it kills him and you start over; carpet all full blocks while loading so no golem spawns.",
+    "The pillager despawns without a name tag once out of the boat, and the farm stops.",
+    "Pacify the pillager in a boat (~15 min) until his crossbow breaks; F3+B to hit the boat, not him.",
+    "If the button on/off switch won't work, flip the daylight detectors (they can keep the dispenser powered by day).",
+    "Pillar up 20 blocks from the kill chamber so villagers don't see golems burning (slows spawns).",
+    "Use path blocks / carpets on temporary dirt so nothing else spawns."
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=TZ3NOlgj6x0 description + auto-subtitles",
+    "video 0:42 frames f02/f06 (Litematica material list)",
+    "litematic of the same design by Adil Gamez (counted)",
+    "original design: gnembon https://www.youtube.com/watch?v=_O6q53zmCMY (2020-08-15, not watched)",
+    "same design: Adil Gamez https://www.youtube.com/watch?v=Cb5NOEi0VJU (12 villagers + 1 pillager, credits gnembon, 1800+/h claimed)",
+    "same design: Mumbo Jumbo built it on Hermitcraft 10 and 11 (per Saignus); possibly https://www.youtube.com/watch?v=K5lCtN_6Egs 'Hermitcraft 10: Episode 15 - IRON PERMIT' (not checked)",
+    "different designs seen and not used: wattles 1.21 iron farm https://www.youtube.com/watch?v=NbhRbXT9_yU; Aurigas one-dimensional 83k/h via Shulkercraft https://www.youtube.com/watch?v=835S_L50Xek; Nico is LOST max-rate 5600/h via 34blockman https://www.youtube.com/watch?v=6CZ2q2SIpG8; overview Shulkercraft '5 BEST Iron Farms 1.21+' https://www.youtube.com/watch?v=xa7BB9Q2A7A"
+   ],
+   "confidence": "high for materials (Litematica list is printed text, cross-checked against an independent litematic of the same design) and rate (measured on video, 528 in 30 min). Medium on stage/milestone (daylight detectors are only for the on/off switch; soul sand is in the list).",
+   "dup_notes": "Compared with n27 (ianxofour day-1: 3 villagers + zombie in a boat, one pit, ~335/h) and n130 (basic 3-villager golem farm). Same basic golem-panic mechanism, but this is gnembon's 4-cell, 12-villager tower with a name-tagged pillager scarer, water flush and lava-blade kill into a chest: ~3x the rate of n27 and fully AFK. Chosen as the 'large automatic' iron farm because it is the original, widely copied design (Mumbo, Adil Gamez) and still works in 26.3. Bigger designs (Aurigas 83k/h, portal farms) skipped as not core.",
+   "icon": "iron_ingot",
+   "stage": "mid",
+   "short": "12-villager tower iron farm, about 1,000 iron/hour.",
+   "steps": [
+    "Build 16x16 tower with lava kill chamber",
+    "Make four 3-bed villager cells",
+    "Load 12 villagers into the cells",
+    "Pacify and nametag a pillager on top",
+    "Dispense water, collect iron AFK"
+   ],
+   "pic": "pics/farm-201.jpg",
+   "core_candidate": true,
+   "core_why": "Big AFK iron upgrade once day-1 iron runs short; day-1 stays the core pick."
+  },
+  {
+   "n": 202,
+   "id": "cobblestone-tnt-auto",
+   "title": "Fast Simple Auto Cobblestone for 1.21+",
+   "creator": "bigbooty17",
+   "url": "https://www.youtube.com/watch?v=NZRiQwVCfcE",
+   "date": "2025-01-21",
+   "edition": "Java",
+   "versions": "1.21+ (title; FAQ: not Bedrock)",
+   "version_notes": "Remake of his earlier design whose string clock and duper were patched after 1.21.2 (spoken 0:14, on-screen note 'String clocks and dupers patched post 1.21.2'); this version uses a repeater clock and a slab TNT duper. Needs vanilla TNT duping: servers that disable it (e.g. Paper, inferred) won't work. An alternate duper (8:06) is for 'non-vanilla redstone' / the experimental redstone changes.",
+   "category": "farm",
+   "farm_type": "cobblestone",
+   "outputs": [
+    {
+     "item": "cobblestone",
+     "rate_per_hour": 28800,
+     "conditions": "12 cobblestone every 1.5 s, blown up by duped TNT straight into 12 hoppers; a double chest fills every ~7 min",
+     "source": "title; video 0:04, 0:48"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": "1:23",
+    "items": [
+     {
+      "item": "deepslate_brick_slab",
+      "count": 1,
+      "note": "icon only (inferred from the matching stairs); any slab variant works (spoken 1:52). Gets waterlogged at the top of the duper"
+     },
+     {
+      "item": "deepslate_brick_stairs",
+      "count": 1,
+      "note": "tooltip read; any stair; placed upside down and waterlogged"
+     },
+     {
+      "item": "redstone_torch",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 1,
+      "note": "any fence gate; must be open so TNT passes"
+     },
+     {
+      "item": "smooth_stone",
+      "count": 30,
+      "note": "tooltip read; use stone or harder blocks, the TNT goes off very close (spoken 1:35)"
+     },
+     {
+      "item": "observer",
+      "count": 2,
+      "note": "icon (face with red dot); one watches the 2x4 platform, one watches a repeater"
+     },
+     {
+      "item": "lever",
+      "count": 1,
+      "note": "tooltip read; with a locking repeater to stop the clock"
+     },
+     {
+      "item": "redstone",
+      "count": 7,
+      "note": ""
+     },
+     {
+      "item": "repeater",
+      "count": 5,
+      "note": "tooltip read; 4 in the clock + 1 locking"
+     },
+     {
+      "item": "piston",
+      "count": 2,
+      "note": "icon; the TNT duper"
+     },
+     {
+      "item": "tnt",
+      "count": 1,
+      "note": "tooltip read; the one block that gets duplicated"
+     },
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": "only 2 needed at a time; make an infinite source (spoken 1:26, 2:53)"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 1,
+      "note": "tooltip read; placed on the centre block last"
+     },
+     {
+      "item": "chest",
+      "count": 8,
+      "note": "4 double chests around the centre block"
+     },
+     {
+      "item": "hopper",
+      "count": 12,
+      "note": "facing into the chests"
+     },
+     {
+      "item": "oak_leaves",
+      "count": 8,
+      "note": "tooltip read; waterlogged leaves hold the water around the generator; any leaf type"
+     },
+     {
+      "item": "dirt",
+      "count": 32,
+      "note": "approximate temporary blocks (spoken 1:40)"
+     }
+    ],
+    "notes": "Read from an inventory screen (frames f02-f12, 1:23-2:00, same contents throughout) with hover tooltips for deepslate brick stairs, smooth stone, lever, TNT, redstone repeater, oak leaves, lava bucket. Slab, observer and piston identified by icon only. Description says 'under 100 blocks'."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Expanded storage (7:00): more double chests under the hoppers, fed by hopper lines",
+     "items": [
+      {
+       "item": "chest",
+       "count": null,
+       "note": "count not stated"
+      },
+      {
+       "item": "hopper",
+       "count": null,
+       "note": "count not stated"
+      }
+     ]
+    },
+    {
+     "name": "Shulker box loaders (schematic on his Discord only)",
+     "items": []
+    },
+    {
+     "name": "Alternate TNT duper for non-vanilla redstone (8:06)",
+     "items": []
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere; must stay chunk-loaded while running (a chunk loader is shown) or it can blow up",
+    "mobs": [],
+    "stage": "mid (observers need Nether quartz)",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "hopper",
+      "count": 12,
+      "why_hard": "60 iron",
+      "farm_that_helps": "iron farm (n27 / n201)"
+     },
+     {
+      "item": "observer",
+      "count": 2,
+      "why_hard": "2 nether quartz",
+      "farm_that_helps": "Nether trip"
+     },
+     {
+      "item": "tnt",
+      "count": 1,
+      "why_hard": "5 gunpowder",
+      "farm_that_helps": "kill a few creepers"
+     }
+    ]
+   },
+   "afk_spot": "anywhere that keeps the farm chunk loaded (stay nearby, or use a chunk loader as shown ~7:56); unloading while running can make it explode",
+   "build_time": "'under 100 blocks', 'quick and easy build' (description / video); no minutes stated",
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "1:23",
+     "title": "Materials"
+    },
+    {
+     "t": "2:06",
+     "title": "Build: Cobble Generator"
+    },
+    {
+     "t": "3:17",
+     "title": "Build: Starting the Upper Build"
+    },
+    {
+     "t": "4:02",
+     "title": "Build: TNT Duper"
+    },
+    {
+     "t": "5:02",
+     "title": "Build: Clock"
+    },
+    {
+     "t": "5:55",
+     "title": "Build: Finishing touches and turning it on"
+    },
+    {
+     "t": "7:00",
+     "title": "Expanding storage"
+    },
+    {
+     "t": "7:44",
+     "title": "How not to blow it up"
+    },
+    {
+     "t": "8:06",
+     "title": "Build: Alternate TNT Duper"
+    },
+    {
+     "t": "8:48",
+     "title": "Outro"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "Discord only: https://discord.com/invite/tvpccRczWx (world download / schematic, not fetched)"
+    }
+   ],
+   "gotchas": [
+    "Pillar exactly 8 blocks up from the generator; the wrong height means the TNT doesn't break the cobble (FAQ, 3:08).",
+    "Wrong clock timings make it blow up when started: three repeaters at max delay, the fourth at half (FAQ, 5:02).",
+    "Waterlog the top slab or it blows up when you stop it (FAQ, 4:02).",
+    "When turning it off, wait for the last TNT to explode inside the duper before anything else.",
+    "Keep it chunk-loaded while running or it will probably explode (7:44).",
+    "Use stone or harder blocks: the TNT explodes very close to the build.",
+    "If the TNT moves but doesn't dupe and duping is enabled, you have non-vanilla redstone: build the alternate duper (FAQ, 8:06).",
+    "Doesn't work on Bedrock (FAQ)."
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=NZRiQwVCfcE description (FAQ) + auto-subtitles",
+    "video 1:23 frames f02-f12 (inventory screen with tooltips)",
+    "same design: MCBlanky 'INFINITE Minecraft Cobblestone Farm 26.2+' https://www.youtube.com/watch?v=ocpCdUXf3l0 (credits 'Original Farm Design by bigbooty17', 25,000/h)",
+    "probably same design: Shulkercraft overview lists a 'Micro TNT (29,000/h)' farm on the TMC Discord (same Discord as bigbooty17) https://www.youtube.com/watch?v=_5kQSeqANKs (not confirmed)",
+    "different, bigger designs seen and not used: Shulkercraft 'Diamond Shaped' 75,000/h by Marten da Mink https://www.youtube.com/watch?v=Un-opjPr9LU; Shulkercraft 207,000/h by NachoCS & Sam https://www.youtube.com/watch?v=4KGkH-jqZoY; LAS TMC wet TNT 5.2M/h https://www.youtube.com/watch?v=V95mM-VDAXk"
+   ],
+   "confidence": "high: inventory list clear with tooltips on most items; rate stated in title and video and consistent with 12 cobble per 1.5 s. Slab type inferred from icon.",
+   "dup_notes": "Compared with n125 (manual cobblestone generator: you mine it yourself), n126 (basalt generator), and trick:tnt-duper-quarry (a TNT duper used for digging, not for farming an item). This one is fully automatic and AFK: a lava/water generator under a TNT duper that blasts the cobble into hoppers. Chosen over the larger Shulkercraft 75k/207k farms because it is the original small design, under 100 blocks, and works in 1.21+ (updated after the 1.21.2 patch).",
+   "icon": "cobblestone",
+   "stage": "mid",
+   "short": "TNT-duper cobble generator, 28,800 cobblestone/hour AFK.",
+   "steps": [
+    "Ring 4 double chests with 12 hoppers",
+    "Waterlogged leaves around a lava centre",
+    "Build slab TNT duper 8 blocks up",
+    "Repeater clock with lever lock",
+    "Keep chunk loaded, AFK nearby"
+   ],
+   "pic": "pics/farm-202.jpg",
+   "replaces_core": "farm:125",
+   "core_why": "Fully AFK 28.8k cobble/h replaces manual generator mining."
+  },
+  {
+   "n": 203,
+   "id": "villager-crop-auto",
+   "title": "Minecraft Easy Villager Potato/Carrot Farm - 700+ Per Hour",
+   "creator": "Shulkercraft (design: LogicalGeekBoy)",
+   "url": "https://www.youtube.com/watch?v=q0bq-RnttBU",
+   "date": "2020-09-16",
+   "edition": "Java",
+   "versions": "1.16.2+ (description: 'Built in Minecraft 1.16.2 but works in 1.20+')",
+   "version_notes": "Villager farmer harvesting and crop-throwing has been unchanged since 1.14 (LogicalGeekBoy's original was 1.14/1.15). Rays Works (Feb 2026) confirms the same villager mechanic works in current versions and notes that since 1.21.5 crops only grow from random ticks in chunks near a player (or a chunk loader), so stay within range. Also works for wheat and beetroot (description), at lower rates.",
+   "category": "farm",
+   "farm_type": "crops (carrot / potato / wheat / beetroot)",
+   "outputs": [
+    {
+     "item": "carrot",
+     "rate_per_hour": 454,
+     "conditions": "one layer, one farmer; measured 227 carrots in 30 min AFK",
+     "source": "video 4:10 (on-screen text: 227 carrots in 30 min, 454 carrots per/h)"
+    },
+    {
+     "item": "carrot",
+     "rate_per_hour": 406,
+     "conditions": "two stacked layers, 203 carrots in 30 min; the second layer was potatoes",
+     "source": "video 7:30 (on-screen text: 203 Carrots, 148 Potatos in 30 min, 702 items per/hour; title says 700+)"
+    },
+    {
+     "item": "potato",
+     "rate_per_hour": 296,
+     "conditions": "two stacked layers, 148 potatoes in 30 min (second layer)",
+     "source": "video 7:30 (same screen)"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": "0:10",
+    "items": [
+     {
+      "item": "carrot",
+      "count": 206,
+      "note": "or potato (wheat seeds / beetroot seeds also work, per description); plants the field and stocks the farmer"
+     },
+     {
+      "item": "glass",
+      "count": 96,
+      "note": "2-high wall around the field"
+     },
+     {
+      "item": "lime_carpet",
+      "count": 8,
+      "note": "over the water holes so villagers do not fall in; any colour"
+     },
+     {
+      "item": "cobblestone",
+      "count": 3,
+      "note": "'Building Block'; any solid block"
+     },
+     {
+      "item": "red_bed",
+      "count": 1,
+      "note": "any colour"
+     },
+     {
+      "item": "hopper",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "chest",
+      "count": 4,
+      "note": "two double chests under the hopper"
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 1,
+      "note": "on top of the stacked hopper minecarts"
+     },
+     {
+      "item": "glowstone",
+      "count": 1,
+      "note": "on top of the composter (light); any light block likely works (inferred)"
+     },
+     {
+      "item": "composter",
+      "count": 1,
+      "note": "farmer job site"
+     },
+     {
+      "item": "hopper_minecart",
+      "count": 2,
+      "note": "stacked on top of a hopper, catch the crops the farmer throws"
+     },
+     {
+      "item": "rail",
+      "count": 1,
+      "note": "under the hopper minecarts"
+     },
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": "make an infinite water source"
+     },
+     {
+      "item": "dirt",
+      "count": 64,
+      "note": "'Temporary Blocks' for leading the villagers"
+     },
+     {
+      "item": "(villager)",
+      "count": 2,
+      "note": "one becomes the farmer in the field, one sits behind the hopper minecarts"
+     }
+    ],
+    "notes": "Read from the on-screen text list at 0:10-0:20 (frame mat1 at 0:17 confirms the first 7 lines; the rest read from the contact sheet at 1/10 fps) and it matches the 'Part 1 Items needed' list in the description word for word. Item ids are my choice of the generic names (carpet colour, bed colour, building block, temporary blocks). Not on the list but used: a hoe to till the farmland."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Second stacked layer (video 4:20, description Part 2)",
+     "items": [
+      {
+       "item": "carrot",
+       "count": 206,
+       "note": "or potato"
+      },
+      {
+       "item": "dirt",
+       "count": 208
+      },
+      {
+       "item": "glass",
+       "count": 96
+      },
+      {
+       "item": "cobblestone",
+       "count": 56,
+       "note": "'Building Block'"
+      },
+      {
+       "item": "smooth_stone_slab",
+       "count": 8,
+       "note": "'Slab', any kind"
+      },
+      {
+       "item": "lime_carpet",
+       "count": 8
+      },
+      {
+       "item": "red_bed",
+       "count": 1
+      },
+      {
+       "item": "glowstone",
+       "count": 1
+      },
+      {
+       "item": "oak_trapdoor",
+       "count": 1
+      },
+      {
+       "item": "hopper",
+       "count": 1
+      },
+      {
+       "item": "rail",
+       "count": 1
+      },
+      {
+       "item": "minecart",
+       "count": 2,
+       "note": "listed as 'Minecart' on screen; the build puts hopper minecarts on top of the hopper (video about 4:40), so these are probably hopper minecarts (inferred)"
+      },
+      {
+       "item": "composter",
+       "count": 1
+      },
+      {
+       "item": "(villager)",
+       "count": 2
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere flat; two villagers must be brought to the farm",
+    "mobs": [
+     "2 villagers (one becomes the farmer; the other sits in a 1-block pocket behind the hopper minecarts)"
+    ],
+    "stage": "early (needs 2 villagers, about 41 iron, 206 carrots or potatoes; 1 glowstone, which can likely be swapped for another light block)",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": [
+     {
+      "item": "hopper",
+      "count": 5,
+      "why_hard": "25 iron (3 hoppers + 2 inside the hopper minecarts)",
+      "farm_that_helps": "iron farm (farm:27)"
+     },
+     {
+      "item": "carrot",
+      "count": 206,
+      "why_hard": "a full field of seed crop; found in village farms",
+      "farm_that_helps": "farm:102 carrot farm / farm:103 potato farm"
+     },
+     {
+      "item": "(villager)",
+      "count": 2,
+      "why_hard": "must be moved from a village or bred",
+      "farm_that_helps": "farm:129 villager breeder; trick:villager-transport"
+     }
+    ]
+   },
+   "afk_spot": "near the farm (crops only grow in chunks near a player; since 1.21.5 a chunk loader alone is not enough, per Rays Works). Fully automatic: the farmer harvests and replants, throws extra crops to the other villager, and the hopper minecarts catch them.",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "https://wisehosting.com/dl?w=Potato-Carrot-Farm"
+    }
+   ],
+   "gotchas": [
+    "Lock the second villager into a trade (give it a job and trade once) so it cannot take the farmer's composter.",
+    "The second villager sits in a one-block pocket behind two stacked hopper minecarts under a trapdoor; crops the farmer throws to it land in the minecarts.",
+    "Put carpet on all water holes so the farmer cannot fall in.",
+    "Glowstone goes on top of the composter, the bed next to the composter (either side).",
+    "Measured 454 carrots/h with one layer; the 700+ in the title is two stacked layers.",
+    "Villager farmers only harvest during their work hours, so output comes in bursts (Rays Works notes it takes a full Minecraft day before crops start coming).",
+    "Since 1.21.5 crops grow only near a player (Rays Works), so the farm will not run while you are far away."
+   ],
+   "sources": [
+    "description (both materials lists, version note, credit to LogicalGeekBoy)",
+    "video contact sheet at 1/10 fps and frames mat1 (0:17), fine01 (2:20-3:55), pic240",
+    "auto-subtitles not available (HTTP 429 rate limit); the video is text-overlay only, no narration (inferred from the sheet)",
+    "original design: LogicalGeekBoy https://www.youtube.com/watch?v=U189TQWbWFs (1.14/1.15)",
+    "same mechanism, newer and more detailed (rates, 1.21.5 chunk-loading note, schematics): Rays Works https://www.youtube.com/watch?v=JlgOM7nMLnc (2026; 206 carrots/h, 196 potatoes/h per simple farm)",
+    "same mechanism: Eyecraftmc https://www.youtube.com/watch?v=fyxyAG1Ojb8; Voltrox https://www.youtube.com/watch?v=zM3AguFCyAM; Kysen https://www.youtube.com/watch?v=3cp0FfV-o60 (same title as Eyecraftmc)"
+   ],
+   "confidence": "high for materials (on-screen list matches the description exactly); medium for rates (one 30-min measurement each, shown on screen).",
+   "dup_notes": "Compared with n102 carrot farm and n103 potato farm (manual 9x9 fields you replant by hand) and n129 villager breeder. Here a farmer villager does the harvesting and replanting and the crops are collected into chests automatically, so it is AFK. No ianxofour record farms crops. Rays Works, Eyecraftmc, Voltrox and Kysen use the same villager-throws-crops-into-hopper-minecart mechanic, so they are listed as sources, not separate records.",
+   "icon": "carrot",
+   "stage": "early",
+   "short": "Farmer villager harvests carrots; hopper minecarts catch them.",
+   "steps": [
+    "Glass ring, water, carpet over holes",
+    "Composter, glowstone and bed in middle",
+    "Till and plant carrots or potatoes",
+    "Hopper minecarts under trapdoor, chests below",
+    "Second villager behind minecarts, farmer inside"
+   ],
+   "pic": "pics/farm-203.jpg",
+   "replaces_core": "farm:101",
+   "core_why": "Automatic villager crop farm replaces manual 9x9; carrots/potatoes, not wheat."
+  },
+  {
+   "n": 204,
+   "id": "cooked-chicken-auto",
+   "title": "Easy Automatic Cooked Chicken Farm Minecraft 1.21 - Tutorial",
+   "creator": "Eyecraftmc",
+   "url": "https://www.youtube.com/watch?v=DP2GV9YzNT4",
+   "date": "2022-04-25",
+   "edition": "Java",
+   "versions": "1.21 per title (uploaded 2022; description text says 1.20 Java)",
+   "version_notes": "Title was updated to 1.21; the description still says 1.20. Not tested here on 1.21.6-1.21.8: Mostly Dark Link warns his own (different) lava cooked-chicken design breaks in exactly 1.21.6-1.21.8 and works again in 1.21.9+, so check this one on those versions (NOT verified).",
+   "category": "farm",
+   "farm_type": "cooked chicken / feathers",
+   "outputs": [
+    {
+     "item": "cooked_chicken",
+     "rate_per_hour": null,
+     "conditions": "rate not stated in title or description; spoken info not readable (subtitles blocked)",
+     "source": "not stated"
+    },
+    {
+     "item": "feather",
+     "rate_per_hour": null,
+     "conditions": "description calls it a 'Food and Feather Farm'; rate not stated",
+     "source": "description"
+    }
+   ],
+   "xp": "small (chickens killed by lava drop no XP; none stated)",
+   "materials_onscreen": {
+    "timestamp": "0:15",
+    "items": [
+     {
+      "item": "polished_andesite",
+      "count": 4,
+      "note": "tooltip 'Polished Andesite'; any solid block (inferred)"
+     },
+     {
+      "item": "comparator",
+      "count": 2,
+      "note": "icon with three torches; tooltip 'Redstone Comparator' in the build; count digit partly hidden, read as 2"
+     },
+     {
+      "item": "dispenser",
+      "count": 4,
+      "note": "tooltip 'Dispenser'; they throw the eggs"
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest for the cooked chicken"
+     },
+     {
+      "item": "hopper",
+      "count": 4,
+      "note": ""
+     },
+     {
+      "item": "cobblestone_slab",
+      "count": 2,
+      "note": "tooltip 'Cobblestone Slab'"
+     },
+     {
+      "item": "observer",
+      "count": 4,
+      "note": "dark block, red dot on the back in the build (icon read, no tooltip seen)"
+     },
+     {
+      "item": "purple_carpet",
+      "count": 3,
+      "note": "tooltip 'Purple Carpet' in the build; any colour (inferred)"
+     },
+     {
+      "item": "glass",
+      "count": 6,
+      "note": ""
+     },
+     {
+      "item": "acacia_trapdoor",
+      "count": 5,
+      "note": "tooltip 'Acacia Trapdoor'"
+     },
+     {
+      "item": "redstone",
+      "count": 4,
+      "note": ""
+     },
+     {
+      "item": "lava_bucket",
+      "count": 2,
+      "note": "the lava that kills and cooks the grown chickens"
+     },
+     {
+      "item": "wheat_seeds",
+      "count": 128,
+      "note": "two stacks; tooltip 'Wheat Seeds' (for leading/feeding the starting chickens, inferred)"
+     },
+     {
+      "item": "dirt",
+      "count": 16,
+      "note": "tooltip 'Dirt'; temporary blocks for getting chickens in (inferred)"
+     },
+     {
+      "item": "egg",
+      "count": 64,
+      "note": "four stacks of 16; thrown into the cells to hatch the breeder chickens (video 2:59 shows an egg being thrown into the hole)"
+     }
+    ],
+    "notes": "Read from a chest screen at 0:15-0:52 (1080p frames at 0:19 and 0:31, zoomed); tooltips seen for Polished Andesite, Dispenser, Cobblestone Slab, Glass, Acacia Trapdoor, Wheat Seeds, Dirt and, in the build, Redstone Comparator, Hopper, Purple Carpet, Redstone Dust. Count of the comparator slot is partly covered by the icon; the observer is read from the icon only. Auto-subtitles could not be downloaded (YouTube HTTP 429 all session), so spoken details (rates, exact roles of the observers) are missing."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere; small footprint (about 3x4 blocks, 5 high)",
+    "mobs": [
+     "adult chickens (hatched from the 64 eggs thrown into the breeder cells)"
+    ],
+    "stage": "mid (observers and comparators need Nether quartz)",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "observer",
+      "count": 4,
+      "why_hard": "4 nether quartz",
+      "farm_that_helps": "Nether quartz mining"
+     },
+     {
+      "item": "comparator",
+      "count": 2,
+      "why_hard": "2 nether quartz",
+      "farm_that_helps": "Nether quartz mining"
+     },
+     {
+      "item": "dispenser",
+      "count": 4,
+      "why_hard": "a bow each (3 string)",
+      "farm_that_helps": "any mob farm for string (farm:208)"
+     },
+     {
+      "item": "egg",
+      "count": 64,
+      "why_hard": "needs a chicken pen first",
+      "farm_that_helps": "farm:121 egg collector / farm:120 chicken pen"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 2,
+      "why_hard": "needs lava source",
+      "farm_that_helps": "trick:dripstone-lava-generator (optional)"
+     }
+    ]
+   },
+   "afk_spot": "within simulation distance of the farm; fully automatic (eggs laid into hoppers feed the dispensers, hatched chicks grow up and are cooked by lava, drops collected into the double chest)",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:15",
+     "title": "List of Material"
+    },
+    {
+     "t": "0:53",
+     "title": "How to Build the Farm"
+    },
+    {
+     "t": "2:59",
+     "title": "Getting Chickens in the Farm"
+    },
+    {
+     "t": "4:15",
+     "title": "Finishing the Farm"
+    },
+    {
+     "t": "5:00",
+     "title": "Important Farm Info"
+    }
+   ],
+   "downloads": [],
+   "gotchas": [
+    "Breeder chickens sit on hoppers above the dispensers; eggs go into the dispensers and are fired into the grow cell (inferred from the build frames).",
+    "Get the breeder chickens in by throwing eggs into the hole over the purple carpet (video 2:59).",
+    "Acacia trapdoors and glass make the front see-through; the lava sits at the top so only grown chickens reach it (inferred).",
+    "Spoken 'Important Farm Info' (5:00) could not be read: subtitles were blocked. Rates are unknown.",
+    "Different design with explicit version notes: Mostly Dark Link 'Lava Chicken' 5.0 does NOT work in 1.21.6-1.21.8."
+   ],
+   "sources": [
+    "description (chapters)",
+    "video 0:15-0:52 materials chest frames (work/204/e02, e06), build contact sheet 0:53-3:03 at 1/4 fps, info sheet 5:00-6:15",
+    "auto-subtitles: blocked (HTTP 429), not used",
+    "same mechanism (egg dispensers + lava; xisumavoid confirmed from its description, the others from titles only): xisumavoid https://www.youtube.com/watch?v=tWT_WCTFUvA (2013 classic, 4.7M views); SsquidbosS https://www.youtube.com/watch?v=dEBiDfmwV3g; Triloms https://www.youtube.com/watch?v=cC76WQtm3aM; The Master Miner https://www.youtube.com/watch?v=ndcftLTskUY",
+    "related compact design: ilmango https://www.youtube.com/watch?v=fvrKM2nhU1I ('[Has A Flaw]' in the title)",
+    "not chosen, different cell design with exact version notes (broken 1.21.6-1.21.8): Mostly Dark Link https://www.youtube.com/watch?v=u5wm49mHZCI (2026; materials chest at 2:48: target, comparator, repeater, 3 redstone, dispenser, stonecutter, cauldron, lava bucket, 4 hoppers, 2 chests, 18 smooth stone, 2 glass, 3 black carpet, 4 smooth stone slabs, 2 spruce trapdoors)"
+   ],
+   "confidence": "medium: the materials chest is clear and most items have tooltips, but rates and spoken gotchas are missing because subtitles were blocked; mechanism details partly inferred from frames.",
+   "dup_notes": "Compared with n120 'Chicken farm (pen)' and n121 'Egg collector (hoppers)': those are a manual pen and egg collection only. This one hatches, grows and cooks chickens on its own (egg dispensers + lava), so it gives cooked food AFK. No ianxofour record farms chickens or food. xisumavoid, SsquidbosS, Triloms and others build the same egg-dispenser + lava mechanism, so they are listed as sources, not records.",
+   "icon": "cooked_chicken",
+   "stage": "mid",
+   "short": "Egg dispensers hatch chickens; lava cooks the grown ones.",
+   "steps": [
+    "Stack dispensers with hoppers feeding them",
+    "Comparator and observer clock behind dispensers",
+    "Glass and trapdoor cell, lava on top",
+    "Throw eggs in to hatch breeders",
+    "Double chest collects cooked chicken"
+   ],
+   "pic": "pics/farm-204.jpg",
+   "core_candidate": true,
+   "core_why": "Automatic cooked food, no fuel; best hands-off food."
+  },
+  {
+   "n": 205,
+   "id": "cow-cooker",
+   "title": "EFFORTLESS AUTOMATIC Cow Farm Minecraft Java 1.21 - 26.1",
+   "creator": "VowLa",
+   "url": "https://www.youtube.com/watch?v=8VWPLHsGk9o",
+   "date": "2024-08-28",
+   "edition": "Java",
+   "versions": "1.21 - 26.1 (title and description)",
+   "version_notes": "Built in Java (creative). Description: 'for 1.21 - 26.1'. Uses only breeding, water, dispensers and lava, so nothing version-sensitive is known (inferred).",
+   "category": "farm",
+   "farm_type": "cow (cooked beef, leather)",
+   "outputs": [
+    {
+     "item": "cooked_beef",
+     "rate_per_hour": null,
+     "conditions": "description: 'produce 2100 cow per day (cooked)'; unclear whether that is a Minecraft or real day, so no hourly rate. Depends on how often you breed.",
+     "source": "description"
+    },
+    {
+     "item": "leather",
+     "rate_per_hour": null,
+     "conditions": "dropped with the beef (0-2 per cow); not stated",
+     "source": "not stated"
+    }
+   ],
+   "xp": "none collected (lava kills give no XP to the player)",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "'Place a double chest here!' (0:40)"
+     },
+     {
+      "item": "hopper",
+      "count": 3,
+      "note": "'Connect 3 hoppers to the chest!' (0:50)"
+     },
+     {
+      "item": "dispenser",
+      "count": 3,
+      "note": "'Then place 3 dispensers like this!' (0:58); kill-chamber dispensers, one per chamber"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 3,
+      "note": "'Now, put a lava bucket on each dispenser!' (1:43)"
+     },
+     {
+      "item": "note_block",
+      "count": 2,
+      "note": "'Put note blocks on 2 corners!' (1:03)"
+     },
+     {
+      "item": "observer",
+      "count": null,
+      "note": "a short observer line around the chamber ('Place observers following this direction!' 1:08); count not shown, roughly 4-6 (inferred)"
+     },
+     {
+      "item": "oak_sign",
+      "count": 3,
+      "note": "'Put 3 sign boards on these sides!' (1:55); stop the lava flowing out"
+     },
+     {
+      "item": "glass",
+      "count": null,
+      "note": "glass fronts on the three chambers; count not shown"
+     },
+     {
+      "item": "dispenser",
+      "count": 1,
+      "note": "breeder dispenser: 'Place a dispenser here & put a water bucket!' (2:30)"
+     },
+     {
+      "item": "water_bucket",
+      "count": 1,
+      "note": "in the breeder dispenser"
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 1,
+      "note": "'Finally place a trapdoor on the glass block!' (2:35); spruce-looking trapdoor in video"
+     },
+     {
+      "item": "stone_brick_slab",
+      "count": 3,
+      "note": "'Now, place 3 slabs like this!' (2:45)"
+     },
+     {
+      "item": "oak_fence",
+      "count": 1,
+      "note": "'Place a fence here & we are done!' (3:10)"
+     },
+     {
+      "item": "stone_button",
+      "count": 1,
+      "note": "'Then press the button!' (4:50) fires the lava"
+     },
+     {
+      "item": "stone_bricks",
+      "count": null,
+      "note": "main building block (5x4 base, breeder walls); count not shown"
+     },
+     {
+      "item": "ladder",
+      "count": null,
+      "note": "optional, to reach the breeder (3:30)"
+     },
+     {
+      "item": "wheat",
+      "count": null,
+      "note": "to breed the cows ('Use wheat to breed the cow!' 4:25)"
+     }
+    ],
+    "notes": "NO materials list in the video, description or a download. This list is gathered from the build-step captions (contact sheets at 1/2.5 fps, work/205/vfine1, vfine2); counts are only those the captions state. Building blocks, glass, observers and ladders are not counted (null). The house around the farm (3:46) is decoration and is left out. The video is silent (music only). plan_draft.raw is an estimate (inferred): it assumes 5 observers, about 40 stone bricks of structure and 6 glass, and 40 wheat for a first round of breeding; the real numbers are not shown."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Decorative house cover (video 3:46, optional)",
+     "items": [
+      {
+       "item": "(stone bricks, logs, lanterns, chains, bushes)",
+       "count": null,
+       "note": "cosmetic only"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere flat; footprint about 5x4 for the cooker plus the breeder pit on top",
+    "mobs": [
+     "about 20 cows ('20 Cows will be perfect for the farm!' 3:00), lured with wheat"
+    ],
+    "stage": "mid (observers need Nether quartz)",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "observer",
+      "count": null,
+      "why_hard": "1 nether quartz each",
+      "farm_that_helps": "Nether quartz mining"
+     },
+     {
+      "item": "dispenser",
+      "count": 4,
+      "why_hard": "a bow each (3 string)",
+      "farm_that_helps": "farm:208 mob farm"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 3,
+      "why_hard": "needs a lava source",
+      "farm_that_helps": "trick:dripstone-lava-generator (optional)"
+     },
+     {
+      "item": "wheat",
+      "count": null,
+      "why_hard": "breeding needs a steady wheat supply",
+      "farm_that_helps": "farm:101 wheat farm / farm:203 villager crop farm"
+     }
+    ]
+   },
+   "afk_spot": "not AFK: you breed the cows with wheat in the breeder on top, babies fall into the 3 chambers below, grow up, then you press the button to fire the lava and cook them; drops go through the hoppers into the double chest",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro (Start of the video)"
+    },
+    {
+     "t": "0:24",
+     "title": "Make Ground"
+    },
+    {
+     "t": "0:31",
+     "title": "How to make Cow Farm"
+    },
+    {
+     "t": "3:46",
+     "title": "How to cover with House"
+    },
+    {
+     "t": "4:16",
+     "title": "How the cow farm working"
+    }
+   ],
+   "downloads": [],
+   "gotchas": [
+    "Dispensers always face toward you (caption 1:15).",
+    "Observers follow the direction arrows shown at 1:25; note blocks sit on 2 corners.",
+    "Signs on the 3 sides keep the lava from flowing out of the chambers.",
+    "The breeder dispenser with a water bucket and the trapdoor on the glass block let only babies drop into the 3 chambers (inferred from 2:30-2:40 and 'Babies fall into these 3 chambers!' 4:48).",
+    "Let the babies grow to adults before pressing the button, or you only get small drops (caption 'Let them grow to adult cows!').",
+    "Description calls it '100% effortless automatic', but breeding and the kill button are manual: semi-automatic.",
+    "Zero-loss cooked: caption 'This is completely zero loss cooked cow farm!' (0:14)."
+   ],
+   "sources": [
+    "description (version, '2100 cow per day (cooked)')",
+    "video captions read from contact sheets work/205/vowsheet01, vfine1, vfine2, frames 288-305 s",
+    "no auto-subtitles (silent video, music only)",
+    "same mechanism (breeder above, babies drop into cells, lava cooks the adults): Mumbo Jumbo https://www.youtube.com/watch?v=GVauT2iYhb0 (2013 original 'Easy Cow Breeder & Cooker'); Tango Tek https://www.youtube.com/watch?v=MCwkP_guxKk (AFK cow farm, 2017)",
+    "similar semi-manual raw/cooked beef farm with a materials chest at 0:38 (built in Bedrock): ArchetypusMC https://www.youtube.com/watch?v=D-aLBFzbi3Q",
+    "not chosen, different (cramming kill, Java only, cheapest): Shulkercraft https://www.youtube.com/watch?v=X3-loYGePzY ('Easiest Cow Farm', breed until 24+ cows cram in one block)",
+    "not checked (titles only): GhostCrafter https://www.youtube.com/watch?v=iAzaL31itTo; RealJayden https://www.youtube.com/watch?v=4JOcDtjBZJQ; Nuvola MC https://www.youtube.com/watch?v=PMMk7eBU5CM; Nanaroid https://www.youtube.com/watch?v=KAY6NRibjO0"
+   ],
+   "confidence": "low-medium: design and steps are clear from captions, but there is no materials list (several counts null) and no stated hourly rate.",
+   "dup_notes": "Compared with n117 'Cow farm (1x1 pen)' (fence pen, breed and kill by hand with a sword) and n119/n118 pens. This one sorts babies into kill chambers and cooks the adults with dispensed lava at the press of a button, collecting cooked beef and leather into a chest with no loss. No ianxofour record farms cows. Mumbo Jumbo's 2013 breeder-cooker is the same idea (listed as source); Shulkercraft's cramming farm is a different kill method (also listed).",
+   "icon": "cooked_beef",
+   "stage": "mid",
+   "short": "Breed cows on top; button-fired lava cooks the grown babies.",
+   "steps": [
+    "Double chest with 3 hoppers",
+    "3 lava dispensers, note blocks, observers",
+    "Glass chambers with signs on sides",
+    "Breeder pit with water dispenser above",
+    "Lure 20 cows, breed with wheat",
+    "Press the button to cook adults"
+   ],
+   "pic": "pics/farm-205.jpg",
+   "core_candidate": true,
+   "core_why": "Main leather source for books and bookshelves, plus cooked beef."
+  },
+  {
+   "n": 206,
+   "id": "sugar-cane-auto",
+   "title": "Easy Automatic Minecraft Sugarcane Farm Tutorial | Java & Bedrock Edition | Lossless | 1.21.5 +",
+   "creator": "Forger",
+   "url": "https://www.youtube.com/watch?v=I5YDpxTn9-0",
+   "date": "2025-05-06",
+   "edition": "Java & Bedrock",
+   "versions": "1.21.5+ (and earlier, per description)",
+   "version_notes": "Description: 'Works in version 1.21.5+ as well as any previous version.' Shown in Java. Standard observer+piston mechanism, unchanged in recent versions.",
+   "category": "farm",
+   "farm_type": "sugar cane",
+   "outputs": [
+    {
+     "item": "sugar_cane",
+     "rate_per_hour": null,
+     "conditions": "19-cane single row as built; rate not stated in title, description or video. Scales with the number of canes (one observer + piston per cane).",
+     "source": "not stated"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": "0:09",
+    "items": [
+     {
+      "item": "glass",
+      "count": 82,
+      "note": "two slots: 64 + 18; any colour"
+     },
+     {
+      "item": "stone",
+      "count": 61,
+      "note": "any solid block (spoken 0:09)"
+     },
+     {
+      "item": "observer",
+      "count": 19,
+      "note": "one per cane"
+     },
+     {
+      "item": "piston",
+      "count": 19,
+      "note": "normal piston"
+     },
+     {
+      "item": "redstone",
+      "count": 19,
+      "note": ""
+     },
+     {
+      "item": "sand",
+      "count": 19,
+      "note": "any block cane grows on (tooltip 'Sand')"
+     },
+     {
+      "item": "stone_stairs",
+      "count": 19,
+      "note": "any stairs; waterlogged to hydrate the cane"
+     },
+     {
+      "item": "sugar_cane",
+      "count": 19,
+      "note": ""
+     },
+     {
+      "item": "powered_rail",
+      "count": 18,
+      "note": "can be partly replaced by normal rails (spoken 1:05)"
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest"
+     },
+     {
+      "item": "redstone_block",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "hopper",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "rail",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "comparator",
+      "count": 1,
+      "note": "icon with three torches; minecart stopper reads the hopper"
+     },
+     {
+      "item": "repeater",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "redstone_torch",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "water_bucket",
+      "count": 1,
+      "note": "infinite source used to waterlog the stairs (inferred: only one bucket shown)"
+     },
+     {
+      "item": "hopper_minecart",
+      "count": 1,
+      "note": "shown as an on-screen '+1 Hopper Minecart' overlay next to the chest"
+     }
+    ],
+    "notes": "Read from a chest screen at about 0:10-0:21 (zoomed crops of several 1080p frames; counts identical across frames; tooltips confirm Stone and Sand). 18 slots plus the hopper minecart overlay. Narration (0:33) says a 'repeater coming out of the hopper' but the list has both a comparator and a repeater, so the comparator likely reads the hopper (inferred)."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Longer row / stacked rows",
+     "items": [
+      {
+       "item": "(one observer, piston, sand, stairs, stone, glass per extra cane)",
+       "count": null,
+       "note": "video 4:07: expand upwards as much as you want, link with a hopper line or droppers"
+      }
+     ]
+    },
+    {
+     "name": "Cheaper clock (Eyecraftmc variant)",
+     "items": [
+      {
+       "item": "daylight_detector",
+       "count": 1
+      },
+      {
+       "item": "observer",
+       "count": 1,
+       "note": "one observer for the whole farm instead of one per cane; slower but far cheaper"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere flat",
+    "mobs": [],
+    "stage": "mid (after the Nether: observers need quartz)",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "observer",
+      "count": 19,
+      "why_hard": "1 nether quartz each (Nether trip) + 2 redstone",
+      "farm_that_helps": "nether (quartz mining); gold/XP farm area"
+     },
+     {
+      "item": "powered_rail",
+      "count": 18,
+      "why_hard": "18 gold ingots",
+      "farm_that_helps": "farm:19 gold farm (or use normal rails)"
+     },
+     {
+      "item": "hopper_minecart",
+      "count": 1,
+      "why_hard": "10 iron",
+      "farm_that_helps": "iron farm"
+     }
+    ]
+   },
+   "afk_spot": "any spot within simulation distance; fully automatic and lossless",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:09",
+     "title": "Materials"
+    },
+    {
+     "t": "0:21",
+     "title": "Building the Sugarcane Farm"
+    },
+    {
+     "t": "3:25",
+     "title": "Sugarcane Farm Complete"
+    },
+    {
+     "t": "3:33",
+     "title": "Sugarcane Farm Demonstration"
+    },
+    {
+     "t": "4:07",
+     "title": "Expanding the Sugarcane Farm"
+    },
+    {
+     "t": "4:18",
+     "title": "Outro"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "litematic",
+     "url": "channel members only (https://www.youtube.com/channel/UC6vwXqnGt8Q1vU2wbU5kDeA/join)"
+    }
+   ],
+   "gotchas": [
+    "Cane is planted on sand that floats on top of the rails; the hopper minecart runs underneath and picks up the dropped cane through the block (lossless).",
+    "Waterlogged stairs next to the sand hydrate the cane; corner stairs at both ends so the water stays put.",
+    "Pistons face the cane at the second block; observers above face the same way, with redstone dust on a row of blocks behind them.",
+    "Minecart stopper: when the cart is over the unloading hopper it waits until it is empty, then runs again.",
+    "Classic water-stream designs lose 10-50% of the cane (Eyecraftmc test); this minecart design is lossless.",
+    "Normal rails can replace some powered rails if gold is short."
+   ],
+   "sources": [
+    "description",
+    "video 0:09-0:21 chest frames (work/206/c03, c13)",
+    "auto-subtitles work/206/I5YDpxTn9-0.en.vtt",
+    "same design family (observer + piston + hopper minecart): Tango Tek https://www.youtube.com/watch?v=H5mAWw3RrAY (lossless compact, 1.15+)",
+    "similar design, daylight-sensor clock instead of one observer per cane: Eyecraftmc https://www.youtube.com/watch?v=1LyQMfTpcHM (materials list at 2:43, 4.1M views)",
+    "not chosen (flying-machine harvesters, different mechanism): Shulkercraft https://www.youtube.com/watch?v=CL_Ue8F2Bw0 and https://www.youtube.com/watch?v=Hm7h2xHuqUg"
+   ],
+   "confidence": "high for materials (clear chest list, counts consistent across frames); rate unknown (never stated).",
+   "dup_notes": "Compared with n107 'Sugar cane farm (rows)', the manual plant-by-water farm you cut by hand. This one harvests itself (observers trigger pistons) and collects with a hopper minecart, so it is AFK. No ianxofour record covers sugar cane.",
+   "icon": "sugar_cane",
+   "stage": "mid",
+   "short": "Observers and pistons harvest cane into a hopper minecart.",
+   "steps": [
+    "Lay powered rails under a sand row",
+    "Waterlog stairs beside the sand",
+    "Pistons and observers above each cane",
+    "Glass box, then add hopper minecart"
+   ],
+   "pic": "pics/farm-206.jpg",
+   "core_candidate": true,
+   "core_why": "Sugar cane feeds paper: books, rockets, trading."
+  },
+  {
+   "n": 207,
+   "id": "kelp-auto",
+   "title": "Minecraft EASIEST Kelp Farm Java 1.21.11 (Tutorial)",
+   "creator": "UForced",
+   "url": "https://www.youtube.com/watch?v=6skHlvpVh3g",
+   "date": "2025-12-24",
+   "edition": "Java",
+   "versions": "1.21.11 (description: 'works on Java edition 1.21 and below')",
+   "version_notes": "Not tested on Bedrock (description). Built and shown in 1.21.11. The F3+F6 debug menu tip (to see kelp age) is 1.21.11-only.",
+   "category": "farm",
+   "farm_type": "kelp",
+   "outputs": [
+    {
+     "item": "kelp",
+     "rate_per_hour": null,
+     "conditions": "16 kelp plants (two rows of 8) as built; rate not stated in the video or description. Smelt to dried_kelp, then craft dried_kelp_block for fuel (each block smelts 20 items).",
+     "source": "not stated"
+    }
+   ],
+   "xp": "none from the farm itself; smelting the kelp gives a little XP (xisumavoid add-on: 10 kelp per XP point)",
+   "materials_onscreen": {
+    "timestamp": "0:05",
+    "items": [
+     {
+      "item": "smooth_stone",
+      "count": 156,
+      "note": "three slots 64+64+28; 'blocks of your choice' (description). Icon looks like smooth stone (inferred)"
+     },
+     {
+      "item": "glass",
+      "count": 14,
+      "note": ""
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 32,
+      "note": "4 high across the hoppers (spoken 0:48)"
+     },
+     {
+      "item": "kelp",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "water_bucket",
+      "count": 16,
+      "note": "screen shows one bucket icon; description and narration say 16 buckets of water"
+     },
+     {
+      "item": "piston",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "observer",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "redstone",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "grass_block",
+      "count": 19,
+      "note": "'or any solid block' (description); kelp floor"
+     },
+     {
+      "item": "hopper",
+      "count": 8,
+      "note": ""
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest"
+     }
+    ],
+    "notes": "Read from an on-screen item panel at 0:05-0:07 (720p frame g05) and it matches the description's 'Material List' line for line (156 blocks, 19 grass, 14 glass, 16 water, 16 kelp, 32 fence gates, 16/16/16, 8 hoppers, 2 chests). Not in the list but used in the build: 2 doors at the front (spoken 1:03) and a lid of blocks on top (spoken 1:45; maybe part of the 156)."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Doors (used in build, not in list)",
+     "items": [
+      {
+       "item": "oak_door",
+       "count": 2,
+       "note": "spoken 1:03; to get in and break kelp that reaches max age 25"
+      }
+     ]
+    },
+    {
+     "name": "Dried kelp block crafter add-on, per slice (xisumavoid, 1.21, tile up to 12 wide per hopper line)",
+     "items": [
+      {
+       "item": "hopper",
+       "count": 6
+      },
+      {
+       "item": "dropper",
+       "count": 3
+      },
+      {
+       "item": "observer",
+       "count": 5
+      },
+      {
+       "item": "crafter",
+       "count": 1
+      },
+      {
+       "item": "smooth_stone",
+       "count": 2,
+       "note": "light grey block, icon unclear"
+      },
+      {
+       "item": "comparator",
+       "count": 2
+      },
+      {
+       "item": "redstone",
+       "count": 1
+      },
+      {
+       "item": "smoker",
+       "count": 1
+      },
+      {
+       "item": "composter",
+       "count": 3
+      },
+      {
+       "item": "decorated_pot",
+       "count": 1,
+       "note": "icon unclear (red pot)"
+      },
+      {
+       "item": "moss_block",
+       "count": 8,
+       "note": "to fill the composter to level 8"
+      },
+      {
+       "item": "iron_bars",
+       "count": 4,
+       "note": "blocker items in one hopper (spoken 1:32)"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere; 11x7 footprint (spoken 0:12)",
+    "mobs": [],
+    "stage": "mid (after the Nether: observers need quartz)",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "observer",
+      "count": 16,
+      "why_hard": "16 nether quartz + 32 redstone",
+      "farm_that_helps": "Nether quartz mining"
+     },
+     {
+      "item": "hopper",
+      "count": 8,
+      "why_hard": "40 iron",
+      "farm_that_helps": "iron farm"
+     },
+     {
+      "item": "water_bucket",
+      "count": 16,
+      "why_hard": "needs an infinite water source to refill",
+      "farm_that_helps": "trick:infinite-water-source"
+     }
+    ]
+   },
+   "afk_spot": "anywhere within simulation distance; fully automatic",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:10",
+     "title": "Example"
+    },
+    {
+     "t": "0:20",
+     "title": "Example"
+    },
+    {
+     "t": "0:30",
+     "title": "Example"
+    }
+   ],
+   "downloads": [],
+   "gotchas": [
+    "Kelp that is pushed can reach max age 25 and stop growing; you must go in (via the doors) and break the bottom piece by hand. In 1.21.11 F3+F6 lets you show 'looking at block' to see the age (spoken 1:03, 1:45).",
+    "Water goes on top of the observers on both sides; the glass and doors must seal it so no water escapes.",
+    "Fence gates go 4 high above the hoppers along the middle.",
+    "Any block works under the kelp as long as it is in water.",
+    "Fuel use: the trick dried-kelp-fuel turns this into furnace fuel; the xisumavoid crafter add-on automates dried kelp blocks."
+   ],
+   "sources": [
+    "description (Material List)",
+    "video 0:05 on-screen materials panel (work/207/g05.jpg)",
+    "auto-subtitles work/207/6skHlvpVh3g.en.vtt",
+    "add-on: xisumavoid 'Minecraft 1.21 | Dried Kelp Block Crafter' https://www.youtube.com/watch?v=PRW3YBYvCBs (materials chest at 1:40, rate 8.8 dried kelp blocks/min per 12-wide section, 14.4 XP/min)",
+    "same mechanism (observer + piston kelp rows into hoppers): Natercade https://www.youtube.com/watch?v=AN2T4G-i-gM; UForced 'MOST EFFICIENT Kelp Farm' https://www.youtube.com/watch?v=0E6y3Li7-R8",
+    "different mechanism, not chosen: ilmango 'Cheap&Simple Kelp Farm 1.14/1.15' https://www.youtube.com/watch?v=8kho1aVOsTo (flying-machine harvester)"
+   ],
+   "confidence": "high for materials (screen panel and description agree exactly); rate unknown (never stated); add-on materials medium (two icons unclear).",
+   "dup_notes": "Compared with n110 'Kelp farm (manual)', which you harvest by hand. This one is automatic (observers fire pistons when kelp grows, drops go to hoppers and a chest). No ianxofour record covers kelp. trick:dried-kelp-fuel covers the fuel use, not the farm.",
+   "icon": "kelp",
+   "stage": "mid",
+   "short": "Observers and pistons cut kelp into hoppers.",
+   "steps": [
+    "Double chest fed by 8 hoppers",
+    "Piston and observer rows both sides",
+    "Fence gates 4 high, glass walls",
+    "Water on observers, plant kelp"
+   ],
+   "pic": "pics/farm-207.jpg",
+   "core_candidate": false,
+   "core_why": "Fuel only (dried kelp); useful but not a core ingredient."
+  },
+  {
+   "n": 208,
+   "id": "mob-trapdoor-platforms",
+   "title": "BEST MINECRAFT MOB FARM 1.21 | Easy, XP, All Drops, No Mob Spawner",
+   "creator": "wattles",
+   "url": "https://www.youtube.com/watch?v=2DozEq2bXXA",
+   "date": "2023-09-06",
+   "edition": "Java & Bedrock",
+   "versions": "1.20+ (title says 1.21)",
+   "version_notes": "Description: 'This Farm works as of Minecraft 1.20.4'; title updated to 1.21. Relies on light level 0 spawning (1.18+ rule) and mobs pathing onto open trapdoors, which still works in 1.21 (inferred). Not shown in 1.21 on screen.",
+   "category": "farm",
+   "farm_type": "general hostile mob (bones, arrows, string, gunpowder, rotten flesh, XP; witches too)",
+   "outputs": [
+    {
+     "item": "bone",
+     "rate_per_hour": null,
+     "conditions": "3 layers over ocean at y~250; rates never stated in video or description",
+     "source": "not stated"
+    },
+    {
+     "item": "gunpowder",
+     "rate_per_hour": null,
+     "conditions": "creeper-only variant possible (trapdoor ceilings); rate not stated",
+     "source": "not stated"
+    },
+    {
+     "item": "string",
+     "rate_per_hour": null,
+     "conditions": "only if the spider-blocking carpets are left out",
+     "source": "video 9:21"
+    },
+    {
+     "item": "music_disc_13",
+     "rate_per_hour": null,
+     "conditions": "optional: double the slabs so skeletons shoot creepers (spoken 12:37); any disc",
+     "source": "video 12:37"
+    }
+   ],
+   "xp": "yes when killed by the player with a sword at the AFK platform (mobs fall to 1 HP); none with the campfire auto-kill",
+   "materials_onscreen": {
+    "timestamp": "0:27",
+    "items": [
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest"
+     },
+     {
+      "item": "hopper",
+      "count": 9,
+      "note": "3x3 under the drop"
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 8,
+      "note": "opened, ring around the drop hole"
+     },
+     {
+      "item": "red_carpet",
+      "count": 36,
+      "note": "one per 3x3 platform (9 per layer x 3 layers + extra); stops spiders. Any colour"
+     },
+     {
+      "item": "water_bucket",
+      "count": 1,
+      "note": "4 corner sources at the bottom (spoken 9:06)"
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 221,
+      "note": "four slots 64+64+64+29; 72 per layer (spoken 7:04)"
+     },
+     {
+      "item": "cobblestone_stairs",
+      "count": 12,
+      "note": "'12 staircases' (spoken 0:47)"
+     },
+     {
+      "item": "cobblestone_slab",
+      "count": 12,
+      "note": "'12 slabs' (spoken 0:47)"
+     },
+     {
+      "item": "cobblestone",
+      "count": 1408,
+      "note": "22 stacks (9+9+4 slots), 'any building block' (spoken 0:50); 3 layers"
+     }
+    ],
+    "notes": "Read from a 'MOB FARM TUTORIAL' chest at 0:39-1:00 (1080p frames m05, m11); tooltip confirms Cobblestone; counts match the narration (2 chests, 9 hoppers, 8 gates, 36 carpet, 22 stacks of building blocks for 3 layers). Second-row icons read as cobblestone stairs and cobblestone slab. List is for the no-spiders version, not creeper-only. Not on the list: blocks to tower up to y~250 (scaffolding or temp blocks), tinted glass if you want see-through walls, campfires for the auto-kill option."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Creeper-only layers",
+     "items": [
+      {
+       "item": "oak_trapdoor",
+       "count": null,
+       "note": "extra trapdoors on the ceiling of every platform so zombies/skeletons cannot fit (spoken 9:51); count not stated"
+      }
+     ]
+    },
+    {
+     "name": "Fully automatic kill (no XP)",
+     "items": [
+      {
+       "item": "campfire",
+       "count": null,
+       "note": "'campfires all over the floor' on top of the hoppers (spoken 13:12); count not stated, 9 for the 3x3 (inferred)"
+      }
+     ]
+    },
+    {
+     "name": "Extra layers",
+     "items": [
+      {
+       "item": "oak_trapdoor",
+       "count": 72,
+       "note": "per extra layer"
+      },
+      {
+       "item": "cobblestone",
+       "count": null,
+       "note": "walls 3 higher + 9 platforms per layer"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "high up (base at about y=250), ideally over a big ocean; not a mushroom island; light caves below if over land",
+    "mobs": [],
+    "stage": "mid (no Nether items, but ~1400 blocks and ~220 trapdoors)",
+    "tools": [
+     "sword, ideally Looting III (spoken 1:20)"
+    ],
+    "hard_materials": [
+     {
+      "item": "cobblestone",
+      "count": 1408,
+      "why_hard": "22 stacks",
+      "farm_that_helps": "farm:202 automatic cobblestone farm"
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 221,
+      "why_hard": "about 660 planks (~166 logs)",
+      "farm_that_helps": "farm:5 tree farm"
+     }
+    ]
+   },
+   "afk_spot": "platform at the bottom next to the drop (bottom row of the chute replaced with slabs, spoken 11:38); light it up",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "minecraft mob farm tutorial"
+    },
+    {
+     "t": "0:27",
+     "title": "materials"
+    },
+    {
+     "t": "1:24",
+     "title": "location"
+    },
+    {
+     "t": "2:00",
+     "title": "the build"
+    },
+    {
+     "t": "5:45",
+     "title": "spawning layers"
+    },
+    {
+     "t": "9:00",
+     "title": "customizations"
+    },
+    {
+     "t": "11:30",
+     "title": "final things"
+    }
+   ],
+   "downloads": [],
+   "gotchas": [
+    "The farm must be at light level 0 inside: use solid or tinted glass walls, not stained glass.",
+    "Open trapdoors on every inner edge of the 3x3 platforms: mobs treat them as floor and walk off.",
+    "Water sources in the 4 bottom corners must flow exactly to the middle hole; the corner diagonals (3 out) make that work.",
+    "Carpet in the middle of each platform stops spiders (which clog the farm) but also stops string.",
+    "Carpets on the hoppers stop XP orbs getting stuck; or campfires on the floor for an automatic kill.",
+    "Do not build on a mushroom island; build over ocean for best rates.",
+    "Torches on the roof so mobs do not spawn on top."
+   ],
+   "sources": [
+    "description",
+    "video 0:27-1:24 chest frames (work/208/m05.jpg, m11.jpg)",
+    "auto-subtitles work/208/2DozEq2bXXA.en.vtt",
+    "rejected as a duplicate of n23 (same ianxofour mechanism: central observer+dispenser water tower, slab platforms, scaffolding, soul campfires): Shulkercraft 'Minecraft 1.21+ Easy All MOB Farm - 7000 items/h' https://www.youtube.com/watch?v=WHPhrNxn5zE",
+    "other 1.21 mob farms seen, not chosen: LaZ1en Farms https://www.youtube.com/watch?v=yyo7BN2r17Y (redstone box, 1500 items/h, no narration of materials), BlazedMC https://www.youtube.com/watch?v=NY1qwYbUIcM"
+   ],
+   "confidence": "high for materials (clear chest list matches narration); low for output (no rates stated anywhere); 1.21 working is from the title, description only confirms 1.20.4.",
+   "dup_notes": "Compared with n23 (ianxofour scaffolding tower: dispensers spray water off platforms, broken 1.19.3+ unless slabs) and n128 (basic dark room: water streams push mobs on the platform floor). This design uses neither: mobs walk off 3x3 platforms through open trapdoors (pathfinding trick), layers stack, and a water funnel at the bottom carries them to the drop. The popular Shulkercraft 1.21 'All Mob Farm' was rejected because it is the n23 design with slabs.",
+   "icon": "bone",
+   "stage": "mid",
+   "short": "Dark tower: mobs walk off trapdoors and fall.",
+   "steps": [
+    "Tower up to y 250 over ocean",
+    "Hoppers, chest, water funnel at bottom",
+    "Nine 3x3 platforms per layer",
+    "Open trapdoors on every edge",
+    "Roof it, AFK below, swing sword"
+   ],
+   "pic": "pics/farm-208.jpg",
+   "replaces_core": "farm:23",
+   "core_why": "Works in 1.21; n23 scaffolding farm broke in 1.19.3."
+  },
+  {
+   "n": 209,
+   "id": "creeper-snow-golem",
+   "title": "Minecraft EASY Creeper XP Farm - 3100 Gunpowder Per Hour!",
+   "creator": "Shulkercraft (farm concept by MushoDen)",
+   "url": "https://www.youtube.com/watch?v=DKWMOcxU0CQ",
+   "date": "2023-06-22",
+   "edition": "Java",
+   "versions": "1.20+ (description now says 1.21+)",
+   "version_notes": "Description: 'Produces 3100 Gunpowder Per Hour and XP in Minecraft 1.21+'. Concept from MushoDen's 'Version 2.0' (2023-04-15); looting/XP kill system added by Shulkercraft. No cats, no redstone.",
+   "category": "farm",
+   "farm_type": "creeper (gunpowder)",
+   "outputs": [
+    {
+     "item": "gunpowder",
+     "rate_per_hour": 3099,
+     "conditions": "1 layer, 1-hour AFK test, Looting III sword with auto clicker, deep ocean with no land within 6 chunks",
+     "source": "title; video 0:00 and 1-hour test (~7:50)"
+    },
+    {
+     "item": "gunpowder",
+     "rate_per_hour": 5700,
+     "conditions": "2 layers",
+     "source": "video end screen 'build more layers'"
+    },
+    {
+     "item": "gunpowder",
+     "rate_per_hour": 8300,
+     "conditions": "3 layers",
+     "source": "video end screen 'build more layers'"
+    }
+   ],
+   "xp": "0 to level 53 in the 1-hour test (video intro and test)",
+   "materials_onscreen": {
+    "timestamp": "0:14",
+    "items": [
+     {
+      "item": "stone_bricks",
+      "count": 2100,
+      "note": "'Building Block' (any); icon looks like stone/stone bricks"
+     },
+     {
+      "item": "spruce_trapdoor",
+      "count": 852,
+      "note": "roof at the same height as the building blocks; any wood"
+     },
+     {
+      "item": "spruce_slab",
+      "count": 102,
+      "note": "hotbar tooltip 'Spruce Slab'"
+     },
+     {
+      "item": "scaffolding",
+      "count": 101,
+      "note": "access tower from the ocean"
+     },
+     {
+      "item": "stone_button",
+      "count": 96,
+      "note": "spawn-proofing (tooltip 'Stone Button')"
+     },
+     {
+      "item": "snow_block",
+      "count": 32,
+      "note": "for 16 snow golems"
+     },
+     {
+      "item": "torch",
+      "count": 22,
+      "note": "roof"
+     },
+     {
+      "item": "carved_pumpkin",
+      "count": 16,
+      "note": "for 16 snow golems"
+     },
+     {
+      "item": "glass",
+      "count": 16,
+      "note": "white stained glass in the build"
+     },
+     {
+      "item": "oak_fence",
+      "count": 13,
+      "note": "around the snow golems"
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "hopper",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "chest",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "white_carpet",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": ""
+     },
+     {
+      "item": "red_bed",
+      "count": 1,
+      "note": "any colour; in the hole in the 5x5 centre"
+     },
+     {
+      "item": "piston",
+      "count": 1,
+      "note": "pushes the fence down (temporary use)"
+     },
+     {
+      "item": "dirt",
+      "count": 64,
+      "note": "'Temporary Block'"
+     }
+    ],
+    "notes": "Read from an on-screen text list 'Items needed' at about 0:14-0:20 (1080p, three frames identical). Space needed: 35 x 35 x 28 (screen at 0:12). Exact item ids for 'Building Block', trapdoor wood and glass colour are inferred from the build footage."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Longer AFK sessions (over 1 hour)",
+     "items": [
+      {
+       "item": "emerald_block",
+       "count": 165,
+       "note": "beacon pyramid; any mineral block works (inferred)"
+      },
+      {
+       "item": "beacon",
+       "count": 1,
+       "note": "Regeneration + Strength"
+      }
+     ]
+    },
+    {
+     "name": "More layers (5700/h with 2, 8300/h with 3)",
+     "items": [
+      {
+       "item": "(repeat the spawning layer)",
+       "count": null
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "deep ocean with no land or other buildings within a 6-chunk radius; 35x35x28 space",
+    "mobs": [
+     "16 snow golems (built on site from snow blocks + carved pumpkins)"
+    ],
+    "stage": "mid",
+    "tools": [
+     "sword with Looting III (recommended: Sweeping Edge III, Looting III, Mending)",
+     "auto clicker for long AFK (optional, linked in description)"
+    ],
+    "hard_materials": [
+     {
+      "item": "spruce_trapdoor",
+      "count": 852,
+      "why_hard": "about 2560 planks = ~640 logs",
+      "farm_that_helps": "farm:5 tree farm"
+     },
+     {
+      "item": "stone_bricks",
+      "count": 2100,
+      "why_hard": "33 stacks of blocks",
+      "farm_that_helps": "farm:202 cobblestone farm"
+     },
+     {
+      "item": "snow_block",
+      "count": 32,
+      "why_hard": "snowy biome or snow golem farm",
+      "farm_that_helps": "farm:132 snow golem snow farm"
+     },
+     {
+      "item": "beacon",
+      "count": 1,
+      "why_hard": "optional; nether star + 165 emerald blocks",
+      "farm_that_helps": "farm:213 raid farm (emeralds), wither kill"
+     }
+    ]
+   },
+   "afk_spot": "crouch under the middle slab in the kill room and attack the creepers (auto clicker); stay within 1 hour unless beacon",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "https://wisehosting.com/dl?w=Creeper-XP-Farm"
+    }
+   ],
+   "gotchas": [
+    "Needs a deep ocean with no land or buildings within 6 chunks, or rates drop.",
+    "Trapdoor roof sits at the same height as the building blocks so only short mobs (creepers) fit under it (inferred from caption).",
+    "Fill the platform with slabs leaving a 2-block gap between each; buttons spawn-proof spots that should not spawn.",
+    "Hit each snow golem once during the build (on-screen step); keep them fenced in the centre.",
+    "Cover the roof and trapdoors with blocks and put torches on top so nothing spawns there.",
+    "Over 1 hour of AFK you take damage: build the beacon with Regeneration and Strength."
+   ],
+   "sources": [
+    "description",
+    "video 0:14 on-screen 'Items needed' list (work/209/msheet.jpg)",
+    "video contact sheets every 8 s (work/209/s01.jpg, s02.jpg); no narration (no subtitles)",
+    "original design: MushoDen 'Best Creeper Farm With Snow Golems - Without Cats & Redstone [Version 2.0]' https://www.youtube.com/watch?v=6n2e5G7kM0w (4300+/h with 4 layers) and v1 https://www.youtube.com/watch?v=ueU2jFMlRn8",
+    "same design: Shulkercraft 'Minecraft Creeper Farm - No Cats, No Redstone - 1700+ Gunpowder Per Hour!' https://www.youtube.com/watch?v=yOrWzLpWqeQ (v1 copy, 3.8M views); BlazedMC 'SIMPLE CREEPER Farm Minecraft Java 1.21+!' https://www.youtube.com/watch?v=KnrQlLVICY4 (snow golem platform)",
+    "different mechanism, not chosen: wattles 'MINECRAFT 1.21 CREEPER FARM' https://www.youtube.com/watch?v=aYp3C_0Qqdo (trapdoor platforms; overlaps slot 208's creeper-only option)"
+   ],
+   "confidence": "high for materials (clear text list) and rates (stated on screen from a 1-hour test); medium on exact block ids for generic 'building block'/'trapdoor'.",
+   "dup_notes": "Compared with n23 and n128 (general mob farms) and slot 208 (wattles trapdoor mob farm, which has a creeper-only option). This is a creeper-only design using snow golems in the centre as the lure and a trapdoor roof low enough that only creepers spawn; no cats, no redstone. Shulkercraft's earlier 1700/h video and BlazedMC's are copies of the same MushoDen design, so one record.",
+   "icon": "gunpowder",
+   "stage": "mid",
+   "short": "Snow golems lure creepers into a kill hole.",
+   "steps": [
+    "Find deep ocean, tower up",
+    "Collection chests and kill room",
+    "Snow golems fenced in the centre",
+    "Huge slab platform, trapdoor roof",
+    "AFK under the slab with Looting"
+   ],
+   "pic": "pics/farm-209.jpg",
+   "core_candidate": true,
+   "core_why": "Gunpowder for elytra rockets and TNT dupers."
+  },
+  {
+   "n": 210,
+   "id": "blaze-spawner-glass-cube",
+   "title": "Minecraft Blaze Farm - 1000+ Rods Per Hour - 1.20",
+   "creator": "Shulkercraft (design by EagleEye621)",
+   "url": "https://www.youtube.com/watch?v=q7mGXe5dCHA",
+   "date": "2020-09-24",
+   "edition": "Java",
+   "versions": "1.16+ (built in 1.16; description says works in 1.20+; same design shown working in 1.21 by RealJayden and UForced)",
+   "version_notes": "Description: 'Built in Minecraft 1.16 but works in 1.20+'. 1.21 evidence is indirect: RealJayden (2024-07, 'Minecraft 1.21+ Java & Bedrock', credits this video) and UForced (2024-11, 'Java 1.21', same materials) build the same design. Not re-tested by me.",
+   "category": "farm",
+   "farm_type": "blaze",
+   "outputs": [
+    {
+     "item": "blaze_rod",
+     "rate_per_hour": 1100,
+     "conditions": "1 spawner, Looting III sword, 556 rods in 30 min AFK (title says 1000+)",
+     "source": "video 5:52-6:20 text overlay + title"
+    },
+    {
+     "item": "blaze_rod",
+     "rate_per_hour": 1900,
+     "conditions": "2 spawners close together, joined by lava streams; player must be within 16 blocks of both spawners",
+     "source": "video 6:24-6:50 text overlay"
+    }
+   ],
+   "xp": "yes, blaze XP from player kills (amount not stated)",
+   "materials_onscreen": {
+    "timestamp": "0:27",
+    "items": [
+     {
+      "item": "white_stained_glass",
+      "count": 574,
+      "note": "'Glass'; hovered tooltip in the shulker box reads White Stained Glass; plain glass works the same (inferred)"
+     },
+     {
+      "item": "stone_bricks",
+      "count": 124,
+      "note": "'Building block'; icon looks like stone bricks/stone, any non-flammable block (inferred)"
+     },
+     {
+      "item": "vine",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "stone_slab",
+      "count": 5,
+      "note": "'Slab'; icon is a light grey stone slab"
+     },
+     {
+      "item": "hopper",
+      "count": 4,
+      "note": ""
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 2,
+      "note": "'Trapdoor'; wood type looks dark (spruce/dark oak?), any wooden trapdoor (inferred)"
+     },
+     {
+      "item": "chest",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "lava_bucket",
+      "count": 4,
+      "note": "one per corner of the glass platform"
+     },
+     {
+      "item": "dirt",
+      "count": 64,
+      "note": "'Temporary Blocks'"
+     }
+    ],
+    "notes": "Read from a text list beside an open shulker box at about 0:24-0:30 (frames f09/f10, identical). Matches the description's 'Items needed' list exactly. Not in the list but used: light sources (glowstone shown) to spawn-proof the spawner while building, removed at the end; a Looting III sword."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Second spawner (1900 rods/h)",
+     "items": [
+      {
+       "item": "(repeat the farm on a 2nd spawner)",
+       "count": null,
+       "note": "spawners must be very close; farms joined with lava streams lifted using stairs, blocks and signs (video 6:54-7:23)"
+      },
+      {
+       "item": "oak_sign",
+       "count": null,
+       "note": "count not stated"
+      },
+      {
+       "item": "lava_bucket",
+       "count": null,
+       "note": "count not stated"
+      }
+     ]
+    },
+    {
+     "name": "Same design, RealJayden 1.21 version (description list)",
+     "items": [
+      {
+       "item": "stone",
+       "count": 558,
+       "note": "'Solid non-burnable blocks'"
+      },
+      {
+       "item": "stone_slab",
+       "count": 152,
+       "note": "'Solid non-burnable slabs'"
+      },
+      {
+       "item": "soul_sand",
+       "count": 4
+      },
+      {
+       "item": "lava_bucket",
+       "count": 4
+      },
+      {
+       "item": "hopper",
+       "count": 4
+      },
+      {
+       "item": "chest",
+       "count": 2
+      },
+      {
+       "item": "glowstone",
+       "count": 5,
+       "note": "optional"
+      },
+      {
+       "item": "glass",
+       "count": 18,
+       "note": "optional"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "nether",
+    "location": "a blaze spawner in a Nether fortress, with room to clear a 13x13 area 7 blocks below it",
+    "mobs": [],
+    "stage": "after reaching the Nether and finding a fortress blaze spawner",
+    "tools": [
+     "Looting III sword recommended (video uses netherite Looting III, Sharpness V, Sweeping Edge III, Mending, Unbreaking III)",
+     "pickaxe",
+     "fire resistance potion helpful (inferred)"
+    ],
+    "hard_materials": [
+     {
+      "item": "white_stained_glass",
+      "count": 574,
+      "why_hard": "574 sand to smelt (plus dye for stained); lots of furnace time",
+      "farm_that_helps": "sand duper (farm:1) + furnace array"
+     },
+     {
+      "item": "hopper",
+      "count": 4,
+      "why_hard": "20 iron",
+      "farm_that_helps": "iron"
+     },
+     {
+      "item": "lava_bucket",
+      "count": 4,
+      "why_hard": "4 buckets (12 iron); lava is easy in the Nether",
+      "farm_that_helps": "iron"
+     }
+    ]
+   },
+   "afk_spot": "in the kill room under the glass cube, next to the hopper line (must be within 16 blocks of the spawner)",
+   "build_time": null,
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:33",
+     "title": "First you need to find a blaze spawner"
+    },
+    {
+     "t": "0:38",
+     "title": "And light up the area around the blaze spawner"
+    },
+    {
+     "t": "0:45",
+     "title": "Start by going down 7 blocks"
+    },
+    {
+     "t": "0:55",
+     "title": "And clear 13x13 area under the spawner"
+    },
+    {
+     "t": "1:06",
+     "title": "Go under the spawner"
+    },
+    {
+     "t": "1:12",
+     "title": "And make a 2x2 square under the spawner"
+    },
+    {
+     "t": "1:28",
+     "title": "From the side go out 3 more blocks"
+    },
+    {
+     "t": "1:44",
+     "title": "Connect the posts to make a square"
+    },
+    {
+     "t": "1:53",
+     "title": "And fill up the middle area"
+    },
+    {
+     "t": "2:01",
+     "title": "Make sure that the spawner is in one of the corners of the 2x2 square"
+    },
+    {
+     "t": "2:08",
+     "title": "And the height between the spawner and glass platform is exactly 6 blocks"
+    },
+    {
+     "t": "2:17",
+     "title": "Build a border around the glass out of building blocks"
+    },
+    {
+     "t": "2:30",
+     "title": "From the corner build a post 10 blocks high"
+    },
+    {
+     "t": "2:58",
+     "title": "Cover the roof with the glass"
+    },
+    {
+     "t": "3:24",
+     "title": "Make more room under the cube for the killing area"
+    },
+    {
+     "t": "3:48",
+     "title": "Under the hole place hoppers going into the chest"
+    },
+    {
+     "t": "3:57",
+     "title": "On top of the hoppers add slabs"
+    },
+    {
+     "t": "4:03",
+     "title": "Make a glass wall around the hoppers"
+    },
+    {
+     "t": "4:15",
+     "title": "And place trapdoors under the glass"
+    },
+    {
+     "t": "4:22",
+     "title": "Go inside the glass cube"
+    },
+    {
+     "t": "4:29",
+     "title": "Add vines on the walls inside the killing area"
+    },
+    {
+     "t": "4:51",
+     "title": "Remove the light sources around the spawner"
+    },
+    {
+     "t": "5:13",
+     "title": "In every corner add lava"
+    },
+    {
+     "t": "5:35",
+     "title": "And the Blaze Farm is done!"
+    },
+    {
+     "t": "5:43",
+     "title": "I recommend using a looting III sword to kill blazes"
+    },
+    {
+     "t": "5:52",
+     "title": "I went AFK for 30 minutes"
+    },
+    {
+     "t": "6:19",
+     "title": "To expand the Blaze Farm"
+    },
+    {
+     "t": "6:24",
+     "title": "You need to find 2 very close blaze spawners"
+    },
+    {
+     "t": "6:45",
+     "title": "And with 2 spawners you can get 1900 blaze rods per/hour"
+    },
+    {
+     "t": "6:54",
+     "title": "Quick tutorial on how to move blazes up using lava"
+    },
+    {
+     "t": "6:59",
+     "title": "Add stairs at the end of the lava stream"
+    },
+    {
+     "t": "7:04",
+     "title": "Behind the stairs place blocks"
+    },
+    {
+     "t": "7:09",
+     "title": "Make it a block taller from each side"
+    },
+    {
+     "t": "7:14",
+     "title": "And add signs on top of the lava stream"
+    },
+    {
+     "t": "7:23",
+     "title": "Place lava on top of the stairs"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "https://wisehosting.com/dl?w=Blaze-Farm"
+    }
+   ],
+   "gotchas": [
+    "Glass platform must be exactly 6 blocks below the spawner, and the spawner must sit over one corner of the 2x2 drop hole (chapters 2:01, 2:08).",
+    "Light up the spawner while building, then remove the light sources before adding lava (chapters 0:38, 4:51).",
+    "Spawners only run when a player is within 16 blocks (video 6:30 overlay), so AFK in the kill room.",
+    "Lava goes in the 4 corners of the platform; flowing lava pushes the blazes to the centre hole (inferred from video).",
+    "Slabs on top of the hoppers and a slab on top of the spawner (video 4:46).",
+    "No narration: the video is music plus on-screen captions, so there are no spoken details."
+   ],
+   "sources": [
+    "description (Items needed, 1.20+ note, designer credit)",
+    "video 0:24-0:30 frames (work/210/f09, f10)",
+    "video 4:46-6:55 frames (work/210/latesheet.jpg: 556 rods in 30 min, 1100/h, 1900/h with 2 spawners, 16-block rule)",
+    "auto-subtitles: only music, no speech",
+    "same design: RealJayden https://www.youtube.com/watch?v=SBl9OAaIbws (credits this video; soul sand/slab variant, 1.21+)",
+    "same design: UForced https://www.youtube.com/watch?v=p7zXpDbkb5A (same glass/vines/4 lava/5 slab/4 hopper list, Java 1.21)",
+    "same idea: bigbooty17 https://www.youtube.com/watch?v=zl9Ph0G3vJc ('Shoutout to Shulkercraft', 1000+/h)"
+   ],
+   "confidence": "high for materials (on-screen list = description) and rates (on-screen 30-min test); medium for 1.21 (stated by copies, not this video).",
+   "dup_notes": "Compared with n3 (Peer Pressure Fortress Farm, also gives blaze rods): n3 uses natural fortress spawning around a fortress; this one is a SPAWNER farm built around one blaze spawner, much smaller and cheaper, so a different mechanism. Not the dungeon spawner grinder (n127, overworld zombie/skeleton spawner). Among blaze spawner videos, RealJayden, UForced and bigbooty17 credit or copy this EagleEye621/Shulkercraft glass-cube design; kept one record. BlazedMC 'EASIEST BLAZE XP Farm 1.21' and Wattles' Bedrock farm not inspected in detail.",
+   "icon": "blaze_rod",
+   "stage": "mid",
+   "short": "Glass cube on a blaze spawner, 1100 rods/hour.",
+   "steps": [
+    "Find a fortress blaze spawner",
+    "Glass platform 6 blocks below",
+    "Glass cube walls and roof",
+    "Hopper kill room under the hole",
+    "Lava in the four corners",
+    "AFK with a Looting sword"
+   ],
+   "pic": "pics/farm-210.jpg",
+   "core_candidate": true,
+   "core_why": "Blaze rods for brewing and eyes of ender."
+  },
+  {
+   "n": 211,
+   "id": "enderman-endermite-one-hit",
+   "title": "Minecraft Enderman XP Farm 26.3+ - BEST DESIGN | Designed by iJevin",
+   "creator": "moretingz (original design by iJevin)",
+   "url": "https://www.youtube.com/watch?v=zYkOuRoV6V4",
+   "date": "2024-06-18",
+   "edition": "Java",
+   "versions": "1.16 - 26.3+ (description); title card says 1.16-1.21+",
+   "version_notes": "Description: 'Versions: 1.16 - 26.3+', Java yes, Bedrock unknown. The video title has been updated to 26.3+ by the creator. Caution from a different creator (bigbooty17, jn8C8uY3fHM description): 'As of 1.21.9 Mojang has introduced skylight into the end, this has reduced spawn rates', fixed on his farm by placing spawnable blocks along the platform path; whether this changes this farm's 4000/h is NOT verified.",
+   "category": "farm",
+   "farm_type": "enderman / xp",
+   "outputs": [
+    {
+     "item": "ender_pearl",
+     "rate_per_hour": 4000,
+     "conditions": "as stated, single player, one-hit kills (Looting level not stated)",
+     "source": "description + video 0:00 title card"
+    },
+    {
+     "item": "experience",
+     "rate_per_hour": null,
+     "conditions": "'level 0 to 30 in just 1 minute'",
+     "source": "description"
+    }
+   ],
+   "xp": "very high: level 0 to 30 in about 1 minute (description)",
+   "materials_onscreen": {
+    "timestamp": "0:20",
+    "items": [
+     {
+      "item": "smooth_stone",
+      "count": 1312,
+      "note": "'Building Blocks' (20 stacks + 32); icon looks like smooth stone; any non-endermen-pickable block (inferred)"
+     },
+     {
+      "item": "oak_leaves",
+      "count": 128,
+      "note": "2 stacks"
+     },
+     {
+      "item": "white_carpet",
+      "count": 128,
+      "note": "2 stacks"
+     },
+     {
+      "item": "dirt",
+      "count": 64,
+      "note": "'Temporary Blocks'"
+     },
+     {
+      "item": "smooth_stone_slab",
+      "count": 31,
+      "note": ""
+     },
+     {
+      "item": "hopper",
+      "count": 12,
+      "note": ""
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 8,
+      "note": "wood type looks like oak/birch"
+     },
+     {
+      "item": "dropper",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "redstone",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "observer",
+      "count": 2,
+      "note": ""
+     },
+     {
+      "item": "chain",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "lever",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "minecart",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "rail",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "name_tag",
+      "count": 1,
+      "note": "bring it already named (description)"
+     },
+     {
+      "item": "water_bucket",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "ender_pearl",
+      "count": 32,
+      "note": "two stacks of 16; thrown until an endermite spawns"
+     }
+    ],
+    "notes": "Read from a chest screen titled 'Enderman Farm' at about 0:20-0:22 (frame work/211/f02). Every count is clear and matches the description's materials list exactly (1312, 128, 128, 64, 31, 12, 8, 3, 3, 2, 1x6, 32+). Block type of the 1312 building blocks and the trapdoor wood are icon reads only."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Shulkercraft version of the same iJevin design (description list, 1.20+)",
+     "items": [
+      {
+       "item": "stone",
+       "count": 1414,
+       "note": "'Building blocks'"
+      },
+      {
+       "item": "white_carpet",
+       "count": 123
+      },
+      {
+       "item": "ladder",
+       "count": 64
+      },
+      {
+       "item": "hopper",
+       "count": 9
+      },
+      {
+       "item": "oak_leaves",
+       "count": 128
+      },
+      {
+       "item": "oak_trapdoor",
+       "count": 8
+      },
+      {
+       "item": "chest",
+       "count": 2
+      },
+      {
+       "item": "iron_bars",
+       "count": 1
+      },
+      {
+       "item": "name_tag",
+       "count": 1
+      },
+      {
+       "item": "minecart",
+       "count": 1
+      },
+      {
+       "item": "rail",
+       "count": 1
+      },
+      {
+       "item": "ender_pearl",
+       "count": 16
+      },
+      {
+       "item": "water_bucket",
+       "count": 1
+      },
+      {
+       "item": "lava_bucket",
+       "count": 1
+      },
+      {
+       "item": "dirt",
+       "count": 64,
+       "note": "temporary"
+      }
+     ]
+    },
+    {
+     "name": "moretingz older 'SIMPLE DESIGN' (2021, description list)",
+     "items": [
+      {
+       "item": "stone",
+       "count": 1344
+      },
+      {
+       "item": "oak_leaves",
+       "count": 128
+      },
+      {
+       "item": "white_carpet",
+       "count": 128
+      },
+      {
+       "item": "dirt",
+       "count": 64
+      },
+      {
+       "item": "ladder",
+       "count": 64
+      },
+      {
+       "item": "oak_fence",
+       "count": 32
+      },
+      {
+       "item": "ender_pearl",
+       "count": 16
+      },
+      {
+       "item": "hopper",
+       "count": 12
+      },
+      {
+       "item": "oak_trapdoor",
+       "count": 8
+      },
+      {
+       "item": "observer",
+       "count": 2
+      },
+      {
+       "item": "lava_bucket",
+       "count": 1
+      },
+      {
+       "item": "water_bucket",
+       "count": 1
+      },
+      {
+       "item": "dropper",
+       "count": 1
+      },
+      {
+       "item": "minecart",
+       "count": 1
+      },
+      {
+       "item": "rail",
+       "count": 1
+      },
+      {
+       "item": "lever",
+       "count": 1
+      },
+      {
+       "item": "iron_bars",
+       "count": 1
+      },
+      {
+       "item": "name_tag",
+       "count": 1
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "the_end",
+    "location": "in the End over the void, near end stone islands (inferred from footage; exact distance from the main island not stated, transcript unavailable)",
+    "mobs": [
+     "1 endermite spawned from a thrown ender pearl, name-tagged and kept in a minecart (endermites from spawn eggs do not attract endermen, per ilmango's note on the original endermite design)"
+    ],
+    "stage": "End access (after the Ender Dragon, inferred)",
+    "tools": [
+     "any sword works for the one-hit kill; Sharpness/Sweeping Edge/Looting help (inferred)",
+     "shears or Silk Touch for 128 leaves (inferred)"
+    ],
+    "hard_materials": [
+     {
+      "item": "smooth_stone",
+      "count": 1312,
+      "why_hard": "about 1300 cobblestone, smelted twice for smooth stone (any block works, inferred)",
+      "farm_that_helps": "cobblestone"
+     },
+     {
+      "item": "hopper",
+      "count": 12,
+      "why_hard": "60 iron",
+      "farm_that_helps": "iron"
+     },
+     {
+      "item": "name_tag",
+      "count": 1,
+      "why_hard": "found in loot, fishing, or bought from a master librarian",
+      "farm_that_helps": "AFK fishing / trading hall"
+     },
+     {
+      "item": "ender_pearl",
+      "count": 32,
+      "why_hard": "need about 32 pearls to get one endermite (5% chance per pearl)",
+      "farm_that_helps": "kill endermen by hand in the End first"
+     },
+     {
+      "item": "white_carpet",
+      "count": 128,
+      "why_hard": "86 wool",
+      "farm_that_helps": "wool (farm:4)"
+     },
+     {
+      "item": "observer",
+      "count": 2,
+      "why_hard": "needs Nether quartz",
+      "farm_that_helps": "Nether quartz mining"
+     }
+    ]
+   },
+   "afk_spot": "in the kill chamber at the bottom, where endermen drop in at one hit and pearls collect in hoppers (video ~7:45)",
+   "build_time": "under an hour (description); older versions said about 45 minutes",
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:20",
+     "title": "Materials"
+    },
+    {
+     "t": "0:33",
+     "title": "Tutorial"
+    },
+    {
+     "t": "7:38",
+     "title": "Important Details"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "https://discord.gg/moretingz (Discord downloads, not checked)"
+    }
+   ],
+   "gotchas": [
+    "Endermite must come from a thrown ender pearl; spawn-egg endermites do not aggro endermen (ilmango, original endermite farm description).",
+    "Bring the name tag already named; name the endermite and trap it in a minecart on a rail inside a dirt shaft (video 5:30-7:00 frames).",
+    "Intro shows a 'DO NOT DO THIS' wrong layer layout at about 0:24; follow the layer spacing exactly.",
+    "1.21.9+: skylight in the End reduced spawn rates on End platform farms (bigbooty17's note); not verified for this design.",
+    "Transcript could not be downloaded (YouTube HTTP 429), so spoken rates, AFK distance and build notes are not captured."
+   ],
+   "sources": [
+    "description (materials, versions 1.16-26.3+, 4000 pearls/h, 0-30 in 1 min, credit to iJevin)",
+    "video 0:20 frames (work/211/f02: chest 'Enderman Farm')",
+    "video 7:18-8:10 frames (work/211/dsheet.jpg: kill chamber, pearls in hoppers)",
+    "original design: iJevin, Hermitcraft 7 Ep. 50 https://www.youtube.com/watch?v=gkuyOoGaC8Y (2020-08-23)",
+    "same design: Shulkercraft https://www.youtube.com/watch?v=nh8voJScSbw ('Design by @iJevin', 14M views)",
+    "same design (older versions): moretingz https://www.youtube.com/watch?v=6s5GpWuguAM , https://www.youtube.com/watch?v=L1boIbsYMME , https://www.youtube.com/watch?v=cMop6v68_QM",
+    "1.21.9 skylight note: bigbooty17 https://www.youtube.com/watch?v=jn8C8uY3fHM description"
+   ],
+   "confidence": "high for materials (on-screen chest = description, all counts clear); medium for rates (creator's own claim, no transcript); low-medium for post-1.21.9 rates.",
+   "dup_notes": "No existing enderman farm in the list (n1-27, n101-142 checked; n15 shulker and n25 dragon trap are End builds but different mobs). Several different enderman mechanisms exist; I kept one: the endermite-lure + one-hit drop design by iJevin (2020), which most popular tutorials copy (Shulkercraft nh8voJScSbw, moretingz x4). Not chosen: ilmango/Methodzz 2017 endermite + sweeping edge farm (KW6qYDjdNac, older, needs Sweeping Edge III), DashPum4 no-endermite cramming farm (zgFMPbPcOQ0, uses player line of sight), bigbooty17 no-endermite farm (jn8C8uY3fHM), ilmango sculk enderman farm (16HfBV68Fc8). These are alternatives, not extra records.",
+   "icon": "ender_pearl",
+   "stage": "late",
+   "short": "End platform farm: 0-30 levels in a minute, pearls.",
+   "steps": [
+    "Platform over the void in End",
+    "Trapdoor holes drop endermen down",
+    "Leaves and carpet stop extra spawns",
+    "Name-tagged endermite in a minecart",
+    "One-hit endermen in kill room",
+    "Hoppers collect the pearls"
+   ],
+   "pic": "pics/farm-211.jpg",
+   "core_candidate": true,
+   "core_why": "Ender pearls and fast XP for mending/enchanting."
+  },
+  {
+   "n": 212,
+   "id": "melon-pumpkin-auto",
+   "title": "Java & Bedrock Automatic Pumpkin/Melon Farm in Minecraft 26.3+ (Tutorial)",
+   "creator": "Triloms",
+   "url": "https://www.youtube.com/watch?v=MqNOlEB-pZg",
+   "date": "2024-12-18",
+   "edition": "Java & Bedrock",
+   "versions": "1.21+ (description: works on Java 26.3+ and prior versions)",
+   "version_notes": "Description says Java 26.3 and earlier; Triloms website says Java & Bedrock 1.21+. The video shows a separate Bedrock step for placing the pistons ('a bit trickier in Bedrock edition', about 3:00). This is Triloms' improved remake of his 2023 video https://www.youtube.com/watch?v=epSlUaPdEWY (1.3M views, design credited there to NaMiature). Observer-on-stem harvesting has worked since 19w11a / 1.14 (ilmango).",
+   "category": "farm",
+   "farm_type": "melon / pumpkin",
+   "outputs": [
+    {
+     "item": "melon_slice",
+     "rate_per_hour": 1250,
+     "conditions": "all 40 spots planted with melon seeds; website says 'Melon Per Hour' (inferred to mean slices, since pistons break melon blocks into 3-7 slices)",
+     "source": "triloms.com farm page (linked in description)"
+    },
+    {
+     "item": "pumpkin",
+     "rate_per_hour": 250,
+     "conditions": "all 40 spots planted with pumpkin seeds",
+     "source": "triloms.com farm page (linked in description)"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": "0:12",
+    "items": [
+     {
+      "item": "smooth_stone",
+      "count": 192,
+      "note": "three stacks of 64; website: any other building block can replace it"
+     },
+     {
+      "item": "dirt",
+      "count": 80,
+      "note": "64 + 16; 9x9 field with a checkerboard of farmland and dirt"
+     },
+     {
+      "item": "glass",
+      "count": 76,
+      "note": "64 + 12; walls, optional (website)"
+     },
+     {
+      "item": "smooth_stone_slab",
+      "count": 1,
+      "note": "no number shown = 1; tooltip 'Smooth Stone Slab' in the build at about 0:40"
+     },
+     {
+      "item": "piston",
+      "count": 40,
+      "note": "normal pistons, facing down over the fruit spots"
+     },
+     {
+      "item": "observer",
+      "count": 40,
+      "note": "facing up between the pistons, watching the stems"
+     },
+     {
+      "item": "glowstone",
+      "count": 5,
+      "note": "sea lantern or shroomlight also fine (website)"
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": "one double chest"
+     },
+     {
+      "item": "hopper_minecart",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "hopper",
+      "count": 1,
+      "note": "unloading hopper under the chest"
+     },
+     {
+      "item": "cobblestone_stairs",
+      "count": 1,
+      "note": "waterlogged in the middle of the field"
+     },
+     {
+      "item": "water_bucket",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "rail",
+      "count": 81,
+      "note": "64 + 17 (website says 82)"
+     },
+     {
+      "item": "powered_rail",
+      "count": 24,
+      "note": "over redstone torches in trenches under the floor"
+     },
+     {
+      "item": "redstone",
+      "count": 41,
+      "note": "on top of the observers and the minecart stopper"
+     },
+     {
+      "item": "redstone_torch",
+      "count": 24,
+      "note": "website says 1; the video fills several trench holes with torches under the powered rails, so 24 matches the build (inferred)"
+     },
+     {
+      "item": "comparator",
+      "count": 1,
+      "note": "reads the hopper (tooltip 'Redstone Comparator' at about 0:28)"
+     },
+     {
+      "item": "iron_hoe",
+      "count": 1,
+      "note": "any hoe (website)"
+     },
+     {
+      "item": "melon_seeds",
+      "count": 40,
+      "note": "or 40 pumpkin seeds; the field takes 40 seeds of either"
+     }
+    ],
+    "notes": "Read from the 'MATERIALS' screen at 0:12-0:16 (1080p frame t2m02 plus zoomed crops); 20 slots, all counts clear. Cross-checked against the Triloms website list: same items, except website says 82 rail (video 81), 1 redstone torch (video 24), 192 'Building Block' (video smooth stone) and omits the smooth stone slab. The hoe icon has a light grey head, read as iron hoe; the seeds icon is dark, read as melon seeds."
+   },
+   "materials_litematic": null,
+   "materials_variants": [
+    {
+     "name": "Original 2023 version (epSlUaPdEWY, design by NaMiature)",
+     "items": [
+      {
+       "item": "smooth_stone",
+       "count": 149,
+       "note": "64+64+21"
+      },
+      {
+       "item": "glass",
+       "count": 76,
+       "note": "64+12 (12 or 13, small digits)"
+      },
+      {
+       "item": "dirt",
+       "count": 80
+      },
+      {
+       "item": "rail",
+       "count": 82
+      },
+      {
+       "item": "powered_rail",
+       "count": 24
+      },
+      {
+       "item": "redstone",
+       "count": 41
+      },
+      {
+       "item": "redstone_torch",
+       "count": 19
+      },
+      {
+       "item": "comparator",
+       "count": 1
+      },
+      {
+       "item": "glowstone",
+       "count": 5
+      },
+      {
+       "item": "piston",
+       "count": 40
+      },
+      {
+       "item": "observer",
+       "count": 40
+      },
+      {
+       "item": "melon_seeds",
+       "count": 20
+      },
+      {
+       "item": "pumpkin_seeds",
+       "count": 20
+      },
+      {
+       "item": "chest",
+       "count": 2
+      },
+      {
+       "item": "hopper",
+       "count": 1
+      },
+      {
+       "item": "cobblestone_stairs",
+       "count": 1,
+       "note": "no hopper minecart shown in that list, but the build uses one (inferred)"
+      }
+     ]
+    },
+    {
+     "name": "Bone meal add-on",
+     "items": [
+      {
+       "item": "composter",
+       "count": 1,
+       "note": "at the end of the storage line turns melons/pumpkins into bone meal (website)"
+      }
+     ]
+    }
+   ],
+   "requires": {
+    "dimension": "overworld",
+    "location": "anywhere; 10x10 hole about 2 deep plus a short staircase/trench to the chest; can be fully underground thanks to the glowstone (website)",
+    "mobs": [],
+    "stage": "mid (after the Nether: observers and the comparator need quartz, glowstone is from the Nether)",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": [
+     {
+      "item": "observer",
+      "count": 40,
+      "why_hard": "40 nether quartz + 80 redstone",
+      "farm_that_helps": "Nether quartz mining; gold/XP farm area (farm:19)"
+     },
+     {
+      "item": "piston",
+      "count": 40,
+      "why_hard": "40 iron",
+      "farm_that_helps": "iron farm (farm:27 / farm:201)"
+     },
+     {
+      "item": "rail",
+      "count": 81,
+      "why_hard": "about 36 iron",
+      "farm_that_helps": "iron farm"
+     },
+     {
+      "item": "powered_rail",
+      "count": 24,
+      "why_hard": "24 gold ingots",
+      "farm_that_helps": "farm:19 gold farm"
+     },
+     {
+      "item": "glowstone",
+      "count": 5,
+      "why_hard": "Nether only",
+      "farm_that_helps": "none needed (5 blocks)"
+     }
+    ]
+   },
+   "afk_spot": "anywhere within simulation distance (crops only grow near a player); fully automatic, items go to the double chest",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "gotchas": [
+    "Checkerboard: hoe every other dirt block; stems go on farmland, fruit grows on the plain dirt next to them.",
+    "Glowstone must go in the exact spots shown, they double as light and as part of the floor pattern.",
+    "Pistons face down over the plain dirt (fruit) spots; observers face up between them watching the stems; redstone dust on top of every observer.",
+    "Hopper minecart loops on rails under the field (powered rails over redstone torches), then stops over the unloading hopper; the comparator holds it until it is empty.",
+    "Bedrock: pistons cannot be placed facing down from below the same way; the video shows a workaround (dig a hole next to the farm and push them in).",
+    "Not expandable (website). For far bigger output, the Shulkercraft slime-block sweeper design is a different mechanism (see sources)."
+   ],
+   "sources": [
+    "description; triloms.com/easy-automatic-melon-pumpkin-farm-in-minecraft-1-21 (rates + materials list)",
+    "video 0:12-0:16 materials frames (work/212/t2m02, t2zoom2)",
+    "earlier version, same design: Triloms https://www.youtube.com/watch?v=epSlUaPdEWY (2023, credits NaMiature; materials frame at 0:10)",
+    "same mechanism family (observer on stem + piston): ilmango https://www.youtube.com/watch?v=z3Y_cljLdj8 (1.14, the original efficient observer-per-stem farm)",
+    "same mechanism, Taffy https://www.youtube.com/watch?v=Z7tYdOu6mLg (credits another original)",
+    "not chosen, different mechanism (clock-driven slime-block piston sweeper, 6500 slices/h, needs 18 slime blocks + 66 packed ice + 9 obsidian): Shulkercraft https://www.youtube.com/watch?v=vetJOwcNOnw, designed by Fluffy Socks"
+   ],
+   "confidence": "high for materials (clear materials screen, cross-checked with the creator's website); medium for rates (website only, not shown measured in video).",
+   "dup_notes": "Compared with n105 'Pumpkin farm (rows)' and n106 'Melon farm (rows)', manual rows you break by hand. This one harvests itself (observers trigger pistons when fruit grows) and collects with a hopper minecart into a chest, so it is AFK. No ianxofour record (n1-27) farms melons or pumpkins.",
+   "icon": "melon_slice",
+   "stage": "mid",
+   "short": "Observers fire pistons on grown melons; minecart collects.",
+   "steps": [
+    "Dig a 10x10 pit, rails underneath",
+    "Checkerboard dirt and farmland, plant seeds",
+    "Pistons down over fruit spots",
+    "Observers on stems, redstone on top",
+    "Add hopper minecart and double chest"
+   ],
+   "pic": "pics/farm-212.jpg",
+   "core_candidate": false,
+   "core_why": "Melons/pumpkins mostly for farmer trades; not core."
+  },
+  {
+   "n": 213,
+   "id": "raid-whole-wave-121",
+   "title": "Three types of raid farms (Java 1.21.2 - 26.3)",
+   "creator": "Mag Plum",
+   "url": "https://www.youtube.com/watch?v=ntYVH8cUMuU",
+   "date": "2025-01-25",
+   "edition": "Java",
+   "versions": "1.21.2 - 26.3 (description 'Tested on')",
+   "version_notes": "Built for the 1.21.2+ raid rules (video 14:47): raid mob spawn attempts now happen in a cylinder of radius 104 and height 192 (97 below to 95 above the raid centre) instead of radius 64 with infinite height, and the no-delay wave spawn needs the spawn point to depend on the remaining cooldown. That is why the old ocean stacking farms (n13, n20, n22) stop working, and why this farm can be built at high altitude in any biome (or underground). Raids are started by drinking an ominous bottle (Bad Omen -> Raid Omen, 30 s wait). Record covers the 'whole wave' type (the video also shows 'instant mini' and 'wave by wave' types, and the schematic zip has 1D and self-sustaining variants).",
+   "category": "farm",
+   "farm_type": "raid",
+   "outputs": [
+    {
+     "item": "emerald",
+     "rate_per_hour": 3340,
+     "conditions": "whole wave type; one raid every ~1 min 33 s (including 30 s raid-omen wait and victory cooldown)",
+     "source": "description"
+    },
+    {
+     "item": "redstone",
+     "rate_per_hour": 2850,
+     "conditions": "whole wave type",
+     "source": "description"
+    },
+    {
+     "item": "totem_of_undying",
+     "rate_per_hour": 303,
+     "conditions": "whole wave type",
+     "source": "description"
+    },
+    {
+     "item": "emerald",
+     "rate_per_hour": 4200,
+     "conditions": "Shulkercraft's test: level 2-4 ominous bottles, diamond sword Sharpness V + Looting III + Sweeping Edge III, 1 min 8 s per cycle; also 2700 redstone, 310 totems, 319 gunpowder, 36 ominous bottles back, ~1850 other items (8,400 items/h total)",
+     "source": "Shulkercraft https://www.youtube.com/watch?v=XpcFrscYFzU 5:24-5:50"
+    },
+    {
+     "item": "ominous_bottle",
+     "rate_per_hour": 36,
+     "conditions": "returned by the farm, but it uses ~52/h so it is NOT self-sustaining; designer: less than one bottle per raid on average",
+     "source": "Shulkercraft 5:44-6:03; video 16:23"
+    },
+    {
+     "item": "gunpowder",
+     "rate_per_hour": 319,
+     "conditions": "Shulkercraft test",
+     "source": "Shulkercraft 5:44"
+    }
+   ],
+   "xp": "yes: level 0 to 86 in one hour (Shulkercraft test)",
+   "materials_onscreen": {
+    "timestamp": "4:33",
+    "items": [
+     {
+      "item": "dirt",
+      "count": 320,
+      "note": "5 stacks; building block, other blocks OK, but put slabs/paths where dirt paths were used to stop spawns (spoken 4:43)"
+     },
+     {
+      "item": "composter",
+      "count": 1,
+      "note": "the raid centre; its position relative to the spawning platform is critical"
+     },
+     {
+      "item": "oak_boat",
+      "count": 1,
+      "note": "to carry the villager up the pillar"
+     },
+     {
+      "item": "lead",
+      "count": 1,
+      "note": "tie the boat to a fence at the top"
+     },
+     {
+      "item": "oak_fence",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "lava_bucket",
+      "count": 2,
+      "note": "poured down to cast 2 cobblestone shafts (drop shaft + elevator); the litematic's 648 cobblestone comes from these"
+     },
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": ""
+     },
+     {
+      "item": "piston",
+      "count": 6,
+      "note": "6 shown (stack number '6'); push raiders off the platform"
+     },
+     {
+      "item": "calibrated_sculk_sensor",
+      "count": 1,
+      "note": "a regular sculk sensor can stop the farm or make it slower (spoken 4:35); mind its no-output side"
+     },
+     {
+      "item": "redstone",
+      "count": 16,
+      "note": ""
+     },
+     {
+      "item": "obsidian",
+      "count": 12,
+      "note": "5x5 Nether portal (corners omitted) that sends ravagers into lava"
+     },
+     {
+      "item": "flint_and_steel",
+      "count": 1,
+      "note": "icon only"
+     },
+     {
+      "item": "hopper",
+      "count": 3,
+      "note": ""
+     },
+     {
+      "item": "chest",
+      "count": 2,
+      "note": ""
+     },
+     {
+      "item": "oak_trapdoor",
+      "count": 1,
+      "note": "icon looks thin; litematic confirms oak_trapdoor"
+     },
+     {
+      "item": "armor_stand",
+      "count": 1,
+      "note": "you hit it to sweep-attack the raiders"
+     },
+     {
+      "item": "cobblestone_stairs",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "cobblestone_slab",
+      "count": 1,
+      "note": ""
+     },
+     {
+      "item": "soul_sand",
+      "count": 1,
+      "note": "bubble elevator"
+     },
+     {
+      "item": "kelp",
+      "count": 1,
+      "note": "for the water elevator"
+     },
+     {
+      "item": "bone_meal",
+      "count": 192,
+      "note": "3 stacks, for growing the kelp in the elevator; 3 stacks of kelp work instead (spoken 4:53)"
+     },
+     {
+      "item": "oak_sign",
+      "count": 4,
+      "note": "litematic shows 2"
+     }
+    ],
+    "notes": "Read from a 'Material list' chest graphic (frames f03-f12 at 4:33-5:00, identical; f05 read at full size). No tooltips except 'Obsidian' and 'Bone Meal' seen later in his chest (f14/f15). Counts cross-checked against the designer's own litematic (whole wave step1 + step2): pistons 6, redstone 16, obsidian 12, hoppers 3, chests 2, calibrated sculk sensor 1 all match. Not in the list but needed: 1 villager (farmer at the composter), ominous bottles to run it, a good sword."
+   },
+   "materials_litematic": {
+    "file": "MagPlum schematic zip https://drive.google.com/file/d/11Wiho8F-seWMA8ksjiPD8xFPUrFdNPkM -> '03.whole wave raid farm step1' + '04.whole wave raid farm step2 (Java 1.21.2+)' (counted with litecount.py)",
+    "items": {
+     "cobblestone": 648,
+     "dirt": 329,
+     "dirt_path": 43,
+     "redstone": 16,
+     "obsidian": 12,
+     "piston": 6,
+     "hopper": 3,
+     "chest": 2,
+     "oak_sign": 2,
+     "lava_bucket": 2,
+     "composter": 2,
+     "cobblestone_slab": 1,
+     "soul_sand": 1,
+     "cobblestone_stairs": 1,
+     "oak_trapdoor": 1,
+     "calibrated_sculk_sensor": 1
+    },
+    "entities": {
+     "villager": 1,
+     "armor_stand": 1
+    },
+    "note": "step1 and step2 overlap (step1 = dirt pillar, composter, villager, lava), so composter/dirt are double counted; cobblestone is cast from lava, not placed. Water and kelp not counted by the schematic."
+   },
+   "materials_variants": [
+    {
+     "name": "Instant mini type (fewer materials, wait each wave, vexes spawn; needs Sweeping Edge III)",
+     "items": [],
+     "note": "schematic 01 in the zip"
+    },
+    {
+     "name": "Wave by wave type (no vex: raiders take fall damage and die in one hit)",
+     "items": [],
+     "note": "schematic 02"
+    },
+    {
+     "name": "Tripwire or boat-and-ice spawning platform instead of the calibrated sculk sensor (less reliable, easier materials)",
+     "items": [],
+     "note": "schematics 05/06"
+    },
+    {
+     "name": "Whole wave 1D (no portal) and self-sustaining versions (1.21.2-1.21.4 and 1.21.5+)",
+     "items": [],
+     "note": "schematics 07-10; not covered in the video"
+    },
+    {
+     "name": "Build on top of an ominous bottle farm (designer's advice) so the bottle farm runs while you raid",
+     "items": []
+    }
+   ],
+   "requires": {
+    "dimension": "overworld + a Nether portal (ravagers go through it into lava in the Nether)",
+    "location": "anywhere, high up (pillar to about Y 147-277 in the video) so raiders can't spawn elsewhere; over deep ocean is easiest. Keep the composter-to-platform offset exactly as built (raid centre 97 blocks above the spawn platform).",
+    "mobs": [
+     "1 villager (farmer linked to the composter), carried up the pillar in a boat"
+    ],
+    "stage": "mid-late (needs Nether portal, an ancient-city sculk sensor, and an enchanted sword)",
+    "tools": [
+     "diamond sword with Sharpness V, Looting III and Sweeping Edge III (Shulkercraft's setup; designer: Sweeping III needed for the mini type)",
+     "shovel (dirt paths)",
+     "ominous bottles, level 2-4 (Shulkercraft)"
+    ],
+    "hard_materials": [
+     {
+      "item": "ominous_bottle",
+      "count": null,
+      "why_hard": "one per raid, ~52/h; the farm gives back ~36/h",
+      "farm_that_helps": "ominous bottle farm / outpost captains / ominous vaults"
+     },
+     {
+      "item": "calibrated_sculk_sensor",
+      "count": 1,
+      "why_hard": "sculk sensor only from the deep dark / ancient city (needs Silk Touch, inferred) + 3 amethyst shards from a geode",
+      "farm_that_helps": "none; one trip to an ancient city"
+     },
+     {
+      "item": "obsidian",
+      "count": 12,
+      "why_hard": "diamond pickaxe or lava casting",
+      "farm_that_helps": "obsidian farm (n8)"
+     },
+     {
+      "item": "bone_meal",
+      "count": 192,
+      "why_hard": "64 bones",
+      "farm_that_helps": "hostile mob farm (n208) or composter (n131); or use 3 stacks of kelp"
+     }
+    ]
+   },
+   "afk_spot": "not AFK: drink a bottle, ride the bubble elevator up, drop into the water at the kill spot, hit the armor stand, repeat after each raid (Shulkercraft 4:53-5:21)",
+   "build_time": "about 35 minutes (Shulkercraft's comparison)",
+   "chapters": [
+    {
+     "t": "0:00",
+     "title": "Intro"
+    },
+    {
+     "t": "0:34",
+     "title": "Instant mini type demo"
+    },
+    {
+     "t": "2:02",
+     "title": "Wave by wave type demo"
+    },
+    {
+     "t": "3:08",
+     "title": "Whole wave type demo"
+    },
+    {
+     "t": "4:29",
+     "title": "Whole wave type construction"
+    },
+    {
+     "t": "14:44",
+     "title": "Principle of the factory"
+    },
+    {
+     "t": "17:25",
+     "title": "Outro"
+    }
+   ],
+   "downloads": [
+    {
+     "kind": "world",
+     "url": "https://drive.google.com/file/d/1yuiqHgGl3TpqqIYSTYyknXitFTiFID8P"
+    },
+    {
+     "kind": "litematic",
+     "url": "https://drive.google.com/file/d/11Wiho8F-seWMA8ksjiPD8xFPUrFdNPkM"
+    },
+    {
+     "kind": "image",
+     "url": "https://drive.google.com/file/d/1L1pOCY2Qk13a62X2x1VpWpHA5fINlJCW (boat spot for Hero of the Village)"
+    }
+   ],
+   "gotchas": [
+    "Don't move the composter or spawning platform: the composter is the raid centre and must sit 97 blocks above the platform.",
+    "Use a calibrated sculk sensor; a regular one can stop the farm or slow it. It has one side with no output: install it the right way.",
+    "Shovel dirt into paths / use slabs wherever temporary dirt was, so mobs don't spawn.",
+    "The villager must stay a farmer linked to that composter.",
+    "Pour water on the lava shafts only after the lava has flowed all the way down.",
+    "Less than one ominous bottle comes back per raid: build it on top of an ominous bottle farm (match the AFK spots).",
+    "For Hero of the Village, place a boat at the marked spot so a falling pillager boards it (description image).",
+    "Instant mini type spawns vexes; dangerous with weak armour.",
+    "Pre-1.21.2 stacking/ocean raid farms (n13, n20, n22) don't work in these versions."
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=ntYVH8cUMuU description + auto-subtitles",
+    "video 4:33 frames f03-f12 (material list graphic)",
+    "designer's litematic zip (counted)",
+    "Shulkercraft '4 Raid Farms WORTH Building in Minecraft 1.21.2+' https://www.youtube.com/watch?v=XpcFrscYFzU (tested rates; recommends this Mag Plum farm for early game)",
+    "mechanics reference: Scorpio https://youtu.be/COxEcP-wKj0 (not watched)",
+    "different designs seen and not used: BasicRedstone easiest raid farm https://www.youtube.com/watch?v=p-b1EmbZ7QE (~1,700 items/h, copied by Voltrox https://www.youtube.com/watch?v=0-wLpMFS5Aw); Tankcat self-sustaining farm via Shulkercraft https://www.youtube.com/watch?v=9ILNpAJhnns (22,000 items/h, 3 h build); 'Advanced' farm https://youtu.be/9umfBPmBlfc; Rays Works auto raid farm https://www.youtube.com/watch?v=Oq47modgU6s; GOOZWACK https://www.youtube.com/watch?v=ySYFguIf3AM; TheySix https://www.youtube.com/watch?v=pfVYmMo1dk4; wattles https://www.youtube.com/watch?v=z2LF60N9f0o (2023 design, claims 1.21 but pre-1.21.2)"
+   ],
+   "confidence": "high for materials (graphic list matches the designer's own litematic item for item) and medium-high for rates (designer's description; Shulkercraft's independent test is higher, with Looting III). Stage/milestone reasoned.",
+   "dup_notes": "Compared with n13 (ianxofour stacking raid farm, 1.16-1.20), n20 (raid captain bank add-on) and n22 (instant AFK raid farm, 1.16-1.20): all three are ocean designs built on the pre-1.21.2 spawn rules (radius 64, infinite height) and are marked as NOT working in 1.21. This one uses the 1.21.2+ spawn cylinder (radius 104, 97 below the centre), a calibrated-sculk-sensor push platform, a Nether-portal ravager disposal and ominous bottles to start raids, so it is a different mechanism. Also different from trick:bad-omen-raid (a manual raid at a village) and trick:hero-of-village. Chosen over the bigger Tankcat farm (3 h build) because Shulkercraft calls it the simple, reliable early-game pick and it has a full material list and schematic.",
+   "icon": "emerald",
+   "stage": "mid",
+   "short": "1.21.2+ raid farm: emeralds, totems, redstone per ominous bottle.",
+   "steps": [
+    "Pillar up with villager in a boat",
+    "Composter 97 blocks above spawn platform",
+    "Sensor-and-piston platform, portal for ravagers",
+    "Cobble shafts: mob drop and elevator",
+    "Drink ominous bottle, hit armor stand"
+   ],
+   "pic": "pics/farm-213.jpg",
+   "replaces_core": "farm:22",
+   "core_why": "Works in 1.21.2+; n22 raid farm stops at 1.20."
   }
  ]
 }
