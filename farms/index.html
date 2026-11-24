@@ -87,7 +87,7 @@
 <body>
   <div class="wrap">
     <nav class="bar top"><a href="../">HORSES</a><a class="on" href="./">FARMS</a></nav>
-    <div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button></div>
+    <div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button><button data-m="chart">CHART</button></div>
     <div class="tools">
       <input class="search" id="q" placeholder="Search" autocomplete="off">
       <div class="stages" id="stages"><button data-s="all" class="on">All</button><button data-s="early">Early</button><button data-s="mid">Mid</button><button data-s="late">Late</button></div>
@@ -96,6 +96,7 @@
       <div class="grid" id="grid"><div class="muted">Loading…</div></div>
       <div class="panel" id="detail"><div class="muted">Pick one.</div></div>
     </div>
+    <div id="chart" hidden></div>
   </div>
 <script>
 const $ = id => document.getElementById(id);
@@ -113,8 +114,8 @@ const icon = (s, cls = '') => { const id = itemId(s); return id ? `<img class="i
 const chip = (item, count, extra) => `<span class="it" title="${esc(niceName(item))}">${icon(item)}${count != null && count !== '' ? `<b>${esc(count)}</b>` : ''}<span class="t">${esc(niceName(item))}${extra ? ' ' + esc(extra) : ''}</span></span>`;
 
 // ---- data ----
-let FARMS = [], TRICKS = [], TRADES = null, PLAN = {};
-let MODE = 'farms', STAGE = 'all', SEL = null, MORE = false;
+let FARMS = [], TRICKS = [], TRADES = null, PLAN = {}, MILESTONES = [];
+let MODE = 'farms', STAGE = 'all', SEL = null, MORE = false, FROM_CHART = false;
 const key = e => e.n != null ? 'farm:' + e.n : 'trick:' + e.id;
 const plan = e => PLAN[key(e)] || {};
 function stageOf(e) {
@@ -223,6 +224,9 @@ function tradeDetail(p, q) {
 function render() {
   const q = $('q').value.trim().toLowerCase().replace(/_/g, ' ');
   $('stages').style.display = MODE === 'trades' ? 'none' : '';
+  $('chart').hidden = MODE !== 'chart';
+  document.querySelector('.main').style.display = MODE === 'chart' ? 'none' : '';
+  if (MODE === 'chart') { if (window.drawChart) window.drawChart(); return; }
   if (MODE === 'trades') {
     const gs = tradeGroups().filter(p => matches(p, q));
     $('grid').innerHTML = gs.map(p => `<button class="card ${SEL === 'tr:' + p.id ? 'on' : ''}" data-k="tr:${esc(p.id)}"><span class="nm">${icon(p.icon, 'l')}<span>${esc(p.name)}</span></span></button>`).join('') || '<div class="muted">No match.</div>';
@@ -240,10 +244,21 @@ function render() {
   $('detail').innerHTML = cur ? detail(cur) : '';
 }
 function openDetail(open) { $('detail').classList.toggle('open', open); if (open) $('detail').scrollTop = 0; }
+const setTab = m => { MODE = m; document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x.dataset.m === m)); };
+// from the CHART tab: open one farm or trick in its own tab (BACK on a phone returns to the chart)
+function openEntry(k) {
+  if (!byKey(k)) return;
+  setTab(k.startsWith('farm:') ? 'farms' : 'tricks');
+  STAGE = 'all'; document.querySelectorAll('#stages button').forEach(x => x.classList.toggle('on', x.dataset.s === 'all'));
+  $('q').value = ''; SEL = k; MORE = false; backStack.length = 0; FROM_CHART = true;
+  render();
+  const c = document.querySelector('#grid .card.on'); if (c) c.scrollIntoView({ block: 'nearest' });
+  if (!WIDE()) openDetail(true);
+}
 
 $('tabs').addEventListener('click', e => {
   const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === MODE) return;
-  MODE = b.dataset.m; SEL = null; MORE = false; $('q').value = '';
+  MODE = b.dataset.m; SEL = null; MORE = false; FROM_CHART = false; $('q').value = '';
   document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x === b));
   openDetail(false); render();
 });
@@ -257,7 +272,12 @@ $('grid').addEventListener('click', e => {
 });
 const backStack = [];
 $('detail').addEventListener('click', e => {
-  if (e.target.closest('#back')) { const prev = backStack.pop(); if (prev) { SEL = prev; render(); } else openDetail(false); return; }
+  if (e.target.closest('#back')) {
+    const prev = backStack.pop();
+    if (prev) { SEL = prev; render(); }
+    else { openDetail(false); if (FROM_CHART) { FROM_CHART = false; setTab('chart'); render(); } }
+    return;
+  }
   if (e.target.closest('#more')) { MORE = !MORE; const y = $('detail').scrollTop; render(); $('detail').scrollTop = y; return; }
   const g = e.target.closest('[data-go]');
   if (g && byKey(g.dataset.go)) {
@@ -272,10 +292,12 @@ $('q').addEventListener('input', render);
 let lastWide = WIDE(); addEventListener('resize', () => { if (WIDE() !== lastWide) { lastWide = WIDE(); render(); } });
 
 const get = (u, d) => fetch(u, { cache: 'no-cache' }).then(r => r.ok ? r.json() : d).catch(() => d);
-Promise.all([get('farms.json', { farms: [] }), get('tricks.json', { tricks: [] }), get('trades.json', null), get('plan.json', { entries: {} })]).then(([f, t, tr, p]) => {
-  FARMS = f.farms || []; TRICKS = t.tricks || []; TRADES = tr; PLAN = (p && p.entries) || {};
+const planUrl = /^[\w.-]+\.json$/.test(new URLSearchParams(location.search).get('plan') || '') ? new URLSearchParams(location.search).get('plan') : 'plan.json'; // ?plan=plan.sample.json for testing
+Promise.all([get('farms.json', { farms: [] }), get('tricks.json', { tricks: [] }), get('trades.json', null), get(planUrl, { entries: {} })]).then(([f, t, tr, p]) => {
+  FARMS = f.farms || []; TRICKS = t.tricks || []; TRADES = tr; PLAN = (p && p.entries) || {}; MILESTONES = (p && p.milestones) || [];
   render();
 });
 </script>
+<script type="module" src="chart.js"></script>
 </body>
 </html>

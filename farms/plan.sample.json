@@ -1,0 +1,1942 @@
+{
+ "milestones": [
+  {
+   "id": "deep-mining",
+   "name": "Deep mining",
+   "icon": "diamond_pickaxe",
+   "short": "Iron gear, diamonds, redstone, lapis"
+  },
+  {
+   "id": "nether",
+   "name": "Nether",
+   "icon": "obsidian",
+   "short": "Portal built, fortress found"
+  },
+  {
+   "id": "end",
+   "name": "Beat the game",
+   "icon": "elytra",
+   "short": "Dragon dead, elytra, shulkers"
+  }
+ ],
+ "entries": {
+  "farm:1": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "sand",
+   "short": "Minecraft Elegance: Instant Concrete Factory (Sand",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:mlg-water-bucket",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:2": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "sand",
+   "short": "Minecraft Elegance: Practical Concrete Factory (Sa",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:3": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "wither_skeleton_skull",
+   "short": "Minecraft Elegance: Peer Pressure Fortress Farm (J",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:117",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:4": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "wool",
+   "short": "Minecraft Elegance: Cheap Sheep Wool Farm (Java 1.",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:117",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:5": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "cherry_log",
+   "short": "Minecraft Elegance: Versatile Tree Farm (Universal",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:6": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "chest",
+   "short": "Minecraft Elegance: Instant Lazy Mob Switch (Java ",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:4",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:7": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "copper_ingot",
+   "short": "Minecraft Elegance: Next Generation Copper Farm (J",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:127",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:8": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "obsidian",
+   "short": "Minecraft Elegance: Instant Obsidian Farm (32k/hr,",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:9": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "villager_trades",
+   "short": "Minecraft Elegance: Voidless Void Trading (Java 1.",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:sorting-system",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:10": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ghast_tear",
+   "short": "Minecraft Elegance: Looting Ghast Farms (up to 720",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:mlg-water-bucket",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:11": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "wither_rose",
+   "short": "Minecraft Elegance: Instant Wither Rose Farm (2900",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:18",
+     "rating": 1,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:1",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:12": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ender_pearl",
+   "short": "Minecraft Elegance: Instant Bartering Farm Farm (8",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:fire-res-brewing",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:13": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "emerald",
+   "short": "Minecraft Elegance: Practical Stacking Raid Farm (",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:126",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:14": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "experience",
+   "short": "Minecraft Elegance: Instant Guardian XP Farm, No D",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:109",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:15": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "shulker_shell",
+   "short": "Minecraft Elegance: Instant Shulker Farm (\"Methuse",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:seed-map-planning",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:16": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "honey_bottle",
+   "short": "Minecraft Elegance: Next-Generation Honey Farms (J",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:3",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:17": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "wither_skeleton_skull",
+   "short": "Minecraft Elegance: Instant Wither Skeleton Farm, ",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:107",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:104",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:18": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "slime_ball",
+   "short": "Minecraft Elegance: Looting Slime Farms, 6000 dph ",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:124",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:19": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "gold_block",
+   "short": "Minecraft Elegance: Instant Gold XP Farm, 360 gold",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:18",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:125",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:20": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "chest",
+   "short": "Minecraft Elegance: Raid Captain Bank, an upgrade ",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:21": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "chest",
+   "short": "Minecraft Elegance: Superfast overworld exploratio",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:8",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:22": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "emerald",
+   "short": "Minecraft Elegance: Instant AFK Raid Farm, 3000+ e",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:23": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "gunpowder",
+   "short": "Minecraft Elegance: Instant Mob Farm with Scaffold",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:5",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:24": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "villager",
+   "short": "Minecraft Elegance: Instant Trading Hall with Vill",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:134",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:25": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "dragon_egg",
+   "short": "Minecraft Elegance: Ender Dragon Death Trap - Simp",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:26": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "trident",
+   "short": "Minecraft Elegance: Instant Trident Farm (Java 1.1",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:mlg-water-bucket",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:27": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "iron_ingot",
+   "short": "Minecraft Elegance: Iron Farm on Day 1 of Survival",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:101": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "wheat",
+   "short": "Wheat farm (9x9)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:102": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "carrot",
+   "short": "Carrot farm (9x9)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:103": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "potato",
+   "short": "Potato farm (9x9)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:104": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "beetroot",
+   "short": "Beetroot farm (9x9)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:105": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "pumpkin",
+   "short": "Pumpkin farm (rows)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:106": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "melon",
+   "short": "Melon farm (rows)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:107": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "sugar_cane",
+   "short": "Sugar cane farm (rows)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:108": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bamboo",
+   "short": "Bamboo farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:109": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cactus",
+   "short": "Cactus farm (simple)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:110": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "kelp",
+   "short": "Kelp farm (manual)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:111": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cocoa_beans",
+   "short": "Cocoa bean farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:112": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "sweet_berries",
+   "short": "Sweet berry farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:113": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "nether_wart",
+   "short": "Nether wart farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:10",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:116",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:114": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "red_mushroom",
+   "short": "Mushroom farm (dark room)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:115": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "oak_log",
+   "short": "Tree farm (oak/birch)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:103",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:116": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "spruce_log",
+   "short": "Tree farm (2x2 spruce)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:117": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "beef",
+   "short": "Cow farm (1x1 pen)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:114",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:108",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:118": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "porkchop",
+   "short": "Pig farm (1x1 pen)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:106",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:110",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:119": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "white_wool",
+   "short": "Sheep farm (pen)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:102",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:120": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "feather",
+   "short": "Chicken farm (pen)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:109",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:121": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "egg",
+   "short": "Egg collector (hoppers)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:135",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:122": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "rabbit_hide",
+   "short": "Rabbit farm (pen)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:123": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "honey_bottle",
+   "short": "Honey farm (hive + campfire)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:109",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:107",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:124": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "cod",
+   "short": "Fishing spot",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:111",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:105",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:125": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "cobblestone",
+   "short": "Cobblestone generator",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:103",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:spawn-chunk-placement",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:126": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "basalt",
+   "short": "Basalt generator",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:127": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "rotten_flesh",
+   "short": "Dungeon spawner grinder",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:128": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "bone",
+   "short": "Dark room mob farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:129": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "villager",
+   "short": "Villager breeder (simple)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:124",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:130": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "iron_ingot",
+   "short": "Iron golem farm (basic)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:142",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:131": {
+   "stage": "mid",
+   "milestone": "deep-mining",
+   "icon": "bone_meal",
+   "short": "Bone meal composter",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:139",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:respawn-anchor-bed",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:116",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:132": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "snowball",
+   "short": "Snow golem snow farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:121",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:water-skiing",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:133": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "ice",
+   "short": "Ice farm (manual)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "farm:134": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "yellow_dye",
+   "short": "Flower dye farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:126",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:111",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:135": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "glow_berries",
+   "short": "Glow berry farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:124",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:136": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "chorus_fruit",
+   "short": "Chorus fruit farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:26",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:137": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "turtle_scute",
+   "short": "Turtle egg / scute farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:120",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:105",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:138": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ochre_froglight",
+   "short": "Froglight farm (basic)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:106",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:ominous-trial-chamber",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:139": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "armadillo_scute",
+   "short": "Armadillo scute pen",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:122",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:140": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "water_bucket",
+   "short": "Infinite water source",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:wind-charge-mobility",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:141": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lava_bucket",
+   "short": "Dripstone lava farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:110",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "farm:142": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "moss_block",
+   "short": "Moss farm",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:111",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:lava-cast-portal": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "water_bucket",
+   "short": "Bucket-cast a Nether portal (no diamond pick)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:portal-linking-8to1": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "obsidian",
+   "short": "Link portals with the 8:1 coordinate rule",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:113",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:106",
+     "rating": 1,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:14",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:nether-roof-portal": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "obsidian",
+   "short": "Portal to the Nether roof",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:dripstone-lava-generator",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:bedrock-breaking": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "piston",
+   "short": "Break bedrock with pistons + TNT",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:lava-lake-portal": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "bucket",
+   "short": "Portal next to a Nether lava ocean for fuel",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:129",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:dripstone-lava-generator": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "pointed_dripstone",
+   "short": "Dripstone lava cauldron generator",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:infinite-water-source": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "water_bucket",
+   "short": "Infinite water source (2x2 or 3-long)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:116",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:early-horse": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "saddle",
+   "short": "Tame and saddle a horse early",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:20",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:126",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:water-skiing": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lead",
+   "short": "Water skiing behind a dolphin (ianxofour)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:107",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:ice-boat-highway": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "blue_ice",
+   "short": "Blue/packed ice boat highway in the Nether",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:nether-hub": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "obsidian",
+   "short": "Nether hub with spoke tunnels",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:23",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:elytra-rockets": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "elytra",
+   "short": "Elytra + firework rocket travel",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:dripstone-lava-generator",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:111",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:end-gateway-hub": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ender_pearl",
+   "short": "Open End gateways (kill dragon / respawn dragon)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:126",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:dragon-death-trap": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "dirt",
+   "short": "Ender Dragon Death Trap (ianxofour)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:133",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:19",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:lazy-mob-switch": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "obsidian",
+   "short": "Instant Lazy Mob Switch (ianxofour)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:villager-transport",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:lava-lake-portal",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:voidless-void-trading": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "rail",
+   "short": "Voidless Void Trading (ianxofour)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:trading-hall": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lectern",
+   "short": "Villager trading hall",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:20",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:librarian-reroll": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "lectern",
+   "short": "Reroll librarians for Mending",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:water-skiing",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:zombie-cure-discount": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "golden_apple",
+   "short": "Zombie-cure villagers for big discounts",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:respawn-anchor-bed",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:villager-transport": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "oak_boat",
+   "short": "Move villagers by boat/minecart",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:115",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:141",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:enchanting-setup": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "enchanting_table",
+   "short": "Enchanting table with 15 bookshelves",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:128",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:110",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:netherite-template-dupe": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "netherite_upgrade_smithing_template",
+   "short": "Duplicate the netherite upgrade template",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:spawnproof-perimeter",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:bed-mining-debris": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "white_bed",
+   "short": "Bed/TNT mining for ancient debris",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:117",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:139",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:5",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:deepslate-diamond-level": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "iron_pickaxe",
+   "short": "Branch-mine at the right Y for diamonds",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:109",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:bad-omen-raid": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ominous_bottle",
+   "short": "Ominous bottle -> raid on demand",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:ominous-trial-chamber": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "ominous_bottle",
+   "short": "Trial chamber + trial/ominous keys",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:mlg-water-bucket": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "water_bucket",
+   "short": "Water-bucket clutch (and boat/ladder variants)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:116",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:120",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:102",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:respawn-anchor-bed": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "white_bed",
+   "short": "Set spawn points (bed / respawn anchor)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 2,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:early-horse",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:118",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:ender-chest-shulker": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "ender_chest",
+   "short": "Ender chest + shulker box logistics",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:136",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:sorting-system": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "hopper",
+   "short": "Hopper item sorter / storage room",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:wind-charge-mobility",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:pearl-stasis": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "soul_sand",
+   "short": "Ender pearl stasis chamber (teleport home)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:bubble-elevator": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "soul_sand",
+   "short": "Bubble column elevator",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:ice-boat-highway",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:sorting-system",
+     "rating": 1,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:deepslate-diamond-level",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:spawn-chunk-placement": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "book",
+   "short": "Place always-on farms in spawn chunks (and know th",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:122",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:afk-fishing": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "fishing_rod",
+   "short": "AFK fishing spot (mending/books/saddles)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:villager-transport",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:120",
+     "rating": 4,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:furnace-array": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "furnace",
+   "short": "Super-smelter (furnace array)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:dried-kelp-fuel": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "kelp",
+   "short": "Dried kelp block fuel loop",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:126",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:127",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:mlg-water-bucket",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:beacon-haste": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "beacon",
+   "short": "Beacon with Haste II at the mining base",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:wither-cage": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "wither_skeleton_skull",
+   "short": "Trap the Wither under bedrock",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:boat-mob-transport": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "oak_boat",
+   "short": "Boat / minecart mob transport",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:early-horse",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:strider-lava-travel": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "saddle",
+   "short": "Ride a strider across Nether lava",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  },
+  "trick:happy-ghast-platform": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "dried_ghast",
+   "short": "Grow a happy ghast (flying build platform)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:4",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:trident-riptide": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "trident",
+   "short": "Riptide trident travel in rain/water",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:bed-mining-debris",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:villager-transport",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:wind-charge-mobility": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "wind_charge",
+   "short": "Wind charges for jumps and fall saving",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:128",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:139",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:129",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:fire-res-brewing": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "brewing_stand",
+   "short": "Brewing station with key potions",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:nether-roof-portal",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:spawnproof-perimeter": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "torch",
+   "short": "Spawn-proof / light the base area",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:20",
+     "rating": 5,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:cartographer-maps": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "emerald",
+   "short": "Buy explorer/village maps from cartographers",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:trading-hall",
+     "rating": 5,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "farm:120",
+     "rating": 3,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:seed-map-planning": {
+   "stage": "early",
+   "milestone": null,
+   "icon": "ender_eye",
+   "short": "Plan with a seed map (Chunkbase) and stronghold fi",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:109",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:hero-of-village": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "ominous_bottle",
+   "short": "Win a raid for Hero of the Village discounts",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:dried-kelp-fuel",
+     "rating": 3,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:trading-hall",
+     "rating": 4,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:infinite-water-source",
+     "rating": 2,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:lodestone-compass": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "lodestone",
+   "short": "Lodestone compasses for base navigation (incl. Net",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "trick:enchanting-setup",
+     "rating": 1,
+     "why": "Makes a part you need"
+    },
+    {
+     "ref": "trick:voidless-void-trading",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:elytra-towing": {
+   "stage": "late",
+   "milestone": "end",
+   "icon": "elytra",
+   "short": "Elytra 'ride share' tow from water (ianxofour)",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": [
+    {
+     "ref": "farm:108",
+     "rating": 1,
+     "why": "Makes a part you need"
+    }
+   ]
+  },
+  "trick:tnt-duper-quarry": {
+   "stage": "mid",
+   "milestone": "nether",
+   "icon": "tnt",
+   "short": "TNT duper for digging perimeters / tunnel bores",
+   "steps": [
+    "Stand-in step"
+   ],
+   "prereqs": []
+  }
+ }
+}
