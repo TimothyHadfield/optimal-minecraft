@@ -25,6 +25,8 @@ const css = `
 #chart .eg path.hi { stroke-width: 2.6; }
 #chart .eg path.hl { opacity: 1; stroke-width: 3; }
 #chart .eg.hov path:not(.hl) { opacity: .18; }
+#chart .tmp path { fill: none; stroke-width: 2.4; }
+#chart .bx.fade { opacity: .3; }
 #chart .lg { position: absolute; left: 8px; bottom: 8px; z-index: 4; display: flex; gap: 6px; padding: 1px 5px; background: #1a1410; border: 2px solid #0a0805; font-size: 15px; color: #a89880; pointer-events: none; }
 #chart .lg span { display: inline-flex; align-items: center; gap: 3px; }
 #chart .lg i { display: inline-block; width: 12px; height: 3px; }
@@ -88,7 +90,7 @@ function compute() {
   });
   const rating = new Map(G.edges.map((e) => [e.from + '>' + e.to, e.rating]));
   window.CHART_STATS = { nodes: G.nodes.length, edges: G.edges.length, drawn: C.edges.length, crossings: stats.crossings, bends: stats.bends, straight: stats.straight, overlaps: stats.overlaps.length, boxHits: stats.boxHits.length, columns: L.columns, width: Math.round(C.width), height: Math.round(C.height), ms: Math.round(performance.now() - t0) };
-  return { G, L, C, lines, rating, mult };
+  return { G, L, C, lines, rating, mult, entries };
 }
 
 const d = (pts) => pts.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join('');
@@ -104,13 +106,13 @@ function paint(el) {
   svg += '<g class="eg">' + C.edges.map((e) => {
     const r = Math.max(1, Math.min(5, rating.get(e.from + '>' + e.to) || 3)); // red (low) -> green (high); 5 also thicker
     return `<path data-f="${esc(e.from)}" data-t="${esc(e.to)}"${r >= 5 ? ' class="hi"' : ''} style="stroke:${RATING_COLOR[r]}" marker-end="url(#cah${r})" d="${d(e.pts)}"/>`;
-  }).join('') + '</g></svg>';
+  }).join('') + '</g><g class="tmp"></g></svg>';
   let boxes = '';
   for (const [id, b] of C.boxes) {
     const e = byKey(id), n = mult.get(id) || 1;
     boxes += `<button class="bx${id.startsWith('trick:') ? ' tr' : ''}" data-k="${esc(id)}" aria-label="${esc(nameOf(e))}" style="left:${b.x}px;top:${b.y}px;width:${boxWidth(n)}px;height:${b.h}px">${icon(iconOf(e)).repeat(n)}</button>`;
   }
-  const shown = [...new Set([...rating.values()])].sort();
+  const shown = [2, 3, 4, 5]; // 2-3 only show for the box you point at
   const legend = `<div class="lg">${shown.map((r) => `<span><i style="background:${RATING_COLOR[r]}"></i>${r}</span>`).join('')}</div>`;
   el.innerHTML = `<div class="cv"><div class="mhead"></div><div class="csz"><div class="cin" style="width:${W}px;height:${H}px">${svg}${boxes}</div></div></div>
     ${legend}<div class="zm"><button data-z="-1" aria-label="Zoom out">−</button><button data-z="1" aria-label="Zoom in">+</button></div>
@@ -168,6 +170,7 @@ function showCard(el, b) {
   const eg = el.querySelector('.eg');
   eg.classList.add('hov');
   eg.querySelectorAll('path').forEach((p) => p.classList.toggle('hl', p.dataset.f === k || p.dataset.t === k));
+  links(el, k);
   card.innerHTML = cardHtml(k);
   card.hidden = false;
   const R = el.getBoundingClientRect(), r = b.getBoundingClientRect();
@@ -190,6 +193,43 @@ function hideCard(el) {
   const eg = el.querySelector('.eg');
   eg.classList.remove('hov');
   eg.querySelectorAll('path.hl').forEach((p) => p.classList.remove('hl'));
+  el.querySelector('.tmp').innerHTML = '';
+  el.querySelectorAll('.bx.fade').forEach((x) => x.classList.remove('fade'));
+}
+
+// The pointed-at box: every prereq link rated 2+ in both directions (what it needs, what needs it). Links
+// already drawn (4-5) are highlighted; the rest get a temporary direct line, coloured by rating. Other
+// boxes fade.
+function links(el, k) {
+  const { C, mult, entries, rating } = CH;
+  const ls = [];
+  for (const p of entries[k].prereqs || []) if (p.rating >= 2 && p.ref !== k && C.boxes.has(p.ref)) ls.push({ from: p.ref, to: k, r: p.rating });
+  for (const [o, v] of Object.entries(entries)) if (o !== k) for (const p of v.prereqs || []) if (p.ref === k && p.rating >= 2 && C.boxes.has(o)) ls.push({ from: k, to: o, r: p.rating });
+  const keep = new Set([k, ...ls.flatMap((l) => [l.from, l.to])]);
+  el.querySelectorAll('.bx').forEach((b) => b.classList.toggle('fade', !keep.has(b.dataset.k)));
+  const extra = ls.filter((l) => !rating.has(l.from + '>' + l.to));
+  // spread the ends on each box side, and the uprights in each gap, so no two lines run on top of each other
+  const outs = new Map(), ins = new Map();
+  for (const l of extra) { (outs.get(l.from) ?? outs.set(l.from, []).get(l.from)).push(l); (ins.get(l.to) ?? ins.set(l.to, []).get(l.to)).push(l); }
+  const cy = (id) => C.boxes.get(id).y + C.boxes.get(id).h / 2;
+  for (const m of [outs, ins]) for (const [id, list] of m) {
+    list.sort((a, b) => cy(m === outs ? a.to : a.from) - cy(m === outs ? b.to : b.from));
+    list.forEach((l, i) => { l[m === outs ? 'sy' : 'ty'] = cy(id) + (i - (list.length - 1) / 2) * Math.min(7, 30 / list.length); l[m === outs ? 'si' : 'ti'] = i; });
+  }
+  const path = (l) => {
+    const s = C.boxes.get(l.from), t = C.boxes.get(l.to);
+    const sx = s.x + boxWidth(mult.get(l.from) || 1), tx = t.x;
+    if (tx - sx > 16) { // forward: one upright just before the target
+      const jx = tx - 8 - (l.ti % 4) * 5;
+      return [[sx, l.sy], [jx, l.sy], [jx, l.ty], [tx, l.ty]];
+    }
+    // target is not to the right (a box with no drawn arrows can sit anywhere in its band): out right, along the
+    // channel between rows, back in from the left
+    const ox = sx + 8 + (l.si % 4) * 5, ix = tx - 8 - (l.ti % 4) * 5;
+    const my = (t.y > s.y ? t.y - 7 : t.y + t.h + 7);
+    return [[sx, l.sy], [ox, l.sy], [ox, my], [ix, my], [ix, l.ty], [tx, l.ty]];
+  };
+  el.querySelector('.tmp').innerHTML = extra.map((l) => { const r = Math.min(5, l.r); return `<path style="stroke:${RATING_COLOR[r]}" marker-end="url(#cah${r})" d="${d(path(l))}"/>`; }).join('');
 }
 
 function wire(el) {
