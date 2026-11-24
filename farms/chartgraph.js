@@ -10,8 +10,10 @@ export const CORE_MIN_RATING = 2;
 export const coreEntries = (planEntries) => Object.fromEntries(Object.entries(planEntries).filter(([k, v]) => k.startsWith('farm:') && v && v.core === true));
 // milestones that have at least one of these entries (an empty band would be an empty column)
 export const usedMilestones = (milestones, entries) => { const u = new Set(Object.values(entries).map((v) => v.milestone)); return (milestones || []).filter((m) => u.has(m.id)); };
-// box and line sizes in px (big square icon boxes: only ~15 of them)
-export const SIZES = { boxW: 64, boxH: 64, rowH: 104, gapX: 150, pad: 20, margin: 10 };
+// box and line sizes in px (big square icon boxes: only ~17 of them). gapIn: between columns of one milestone
+// band; gapBand: across a milestone line. Short gaps keep the chart about a laptop screen's shape, so it is
+// drawn big (boxes ~52+ px at 1280 px wide).
+export const SIZES = { boxW: 64, boxH: 64, rowH: 100, gapIn: 76, gapBand: 96, pad: 20, margin: 10 };
 
 // Line colour by prereq rating, red (low) -> green (high), on the dark brown background.
 export const RATING_COLOR = { 1: '#e2553f', 2: '#e2553f', 3: '#f0a830', 4: '#d6cf3a', 5: '#7cc242' };

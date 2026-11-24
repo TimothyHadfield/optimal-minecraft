@@ -7,6 +7,7 @@ import { coreLayout } from './corelayout.js';
 import { buildGraph, SIZES, RATING_COLOR, multiples, boxWidth, coreEntries, usedMilestones, CORE_MIN_RATING } from './chartgraph.js';
 
 const HEAD = 30; // the milestone labels' row (sticky at the top of the chart)
+const FOOT = 34; // room under the boxes so the legend and zoom buttons don't cover one
 const ZMIN = 0.35, ZMAX = 2, ZSTEP = 1.2;
 const HOVER = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const WIDE_C = () => matchMedia('(min-width: 900px)').matches;
@@ -63,12 +64,14 @@ function compute() {
     return +(o ? o.rate_per_hour : Math.max(0, ...outs.map((x) => +x.rate_per_hour || 0))) || 0;
   };
   const mult = multiples(entries, rateOf); // 1x / 2x / 3x within the core set
-  const boxW = boxWidth(Math.max(1, ...mult.values()));
-  const C = coreLayout(G.nodes, G.edges, G.bandOf, { ...SIZES, boxW, widthOf: (k) => boxWidth(mult.get(k) || 1) });
+  // each column is as wide as its widest box (a 3x box no longer widens every column); Tim's order = rank
+  const C = coreLayout(G.nodes, G.edges, G.bandOf, { ...SIZES, widthOf: (k) => boxWidth(mult.get(k) || 1), rankOf: (k) => entries[k].rank });
   // each milestone line: in the middle of the gap before its band's first column
-  const lines = C.bands.slice(1).map((b, i) => ({ x: b.start > 0 ? C.colX(b.start) - SIZES.gapX / 2 : SIZES.pad / 2, m: G.milestones[i] }));
+  const lines = C.lineX.map((x, i) => ({ x, m: G.milestones[i] }));
   const rating = new Map(G.edges.map((e) => [e.from + '>' + e.to, e.rating]));
+  C.height += FOOT; // an empty strip under the lowest boxes for the legend and the zoom buttons
   window.CHART_STATS = { nodes: G.nodes.length, edges: G.edges.length, drawn: C.edges.length, ...C.stats, columns: C.columns, width: Math.round(C.width), height: Math.round(C.height), ms: Math.round(performance.now() - t0) };
+  // boxPx (on-screen box size at the current zoom) is filled in by zoom()
   return { G, C, lines, rating, mult, entries };
 }
 const d = (pts) => pts.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join('');
@@ -101,7 +104,7 @@ function paint(el) {
 function fitZoom(el) {
   const cv = el.querySelector('.cv'), { C } = CH;
   const zh = (cv.clientHeight - HEAD - 6) / C.height, zw = (cv.clientWidth - 6) / C.width;
-  Z = WIDE_C() ? Math.min(1.4, zh, zw) : Math.max(0.55, Math.min(1, zh));
+  Z = WIDE_C() ? Math.min(1.4, zh, zw) : Math.max(42 / SIZES.boxH, Math.min(1, zh)); // phone: boxes at least 42 px
   if (WIDE_C()) cv.style.height = Math.min(cv.clientHeight, Math.ceil(C.height * Z + HEAD + 8)) + 'px'; // no empty strip under it
 }
 
@@ -110,6 +113,7 @@ function zoom(el, keepCenter) {
   let cx = 0, cy = 0;
   if (keepCenter) { const oz = +cv.dataset.z || z; cx = (cv.scrollLeft + cv.clientWidth / 2) / oz; cy = (cv.scrollTop + cv.clientHeight / 2) / oz; }
   cv.dataset.z = z;
+  if (window.CHART_STATS) window.CHART_STATS.boxPx = Math.round(SIZES.boxH * z);
   el.querySelector('.cin').style.transform = `scale(${z})`;
   const sz = el.querySelector('.csz');
   sz.style.width = C.width * z + 'px'; sz.style.height = C.height * z + 'px';
