@@ -32,6 +32,7 @@
     .cols > *, .row .nm, td { min-width: 0; overflow-wrap: anywhere; }
     h2 { overflow-wrap: anywhere; }
     td.lb { white-space: nowrap; overflow-wrap: normal; width: 1%; }
+    h3 .muted { font-family: "VT323", monospace; letter-spacing: 0; }
     @media (min-width: 860px) {
       .cols { grid-template-columns: 380px 1fr; height: calc(100vh - 150px); }
       .cols > * { min-height: 0; overflow-y: auto; }
@@ -72,7 +73,7 @@
     <div class="sub" id="sub">━━━ ianxofour ━━━</div>
     <div class="cols">
       <div>
-        <div class="seg pix" id="seg"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button></div>
+        <div class="seg pix" id="seg"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button></div>
         <input class="search" id="q" placeholder="Search farm or item" autocomplete="off">
         <div class="list" id="list"><div class="muted">Loading…</div></div>
       </div>
@@ -134,9 +135,47 @@ function trickDetail(t) {
   ${(t.sources || []).length ? '<h3>SOURCES</h3><ul>' + t.sources.map(s => `<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, '').slice(0, 60))}</a></li>`).join('') + '</ul>' : ''}
   ${t.confidence ? `<div class="muted" style="margin-top:12px">Sure? ${esc(t.confidence)}</div>` : ''}`;
 }
-let MODE = 'farms', TRICKS = [];
+let MODE = 'farms', TRICKS = [], TRADES = null, selP = null;
+const stack = xs => (xs || []).map(x => `${x.count != null ? num(x.count) + (x.count_max != null && x.count_max !== x.count ? '–' + num(x.count_max) : '') + ' ' : ''}${nice(x.item)}`).join(' + ');
+function tradeRows(levels, q) {
+  return (levels || []).map(l => {
+    const ts = (l.trades || []).filter(t => !q || JSON.stringify(t).toLowerCase().replace(/_/g, ' ').includes(q));
+    if (!ts.length) return '';
+    return `<h3>${esc(String(l.level || l.name || '').toUpperCase())}${l.pick ? ` <span class="muted">· ${esc(l.pick)}</span>` : ''}</h3><table>` +
+      ts.map(t => `<tr><td>${stack(t.wants)} → <b style="color:#ffd54a">${stack(t.gives)}</b>${t.notes ? `<br><span class="note">${esc(t.notes)}</span>` : ''}</td>
+        <td class="note lb">${t.max_uses != null ? t.max_uses + '×' : ''}${t.xp != null ? ' · ' + t.xp + 'xp' : ''}</td></tr>`).join('') + '</table>';
+  }).join('');
+}
+function tradeGroups() {
+  if (!TRADES) return [];
+  const g = (TRADES.professions || []).map(p => ({ id: p.id, name: nice(p.id), sub: p.job_site ? nice(p.job_site) : '', levels: p.levels, notes: p.notes }));
+  const w = TRADES.wandering_trader;
+  if (w) g.push({ id: 'wandering_trader', name: 'Wandering Trader', sub: '', levels: w.groups, notes: w.notes });
+  (TRADES.experimental || []).forEach(e => g.push({ id: 'exp-' + e.profession, name: nice(e.profession) + ' (experimental)', sub: 'trade rebalance', levels: e.levels, notes: e.notes }));
+  g.push({ id: 'mechanics', name: 'How prices work', sub: '', mech: TRADES.mechanics });
+  return g;
+}
+function tradeDetail(p, q) {
+  if (p.mech) return `<h2 class="pix">HOW PRICES WORK</h2>` + (p.mech || []).map(m => `<h3>${esc(m.name).toUpperCase()}</h3><div>${esc(m.text)}</div>`).join('') +
+    (TRADES.meta ? `<div class="muted" style="margin-top:12px">Version ${esc(TRADES.meta.version)}. ${esc(TRADES.meta.rebalance || '')}</div>` : '');
+  return `<h2 class="pix">${esc(p.name)}</h2>${p.sub ? `<div class="muted">Job site: ${esc(p.sub)}</div>` : ''}${p.notes ? `<div class="muted">${esc(p.notes)}</div>` : ''}${tradeRows(p.levels, q) || '<div class="na">No match.</div>'}`;
+}
+function renderTrades() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const wide = matchMedia('(min-width: 860px)').matches;
+  const groups = tradeGroups().filter(p => !q || JSON.stringify(p).toLowerCase().replace(/_/g, ' ').includes(q));
+  if (q && !groups.some(p => p.id === selP) && groups.length && wide) selP = groups[0].id;
+  document.getElementById('list').innerHTML = groups.map(p => `
+    <div class="row ${selP === p.id ? 'on' : ''}"><button data-p="${esc(p.id)}">
+      <span class="nm">${esc(p.name)}${p.sub ? `<br><span class="tag">${esc(p.sub)}</span>` : ''}</span></button>
+      ${!wide && selP === p.id ? `<div class="inline">${tradeDetail(p, q)}</div>` : ''}
+    </div>`).join('') || `<div class="muted">${TRADES ? 'No match.' : 'Coming soon.'}</div>`;
+  const cur = groups.find(p => p.id === selP);
+  document.getElementById('detail').innerHTML = cur ? tradeDetail(cur, q) : '<div class="muted">Pick a villager.</div>';
+}
 function render() {
   if (MODE === 'tricks') return renderTricks();
+  if (MODE === 'trades') return renderTrades();
   const q = document.getElementById('q').value.trim().toLowerCase();
   const shown = FARMS.filter(f => !q || JSON.stringify([f.title, f.farm_type, f.outputs, f.materials_onscreen, f.materials_litematic]).toLowerCase().replace(/_/g, ' ').includes(q));
   const wide = matchMedia('(min-width: 860px)').matches;
@@ -167,18 +206,22 @@ document.getElementById('seg').addEventListener('click', e => {
   const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === MODE) return;
   MODE = b.dataset.m;
   document.querySelectorAll('#seg button').forEach(x => x.classList.toggle('on', x === b));
-  document.getElementById('q').placeholder = MODE === 'farms' ? 'Search farm or item' : 'Search tricks';
+  document.getElementById('q').placeholder = { farms: 'Search farm or item', tricks: 'Search tricks', trades: 'Search item or villager' }[MODE];
   document.getElementById('q').value = '';
   if (MODE === 'tricks' && selT == null && TRICKS.length && matchMedia('(min-width: 860px)').matches) selT = TRICKS[0].id;
+  if (MODE === 'trades' && selP == null && TRADES && matchMedia('(min-width: 860px)').matches) selP = tradeGroups()[0]?.id;
   render();
 });
 document.getElementById('list').addEventListener('click', e => {
   const wide = matchMedia('(min-width: 860px)').matches;
+  const p = e.target.closest('button[data-p]');
+  if (p) { const id = p.dataset.p; selP = selP === id && !wide ? null : id; return render(); }
   const t = e.target.closest('button[data-t]');
   if (t) { const id = t.dataset.t; selT = selT === id && !wide ? null : id; return render(); }
   const b = e.target.closest('button[data-n]'); if (!b) return;
   const n = +b.dataset.n; sel = sel === n && !wide ? null : n; render();
 });
+fetch('trades.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => { TRADES = d; if (MODE === 'trades') render(); }).catch(() => {});
 fetch('tricks.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { tricks: [] }).then(d => { TRICKS = d.tricks || []; if (MODE === 'tricks') render(); }).catch(() => {});
 document.getElementById('q').addEventListener('input', render);
 addEventListener('resize', render);

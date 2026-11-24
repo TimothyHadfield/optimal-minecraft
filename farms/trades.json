@@ -1,0 +1,8571 @@
+{
+ "meta": {
+  "version": "Java Edition 26.3",
+  "version_detail": "26.3 released September 15, 2026 (first snapshot June 23, 2026). Next version 26.4 is in snapshots (26.4 Snapshot 10 as of the wiki on 2026-11-24).",
+  "version_source": "https://minecraft.wiki/w/Template:Version (java = 26.3) and https://minecraft.wiki/w/Java_Edition_version_history",
+  "researched": "2026-11-24",
+  "sources": [
+   "https://minecraft.wiki/w/Trading (rendered via api.php?action=parse; trade tables come from the wiki trade database)",
+   "https://minecraft.wiki/w/Trading?action=raw",
+   "https://minecraft.wiki/w/Villager_Trade_Rebalance?action=raw",
+   "https://minecraft.wiki/w/Villager?action=raw (gossip, restock, level thresholds)",
+   "https://minecraft.wiki/w/Template:Version?action=raw",
+   "https://minecraft.wiki/w/Java_Edition_version_history?action=raw"
+  ],
+  "rebalance": "Default in 26.3 (since Java 1.21.5): rebalanced cartographer (biome-specific village maps, jungle/swamp explorer maps, paper/glass pane 12 uses) and rebalanced wandering trader (buy trades, 2+2+5 offers, cheaper prices). Still experimental (Villager Trade Rebalance data pack): biome-specific librarian enchanted books and biome-specific armorers. Butcher, cleric, farmer, fisherman, fletcher, leatherworker, mason, shepherd, toolsmith and weaponsmith are unchanged by the rebalance.",
+  "format_notes": "Counts: \"count\" is a fixed amount, or the minimum when \"count_max\" is present (a random price picked when the trade unlocks). \"chance_java\" is the wiki's Java chance that a given trade is one of the level's picks (values over 100% are the expected number of offers from a multi-trade group). Item \"<color>_x\" means one separate trade per dye color. Prices shown are base prices before demand/reputation/Hero of the Village. Java Edition only. Nitwits and unemployed villagers (and babies) have no trades.",
+  "unsure": [
+   "Wandering trader price multipliers and whether each wandering trade is exactly equally likely (wiki marks it \"verify\").",
+   "Item ids sulfur_spike, shelf_mushroom, poplar_log, poplar_sapling are inferred from wiki names (items added in 26.2/26.3).",
+   "The wiki rebalance page still lists cartographer glass pane max uses 16 in its old table; the Trading page and history say 12 since 1.21.5 (12 used)."
+  ],
+  "counts": {
+   "professions": 13,
+   "profession_trades": 183,
+   "wandering_trader_trades": 100,
+   "experimental_tables": 8,
+   "experimental_trades": 125
+  }
+ },
+ "mechanics": [
+  {
+   "name": "Levels and villager XP",
+   "text": "Novice 0, apprentice 10, journeyman 70, expert 150, master 250 total villager XP. Each trade adds its \"xp\" value. Java: each level unlocks up to 2 new trades picked at random from that level's pool (all if the pool has 2 or fewer); max 10 trades. Exception: master librarians pick 3 (since 26.1). Leveling up gives the villager 10 s of Regeneration I. Master trades still add XP but do nothing."
+  },
+  {
+   "name": "Player XP from trading",
+   "text": "Every villager trade gives the player 3-6 XP, plus 5 XP if the trade levels the villager up (8-11 instead of 3-6 while the villager is willing to breed, per the Villager page). Wandering trader trades also give player XP."
+  },
+  {
+   "name": "Locking trades",
+   "text": "An unemployed villager takes a profession by claiming a job site block. A novice that has never been traded with loses the job if its job site is removed, and re-rolls its trades when it reclaims one (and periodically while it has no XP). One trade locks the profession and offers forever."
+  },
+  {
+   "name": "Restocking",
+   "text": "Each trade has max uses. Villagers restock all trades when they work at their job site, up to twice per Minecraft day; after 2 restocks within 10 minutes a villager waits at least 10 minutes. (Bedrock also needs a bed; not Java.)"
+  },
+  {
+   "name": "Price formula (Java)",
+   "text": "Final price = clamp( floor(p*(m*max(0,d)+1)) - floor(m*r) - [Hero] max(1, floor(p*(0.3+0.0625*(h-1)))), 1, stack size ), where p = base price, m = price multiplier, d = demand, r = reputation, h = Hero of the Village level. Only the first wanted item changes price; the second item and the output never change."
+  },
+  {
+   "name": "Demand",
+   "text": "Tracked per trade. Starts at minus 2x the trade's max uses. At each restock: demand = demand - max uses + 2x uses actually made. When demand is positive the price rises by floor(base price * multiplier * demand). Not trading lets it fall back."
+  },
+  {
+   "name": "Reputation / gossip",
+   "text": "Reputation = sum of gossip value x weight, per player per villager. trading: +4 per trade, max 25, weight 1, decays 2 per 20 min. Curing: major_positive +20 (max 20, weight 5, never decays, never shared) and minor_positive +25 (max 25, weight 1, decays 1 per 20 min). Attacking: minor_negative +25 (max 200, weight -1). Killing a nearby villager: major_negative +25 (max 100, weight -5, spreads to villagers that see it within 16 blocks). Price drops by floor(multiplier x reputation); in Java negative reputation can raise prices. Gossip spreads between villagers minus a sharing cost; decay is every 20 real minutes regardless of sleep."
+  },
+  {
+   "name": "Zombie cure discount",
+   "text": "Curing a zombie villager gives you major_positive 20 + minor_positive 25 = reputation 125 at first (20x5 + 25), so price drops by floor(125 x multiplier): about 6 emeralds off a 0.05 trade and 25 off a 0.2 trade (always at least 1 left). The 100-point major part is permanent; the 25 minor part decays. Since Java 1.20.2 the discount is given only the first time a villager is cured: re-zombifying and curing again no longer stacks (bug MC-181190 fixed). Villagers that already had stacked discounts kept them. Reasoned arithmetic from the wiki gossip table."
+  },
+  {
+   "name": "Hero of the Village",
+   "text": "From winning a raid. Cuts every villager price by 30% at level I plus 6.25% per extra level (up to 55% at V) of the base price, rounded down but at least 1 item. Not scaled by the price multiplier. Stacks with reputation discounts."
+  },
+  {
+   "name": "Buying items from players",
+   "text": "Villagers ignore extra item data when buying: renamed or enchanted items, and lodestone compasses for compass trades, are accepted."
+  },
+  {
+   "name": "Data-driven trades",
+   "text": "Since Java 26.1 villager trades are defined by data packs (villager trade definitions), so servers or data packs can change these tables."
+  },
+  {
+   "name": "Non-trading villagers",
+   "text": "Nitwits (green coat) never get a profession; unemployed villagers and babies cannot trade. In Java they grunt and shake their head when clicked."
+  }
+ ],
+ "professions": [
+  {
+   "id": "armorer",
+   "job_site": "blast_furnace",
+   "notes": "Default (non-experimental) table. The rebalanced biome-specific armorer is still experimental (see experimental).",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "50%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "diamond",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 19,
+         "count_max": 33
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 14 + that level, so 19-33 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13,
+         "count_max": 27
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 8 + that level, so 13-27 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13,
+         "count_max": 27
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 8 + that level, so 13-27 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 21,
+         "count_max": 35
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 16 + that level, so 21-35 emeralds."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "butcher",
+   "job_site": "smoker",
+   "notes": "",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "chicken",
+         "count": 14
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "rabbit",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "porkchop",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "rabbit_stew",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "cooked_chicken",
+         "count": 8
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "cooked_porkchop",
+         "count": 5
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "beef",
+         "count": 10
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "mutton",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "dried_kelp_block",
+         "count": 10
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "sweet_berries",
+         "count": 10
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cartographer",
+   "job_site": "cartography_table",
+   "notes": "This IS the rebalanced table: biome-specific village/explorer maps became default in Java 1.21.5 (paper and glass pane max uses cut 16 -> 12). The old pre-rebalance table is no longer reachable.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "paper",
+         "count": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "map",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of N, N depends on villager biome type (see notes)",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "glass_pane",
+         "count": 11
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "50%-67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        },
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "filled_map",
+         "count": 1,
+         "name": "Village Map"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "133%-150%",
+       "notes": "Biome-dependent (rebalanced, default since 1.21.5): each map is its own trade, so a villager can offer several. Targets by villager biome type: desert -> savanna village, plains village, jungle pyramid (jungle explorer map); jungle -> savanna village, desert village, swamp hut (swamp explorer map); plains -> savanna village, taiga village (only 2); savanna -> desert village, plains village, jungle pyramid; snowy -> plains village, taiga village, swamp hut; swamp -> snowy village, taiga village, jungle pyramid; taiga -> plains village, snowy village, swamp hut. Wiki chance: glass pane 67% (plains) / 50% (others); expected map offers 133% (plains) / 150% (others)."
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13
+        },
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "filled_map",
+         "count": 1,
+         "name": "Ocean Monument Map"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "The target is chosen when the villager unlocks the trade; the trade is not offered if no target can be found (e.g. structure absent). All copies from one villager lead to the same structure."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 12
+        },
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "filled_map",
+         "count": 1,
+         "name": "Buried Trial Chambers Map"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "The target is chosen when the villager unlocks the trade; the trade is not offered if no target can be found (e.g. structure absent). All copies from one villager lead to the same structure."
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of N, N depends on villager biome type (see notes)",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "item_frame",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "33%-50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "banner",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "150%-167%",
+       "notes": "Banner colors depend on the villager biome type, one trade per color: desert cyan, gray, green, lime, orange; jungle brown, green, yellow; plains brown, pink, white, yellow; savanna green, magenta, orange, red; snowy blue, cyan, light blue, red, white; swamp black, light blue, purple; taiga blue, lime, pink, purple. Item frame chance: 33% desert/snowy, 40% plains/savanna/taiga, 50% jungle/swamp."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "globe_banner_pattern",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 14
+        },
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "filled_map",
+         "count": 1,
+         "name": "Woodland Mansion Map"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "The target is chosen when the villager unlocks the trade; the trade is not offered if no target can be found (e.g. structure absent). All copies from one villager lead to the same structure."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cleric",
+   "job_site": "brewing_stand",
+   "notes": "",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "rotten_flesh",
+         "count": 32
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "redstone",
+         "count": 2
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "gold_ingot",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "lapis_lazuli",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "rabbit_foot",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "glowstone",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "turtle_scute",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "glass_bottle",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "ender_pearl",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "nether_wart",
+         "count": 22
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "experience_bottle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "farmer",
+   "job_site": "composter",
+   "notes": "Cake trade has a known price bug in Java (3 emeralds); see trade note.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "wheat",
+         "count": 20
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "potato",
+         "count": 26
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "carrot",
+         "count": 22
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "beetroot",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "bread",
+         "count": 6
+        }
+       ],
+       "max_uses": 16,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "pumpkin",
+         "count": 6
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "pumpkin_pie",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "apple",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "melon",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "cookie",
+         "count": 18
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "suspicious_stew",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "100%",
+       "notes": "Suspicious stew effect picked when the trade unlocks: Blindness 6s, Jump Boost 8s, Night Vision 5s, Poison 14s, Saturation 0.35s or Weakness 7s."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "cake",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "100%",
+       "notes": "Bug: Java currently charges 3 emeralds per cake (wiki marks this fixed in the upcoming 26.4)."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "golden_carrot",
+         "count": 3
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "glistering_melon_slice",
+         "count": 3
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fisherman",
+   "job_site": "barrel",
+   "notes": "Master boat trade wants a biome-dependent boat type.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "string",
+         "count": 20
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 10
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "cod_bucket",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "cod",
+         "count": 6
+        },
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "cooked_cod",
+         "count": 6
+        }
+       ],
+       "max_uses": 16,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "cod",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "campfire",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "salmon",
+         "count": 6
+        },
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "cooked_salmon",
+         "count": 6
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "salmon",
+         "count": 13
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8,
+         "count_max": 22
+        }
+       ],
+       "gives": [
+        {
+         "item": "fishing_rod",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 3 + that level, so 8-22 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "tropical_fish",
+         "count": 6
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "pufferfish",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "<biome_wood>_boat",
+         "count": 1,
+         "name": "Boat"
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%",
+       "notes": "Wanted boat wood depends on villager biome type: desert jungle_boat, jungle jungle_boat, plains oak_boat, savanna acacia_boat, snowy spruce_boat, swamp dark_oak_boat, taiga spruce_boat."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fletcher",
+   "job_site": "fletching_table",
+   "notes": "",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "stick",
+         "count": 32
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "arrow",
+         "count": 16
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "gravel",
+         "count": 10
+        },
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "flint",
+         "count": 10
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "flint",
+         "count": 26
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "bow",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "string",
+         "count": 14
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "crossbow",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "feather",
+         "count": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7,
+         "count_max": 21
+        }
+       ],
+       "gives": [
+        {
+         "item": "bow",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 2 + that level, so 7-21 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "tripwire_hook",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8,
+         "count_max": 22
+        }
+       ],
+       "gives": [
+        {
+         "item": "crossbow",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "67%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 3 + that level, so 8-22 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        },
+        {
+         "item": "arrow",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "tipped_arrow",
+         "count": 5
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "67%",
+       "notes": "Tipped arrow effect: a random brewable regular, extended or strengthened potion effect picked when the trade unlocks."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "leatherworker",
+   "job_site": "cauldron",
+   "notes": "All sold leather items are randomly dyed.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "leather",
+         "count": 6
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "flint",
+         "count": 26
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "rabbit_hide",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "turtle_scute",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 6
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_horse_armor",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "leather_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Dyed a random color: random dyes applied, 6.25% 1 dye, 37.5% 2 dyes, 56.25% 3 dyes (same dye can repeat)."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 6
+        }
+       ],
+       "gives": [
+        {
+         "item": "saddle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "librarian",
+   "job_site": "lectern",
+   "notes": "Default table: any-enchantment books at novice-expert. Since 26.1 the master librarian sells red and yellow candles (3 emeralds) instead of the name tag (name tag moved to the wandering trader). Biome-specific books are still experimental (see experimental).",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "paper",
+         "count": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "bookshelf",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Price in emeralds is random: 2+3*level to 6+13*level, doubled for treasure enchantments (4+6*level to 12+26*level); capped at 64 before discounts. Level I 5-19 (treasure 10-38), II 8-32 (16-64), III 11-45 (22-64), IV 14-58 (28-64), V 17-64 (34-64). Any enchantment except Soul Speed, Swift Sneak and Wind Burst, equal chance, then a random level. Treasure enchantments like Mending and Frost Walker (and curses) are possible. The same book can be offered more than once."
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "book",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "lantern",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Price in emeralds is random: 2+3*level to 6+13*level, doubled for treasure enchantments (4+6*level to 12+26*level); capped at 64 before discounts. Level I 5-19 (treasure 10-38), II 8-32 (16-64), III 11-45 (22-64), IV 14-58 (28-64), V 17-64 (34-64). Any enchantment except Soul Speed, Swift Sneak and Wind Burst, equal chance, then a random level. Treasure enchantments like Mending and Frost Walker (and curses) are possible. The same book can be offered more than once."
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "ink_sac",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "glass",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Price in emeralds is random: 2+3*level to 6+13*level, doubled for treasure enchantments (4+6*level to 12+26*level); capped at 64 before discounts. Level I 5-19 (treasure 10-38), II 8-32 (16-64), III 11-45 (22-64), IV 14-58 (28-64), V 17-64 (34-64). Any enchantment except Soul Speed, Swift Sneak and Wind Burst, equal chance, then a random level. Treasure enchantments like Mending and Frost Walker (and curses) are possible. The same book can be offered more than once."
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "writable_book",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "50%",
+       "notes": "Lists 2 books and quill but Java only asks for 1 (bug MC-248042: unstackable item price always discounted to 1)."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "clock",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "50%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "50%",
+       "notes": "Price in emeralds is random: 2+3*level to 6+13*level, doubled for treasure enchantments (4+6*level to 12+26*level); capped at 64 before discounts. Level I 5-19 (treasure 10-38), II 8-32 (16-64), III 11-45 (22-64), IV 14-58 (28-64), V 17-64 (34-64). Any enchantment except Soul Speed, Swift Sneak and Wind Burst, equal chance, then a random level. Treasure enchantments like Mending and Frost Walker (and curses) are possible. The same book can be offered more than once."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all (master librarians draw 3 trades since 26.1; default pool has only 2)",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "red_candle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "yellow_candle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mason",
+   "job_site": "stonecutter",
+   "notes": "Expert terracotta trades are one trade per color (16 stained + 16 glazed), so nether quartz is only a 6% pick.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "clay_ball",
+         "count": 10
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "brick",
+         "count": 10
+        }
+       ],
+       "max_uses": 16,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "stone",
+         "count": 20
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "chiseled_stone_bricks",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 7",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "granite",
+         "count": 16
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "andesite",
+         "count": 16
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "diorite",
+         "count": 16
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "dripstone_block",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "polished_andesite",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "polished_diorite",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "polished_granite",
+         "count": 4
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "29%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 33",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "quartz",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "6%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_stained_terracotta",
+         "count": 1,
+         "color": "any (one trade per color: white_stained_terracotta, orange_stained_terracotta, magenta_stained_terracotta, light_blue_stained_terracotta, yellow_stained_terracotta, lime_stained_terracotta, pink_stained_terracotta, gray_stained_terracotta, light_gray_stained_terracotta, cyan_stained_terracotta, purple_stained_terracotta, blue_stained_terracotta, brown_stained_terracotta, green_stained_terracotta, red_stained_terracotta, black_stained_terracotta)"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "74%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_glazed_terracotta",
+         "count": 1,
+         "color": "any (one trade per color: white_glazed_terracotta, orange_glazed_terracotta, magenta_glazed_terracotta, light_blue_glazed_terracotta, yellow_glazed_terracotta, lime_glazed_terracotta, pink_glazed_terracotta, gray_glazed_terracotta, light_gray_glazed_terracotta, cyan_glazed_terracotta, purple_glazed_terracotta, blue_glazed_terracotta, brown_glazed_terracotta, green_glazed_terracotta, red_glazed_terracotta, black_glazed_terracotta)"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "74%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "quartz_pillar",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "quartz_block",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shepherd",
+   "job_site": "loom",
+   "notes": "Dye-buying trades and colored item trades are one trade per color, which is why each is a low-percentage pick.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "white_wool",
+         "count": 18
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "brown_wool",
+         "count": 18
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "black_wool",
+         "count": 18
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "gray_wool",
+         "count": 18
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "shears",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 37",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "white_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "5%"
+      },
+      {
+       "wants": [
+        {
+         "item": "gray_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "5%"
+      },
+      {
+       "wants": [
+        {
+         "item": "black_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "5%"
+      },
+      {
+       "wants": [
+        {
+         "item": "light_blue_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "5%"
+      },
+      {
+       "wants": [
+        {
+         "item": "lime_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "5%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_wool",
+         "count": 1,
+         "color": "any (one trade per color: white_wool, orange_wool, magenta_wool, light_blue_wool, yellow_wool, lime_wool, pink_wool, gray_wool, light_gray_wool, cyan_wool, purple_wool, blue_wool, brown_wool, green_wool, red_wool, black_wool)"
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "68%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_carpet",
+         "count": 4,
+         "color": "any (one trade per color: white_carpet, orange_carpet, magenta_carpet, light_blue_carpet, yellow_carpet, lime_carpet, pink_carpet, gray_carpet, light_gray_carpet, cyan_carpet, purple_carpet, blue_carpet, brown_carpet, green_carpet, red_carpet, black_carpet)"
+        }
+       ],
+       "max_uses": 16,
+       "xp": 5,
+       "price_multiplier": 0.05,
+       "chance_java": "68%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 21",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "yellow_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "10%"
+      },
+      {
+       "wants": [
+        {
+         "item": "light_gray_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "10%"
+      },
+      {
+       "wants": [
+        {
+         "item": "orange_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "10%"
+      },
+      {
+       "wants": [
+        {
+         "item": "red_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "10%"
+      },
+      {
+       "wants": [
+        {
+         "item": "pink_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "10%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_bed",
+         "count": 1,
+         "color": "any (one trade per color: white_bed, orange_bed, magenta_bed, light_blue_bed, yellow_bed, lime_bed, pink_bed, gray_bed, light_gray_bed, cyan_bed, purple_bed, blue_bed, brown_bed, green_bed, red_bed, black_bed)"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "95%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 22",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "brown_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "purple_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "blue_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "green_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "magenta_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "cyan_dye",
+         "count": 12
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "9%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "<color>_banner",
+         "count": 1,
+         "color": "any (one trade per color: white_banner, orange_banner, magenta_banner, light_blue_banner, yellow_banner, lime_banner, pink_banner, gray_banner, light_gray_banner, cyan_banner, purple_banner, blue_banner, brown_banner, green_banner, red_banner, black_banner)"
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "chance_java": "94%",
+       "notes": "One trade per color (16), so several colors can be offered at once in Java."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "painting",
+         "count": 3
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "toolsmith",
+   "job_site": "smithing_table",
+   "notes": "",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "stone_axe",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "stone_shovel",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "stone_pickaxe",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "stone_hoe",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 5",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "flint",
+         "count": 30
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "40%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 6,
+         "count_max": 20
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_axe",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 1 + that level, so 6-20 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7,
+         "count_max": 21
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_shovel",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 2 + that level, so 7-21 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8,
+         "count_max": 22
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_pickaxe",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 3 + that level, so 8-22 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_hoe",
+         "count": 1
+        }
+       ],
+       "max_uses": 3,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "chance_java": "40%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "diamond",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 17,
+         "count_max": 31
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_axe",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 12 + that level, so 17-31 emeralds."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 10,
+         "count_max": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_shovel",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "67%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 5 + that level, so 10-24 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 18,
+         "count_max": 32
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_pickaxe",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 13 + that level, so 18-32 emeralds."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "weaponsmith",
+   "job_site": "grindstone",
+   "notes": "",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_axe",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "chance_java": "67%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7,
+         "count_max": 21
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_sword",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 1,
+       "price_multiplier": 0.05,
+       "chance_java": "67%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 2 + that level, so 7-21 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "flint",
+         "count": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "diamond",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "chance_java": "100%"
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 17,
+         "count_max": 31
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_axe",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 12 + that level, so 17-31 emeralds."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 1",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13,
+         "count_max": 27
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_sword",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "chance_java": "100%",
+       "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 8 + that level, so 13-27 emeralds."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "wandering_trader": {
+  "notes": "Always 9 offers in this order: 2 buy trades, 2 special sell trades, 5 ordinary sell trades, each picked with equal chance within its table (wiki flags \"each trade is equally likely\" as needing verification). This is the rebalanced trader, default since Java 1.21.5. It has no levels and no villager XP; the wiki hides price multipliers for it (null here). Trades give the player XP. Since 26.1 it also sells name tags (1 emerald). Its stock does not restock (inferred: it has no job site).",
+  "groups": [
+   {
+    "name": "buy",
+    "pick": "2 of 6",
+    "notes": "Trader buys these from you (added by the rebalance, default since 1.21.5).",
+    "trades": [
+     {
+      "wants": [
+       {
+        "item": "hay_block",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%"
+     },
+     {
+      "wants": [
+       {
+        "item": "potion",
+        "count": 1,
+        "name": "Water Bottle"
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%",
+      "notes": "Water bottle = potion item with the water potion."
+     },
+     {
+      "wants": [
+       {
+        "item": "baked_potato",
+        "count": 4
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%"
+     },
+     {
+      "wants": [
+       {
+        "item": "milk_bucket",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 2
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%"
+     },
+     {
+      "wants": [
+       {
+        "item": "water_bucket",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 2
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%"
+     },
+     {
+      "wants": [
+       {
+        "item": "fermented_spider_eye",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "33%"
+     }
+    ]
+   },
+   {
+    "name": "special_sell",
+    "pick": "2 of 16",
+    "notes": "Special selling table.",
+    "trades": [
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "packed_ice",
+        "count": 1
+       }
+      ],
+      "max_uses": 6,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "gunpowder",
+        "count": 4
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "acacia_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "birch_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "cherry_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "dark_oak_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "jungle_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "mangrove_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "oak_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pale_oak_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "spruce_log",
+        "count": 8
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "poplar_log",
+        "count": 8,
+        "id_note": "id (inferred) from the wiki name \"Poplar Log\""
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "podzol",
+        "count": 3
+       }
+      ],
+      "max_uses": 6,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "potion",
+        "count": 1,
+        "name": "Potion of Invisibility"
+       }
+      ],
+      "max_uses": 1,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%",
+      "notes": "Potion of Invisibility, duration 8:00."
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 6
+       }
+      ],
+      "gives": [
+       {
+        "item": "blue_ice",
+        "count": 1
+       }
+      ],
+      "max_uses": 6,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 6,
+        "count_max": 20
+       }
+      ],
+      "gives": [
+       {
+        "item": "iron_pickaxe",
+        "count": 1,
+        "enchanted": true
+       }
+      ],
+      "max_uses": 1,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "13%",
+      "notes": "Randomly enchanted as if at enchanting level 5-19 (like the middle slot of an enchanting table with 13 bookshelves); never treasure enchantments. Price = 1 + that level, so 6-20 emeralds."
+     }
+    ]
+   },
+   {
+    "name": "ordinary_sell",
+    "pick": "5 of 78",
+    "notes": "Ordinary selling table.",
+    "trades": [
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "fern",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "sugar_cane",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pumpkin",
+        "count": 1
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "dandelion",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "poppy",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "allium",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "azure_bluet",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "red_tulip",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "orange_tulip",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "white_tulip",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pink_tulip",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "oxeye_daisy",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "cornflower",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "blue_orchid",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "lily_of_the_valley",
+        "count": 1
+       }
+      ],
+      "max_uses": 7,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "open_eyeblossom",
+        "count": 1
+       }
+      ],
+      "max_uses": 7,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "wheat_seeds",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "beetroot_seeds",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pumpkin_seeds",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "melon_seeds",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "name_tag",
+        "count": 1
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "sulfur_spike",
+        "count": 2,
+        "id_note": "id (inferred) from the wiki name \"Sulfur Spike\""
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "white_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "light_gray_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "gray_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "black_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "brown_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "red_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "orange_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "yellow_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "lime_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "green_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "cyan_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "light_blue_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "blue_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "purple_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "magenta_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pink_dye",
+        "count": 3
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "vine",
+        "count": 3
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pale_hanging_moss",
+        "count": 3
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "brown_mushroom",
+        "count": 3
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "red_mushroom",
+        "count": 3
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "shelf_mushroom",
+        "count": 3,
+        "id_note": "id (inferred) from the wiki name \"Shelf Mushroom\""
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "lily_pad",
+        "count": 5
+       }
+      ],
+      "max_uses": 2,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "small_dripleaf",
+        "count": 2
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "sand",
+        "count": 8
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "red_sand",
+        "count": 4
+       }
+      ],
+      "max_uses": 6,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pointed_dripstone",
+        "count": 2
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "rooted_dirt",
+        "count": 2
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "moss_block",
+        "count": 2
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "pale_moss_block",
+        "count": 2
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "wildflowers",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 1
+       }
+      ],
+      "gives": [
+       {
+        "item": "tall_dry_grass",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 2
+       }
+      ],
+      "gives": [
+       {
+        "item": "golden_dandelion",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 2
+       }
+      ],
+      "gives": [
+       {
+        "item": "sea_pickle",
+        "count": 1
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 2
+       }
+      ],
+      "gives": [
+       {
+        "item": "glowstone",
+        "count": 1
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "tropical_fish_bucket",
+        "count": 1
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "pufferfish_bucket",
+        "count": 1
+       }
+      ],
+      "max_uses": 4,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "kelp",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "cactus",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "brain_coral_block",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "bubble_coral_block",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "fire_coral_block",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "horn_coral_block",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "tube_coral_block",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 3
+       }
+      ],
+      "gives": [
+       {
+        "item": "firefly_bush",
+        "count": 1
+       }
+      ],
+      "max_uses": 12,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 4
+       }
+      ],
+      "gives": [
+       {
+        "item": "slime_ball",
+        "count": 1
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "acacia_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "birch_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "cherry_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "dark_oak_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "jungle_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "mangrove_propagule",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "oak_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "pale_oak_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "spruce_sapling",
+        "count": 1
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "poplar_sapling",
+        "count": 1,
+        "id_note": "id (inferred) from the wiki name \"Poplar Sapling\""
+       }
+      ],
+      "max_uses": 8,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     },
+     {
+      "wants": [
+       {
+        "item": "emerald",
+        "count": 5
+       }
+      ],
+      "gives": [
+       {
+        "item": "nautilus_shell",
+        "count": 1
+       }
+      ],
+      "max_uses": 5,
+      "xp": null,
+      "price_multiplier": null,
+      "chance_java": "6%"
+     }
+    ]
+   }
+  ]
+ },
+ "experimental": [
+  {
+   "profession": "librarian",
+   "variant": "all biomes (book pool depends on biome)",
+   "notes": "Villager Trade Rebalance experiment (still experimental in Java 26.3; enable the experiment data pack at world creation). Books depend on the villager biome type. Common books (novice-expert, random level): desert Fire Protection, Thorns, Infinity; plains Punch, Smite, Bane of Arthropods; savanna Knockback, Curse of Binding, Sweeping Edge; snowy Aqua Affinity, Looting, Frost Walker; taiga Blast Protection, Fire Aspect, Flame; jungle Feather Falling, Projectile Protection, Power; swamp Depth Strider, Respiration, Curse of Vanishing. Special book (master only, fixed level): desert Efficiency III, plains Protection III, savanna Sharpness III, snowy Silk Touch, taiga Fortune II, jungle Unbreaking II, swamp Mending. Crossbow, fishing rod, trident, mace and spear enchantments cannot be traded. Jungle and swamp villages do not generate naturally: breed or cure villagers in those biomes. The experiment also raises Mending/Unbreaking/Efficiency/Quick Charge book odds in some structure loot.",
+   "biome_books": {
+    "desert": {
+     "common": [
+      "fire_protection",
+      "thorns",
+      "infinity"
+     ],
+     "special": "efficiency 3"
+    },
+    "plains": {
+     "common": [
+      "punch",
+      "smite",
+      "bane_of_arthropods"
+     ],
+     "special": "protection 3"
+    },
+    "savanna": {
+     "common": [
+      "knockback",
+      "binding_curse",
+      "sweeping_edge"
+     ],
+     "special": "sharpness 3"
+    },
+    "snowy": {
+     "common": [
+      "aqua_affinity",
+      "looting",
+      "frost_walker"
+     ],
+     "special": "silk_touch 1"
+    },
+    "taiga": {
+     "common": [
+      "blast_protection",
+      "fire_aspect",
+      "flame"
+     ],
+     "special": "fortune 2"
+    },
+    "jungle": {
+     "common": [
+      "feather_falling",
+      "projectile_protection",
+      "power"
+     ],
+     "special": "unbreaking 2"
+    },
+    "swamp": {
+     "common": [
+      "depth_strider",
+      "respiration",
+      "vanishing_curse"
+     ],
+     "special": "mending 1"
+    }
+   },
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "paper",
+         "count": 24
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 16,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.2,
+       "notes": "The enchantment is chosen randomly from the \"Common\" enchantments listed on the table below according to the biome of the villagers. Every level of these enchantments has an equal chance to be chosen, meaning high-level enchantments are as likely as low-level enchantments. It is possible for a librarian to sell the same book more than once. Price 2+3*level to 6+13*level emeralds, doubled for treasure, capped at 64."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "bookshelf",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 1,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "book",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.2,
+       "notes": "The enchantment is chosen randomly from the \"Common\" enchantments listed on the table below according to the biome of the villagers. Every level of these enchantments has an equal chance to be chosen, meaning high-level enchantments are as likely as low-level enchantments. It is possible for a librarian to sell the same book more than once. Price 2+3*level to 6+13*level emeralds, doubled for treasure, capped at 64."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "lantern",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "ink_sac",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2,
+       "notes": "The enchantment is chosen randomly from the \"Common\" enchantments listed on the table below according to the biome of the villagers. Every level of these enchantments has an equal chance to be chosen, meaning high-level enchantments are as likely as low-level enchantments. It is possible for a librarian to sell the same book more than once. Price 2+3*level to 6+13*level emeralds, doubled for treasure, capped at 64."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "glass",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "writable_book",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "In Java Edition only one is requested per trade because of bug MC-248042 (Librarian's book and quill trade is always discounted to 1 since they are unstackable)."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "clock",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "compass",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 15,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "all 3 (master librarians draw 3 since 26.1)",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5,
+         "count_max": 64
+        },
+        {
+         "item": "book",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "enchanted_book",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.2,
+       "notes": "The enchantment is set from the \"Special\" enchantments listed on the table below according to the biome of the villagers. Unlike common enchantments, the level of enchantment is also defined. Price 2+3*level to 6+13*level emeralds, doubled for treasure, capped at 64."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "red_candle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "yellow_candle",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "desert",
+   "notes": "Villager Trade Rebalance experiment armorer, desert biome type. Expert/master armor always Thorns I. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 11
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 16
+        },
+        {
+         "item": "diamond",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 16
+        },
+        {
+         "item": "diamond",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Thorns I."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "jungle",
+   "notes": "Villager Trade Rebalance experiment armorer, jungle biome type. Sells chainmail (only jungle and swamp armorers do). Expert chainmail Unbreaking I; master Projectile Protection I helmet / Feather Falling I boots. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Unbreaking I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Unbreaking I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 11
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Unbreaking I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Unbreaking I."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Projectile Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Feather Falling I."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "plains",
+   "notes": "Villager Trade Rebalance experiment armorer, plains biome type. Expert/master armor always Protection I. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 11
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 16
+        },
+        {
+         "item": "diamond",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 16
+        },
+        {
+         "item": "diamond",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "savanna",
+   "notes": "Villager Trade Rebalance experiment armorer, savanna biome type. Cheap armor always cursed with Curse of Binding. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 6
+        },
+        {
+         "item": "diamond",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        },
+        {
+         "item": "diamond",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "The armor piece is always enchanted with Curse of Binding."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "snowy",
+   "notes": "Villager Trade Rebalance experiment armorer, snowy biome type. Expert: Frost Walker I iron boots + Aqua Affinity iron helmet (both always offered). Master diamond versions. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "These boots are always enchanted with Frost Walker I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "This helmet is always enchanted with Aqua Affinity."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 12
+        },
+        {
+         "item": "diamond",
+         "count": 2
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "These boots are always enchanted with Frost Walker I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 12
+        },
+        {
+         "item": "diamond",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "This helmet is always enchanted with Aqua Affinity."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "swamp",
+   "notes": "Villager Trade Rebalance experiment armorer, swamp biome type. Sells chainmail. Expert chainmail always Mending; master Respiration I helmet / Depth Strider I boots. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Mending."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Mending."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 11
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Mending."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 13
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Mending."
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_helmet",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "This helmet is always enchanted with Respiration I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 8
+        }
+       ],
+       "gives": [
+        {
+         "item": "chainmail_boots",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "These boots are always enchanted with Depth Strider I."
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "profession": "armorer",
+   "variant": "taiga",
+   "notes": "Villager Trade Rebalance experiment armorer, taiga biome type. Expert swaps one diamond armor piece for another (damaged/enchanted/cursed pieces accepted; 8 diamonds minimum for a full set). Master Blast Protection I diamond armor; buys a diamond block for 42 emeralds instead of an iron block. Diamond armor also costs diamonds; most master armorers buy 1 iron block for 4 emeralds. Armorers accept armor of any durability when buying.",
+   "levels": [
+    {
+     "level": "novice",
+     "xp_to_reach": 0,
+     "pick": "all 2",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "coal",
+         "count": 15
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "iron_ingot",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 2,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "apprentice",
+     "xp_to_reach": 10,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 7
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 9
+        }
+       ],
+       "gives": [
+        {
+         "item": "iron_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 5,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "journeyman",
+     "xp_to_reach": 70,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "lava_bucket",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 20,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 5
+        }
+       ],
+       "gives": [
+        {
+         "item": "shield",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 36
+        }
+       ],
+       "gives": [
+        {
+         "item": "bell",
+         "count": 1
+        }
+       ],
+       "max_uses": 12,
+       "xp": 10,
+       "price_multiplier": 0.2
+      }
+     ]
+    },
+    {
+     "level": "expert",
+     "xp_to_reach": 150,
+     "pick": "2 of 4",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        },
+        {
+         "item": "diamond_boots",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_leggings",
+         "count": 1
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        },
+        {
+         "item": "diamond_leggings",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_chestplate",
+         "count": 1
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 2
+        },
+        {
+         "item": "diamond_chestplate",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_helmet",
+         "count": 1
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 4
+        },
+        {
+         "item": "diamond_helmet",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_boots",
+         "count": 1
+        }
+       ],
+       "max_uses": 3,
+       "xp": 15,
+       "price_multiplier": 0.05
+      }
+     ]
+    },
+    {
+     "level": "master",
+     "xp_to_reach": 250,
+     "pick": "2 of 3",
+     "trades": [
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 18
+        },
+        {
+         "item": "diamond",
+         "count": 4
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_chestplate",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Blast Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "emerald",
+         "count": 18
+        },
+        {
+         "item": "diamond",
+         "count": 3
+        }
+       ],
+       "gives": [
+        {
+         "item": "diamond_leggings",
+         "count": 1,
+         "enchanted": true
+        }
+       ],
+       "max_uses": 3,
+       "xp": 30,
+       "price_multiplier": 0.05,
+       "notes": "This armor piece is always enchanted with Blast Protection I."
+      },
+      {
+       "wants": [
+        {
+         "item": "diamond_block",
+         "count": 1
+        }
+       ],
+       "gives": [
+        {
+         "item": "emerald",
+         "count": 42
+        }
+       ],
+       "max_uses": 12,
+       "xp": 30,
+       "price_multiplier": 0.05
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

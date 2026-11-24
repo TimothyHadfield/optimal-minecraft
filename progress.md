@@ -14,6 +14,7 @@ The repo is now Tim's Minecraft site with two sections: **Horses** (the calculat
 | Horses ⇄ Farms switch | 2026-11-24: plain two-button bar at the top of both pages |
 | Farms record | 2026-11-24: all 27 ianxofour Minecraft videos (21 farms, 2 add-ons, 4 not-farms) in `farms/farms.json`: outputs/rates, requirements, hard materials (which other farm helps), on-screen materials list read from video frames, Litematica counts for 11, downloads, gotchas, confidence |
 | Tricks list | 2026-11-24: 51 non-farm tasks (nether roof portal, lava-lake portal, early horse, trading, etc.) in `farms/tricks.json`, Farms/Tricks toggle on the Farms page |
+| Villager trades | 2026-11-24: `farms/trades.json`, Trades tab. Java 26.3: 13 professions / 183 trades, wandering trader 100, 8 experimental (trade-rebalance) tables / 125, price mechanics. Source: minecraft.wiki Trading (rendered via API; the raw page is a database template) + Villager Trade Rebalance raw wikitext. Wandering-trader price multipliers unknown (null); 4 item ids guessed (`sulfur_spike`, `shelf_mushroom`, `poplar_log`, `poplar_sapling`) |
 | Tests | None. phone-view 393 px + desktop, no overflow, no console errors (2026-11-24, local server) |
 
 ## Authorized next steps
