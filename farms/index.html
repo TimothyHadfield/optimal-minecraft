@@ -225,6 +225,7 @@ function tradeDetail(p, q) {
 function render() {
   const q = $('q').value.trim().toLowerCase().replace(/_/g, ' ');
   $('stages').style.display = MODE === 'trades' ? 'none' : '';
+  document.querySelector('.tools').style.display = MODE === 'chart' ? 'none' : ''; // the chart has only the core farms: no search or stage filter
   $('chart').hidden = MODE !== 'chart';
   document.querySelector('.main').style.display = MODE === 'chart' ? 'none' : '';
   if (MODE === 'chart') { if (window.drawChart) window.drawChart(); return; }
@@ -238,7 +239,10 @@ function render() {
   }
   const list = entries().filter(e => (STAGE === 'all' || stageOf(e) === STAGE) && matches(e, q));
   const order = { early: 0, mid: 1, late: 2 };
-  list.sort((a, b) => order[stageOf(a)] - order[stageOf(b)] || nameOf(a).localeCompare(nameOf(b)));
+  // farms: by importance (plan rank, 1 first; no rank = last, A-Z). Tricks: by stage, then A-Z.
+  const rk = e => plan(e).rank != null ? +plan(e).rank : Infinity;
+  if (MODE === 'farms') list.sort((a, b) => rk(a) - rk(b) || nameOf(a).localeCompare(nameOf(b)));
+  else list.sort((a, b) => order[stageOf(a)] - order[stageOf(b)] || nameOf(a).localeCompare(nameOf(b)));
   $('grid').innerHTML = list.map(card).join('') || '<div class="muted">No match.</div>';
   if (WIDE() && !list.some(e => key(e) === SEL) && list.length) SEL = key(list[0]);
   const cur = byKey(SEL || '');

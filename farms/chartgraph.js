@@ -1,11 +1,17 @@
 // Farms CHART tab: plan.json -> the graph that layout.js lays out. Pure: no DOM (Node checks use it too).
-// A box per entry; an arrow per prereq rated MIN_RATING+ (fewer lines, simpler); band = the entry's
-// milestone (0 = needs none, then the plan's milestones in order).
-// MIN_RATING 4, not 3: on the real plan.json (2026-11-24) rated 3+ drew 107 arrows with 118 crossings,
-// rated 4+ draws 47 with 3 crossings. Rated-3 links still show in the hover card's "Build first".
+// A box per entry; an arrow per prereq rated MIN_RATING+; band = the entry's milestone (0 = needs none,
+// then the plan's milestones in order).
+// The chart passes only the core farms (plan `core: true`, Tim 2026-11-24: "only maybe 15 very important
+// farms ... just focus on the lines ... that connect those core farms") with every link rated 2+
+// (coreEntries / CORE_MIN_RATING). MIN_RATING 4 was the old all-entries chart's cut.
 export const MIN_RATING = 4;
-// box and line sizes in px (small square icon boxes)
-export const SIZES = { boxW: 40, boxH: 40, rowH: 54, gapMin: 44, track: 9, near: 7, pad: 14 };
+export const CORE_MIN_RATING = 2;
+// plan entries -> only the core farms (new farms marked core show up on their own)
+export const coreEntries = (planEntries) => Object.fromEntries(Object.entries(planEntries).filter(([k, v]) => k.startsWith('farm:') && v && v.core === true));
+// milestones that have at least one of these entries (an empty band would be an empty column)
+export const usedMilestones = (milestones, entries) => { const u = new Set(Object.values(entries).map((v) => v.milestone)); return (milestones || []).filter((m) => u.has(m.id)); };
+// box and line sizes in px (big square icon boxes: only ~15 of them)
+export const SIZES = { boxW: 64, boxH: 64, rowH: 104, gapX: 150, pad: 20, margin: 10 };
 
 // Line colour by prereq rating, red (low) -> green (high), on the dark brown background.
 export const RATING_COLOR = { 1: '#e2553f', 2: '#e2553f', 3: '#f0a830', 4: '#d6cf3a', 5: '#7cc242' };
@@ -32,10 +38,10 @@ export function multiples(entries, rateOf) {
   }
   return out;
 }
-// box width for 1, 2 or 3 icons (26 px icons, each extra one 16 px further right)
-export const boxWidth = (n) => 40 + (n - 1) * 16;
+// box width for 1, 2 or 3 icons (40 px icons, each extra one 24 px further right)
+export const boxWidth = (n) => 64 + (n - 1) * 24;
 
-export function buildGraph(plan, { reduce = true } = {}) {
+export function buildGraph(plan, { reduce = true, minRating = MIN_RATING } = {}) {
   const ms = plan.milestones || [];
   const msIndex = new Map(ms.map((m, i) => [m.id, i + 1]));
   const ents = plan.entries || {};
@@ -47,7 +53,7 @@ export function buildGraph(plan, { reduce = true } = {}) {
   for (const k of keys) {
     const seen = new Set();
     for (const p of ents[k].prereqs || []) {
-      if (!(p.rating >= MIN_RATING) || !(p.ref in ents) || p.ref === k || seen.has(p.ref)) continue;
+      if (!(p.rating >= minRating) || !(p.ref in ents) || p.ref === k || seen.has(p.ref)) continue;
       if (bandOf.get(p.ref) > bandOf.get(k)) continue; // would point back across a milestone line
       seen.add(p.ref);
       edges.push({ from: p.ref, to: k, rating: p.rating });

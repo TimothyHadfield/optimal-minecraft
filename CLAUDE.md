@@ -22,6 +22,10 @@ calculator: 0-100 perfection score, a saved stable, breeding advice). Used on iP
 - `farms/index.html`: the Farms section (plain JS, no Babel): list + detail, Farms/Tricks toggle,
   search. Data: `farms/farms.json` (27 ianxofour videos, one record each) and `farms/tricks.json`.
   `docs/farms-catalogue.md`: the video catalogue with every download link and source.
+  FARMS list is sorted by `rank` in `farms/plan.json` (1 first, no rank last A-Z).
+  CHART tab (`farms/chart.js`): only farms with `core: true` in plan.json, every prereq link rated 2-5
+  between them, laid out by `farms/corelayout.js` (straight lines, a seeded search for 0 crossings and
+  0 lines through boxes; `window.CHART_STATS` reports both). `farms/layout.js` is no longer used by it.
 - Each sub-page has a small ◀ home link at the top-left that goes to `../` (the main page).
 - Fonts: Inter for text, numbers and inputs; Pixelify Sans for headings, buttons and tabs
   (both Google Fonts).
