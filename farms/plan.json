@@ -58,7 +58,9 @@
     "blaze_rod": 6,
     "water_bucket": 2,
     "diorite": 1
-   }
+   },
+   "rank": 14,
+   "core": true
   },
   "farm:2": {
    "stage": "late",
@@ -109,7 +111,9 @@
     "string": 11,
     "coal": 1,
     "granite": 1
-   }
+   },
+   "rank": 26,
+   "core": false
   },
   "farm:3": {
    "stage": "mid",
@@ -165,7 +169,9 @@
     "quartz": 3,
     "cobweb": 3,
     "turtle_egg": 2
-   }
+   },
+   "rank": 16,
+   "core": false
   },
   "farm:4": {
    "stage": "early",
@@ -202,7 +208,9 @@
     "redstone": 5,
     "coal": 2,
     "water_bucket": 1
-   }
+   },
+   "rank": 17,
+   "core": false
   },
   "farm:5": {
    "stage": "mid",
@@ -255,7 +263,9 @@
     "soul_sand": 1,
     "white_wool": 1,
     "podzol": 1
-   }
+   },
+   "rank": 3,
+   "core": true
   },
   "farm:6": {
    "stage": "mid",
@@ -291,7 +301,9 @@
     "redstone": 3,
     "netherrack": 2,
     "water_bucket": 2
-   }
+   },
+   "rank": 41,
+   "core": false
   },
   "farm:7": {
    "stage": "late",
@@ -327,7 +339,9 @@
     "quartz": 2,
     "lava_bucket": 1,
     "looting_iii_sword": 1
-   }
+   },
+   "rank": 30,
+   "core": false
   },
   "farm:8": {
    "stage": "late",
@@ -379,7 +393,9 @@
     "white_wool": 3,
     "pumpkin": 2,
     "lava_bucket": 1
-   }
+   },
+   "rank": 7,
+   "core": true
   },
   "farm:9": {
    "stage": "mid",
@@ -407,7 +423,9 @@
    "raw": {
     "gold_ingot": 82,
     "redstone": 14
-   }
+   },
+   "rank": 27,
+   "core": false
   },
   "farm:10": {
    "stage": "late",
@@ -462,7 +480,9 @@
     "glowstone": 2,
     "slime_ball": 2,
     "ender_pearl": 1
-   }
+   },
+   "rank": 25,
+   "core": false
   },
   "farm:11": {
    "stage": "late",
@@ -510,7 +530,9 @@
     "soul_sand": 4,
     "wither_skeleton_skull": 3,
     "quartz": 1
-   }
+   },
+   "rank": 29,
+   "core": false
   },
   "farm:12": {
    "stage": "late",
@@ -562,7 +584,9 @@
     "string": 3,
     "slime_ball": 1,
     "turtle_egg": 1
-   }
+   },
+   "rank": 12,
+   "core": true
   },
   "farm:13": {
    "stage": "late",
@@ -623,7 +647,9 @@
     "copper_ingot": 3,
     "nether_star": 1,
     "lava_bucket": 1
-   }
+   },
+   "rank": 55,
+   "core": false
   },
   "farm:14": {
    "stage": "mid",
@@ -670,7 +696,9 @@
     "coal": 4,
     "quartz": 2,
     "ender_pearl": 1
-   }
+   },
+   "rank": 15,
+   "core": true
   },
   "farm:15": {
    "stage": "late",
@@ -719,7 +747,9 @@
     "string": 1,
     "slime_ball": 1,
     "shulker": 1
-   }
+   },
+   "rank": 8,
+   "core": true
   },
   "farm:16": {
    "stage": "mid",
@@ -760,7 +790,9 @@
     "dirt": 31,
     "oxeye_daisy": 31,
     "quartz": 3
-   }
+   },
+   "rank": 18,
+   "core": false
   },
   "farm:17": {
    "stage": "mid",
@@ -812,7 +844,9 @@
     "ender_pearl": 1,
     "flint": 1,
     "slime_ball": 1
-   }
+   },
+   "rank": 9,
+   "core": true
   },
   "farm:18": {
    "stage": "mid",
@@ -856,7 +890,9 @@
     "string": 2,
     "pumpkin": 1,
     "slime_ball": 1
-   }
+   },
+   "rank": 13,
+   "core": true
   },
   "farm:19": {
    "stage": "mid",
@@ -888,7 +924,9 @@
     "flint": 1,
     "gold_ingot": 1,
     "carrot": 1
-   }
+   },
+   "rank": 4,
+   "core": true
   },
   "farm:20": {
    "stage": "mid",
@@ -923,7 +961,9 @@
     "diamond": 2,
     "coal": 1,
     "lava_bucket": 1
-   }
+   },
+   "rank": 28,
+   "core": false
   },
   "farm:21": {
    "stage": "early",
@@ -937,7 +977,9 @@
     "Keep the coast on your left"
    ],
    "prereqs": [],
-   "raw": {}
+   "raw": {},
+   "rank": 69,
+   "core": false
   },
   "farm:22": {
    "stage": "mid",
@@ -979,7 +1021,9 @@
     "soul_sand": 1,
     "quartz": 1,
     "lava_bucket": 1
-   }
+   },
+   "rank": 6,
+   "core": true
   },
   "farm:23": {
    "stage": "mid",
@@ -1030,7 +1074,9 @@
     "coal": 9,
     "gold_ingot": 4,
     "water_bucket": 1
-   }
+   },
+   "rank": 10,
+   "core": true
   },
   "farm:24": {
    "stage": "early",
@@ -1060,7 +1106,9 @@
      "why": "iron trades for emeralds"
     }
    ],
-   "raw": {}
+   "raw": {},
+   "rank": 11,
+   "core": true
   },
   "farm:25": {
    "stage": "late",
@@ -1094,7 +1142,9 @@
     "string": 3,
     "obsidian": 1,
     "water_bucket": 1
-   }
+   },
+   "rank": 40,
+   "core": false
   },
   "farm:26": {
    "stage": "mid",
@@ -1142,7 +1192,9 @@
     "iron_ingot": 8,
     "slime_ball": 8,
     "obsidian": 2
-   }
+   },
+   "rank": 54,
+   "core": false
   },
   "farm:27": {
    "stage": "early",
@@ -1162,7 +1214,9 @@
     "coal": 2,
     "water_bucket": 1,
     "lava_bucket": 1
-   }
+   },
+   "rank": 1,
+   "core": true
   },
   "farm:101": {
    "stage": "early",
@@ -1179,7 +1233,9 @@
     "wheat_seeds": 80,
     "water_bucket": 1,
     "oak_log": 1
-   }
+   },
+   "rank": 5,
+   "core": true
   },
   "farm:102": {
    "stage": "early",
@@ -1196,7 +1252,9 @@
     "carrot": 80,
     "water_bucket": 1,
     "oak_log": 1
-   }
+   },
+   "rank": 33,
+   "core": false
   },
   "farm:103": {
    "stage": "early",
@@ -1213,7 +1271,9 @@
     "potato": 80,
     "water_bucket": 1,
     "oak_log": 1
-   }
+   },
+   "rank": 34,
+   "core": false
   },
   "farm:104": {
    "stage": "early",
@@ -1230,7 +1290,9 @@
     "beetroot_seeds": 80,
     "water_bucket": 1,
     "oak_log": 1
-   }
+   },
+   "rank": 53,
+   "core": false
   },
   "farm:105": {
    "stage": "early",
@@ -1247,7 +1309,9 @@
     "pumpkin_seeds": 18,
     "water_bucket": 2,
     "oak_log": 1
-   }
+   },
+   "rank": 35,
+   "core": false
   },
   "farm:106": {
    "stage": "early",
@@ -1264,7 +1328,9 @@
     "melon_seeds": 18,
     "water_bucket": 2,
     "oak_log": 1
-   }
+   },
+   "rank": 36,
+   "core": false
   },
   "farm:107": {
    "stage": "early",
@@ -1280,7 +1346,9 @@
    "raw": {
     "sugar_cane": 16,
     "water_bucket": 2
-   }
+   },
+   "rank": 22,
+   "core": false
   },
   "farm:108": {
    "stage": "early",
@@ -1295,7 +1363,9 @@
    "prereqs": [],
    "raw": {
     "bamboo": 20
-   }
+   },
+   "rank": 49,
+   "core": false
   },
   "farm:109": {
    "stage": "early",
@@ -1311,7 +1381,9 @@
    "raw": {
     "sand": 10,
     "cactus": 10
-   }
+   },
+   "rank": 56,
+   "core": false
   },
   "farm:110": {
    "stage": "early",
@@ -1327,7 +1399,9 @@
    "raw": {
     "kelp": 10,
     "water_bucket": 2
-   }
+   },
+   "rank": 37,
+   "core": false
   },
   "farm:111": {
    "stage": "early",
@@ -1343,7 +1417,9 @@
    "raw": {
     "cocoa_beans": 24,
     "jungle_log": 12
-   }
+   },
+   "rank": 68,
+   "core": false
   },
   "farm:112": {
    "stage": "early",
@@ -1358,7 +1434,9 @@
    "prereqs": [],
    "raw": {
     "sweet_berries": 28
-   }
+   },
+   "rank": 57,
+   "core": false
   },
   "farm:113": {
    "stage": "mid",
@@ -1374,7 +1452,9 @@
    "raw": {
     "soul_sand": 36,
     "nether_wart": 36
-   }
+   },
+   "rank": 31,
+   "core": false
   },
   "farm:114": {
    "stage": "early",
@@ -1391,7 +1471,9 @@
     "cobblestone": 120,
     "red_mushroom": 4,
     "brown_mushroom": 4
-   }
+   },
+   "rank": 58,
+   "core": false
   },
   "farm:115": {
    "stage": "early",
@@ -1407,7 +1489,9 @@
    "raw": {
     "oak_sapling": 10,
     "coal": 3
-   }
+   },
+   "rank": 32,
+   "core": false
   },
   "farm:116": {
    "stage": "early",
@@ -1423,7 +1507,9 @@
    "raw": {
     "spruce_sapling": 4,
     "bone_meal": 3
-   }
+   },
+   "rank": 42,
+   "core": false
   },
   "farm:117": {
    "stage": "early",
@@ -1445,7 +1531,9 @@
    "raw": {
     "wheat": 20,
     "oak_log": 2
-   }
+   },
+   "rank": 20,
+   "core": false
   },
   "farm:118": {
    "stage": "early",
@@ -1466,7 +1554,9 @@
    ],
    "raw": {
     "carrot": 20
-   }
+   },
+   "rank": 43,
+   "core": false
   },
   "farm:119": {
    "stage": "early",
@@ -1489,7 +1579,9 @@
     "oak_log": 15,
     "wheat": 4,
     "iron_ingot": 2
-   }
+   },
+   "rank": 44,
+   "core": false
   },
   "farm:120": {
    "stage": "early",
@@ -1511,7 +1603,9 @@
    "raw": {
     "oak_log": 15,
     "wheat_seeds": 10
-   }
+   },
+   "rank": 21,
+   "core": false
   },
   "farm:121": {
    "stage": "early",
@@ -1540,7 +1634,9 @@
     "sand": 24,
     "oak_log": 18,
     "wheat_seeds": 8
-   }
+   },
+   "rank": 45,
+   "core": false
   },
   "farm:122": {
    "stage": "early",
@@ -1562,7 +1658,9 @@
    "raw": {
     "oak_log": 14,
     "carrot": 10
-   }
+   },
+   "rank": 59,
+   "core": false
   },
   "farm:123": {
    "stage": "early",
@@ -1582,7 +1680,9 @@
     "honeycomb": 3,
     "iron_ingot": 2,
     "coal": 1
-   }
+   },
+   "rank": 46,
+   "core": false
   },
   "farm:124": {
    "stage": "early",
@@ -1597,7 +1697,9 @@
    "prereqs": [],
    "raw": {
     "string": 2
-   }
+   },
+   "rank": 47,
+   "core": false
   },
   "farm:125": {
    "stage": "early",
@@ -1614,7 +1716,9 @@
     "cobblestone": 10,
     "lava_bucket": 1,
     "water_bucket": 1
-   }
+   },
+   "rank": 2,
+   "core": true
   },
   "farm:126": {
    "stage": "mid",
@@ -1637,7 +1741,9 @@
     "lava_bucket": 1,
     "soul_soil": 1,
     "blue_ice": 1
-   }
+   },
+   "rank": 60,
+   "core": false
   },
   "farm:127": {
    "stage": "early",
@@ -1653,7 +1759,9 @@
    "raw": {
     "cobblestone": 201,
     "water_bucket": 2
-   }
+   },
+   "rank": 48,
+   "core": false
   },
   "farm:128": {
    "stage": "early",
@@ -1675,7 +1783,9 @@
    "raw": {
     "cobblestone": 901,
     "water_bucket": 8
-   }
+   },
+   "rank": 23,
+   "core": false
   },
   "farm:129": {
    "stage": "early",
@@ -1704,7 +1814,9 @@
     "carrot": 12,
     "oak_log": 6,
     "water_bucket": 1
-   }
+   },
+   "rank": 24,
+   "core": false
   },
   "farm:130": {
    "stage": "early",
@@ -1728,7 +1840,9 @@
     "oak_log": 8,
     "sand": 8,
     "iron_ingot": 5
-   }
+   },
+   "rank": 19,
+   "core": false
   },
   "farm:131": {
    "stage": "early",
@@ -1750,7 +1864,9 @@
    "raw": {
     "iron_ingot": 10,
     "oak_log": 9
-   }
+   },
+   "rank": 38,
+   "core": false
   },
   "farm:132": {
    "stage": "early",
@@ -1767,7 +1883,9 @@
     "snowball": 8,
     "sand": 6,
     "pumpkin": 1
-   }
+   },
+   "rank": 51,
+   "core": false
   },
   "farm:133": {
    "stage": "mid",
@@ -1789,7 +1907,9 @@
    "raw": {
     "water_bucket": 2,
     "silk_touch_pickaxe": 1
-   }
+   },
+   "rank": 50,
+   "core": false
   },
   "farm:134": {
    "stage": "early",
@@ -1811,7 +1931,9 @@
    "raw": {
     "bone_meal": 64,
     "sunflower": 4
-   }
+   },
+   "rank": 61,
+   "core": false
   },
   "farm:135": {
    "stage": "early",
@@ -1827,7 +1949,9 @@
    "raw": {
     "cobblestone": 16,
     "glow_berries": 8
-   }
+   },
+   "rank": 62,
+   "core": false
   },
   "farm:136": {
    "stage": "late",
@@ -1849,7 +1973,9 @@
    "raw": {
     "end_stone": 5,
     "chorus_flower": 5
-   }
+   },
+   "rank": 63,
+   "core": false
   },
   "farm:137": {
    "stage": "early",
@@ -1865,7 +1991,9 @@
    "raw": {
     "seagrass": 10,
     "iron_ingot": 2
-   }
+   },
+   "rank": 64,
+   "core": false
   },
   "farm:138": {
    "stage": "mid",
@@ -1881,7 +2009,9 @@
    "raw": {
     "string": 6,
     "slime_ball": 5
-   }
+   },
+   "rank": 65,
+   "core": false
   },
   "farm:139": {
    "stage": "early",
@@ -1899,7 +2029,9 @@
     "spider_eye": 4,
     "copper_ingot": 1,
     "feather": 1
-   }
+   },
+   "rank": 66,
+   "core": false
   },
   "farm:140": {
    "stage": "early",
@@ -1914,7 +2046,9 @@
    "prereqs": [],
    "raw": {
     "water_bucket": 2
-   }
+   },
+   "rank": 52,
+   "core": false
   },
   "farm:141": {
    "stage": "early",
@@ -1932,7 +2066,9 @@
     "cobblestone": 3,
     "lava_bucket": 1,
     "pointed_dripstone": 1
-   }
+   },
+   "rank": 39,
+   "core": false
   },
   "farm:142": {
    "stage": "early",
@@ -1954,7 +2090,9 @@
    "raw": {
     "cobblestone": 25,
     "moss_block": 1
-   }
+   },
+   "rank": 67,
+   "core": false
   },
   "trick:lava-cast-portal": {
    "stage": "early",
