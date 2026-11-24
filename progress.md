@@ -18,7 +18,7 @@ Tim's Minecraft site: main page → **Farms** (`farms/`: record of farms, tricks
 | Tricks | 51 in `farms/tricks.json`, drawn SVG pictures |
 | Trades | `farms/trades.json`, Java 26.3 (13 professions / 183 trades, wandering trader 100, 8 experimental tables) |
 | Pictures | `farms/pics/`: farm-<n>.jpg real video frames (1–27, 201–213; #26 and #211 weak), basic-<slug>.svg, trick-<id>.svg. Icons `farms/icons/<id>.png` (~418, minecraft.wiki) |
-| CHART | Core farms only, all prereq links between them (rating 2–5, red→green, 5 thicker), milestone bands, hover/tap preview, 1×/2×/3× icon rule within same-icon groups. CHART_STATS 2026-11-24: 15 nodes, 16 lines, 0 crossings, 0 bends |
+| CHART | Core farms only, all prereq links between them (rating 2–5, red→green, 5 thicker), milestone bands, hover/tap preview, 1×/2×/3× icon rule within same-icon groups. 2026-11-24 chartfit: laptop shape (column only as wide as its widest box, gaps 76 in a band / 96 across a milestone, 7 rows, build-order `rank` left→right in a band). CHART_STATS: 17 nodes, 22 lines, 0 crossings, 0 box hits, 0 bends, 1 order swap, 1472×738, boxes 61 px at 1440×900, 54 px at 1280×800, 47 px on phone |
 | Fonts | Inter (text) + Pixelify Sans (headings/tabs) |
 | Tests | No suite. phone-view WebKit 393 px + desktop (2026-11-24, local + live redirect) |
 
@@ -40,6 +40,7 @@ None.
 - All ianxofour farms are Java only; several version-limited (`versions` + `version_notes`). 202 needs TNT duping (some servers disable it); 213 uses more ominous bottles than it returns.
 - Litematica counts include terrain for some (see each record's `materials_litematic.differences`). #3's on-screen list omits 1,122 nether bricks.
 - New core farms change the chart; `corelayout.js` searched 0 crossings for today's set but a test set with one extra core farm gave 1 crossing.
+- CHART_STATS `ms`: ~0.5 s in Chrome, 3–6 s in phone-view's WebKit (Playwright WebKit on Windows has no JIT; not a real-iPhone number).
 - The local folder is still named `Craft_Horse` (project memory is keyed to the path); repo is optimal-minecraft.
 - Research tools: `tools/litecount.py`, `tools/farm-research-brief.md`, `tools/get-icons.py`, `tools/gen-trick-pics.py`. Merge script for new farm batches lived in the scratchpad (`merge_others.py`): append records, plan entries, prereq changes, then re-rank.
 
