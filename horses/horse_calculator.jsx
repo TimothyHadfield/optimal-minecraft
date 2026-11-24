@@ -278,12 +278,12 @@ export default function HorseCalc() {
       `,
       backgroundSize: '16px 16px, 16px 16px, 100% 100%',
       color: '#e8e0d0',
-      fontFamily: '"VT323", "Courier New", monospace',
+      fontFamily: '"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
       padding: '16px',
       paddingBottom: '40px',
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pixelify+Sans:wght@400;600&display=swap');
         * { box-sizing: border-box; }
         .pixel-slider {
           -webkit-appearance: none;
@@ -323,8 +323,8 @@ export default function HorseCalc() {
         }
         .saved-flash { animation: flash 0.6s ease-in-out 2; }
         .pixel-btn {
-          font-family: '"Press Start 2P", monospace';
-          font-size: 11px;
+          font-family: "Pixelify Sans", monospace;
+          font-size: 15px;
           padding: 12px 14px;
           background: #7cc242;
           color: #0a0805;
@@ -336,8 +336,8 @@ export default function HorseCalc() {
         }
         .pixel-btn:active { transform: translate(1px, 1px); box-shadow: inset 2px 2px 0 rgba(0,0,0,0.3), inset -2px -2px 0 rgba(255,255,255,0.2); }
         .pixel-btn-sm {
-          font-family: '"Press Start 2P", monospace';
-          font-size: 8px;
+          font-family: "Pixelify Sans", monospace;
+          font-size: 11px;
           padding: 8px 10px;
           background: #8b6f47;
           color: #f4ead5;
@@ -349,8 +349,8 @@ export default function HorseCalc() {
         .pixel-btn-sm:active { transform: translate(1px, 1px); }
         .pixel-btn-danger { background: #b03028; color: #f4ead5; }
         .pixel-input {
-          font-family: '"VT323", monospace';
-          font-size: 22px;
+          font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+          font-size: 18px;
           padding: 10px 12px;
           background: #0f0a07;
           color: #f4ead5;
@@ -373,20 +373,20 @@ export default function HorseCalc() {
           padding: 16px;
           margin-bottom: 16px;
         }
-        .title-font { font-family: '"Press Start 2P", monospace'; }
-        .body-font { font-family: '"VT323", monospace'; }
+        .title-font { font-family: "Pixelify Sans", monospace; }
+        .body-font { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
       `}</style>
 
       <div style={{ maxWidth: 540, margin: '0 auto' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 16, paddingTop: 8 }}>
-          <div className="title-font" style={{ fontSize: 18, color: mode === 'perfect' ? '#7cc242' : '#c0392b', letterSpacing: 2, lineHeight: 1.6, textShadow: '3px 3px 0 #0a0805' }}>
+          <div className="title-font" style={{ fontSize: 25, color: mode === 'perfect' ? '#7cc242' : '#c0392b', letterSpacing: 2, lineHeight: 1.6, textShadow: '3px 3px 0 #0a0805' }}>
             HORSE
           </div>
-          <div className="title-font" style={{ fontSize: 14, color: mode === 'perfect' ? '#ffd54a' : '#a89880', letterSpacing: 2, marginTop: 8, textShadow: '2px 2px 0 #0a0805' }}>
+          <div className="title-font" style={{ fontSize: 20, color: mode === 'perfect' ? '#ffd54a' : '#a89880', letterSpacing: 2, marginTop: 8, textShadow: '2px 2px 0 #0a0805' }}>
             {mode === 'perfect' ? 'PERFECTION' : 'IMPERFECTION'}
           </div>
-          <div style={{ fontSize: 18, color: '#8b7355', marginTop: 8, letterSpacing: 2 }}>
+          <div style={{ fontSize: 14, color: '#8b7355', marginTop: 8, letterSpacing: 2 }}>
             ━━━ {tab === 'calc' ? 'CALCULATOR' : 'BREEDING'} ━━━
           </div>
         </div>
@@ -398,8 +398,8 @@ export default function HorseCalc() {
             style={{
               flex: 1,
               padding: '12px 8px',
-              fontFamily: '"Press Start 2P", monospace',
-              fontSize: 10,
+              fontFamily: '"Pixelify Sans", monospace',
+              fontSize: 14,
               letterSpacing: 1.5,
               background: mode === 'perfect' ? '#7cc242' : '#1f1813',
               color: mode === 'perfect' ? '#0a0805' : '#5a4a38',
@@ -417,8 +417,8 @@ export default function HorseCalc() {
             style={{
               flex: 1,
               padding: '12px 8px',
-              fontFamily: '"Press Start 2P", monospace',
-              fontSize: 10,
+              fontFamily: '"Pixelify Sans", monospace',
+              fontSize: 14,
               letterSpacing: 1.5,
               background: mode === 'trash' ? '#c0392b' : '#1f1813',
               color: mode === 'trash' ? '#f4ead5' : '#5a4a38',
@@ -440,8 +440,8 @@ export default function HorseCalc() {
             style={{
               flex: 1,
               padding: '14px 8px',
-              fontFamily: '"Press Start 2P", monospace',
-              fontSize: 11,
+              fontFamily: '"Pixelify Sans", monospace',
+              fontSize: 15,
               letterSpacing: 2,
               background: tab === 'calc' ? '#7cc242' : '#2a221c',
               color: tab === 'calc' ? '#0a0805' : '#a89880',
@@ -459,8 +459,8 @@ export default function HorseCalc() {
             style={{
               flex: 1,
               padding: '14px 8px',
-              fontFamily: '"Press Start 2P", monospace',
-              fontSize: 11,
+              fontFamily: '"Pixelify Sans", monospace',
+              fontSize: 15,
               letterSpacing: 2,
               background: tab === 'breed' ? '#ffd54a' : '#2a221c',
               color: tab === 'breed' ? '#0a0805' : '#a89880',
@@ -479,11 +479,11 @@ export default function HorseCalc() {
 
         {/* Score Display */}
         <div className="panel" style={{ textAlign: 'center', padding: '24px 16px' }}>
-          <div style={{ fontSize: 16, color: '#8b7355', letterSpacing: 3, marginBottom: 8 }}>
+          <div style={{ fontSize: 13, color: '#8b7355', letterSpacing: 3, marginBottom: 8 }}>
             {mode === 'perfect' ? 'PERFECTION SCORE' : 'TRASH SCORE'}
           </div>
           <div className="title-font" style={{
-            fontSize: 56,
+            fontSize: 78,
             color,
             textShadow: `4px 4px 0 #0a0805, 0 0 20px ${color}40`,
             lineHeight: 1,
@@ -491,7 +491,7 @@ export default function HorseCalc() {
           }}>
             {shown.toFixed(1)}
           </div>
-          <div className="title-font" style={{ fontSize: 12, color, letterSpacing: 3, marginTop: 12, marginBottom: 16 }}>
+          <div className="title-font" style={{ fontSize: 17, color, letterSpacing: 3, marginTop: 12, marginBottom: 16 }}>
             {scoreLabel(shown, mode)}
           </div>
           {/* Pixel progress bar */}
@@ -538,7 +538,7 @@ export default function HorseCalc() {
               border: '2px solid #0a0805',
               boxShadow: 'inset 2px 2px 0 rgba(0,0,0,0.6)',
             }}>
-              <div className="title-font" style={{ fontSize: 8, color: '#ffd54a', letterSpacing: 1, marginBottom: 6 }}>
+              <div className="title-font" style={{ fontSize: 11, color: '#ffd54a', letterSpacing: 1, marginBottom: 6 }}>
                 ▸ FROM ITEMS MACHINE
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -551,21 +551,21 @@ export default function HorseCalc() {
                   min="1"
                   step="1"
                   placeholder="80"
-                  style={{ fontSize: 20, padding: '6px 8px', flex: 1 }}
+                  style={{ fontSize: 16, padding: '6px 8px', flex: 1 }}
                 />
-                <div style={{ fontSize: 16, color: '#8b7355', letterSpacing: 1, flexShrink: 0 }}>
+                <div style={{ fontSize: 13, color: '#8b7355', letterSpacing: 1, flexShrink: 0 }}>
                   items
                 </div>
-                <div style={{ fontSize: 22, color: '#7cc242', flexShrink: 0 }}>→</div>
-                <div style={{ fontSize: 20, color: '#f4ead5', flexShrink: 0, minWidth: 70, textAlign: 'right' }}>
+                <div style={{ fontSize: 18, color: '#7cc242', flexShrink: 0 }}>→</div>
+                <div style={{ fontSize: 16, color: '#f4ead5', flexShrink: 0, minWidth: 70, textAlign: 'right' }}>
                   {speed.toFixed(2)}
                 </div>
               </div>
-              <div style={{ fontSize: 14, color: '#5a4a38', marginTop: 6, textAlign: 'center', letterSpacing: 1 }}>
+              <div style={{ fontSize: 12, color: '#5a4a38', marginTop: 6, textAlign: 'center', letterSpacing: 1 }}>
                 760 ÷ items = blocks/sec
               </div>
               {itemsOutOfRange && (
-                <div style={{ fontSize: 14, color: '#f0a830', marginTop: 4, textAlign: 'center', letterSpacing: 1 }}>
+                <div style={{ fontSize: 12, color: '#f0a830', marginTop: 4, textAlign: 'center', letterSpacing: 1 }}>
                   ⚠ outside horse range ({(760/MAX_SPEED).toFixed(0)}–{(760/MIN_SPEED).toFixed(0)} items) — speed clamped
                 </div>
               )}
@@ -605,7 +605,7 @@ export default function HorseCalc() {
 
         {/* Save */}
         <div className="panel">
-          <div className="title-font" style={{ fontSize: 10, color: '#ffd54a', letterSpacing: 2, marginBottom: 10 }}>
+          <div className="title-font" style={{ fontSize: 14, color: '#ffd54a', letterSpacing: 2, marginBottom: 10 }}>
             ▸ NAME THIS HORSE
           </div>
           <input
@@ -629,7 +629,7 @@ export default function HorseCalc() {
         {/* Saved horses */}
         {loaded && savedHorses.length > 0 && (
           <div className="panel">
-            <div className="title-font" style={{ fontSize: 11, color: mode === 'perfect' ? '#ffd54a' : '#c0392b', letterSpacing: 2, marginBottom: 14 }}>
+            <div className="title-font" style={{ fontSize: 15, color: mode === 'perfect' ? '#ffd54a' : '#c0392b', letterSpacing: 2, marginBottom: 14 }}>
               ▸ {mode === 'perfect' ? 'YOUR STABLE' : 'YOUR TRASH STABLE'} ({savedHorses.length})
             </div>
             {savedHorses.map((h, idx) => {
@@ -650,7 +650,7 @@ export default function HorseCalc() {
                     position: 'absolute',
                     top: -10,
                     right: 8,
-                    fontSize: 8,
+                    fontSize: 11,
                     color: mode === 'perfect' ? '#0a0805' : '#f4ead5',
                     background: mode === 'perfect' ? '#ffd54a' : '#c0392b',
                     padding: '3px 6px',
@@ -659,18 +659,18 @@ export default function HorseCalc() {
                   }}>{mode === 'perfect' ? '★ BEST' : '☠ TRASHIEST'}</div>
                 )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 6 }}>
-                  <div style={{ fontSize: 22, color: '#f4ead5', fontWeight: 'bold', maxWidth: '70%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <div style={{ fontSize: 18, color: '#f4ead5', fontWeight: 'bold', maxWidth: '70%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {h.name}
                   </div>
                   <div className="title-font" style={{
-                    fontSize: 16,
+                    fontSize: 22,
                     color: scoreColor(hShown),
                     textShadow: '2px 2px 0 #0a0805',
                   }}>
                     {hShown.toFixed(1)}
                   </div>
                 </div>
-                <div style={{ fontSize: 18, color: '#a89880', marginBottom: 10, lineHeight: 1.4 }}>
+                <div style={{ fontSize: 14, color: '#a89880', marginBottom: 10, lineHeight: 1.4 }}>
                   <span style={{ color: '#ffd54a' }}>⚡</span> {h.speed.toFixed(2)} b/s
                   <span style={{ margin: '0 8px', color: '#5a4a38' }}>│</span>
                   <span style={{ color: '#7cc242' }}>↑</span> {h.jump.toFixed(2)} b
@@ -694,7 +694,7 @@ export default function HorseCalc() {
                 padding: 10,
                 background: '#0f0a07',
                 border: '2px solid #0a0805',
-                fontSize: 18,
+                fontSize: 14,
                 color: '#a89880',
                 lineHeight: 1.4,
               }}>
@@ -716,7 +716,7 @@ export default function HorseCalc() {
         {/* Footer info */}
         <div style={{
           textAlign: 'center',
-          fontSize: 16,
+          fontSize: 13,
           color: '#5a4a38',
           marginTop: 20,
           lineHeight: 1.6,
@@ -760,8 +760,8 @@ function StatRow({ label, icon, iconColor, value, unit, min, max, step, score, o
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 22, color: iconColor || '#f4ead5' }}>{icon}</span>
-          <span className="title-font" style={{ fontSize: 11, color: '#f4ead5', letterSpacing: 2 }}>{label}</span>
+          <span style={{ fontSize: 18, color: iconColor || '#f4ead5' }}>{icon}</span>
+          <span className="title-font" style={{ fontSize: 15, color: '#f4ead5', letterSpacing: 2 }}>{label}</span>
         </div>
         <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
@@ -773,7 +773,7 @@ function StatRow({ label, icon, iconColor, value, unit, min, max, step, score, o
               onChange={handleTextChange}
               onBlur={handleTextBlur}
               style={{
-                fontSize: 22,
+                fontSize: 18,
                 color: '#f4ead5',
                 background: '#0f0a07',
                 border: '2px solid #3a3024',
@@ -788,7 +788,7 @@ function StatRow({ label, icon, iconColor, value, unit, min, max, step, score, o
             />
             {renderValue && <span>{renderValue(value)}</span>}
           </div>
-          <div style={{ fontSize: 14, color: '#8b7355', letterSpacing: 1, marginTop: 2 }}>{unit}</div>
+          <div style={{ fontSize: 12, color: '#8b7355', letterSpacing: 1, marginTop: 2 }}>{unit}</div>
         </div>
       </div>
       <input
@@ -800,9 +800,9 @@ function StatRow({ label, icon, iconColor, value, unit, min, max, step, score, o
         value={Math.max(min, Math.min(max, value))}
         onChange={(e) => onChange(parseFloat(e.target.value))}
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6, fontSize: 14, color: '#5a4a38' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6, fontSize: 12, color: '#5a4a38' }}>
         <span>{min.toFixed(precision === 0 ? 1 : precision === 2 ? 1 : precision)}</span>
-        <span className="title-font" style={{ fontSize: 9, color, letterSpacing: 1 }}>
+        <span className="title-font" style={{ fontSize: 13, color, letterSpacing: 1 }}>
           {score.toFixed(0)}/100
         </span>
         <span>{max.toFixed(precision === 0 ? 1 : precision === 2 ? 1 : precision)}</span>
@@ -824,7 +824,7 @@ function ParentCard({ horse, HeartIcon, mode = 'perfect' }) {
       boxShadow: 'inset 2px 2px 0 rgba(255,255,255,0.04), inset -2px -2px 0 rgba(0,0,0,0.4)',
     }}>
       <div style={{
-        fontSize: 18,
+        fontSize: 14,
         color: '#f4ead5',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
@@ -832,14 +832,14 @@ function ParentCard({ horse, HeartIcon, mode = 'perfect' }) {
         marginBottom: 4,
       }}>{horse.name}</div>
       <div className="title-font" style={{
-        fontSize: 14,
+        fontSize: 20,
         color: scoreColor(shown),
         textShadow: '2px 2px 0 #0a0805',
         marginBottom: 6,
       }}>
         {shown.toFixed(1)}
       </div>
-      <div style={{ fontSize: 15, color: '#a89880', lineHeight: 1.5 }}>
+      <div style={{ fontSize: 12, color: '#a89880', lineHeight: 1.5 }}>
         <div><span style={{ color: '#ffd54a' }}>⚡</span> {horse.speed.toFixed(2)} b/s</div>
         <div><span style={{ color: '#7cc242' }}>↑</span> {horse.jump.toFixed(1)} b</div>
         <div><HeartIcon size={11} /> {horse.hearts.toFixed(1)}</div>
@@ -861,7 +861,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
   if (!loaded) {
     return (
       <div className="panel" style={{ textAlign: 'center', padding: 24 }}>
-        <div style={{ fontSize: 18, color: '#a89880' }}>Loading stable...</div>
+        <div style={{ fontSize: 14, color: '#a89880' }}>Loading stable...</div>
       </div>
     );
   }
@@ -869,10 +869,10 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
   if (horses.length === 0) {
     return (
       <div className="panel" style={{ textAlign: 'center', padding: 24 }}>
-        <div className="title-font" style={{ fontSize: 11, color: '#8b7355', letterSpacing: 2, marginBottom: 14 }}>
+        <div className="title-font" style={{ fontSize: 15, color: '#8b7355', letterSpacing: 2, marginBottom: 14 }}>
           {mode === 'perfect' ? 'EMPTY STABLE' : 'EMPTY TRASH'}
         </div>
-        <div style={{ fontSize: 18, color: '#a89880', lineHeight: 1.5 }}>
+        <div style={{ fontSize: 14, color: '#a89880', lineHeight: 1.5 }}>
           Switch to the CALC tab and add some horses to {mode === 'perfect' ? 'your stable' : 'this stable'}. Once you have at least 2 horses, this tab will show you the optimal breeding pair.
         </div>
       </div>
@@ -882,10 +882,10 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
   if (horses.length === 1) {
     return (
       <div className="panel" style={{ textAlign: 'center', padding: 24 }}>
-        <div className="title-font" style={{ fontSize: 11, color: '#8b7355', letterSpacing: 2, marginBottom: 14 }}>
+        <div className="title-font" style={{ fontSize: 15, color: '#8b7355', letterSpacing: 2, marginBottom: 14 }}>
           ONE HORSE ONLY
         </div>
-        <div style={{ fontSize: 18, color: '#a89880', lineHeight: 1.5 }}>
+        <div style={{ fontSize: 14, color: '#a89880', lineHeight: 1.5 }}>
           Add at least one more horse to your stable to see breeding recommendations.
         </div>
       </div>
@@ -916,24 +916,24 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
     <>
       {/* Stat Leaders */}
       <div className="panel">
-        <div className="title-font" style={{ fontSize: 10, color: accent, letterSpacing: 2, marginBottom: 12 }}>
+        <div className="title-font" style={{ fontSize: 14, color: accent, letterSpacing: 2, marginBottom: 12 }}>
           ▸ {mode === 'perfect' ? 'STAT LEADERS' : 'TRASHIEST STATS'}
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 6 }}>
           <div style={{ padding: 8, background: '#0f0a07', border: '2px solid #0a0805' }}>
-            <div style={{ color: '#ffd54a', fontSize: 14, letterSpacing: 1 }}>⚡ SPEED</div>
-            <div style={{ color: '#f4ead5', fontSize: 16, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.speed.name}</div>
-            <div style={{ color: '#a89880', fontSize: 14 }}>{leaders.speed.speed.toFixed(2)}</div>
+            <div style={{ color: '#ffd54a', fontSize: 12, letterSpacing: 1 }}>⚡ SPEED</div>
+            <div style={{ color: '#f4ead5', fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.speed.name}</div>
+            <div style={{ color: '#a89880', fontSize: 12 }}>{leaders.speed.speed.toFixed(2)}</div>
           </div>
           <div style={{ padding: 8, background: '#0f0a07', border: '2px solid #0a0805' }}>
-            <div style={{ color: '#7cc242', fontSize: 14, letterSpacing: 1 }}>↑ JUMP</div>
-            <div style={{ color: '#f4ead5', fontSize: 16, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.jump.name}</div>
-            <div style={{ color: '#a89880', fontSize: 14 }}>{leaders.jump.jump.toFixed(1)}</div>
+            <div style={{ color: '#7cc242', fontSize: 12, letterSpacing: 1 }}>↑ JUMP</div>
+            <div style={{ color: '#f4ead5', fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.jump.name}</div>
+            <div style={{ color: '#a89880', fontSize: 12 }}>{leaders.jump.jump.toFixed(1)}</div>
           </div>
           <div style={{ padding: 8, background: '#0f0a07', border: '2px solid #0a0805' }}>
-            <div style={{ color: '#d63030', fontSize: 14, letterSpacing: 1 }}><HeartIcon size={10}/> HEALTH</div>
-            <div style={{ color: '#f4ead5', fontSize: 16, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.hearts.name}</div>
-            <div style={{ color: '#a89880', fontSize: 14 }}>{leaders.hearts.hearts.toFixed(1)}</div>
+            <div style={{ color: '#d63030', fontSize: 12, letterSpacing: 1 }}><HeartIcon size={10}/> HEALTH</div>
+            <div style={{ color: '#f4ead5', fontSize: 13, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{leaders.hearts.name}</div>
+            <div style={{ color: '#a89880', fontSize: 12 }}>{leaders.hearts.hearts.toFixed(1)}</div>
           </div>
         </div>
       </div>
@@ -949,7 +949,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
           position: 'absolute',
           top: -10,
           left: 12,
-          fontSize: 9,
+          fontSize: 13,
           color: accentText,
           background: accent,
           padding: '4px 8px',
@@ -961,24 +961,24 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
         <div style={{ display: 'flex', gap: 6, alignItems: 'stretch' }}>
           <ParentCard horse={top.a} HeartIcon={HeartIcon} mode={mode} />
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div className="title-font" style={{ fontSize: 16, color: accent }}>×</div>
+            <div className="title-font" style={{ fontSize: 22, color: accent }}>×</div>
           </div>
           <ParentCard horse={top.b} HeartIcon={HeartIcon} mode={mode} />
         </div>
 
         <div style={{ marginTop: 16, textAlign: 'center' }}>
-          <div className="title-font" style={{ fontSize: 9, color: '#8b7355', letterSpacing: 2, marginBottom: 6 }}>
+          <div className="title-font" style={{ fontSize: 13, color: '#8b7355', letterSpacing: 2, marginBottom: 6 }}>
             EXPECTED FOAL
           </div>
           <div className="title-font" style={{
-            fontSize: 32,
+            fontSize: 45,
             color: scoreColor(topShown),
             textShadow: `3px 3px 0 #0a0805, 0 0 16px ${scoreColor(topShown)}40`,
             lineHeight: 1,
           }}>
             {topShown.toFixed(1)}
           </div>
-          <div style={{ fontSize: 16, color: '#a89880', marginTop: 6 }}>
+          <div style={{ fontSize: 13, color: '#a89880', marginTop: 6 }}>
             best simulated: <span style={{ color: scoreColor(bestShown) }}>{bestShown.toFixed(1)}</span>
           </div>
         </div>
@@ -995,7 +995,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
             padding: 10,
             background: '#3a2814',
             border: '2px solid #f0a830',
-            fontSize: 15,
+            fontSize: 12,
             color: '#f0a830',
             lineHeight: 1.4,
           }}>
@@ -1009,7 +1009,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
             padding: 10,
             background: '#1a2a14',
             border: '2px solid #7cc242',
-            fontSize: 15,
+            fontSize: 12,
             color: '#7cc242',
             lineHeight: 1.4,
           }}>
@@ -1021,7 +1021,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
       {/* Alternatives */}
       {otherPairs.length > 0 && (
         <div className="panel">
-          <div className="title-font" style={{ fontSize: 10, color: '#7cc242', letterSpacing: 2, marginBottom: 12 }}>
+          <div className="title-font" style={{ fontSize: 14, color: '#7cc242', letterSpacing: 2, marginBottom: 12 }}>
             ▸ ALTERNATIVE PAIRS
           </div>
           {otherPairs.map((p, idx) => {
@@ -1036,14 +1036,14 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
               marginBottom: idx === otherPairs.length - 1 ? 0 : 8,
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                <span style={{ color: '#f4ead5', fontSize: 17, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '70%' }}>
+                <span style={{ color: '#f4ead5', fontSize: 14, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '70%' }}>
                   {p.a.name} × {p.b.name}
                 </span>
-                <span className="title-font" style={{ fontSize: 12, color: scoreColor(pShown), textShadow: '2px 2px 0 #0a0805' }}>
+                <span className="title-font" style={{ fontSize: 17, color: scoreColor(pShown), textShadow: '2px 2px 0 #0a0805' }}>
                   {pShown.toFixed(1)}
                 </span>
               </div>
-              <div style={{ fontSize: 14, color: '#8b7355', letterSpacing: 0.5 }}>
+              <div style={{ fontSize: 12, color: '#8b7355', letterSpacing: 0.5 }}>
                 best {pBestShown.toFixed(0)} · {mode === 'perfect' ? 'beats' : 'worse than'} parents {(p.pBeatsParents*100).toFixed(0)}%
                 {p.pNearGoal > 0 && ` · ${mode === 'perfect' ? '95+' : '≤5'} ${(p.pNearGoal*100).toFixed(1)}%`}
               </div>
@@ -1055,18 +1055,18 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
 
       {/* Cull list */}
       <div className="panel">
-        <div className="title-font" style={{ fontSize: 10, color: dominated.length > 0 ? '#c0392b' : '#7cc242', letterSpacing: 2, marginBottom: 10 }}>
+        <div className="title-font" style={{ fontSize: 14, color: dominated.length > 0 ? '#c0392b' : '#7cc242', letterSpacing: 2, marginBottom: 10 }}>
           ▸ {dominated.length > 0 ? `SAFE TO CULL (${dominated.length})` : 'STABLE IS LEAN'}
         </div>
         {dominated.length === 0 ? (
-          <div style={{ fontSize: 16, color: '#a89880', lineHeight: 1.5 }}>
+          <div style={{ fontSize: 13, color: '#a89880', lineHeight: 1.5 }}>
             {mode === 'perfect'
               ? 'Every horse contributes something unique — none is strictly worse than another on all three stats. To make room for new foals, delete the lowest-scoring horses manually from the CALC tab.'
               : 'Every horse is unique in its awfulness — none is strictly better than another on all three stats. To make room, manually delete the highest-scoring (least trashy) horses from the CALC tab.'}
           </div>
         ) : (
           <>
-            <div style={{ fontSize: 15, color: '#8b7355', marginBottom: 10, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 12, color: '#8b7355', marginBottom: 10, lineHeight: 1.4 }}>
               {mode === 'perfect'
                 ? "These horses are beaten on every stat by another horse you own. Cull them without remorse — they can't contribute anything to breeding."
                 : "These horses are out-trashed on every stat by another horse you own. They're not bad enough to keep — cull them and free up space."}
@@ -1083,12 +1083,12 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
                 marginBottom: 8,
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 4 }}>
-                  <span style={{ color: '#f4ead5', fontSize: 17 }}>
+                  <span style={{ color: '#f4ead5', fontSize: 14 }}>
                     <span style={{ color: '#c0392b' }}>✗</span> {horse.name}
                   </span>
-                  <span style={{ color: '#8b7355', fontSize: 14 }}>{hShown.toFixed(1)}</span>
+                  <span style={{ color: '#8b7355', fontSize: 12 }}>{hShown.toFixed(1)}</span>
                 </div>
-                <div style={{ fontSize: 14, color: '#8b7355', lineHeight: 1.4 }}>
+                <div style={{ fontSize: 12, color: '#8b7355', lineHeight: 1.4 }}>
                   {mode === 'perfect' ? 'dominated by' : 'out-trashed by'} <span style={{ color: '#a89880' }}>{dominator.name}</span> ({dShown.toFixed(1)})
                 </div>
               </div>
@@ -1101,7 +1101,7 @@ function BreedingTab({ horses, loaded, HeartIcon, mode = 'perfect' }) {
       {/* Methodology note */}
       <div style={{
         textAlign: 'center',
-        fontSize: 14,
+        fontSize: 12,
         color: '#5a4a38',
         marginTop: 8,
         marginBottom: 12,
@@ -1125,10 +1125,10 @@ function ProbRow({ label, value, small, last }) {
       justifyContent: 'space-between',
       alignItems: 'baseline',
       marginBottom: last ? 0 : 8,
-      fontSize: 16,
+      fontSize: 13,
     }}>
       <span style={{ color: '#a89880' }}>{label}</span>
-      <span className="title-font" style={{ fontSize: small ? 11 : 14, color, letterSpacing: 1 }}>
+      <span className="title-font" style={{ fontSize: small ? 15 : 20, color, letterSpacing: 1 }}>
         {display}%
       </span>
     </div>

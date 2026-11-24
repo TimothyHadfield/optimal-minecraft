@@ -15,7 +15,7 @@ const css = `
 #chart .cv { overflow: auto; background: #1a1410; border: 2px solid #0a0805; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); overscroll-behavior: contain; cursor: grab; }
 #chart .cv.drag { cursor: grabbing; user-select: none; }
 #chart .mhead { position: sticky; top: 0; z-index: 3; height: ${HEAD}px; pointer-events: none; }
-#chart .ml { position: absolute; top: 4px; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; padding: 1px 6px 1px 3px; background: #1a1410; border: 2px solid #ffd54a; color: #ffd54a; font-size: 17px; white-space: nowrap; }
+#chart .ml { position: absolute; top: 4px; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; padding: 1px 6px 1px 3px; background: #1a1410; border: 2px solid #ffd54a; color: #ffd54a; font-size: 14px; white-space: nowrap; }
 #chart .csz { position: relative; }
 #chart .cin { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
 #chart svg { position: absolute; left: 0; top: 0; overflow: visible; }
@@ -27,7 +27,7 @@ const css = `
 #chart .eg.hov path:not(.hl) { opacity: .18; }
 #chart .tmp path { fill: none; stroke-width: 2.4; }
 #chart .bx.fade { opacity: .3; }
-#chart .lg { position: absolute; left: 8px; bottom: 8px; z-index: 4; display: flex; gap: 6px; padding: 1px 5px; background: #1a1410; border: 2px solid #0a0805; font-size: 15px; color: #a89880; pointer-events: none; }
+#chart .lg { position: absolute; left: 8px; bottom: 8px; z-index: 4; display: flex; gap: 6px; padding: 1px 5px; background: #1a1410; border: 2px solid #0a0805; font-size: 12px; color: #a89880; pointer-events: none; }
 #chart .lg span { display: inline-flex; align-items: center; gap: 3px; }
 #chart .lg i { display: inline-block; width: 12px; height: 3px; }
 #chart .bx { all: unset; position: absolute; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #2a221c; border: 2px solid #0a0805; cursor: pointer; }
@@ -37,18 +37,18 @@ const css = `
 #chart .bx img { width: 26px; height: 26px; image-rendering: pixelated; }
 #chart .bx img + img { margin-left: -10px; }
 #chart .zm { position: absolute; right: 8px; bottom: 8px; z-index: 4; display: flex; gap: 4px; }
-#chart .zm button { width: 36px; height: 36px; padding: 0; border: 2px solid #0a0805; background: #1f1813; color: #f4ead5; font-size: 22px; cursor: pointer; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.3); }
+#chart .zm button { width: 36px; height: 36px; padding: 0; border: 2px solid #0a0805; background: #1f1813; color: #f4ead5; font-size: 18px; cursor: pointer; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.3); }
 #chart .card2 { position: absolute; z-index: 5; width: 236px; background: #2a221c; border: 2px solid #0a0805; box-shadow: 3px 3px 0 rgba(0,0,0,0.5); padding: 7px 8px 8px; }
 #chart .card2[hidden] { display: none; }
 #chart .card2 .hd { display: flex; align-items: center; gap: 6px; }
 #chart .card2 .hd b { flex: 1; min-width: 0; font-weight: normal; color: #ffd54a; line-height: 1; }
-#chart .card2 .one { font-size: 17px; margin-top: 3px; }
+#chart .card2 .one { font-size: 14px; margin-top: 3px; }
 #chart .card2 h3 { margin: 6px 0 3px; }
-#chart .card2 .it { font-size: 16px; }
+#chart .card2 .it { font-size: 13px; }
 #chart .card2 .bf { display: flex; flex-wrap: wrap; gap: 3px 8px; }
 #chart .card2 .bf span { display: inline-flex; align-items: center; gap: 3px; }
 #chart .card2 .dots { font-size: 12px; }
-#chart .card2 .go { all: unset; cursor: pointer; display: block; box-sizing: border-box; width: 100%; margin-top: 7px; text-align: center; padding: 6px 0; font-family: "Press Start 2P", monospace; font-size: 9px; background: #8b6f47; border: 2px solid #0a0805; }
+#chart .card2 .go { all: unset; cursor: pointer; display: block; box-sizing: border-box; width: 100%; margin-top: 7px; text-align: center; padding: 6px 0; font-family: "Pixelify Sans", monospace; font-size: 13px; background: #8b6f47; border: 2px solid #0a0805; }
 #chart .empty { padding: 20px; }
 `;
 document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);

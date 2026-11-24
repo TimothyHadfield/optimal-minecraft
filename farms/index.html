@@ -9,33 +9,35 @@
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: #1a1410; color: #f4ead5; }
-    body { font-family: "VT323", "Courier New", monospace; font-size: 20px; line-height: 1.15; }
+    body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.3; }
     a { color: #7cc242; }
     button { font: inherit; color: inherit; }
-    .pix { font-family: "Press Start 2P", monospace; }
+    .pix { font-family: "Pixelify Sans", monospace; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 8px max(10px, env(safe-area-inset-left)) 16px max(10px, env(safe-area-inset-right)); }
     .bar { display: flex; gap: 4px; }
-    .bar > * { flex: 1; text-align: center; text-decoration: none; padding: 9px 6px; font-family: "Press Start 2P", monospace; font-size: 9px; letter-spacing: 1px;
+    .bar > * { flex: 1; text-align: center; text-decoration: none; padding: 9px 6px; font-family: "Pixelify Sans", monospace; font-size: 13px; letter-spacing: 1px;
       border: 2px solid #0a0805; background: #1f1813; color: #6a5a48; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); cursor: pointer; }
     .bar > .on { background: #8b6f47; color: #f4ead5; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3); }
     .bar.tabs > .on { background: #7cc242; color: #0a0805; }
-    .top { max-width: 540px; margin: 0 auto 8px; }
+    .hdr { display: flex; align-items: center; gap: 4px; }
+    .hdr .bar { flex: 1; min-width: 0; }
+    .home { flex: none; padding: 4px 6px 4px 0; text-decoration: none; font-family: "Pixelify Sans", monospace; font-size: 18px; line-height: 1; color: #8b7355; }
     .tools { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
-    .search { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 20px; padding: 6px 8px; background: #0f0a07; color: #f4ead5;
+    .search { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 16px; padding: 6px 8px; background: #0f0a07; color: #f4ead5;
       border: 2px solid #0a0805; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); outline: none; }
     .search:focus { border-color: #7cc242; }
     .stages { display: flex; gap: 4px; }
-    .stages button { padding: 4px 8px; border: 2px solid #0a0805; background: #1f1813; color: #6a5a48; cursor: pointer; font-size: 18px; }
+    .stages button { padding: 4px 8px; border: 2px solid #0a0805; background: #1f1813; color: #6a5a48; cursor: pointer; font-size: 14px; }
     .stages button.on { color: #0a0805; }
     .stages button.on[data-s="all"] { background: #f4ead5; }
     .stages button.on[data-s="early"], .st-early { background: #7cc242; }
     .stages button.on[data-s="mid"], .st-mid { background: #f0a830; }
     .stages button.on[data-s="late"], .st-late { background: #c0392b; }
-    .chip-st { display: inline-block; padding: 0 5px; color: #0a0805; font-size: 15px; line-height: 18px; text-transform: uppercase; }
+    .chip-st { display: inline-block; padding: 0 5px; color: #0a0805; font-size: 12px; line-height: 18px; text-transform: uppercase; }
     .main { display: grid; grid-template-columns: 1fr; gap: 10px; }
     @media (min-width: 900px) {
       .main { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); height: calc(100vh - 140px); }
@@ -46,7 +48,7 @@
     .card { all: unset; cursor: pointer; display: block; background: #1f1813; border: 2px solid #0a0805; position: relative; min-width: 0; }
     .card.on { border-color: #ffd54a; }
     .card .pic { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #2a221c; }
-    .card .nm { display: flex; gap: 4px; align-items: center; padding: 3px 5px 4px; font-size: 17px; line-height: 1; min-width: 0; }
+    .card .nm { display: flex; gap: 4px; align-items: center; padding: 3px 5px 4px; font-size: 14px; line-height: 1; min-width: 0; }
     .card .nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .card .chip-st { position: absolute; top: 3px; right: 3px; }
     .card .big { position: absolute; left: 4px; top: 4px; width: 28px; height: 28px; background: rgba(15,10,7,0.75); padding: 2px; }
@@ -58,36 +60,35 @@
       #detail { position: fixed; inset: 0; z-index: 5; overflow-y: auto; padding: max(10px, env(safe-area-inset-top)) 12px 30px; transform: translateX(100%); transition: transform .2s; }
       #detail.open { transform: none; }
     }
-    #back { all: unset; cursor: pointer; font-family: "Press Start 2P", monospace; font-size: 10px; padding: 8px 10px; background: #8b6f47; border: 2px solid #0a0805; margin-bottom: 8px; display: inline-block; }
+    #back { all: unset; cursor: pointer; font-family: "Pixelify Sans", monospace; font-size: 14px; padding: 8px 10px; background: #8b6f47; border: 2px solid #0a0805; margin-bottom: 8px; display: inline-block; }
     .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border: 2px solid #0a0805; background: #1f1813; }
     .ttl { display: flex; gap: 8px; align-items: center; margin: 8px 0 2px; }
-    .ttl h2 { font-family: "Press Start 2P", monospace; font-size: 12px; line-height: 1.5; color: #ffd54a; margin: 0; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+    .ttl h2 { font-family: "Pixelify Sans", monospace; font-size: 17px; line-height: 1.3; color: #ffd54a; margin: 0; flex: 1; min-width: 0; overflow-wrap: anywhere; }
     .one { color: #c8b89a; }
-    h3 { font-family: "Press Start 2P", monospace; font-size: 9px; color: #7cc242; margin: 12px 0 5px; letter-spacing: 1px; }
+    h3 { font-family: "Pixelify Sans", monospace; font-size: 13px; color: #7cc242; margin: 12px 0 5px; letter-spacing: 1px; }
     .chips { display: flex; flex-wrap: wrap; gap: 4px; }
-    .it { display: inline-flex; align-items: center; gap: 4px; background: #1f1813; border: 2px solid #0a0805; padding: 1px 5px 1px 2px; font-size: 18px; max-width: 100%; }
+    .it { display: inline-flex; align-items: center; gap: 4px; background: #1f1813; border: 2px solid #0a0805; padding: 1px 5px 1px 2px; font-size: 14px; max-width: 100%; }
     .it b { color: #ffd54a; font-weight: normal; }
     .it .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .pre { all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; background: #1f1813; border: 2px solid #0a0805; padding: 3px 6px; margin-bottom: 4px; width: 100%; box-sizing: border-box; }
     .pre .w { flex: 1; min-width: 0; }
-    .pre .why { color: #a89880; font-size: 16px; }
-    .dots { color: #ffd54a; letter-spacing: 1px; white-space: nowrap; font-size: 16px; }
+    .pre .why { color: #a89880; font-size: 13px; }
+    .dots { color: #ffd54a; letter-spacing: 1px; white-space: nowrap; font-size: 13px; }
     .dots i { color: #4a3e30; font-style: normal; }
     ol, ul { margin: 0; padding-left: 22px; }
-    .muted { color: #a89880; font-size: 17px; }
-    .more { all: unset; cursor: pointer; display: inline-block; margin-top: 12px; padding: 4px 10px; border: 2px solid #0a0805; background: #1f1813; font-size: 17px; }
+    .muted { color: #a89880; font-size: 14px; }
+    .more { all: unset; cursor: pointer; display: inline-block; margin-top: 12px; padding: 4px 10px; border: 2px solid #0a0805; background: #1f1813; font-size: 14px; }
     .links a { margin-right: 12px; }
     table { border-collapse: collapse; }
     td { padding: 1px 6px 1px 0; vertical-align: middle; }
     .trade { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 3px 0; border-bottom: 1px solid #1f1813; }
-    .trade .u { margin-left: auto; color: #a89880; font-size: 16px; }
-    .lv { color: #a89880; font-family: "VT323", monospace; letter-spacing: 0; font-size: 16px; }
+    .trade .u { margin-left: auto; color: #a89880; font-size: 13px; }
+    .lv { color: #a89880; font-family: inherit; letter-spacing: 0; font-size: 13px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav class="bar top"><a href="../">HORSES</a><a class="on" href="./">FARMS</a></nav>
-    <div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button><button data-m="chart">CHART</button></div>
+    <div class="hdr"><a class="home" href="../" aria-label="Home">◀</a><div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button><button data-m="chart">CHART</button></div></div>
     <div class="tools">
       <input class="search" id="q" placeholder="Search" autocomplete="off">
       <div class="stages" id="stages"><button data-s="all" class="on">All</button><button data-s="early">Early</button><button data-s="mid">Mid</button><button data-s="late">Late</button></div>
