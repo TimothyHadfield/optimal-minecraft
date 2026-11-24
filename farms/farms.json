@@ -3,7 +3,7 @@
   "source": "ianxofour YouTube channel https://www.youtube.com/@ianxofour (Java Edition only)",
   "researched": "2026-11-24",
   "method": "materials read from each video's on-screen list (frames at the Materials chapter), cross-checked with Litematica schematic counts where he published one; rates and requirements from title, description and transcript",
-  "count": 27
+  "count": 69
  },
  "farms": [
   {
@@ -8125,6 +8125,3161 @@
     "auto-subtitles S/subs/27.en.vtt"
    ],
    "confidence": "high: chest list is clear and matches narration exactly; rates stated in description and video."
+  },
+  {
+   "n": 101,
+   "id": "basic-wheat",
+   "category": "basic farm",
+   "title": "Wheat farm (9x9)",
+   "url": "https://minecraft.wiki/w/Wheat",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "wheat",
+   "icon": "wheat",
+   "stage": "early",
+   "short": "9x9 wheat seeds field watered by one centre source.",
+   "outputs": [
+    {
+     "item": "wheat",
+     "rate_per_hour": 80,
+     "conditions": "80 plots, harvested about once an hour (estimate); each mature wheat also drops 0-3 seeds (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "wheat_seeds",
+     "rate_per_hour": 120,
+     "conditions": "0-3 extra seeds per plant, roughly 1.5 average (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "wheat_seeds",
+      "count": 80,
+      "note": "1 per plot"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1,
+      "note": "any hoe"
+     }
+    ],
+    "notes": "typical build: 9x9 dirt/grass, centre block water, 80 farmland plots. Water hydrates 4 blocks out, so 9x9 is the most one source can water."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any flat grass/dirt, light 9+ (sun or torches)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Clear a flat 9x9 of grass or dirt.",
+    "Dig the centre block, pour water.",
+    "Till all 80 blocks with a hoe.",
+    "Plant wheat seeds on every plot.",
+    "Harvest when fully grown, replant."
+   ],
+   "gotchas": [
+    "Jumping on farmland turns it back to dirt.",
+    "Light 9+ needed; add torches for night growth.",
+    "Cover the water with a slab or lily pad so you don't fall in.",
+    "Breaking grass gives the first seeds."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Wheat"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-wheat.svg"
+  },
+  {
+   "n": 102,
+   "id": "basic-carrot",
+   "category": "basic farm",
+   "title": "Carrot farm (9x9)",
+   "url": "https://minecraft.wiki/w/Carrot",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "carrot",
+   "icon": "carrot",
+   "stage": "early",
+   "short": "9x9 carrots field watered by one centre source.",
+   "outputs": [
+    {
+     "item": "carrot",
+     "rate_per_hour": 220,
+     "conditions": "80 plots, harvested about once an hour (estimate); 2-5 carrots per plant, average 3.71 (wiki); about 300 gross minus 80 replanted",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "carrot",
+      "count": 80,
+      "note": "1 per plot"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1,
+      "note": "any hoe"
+     }
+    ],
+    "notes": "typical build: 9x9 dirt/grass, centre block water, 80 farmland plots. Water hydrates 4 blocks out, so 9x9 is the most one source can water."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any flat grass/dirt, light 9+ (sun or torches)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Clear a flat 9x9 of grass or dirt.",
+    "Dig the centre block, pour water.",
+    "Till all 80 blocks with a hoe.",
+    "Plant carrots on every plot.",
+    "Harvest when fully grown, replant."
+   ],
+   "gotchas": [
+    "Jumping on farmland turns it back to dirt.",
+    "Light 9+ needed; add torches for night growth.",
+    "Cover the water with a slab or lily pad so you don't fall in.",
+    "First carrots come from zombie drops or village farms."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Carrot"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-carrot.svg"
+  },
+  {
+   "n": 103,
+   "id": "basic-potato",
+   "category": "basic farm",
+   "title": "Potato farm (9x9)",
+   "url": "https://minecraft.wiki/w/Potato",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "potato",
+   "icon": "potato",
+   "stage": "early",
+   "short": "9x9 potatoes field watered by one centre source.",
+   "outputs": [
+    {
+     "item": "potato",
+     "rate_per_hour": 220,
+     "conditions": "80 plots, harvested about once an hour (estimate); 2-5 per plant like carrots (wiki); ~2% chance of a poisonous potato too",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "potato",
+      "count": 80,
+      "note": "1 per plot"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1,
+      "note": "any hoe"
+     }
+    ],
+    "notes": "typical build: 9x9 dirt/grass, centre block water, 80 farmland plots. Water hydrates 4 blocks out, so 9x9 is the most one source can water."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any flat grass/dirt, light 9+ (sun or torches)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Clear a flat 9x9 of grass or dirt.",
+    "Dig the centre block, pour water.",
+    "Till all 80 blocks with a hoe.",
+    "Plant potatoes on every plot.",
+    "Harvest when fully grown, replant."
+   ],
+   "gotchas": [
+    "Jumping on farmland turns it back to dirt.",
+    "Light 9+ needed; add torches for night growth.",
+    "Cover the water with a slab or lily pad so you don't fall in.",
+    "First potatoes from village farms or zombie drops; smelt for baked potatoes."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Potato"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-potato.svg"
+  },
+  {
+   "n": 104,
+   "id": "basic-beetroot",
+   "category": "basic farm",
+   "title": "Beetroot farm (9x9)",
+   "url": "https://minecraft.wiki/w/Beetroot",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "beetroot",
+   "icon": "beetroot",
+   "stage": "early",
+   "short": "9x9 beetroot seeds field watered by one centre source.",
+   "outputs": [
+    {
+     "item": "beetroot",
+     "rate_per_hour": 80,
+     "conditions": "80 plots, harvested about once an hour (estimate); 1 beetroot + seeds per plant; beetroot has only 4 growth stages",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "beetroot_seeds",
+      "count": 80,
+      "note": "1 per plot"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1,
+      "note": "any hoe"
+     }
+    ],
+    "notes": "typical build: 9x9 dirt/grass, centre block water, 80 farmland plots. Water hydrates 4 blocks out, so 9x9 is the most one source can water."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any flat grass/dirt, light 9+ (sun or torches)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "hoe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Clear a flat 9x9 of grass or dirt.",
+    "Dig the centre block, pour water.",
+    "Till all 80 blocks with a hoe.",
+    "Plant beetroot seeds on every plot.",
+    "Harvest when fully grown, replant."
+   ],
+   "gotchas": [
+    "Jumping on farmland turns it back to dirt.",
+    "Light 9+ needed; add torches for night growth.",
+    "Cover the water with a slab or lily pad so you don't fall in.",
+    "Seeds come from village farms, chests or breaking village beetroots."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Beetroot"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-beetroot.svg"
+  },
+  {
+   "n": 105,
+   "id": "basic-pumpkin",
+   "category": "basic farm",
+   "title": "Pumpkin farm (rows)",
+   "url": "https://minecraft.wiki/w/Pumpkin",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "pumpkin",
+   "icon": "pumpkin",
+   "stage": "early",
+   "short": "Rows of pumpkin stems, empty dirt beside each for fruit.",
+   "outputs": [
+    {
+     "item": "pumpkin",
+     "rate_per_hour": 30,
+     "conditions": "18 stems, about 1 pumpkin per stem every ~35 min (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": "2 sources spread along each 9-long channel (estimate of typical)"
+     },
+     {
+      "item": "pumpkin_seeds",
+      "count": 18,
+      "note": "9 per stem row"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1
+     }
+    ],
+    "notes": "typical build: water channel 9 long, a stem row on each side, then a bare dirt row on the outside where fruit grows. Repeat the pattern sideways."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "flat ground, light 9+",
+    "mobs": [],
+    "stage": "day 1-3",
+    "tools": [
+     "hoe",
+     "axe (fast pumpkin/melon breaking)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 9-long water channel.",
+    "Till one row each side, plant seeds.",
+    "Leave the next row as plain dirt.",
+    "Break fruit, never the stems."
+   ],
+   "gotchas": [
+    "Fruit only grows on an empty dirt/grass/farmland block next to the stem.",
+    "Don't till the fruit rows' path into a block with a crop on it.",
+    "Each stem makes many fruits; leave it alone."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Pumpkin"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-pumpkin.svg"
+  },
+  {
+   "n": 106,
+   "id": "basic-melon",
+   "category": "basic farm",
+   "title": "Melon farm (rows)",
+   "url": "https://minecraft.wiki/w/Melon",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "melon",
+   "icon": "melon_slice",
+   "stage": "early",
+   "short": "Rows of melon stems, empty dirt beside each for fruit.",
+   "outputs": [
+    {
+     "item": "melon",
+     "rate_per_hour": 30,
+     "conditions": "18 stems; each melon block gives 3-7 slices (wiki), ~150 slices/hr (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": "2 sources spread along each 9-long channel (estimate of typical)"
+     },
+     {
+      "item": "melon_seeds",
+      "count": 18,
+      "note": "9 per stem row"
+     },
+     {
+      "item": "wooden_hoe",
+      "count": 1
+     }
+    ],
+    "notes": "typical build: water channel 9 long, a stem row on each side, then a bare dirt row on the outside where fruit grows. Repeat the pattern sideways."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "flat ground, light 9+",
+    "mobs": [],
+    "stage": "day 1-3",
+    "tools": [
+     "hoe",
+     "axe (fast pumpkin/melon breaking)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 9-long water channel.",
+    "Till one row each side, plant seeds.",
+    "Leave the next row as plain dirt.",
+    "Break fruit, never the stems."
+   ],
+   "gotchas": [
+    "Fruit only grows on an empty dirt/grass/farmland block next to the stem.",
+    "Don't till the fruit rows' path into a block with a crop on it.",
+    "Each stem makes many fruits; leave it alone."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Melon"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-melon.svg"
+  },
+  {
+   "n": 107,
+   "id": "basic-sugar-cane",
+   "category": "basic farm",
+   "title": "Sugar cane farm (rows)",
+   "url": "https://minecraft.wiki/w/Sugar_Cane",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "sugar_cane",
+   "icon": "sugar_cane",
+   "stage": "early",
+   "short": "Cane rows on both sides of water channels; cut the top two.",
+   "outputs": [
+    {
+     "item": "sugar_cane",
+     "rate_per_hour": 60,
+     "conditions": "16 plants; each grows ~1 block per ~18 min (16 random ticks), max 3 tall (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2
+     },
+     {
+      "item": "sugar_cane",
+      "count": 16,
+      "note": "4 rows of 4 beside 2 water lines"
+     }
+    ],
+    "notes": "typical build: 1-wide water lines, cane planted on grass/dirt/sand directly next to the water."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "next to water on grass, dirt or sand",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig 1-wide water lines.",
+    "Plant cane on blocks touching the water.",
+    "Break the 2nd block up; bottom stays."
+   ],
+   "gotchas": [
+    "Must touch water directly (not diagonally).",
+    "Grows only 3 tall; harvest often.",
+    "Paper (books, rockets) needs lots of cane."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Sugar_Cane"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-sugar-cane.svg"
+  },
+  {
+   "n": 108,
+   "id": "basic-bamboo",
+   "category": "basic farm",
+   "title": "Bamboo farm",
+   "url": "https://minecraft.wiki/w/Bamboo",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.14+",
+   "version_notes": "",
+   "farm_type": "bamboo",
+   "icon": "bamboo",
+   "stage": "early",
+   "short": "Bamboo shoots on grass; cut above the bottom block.",
+   "outputs": [
+    {
+     "item": "bamboo",
+     "rate_per_hour": 200,
+     "conditions": "20 plants (estimate); grows fast and up to 12-16 tall",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "bamboo",
+      "count": 20
+     }
+    ],
+    "notes": "typical build: a 5x4 patch of grass/dirt, one bamboo per block."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "grass/dirt/sand/moss; jungle to find bamboo",
+    "mobs": [],
+    "stage": "early",
+    "tools": [
+     "sword or axe (instant break)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant bamboo on grass or dirt.",
+    "Wait for tall stalks.",
+    "Break the 2nd block; whole stalk drops."
+   ],
+   "gotchas": [
+    "Find bamboo in jungles or from pandas.",
+    "Great furnace fuel and scaffolding.",
+    "Bamboo needs light 9+ above it to grow."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Bamboo"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-bamboo.svg"
+  },
+  {
+   "n": 109,
+   "id": "basic-cactus",
+   "category": "basic farm",
+   "title": "Cactus farm (simple)",
+   "url": "https://minecraft.wiki/w/Cactus",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "cactus",
+   "icon": "cactus",
+   "stage": "early",
+   "short": "Cacti on sand, one block apart, cut the top.",
+   "outputs": [
+    {
+     "item": "cactus",
+     "rate_per_hour": 30,
+     "conditions": "10 cacti; ~1 block per ~18 min each, max 3 tall (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "sand",
+      "count": 10
+     },
+     {
+      "item": "cactus",
+      "count": 10
+     }
+    ],
+    "notes": "typical build: sand blocks in a checker pattern, nothing touching any cactus side."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "on sand or red sand; desert to find cactus",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place sand with gaps between.",
+    "Plant cactus on each sand.",
+    "Break the upper blocks to harvest."
+   ],
+   "gotchas": [
+    "Any block beside a cactus breaks it.",
+    "Cactus destroys dropped items that touch it.",
+    "Smelt for green dye."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Cactus"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-cactus.svg"
+  },
+  {
+   "n": 110,
+   "id": "basic-kelp",
+   "category": "basic farm",
+   "title": "Kelp farm (manual)",
+   "url": "https://minecraft.wiki/w/Kelp",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.13+",
+   "version_notes": "",
+   "farm_type": "kelp",
+   "icon": "kelp",
+   "stage": "early",
+   "short": "Kelp planted underwater; cut near the bottom to regrow.",
+   "outputs": [
+    {
+     "item": "kelp",
+     "rate_per_hour": 100,
+     "conditions": "10 plants in a deep pond (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "kelp",
+      "count": 10
+     },
+     {
+      "item": "water_bucket",
+      "count": 2,
+      "note": "to fill a pond"
+     }
+    ],
+    "notes": "typical build: kelp planted on the floor of an ocean or a pond 8+ blocks deep."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "water at least a few blocks deep",
+    "mobs": [],
+    "stage": "early",
+    "tools": [
+     "any"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant kelp on the floor underwater.",
+    "Let it grow up.",
+    "Break the 2nd block from bottom."
+   ],
+   "gotchas": [
+    "Bring a door or bubble air pocket for breath.",
+    "Dried kelp blocks are good fuel (20 items).",
+    "Breaking the bottom block loses the plant."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Kelp"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-kelp.svg"
+  },
+  {
+   "n": 111,
+   "id": "basic-cocoa",
+   "category": "basic farm",
+   "title": "Cocoa bean farm",
+   "url": "https://minecraft.wiki/w/Cocoa_Beans",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "cocoa_beans",
+   "icon": "cocoa_beans",
+   "stage": "early",
+   "short": "Cocoa pods on jungle logs; pick brown pods.",
+   "outputs": [
+    {
+     "item": "cocoa_beans",
+     "rate_per_hour": 60,
+     "conditions": "24 pods on 2 log pillars; mature pod drops 2-3 beans (estimate of rate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "jungle_log",
+      "count": 12,
+      "note": "2 pillars of 6"
+     },
+     {
+      "item": "cocoa_beans",
+      "count": 24,
+      "note": "pods on up to 4 faces of each log"
+     }
+    ],
+    "notes": "typical build: 2 pillars of jungle logs, cocoa placed on the side faces."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "jungle (for logs and beans)",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Stack jungle logs into pillars.",
+    "Right-click log sides with beans.",
+    "Break orange-brown pods, replant."
+   ],
+   "gotchas": [
+    "Only jungle logs or wood work.",
+    "Green and yellow pods aren't ripe.",
+    "Beans make brown dye and cookies."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Cocoa_Beans"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-cocoa.svg"
+  },
+  {
+   "n": 112,
+   "id": "basic-sweet-berries",
+   "category": "basic farm",
+   "title": "Sweet berry farm",
+   "url": "https://minecraft.wiki/w/Sweet_Berries",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.14+",
+   "version_notes": "",
+   "farm_type": "sweet_berries",
+   "icon": "sweet_berries",
+   "stage": "early",
+   "short": "Berry bush rows with walk paths; right-click to pick.",
+   "outputs": [
+    {
+     "item": "sweet_berries",
+     "rate_per_hour": 60,
+     "conditions": "28 bushes; 2-3 berries at full age, 1-2 at age 2 (wiki) (rate estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "sweet_berries",
+      "count": 28
+     }
+    ],
+    "notes": "typical build: 2 strips of 7x2 bushes on grass with 1-wide paths."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "grass/dirt; taiga for first berries",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant berries on grass.",
+    "Leave walk paths between rows.",
+    "Right-click ripe red bushes."
+   ],
+   "gotchas": [
+    "Bushes hurt and slow you; don't walk through.",
+    "Needs light 10+ above.",
+    "Foxes eat them."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Sweet_Berries"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-sweet-berries.svg"
+  },
+  {
+   "n": 113,
+   "id": "basic-nether-wart",
+   "category": "basic farm",
+   "title": "Nether wart farm",
+   "url": "https://minecraft.wiki/w/Nether_Wart",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "nether_wart",
+   "icon": "nether_wart",
+   "stage": "mid",
+   "short": "Nether wart on soul sand; works in any dimension.",
+   "outputs": [
+    {
+     "item": "nether_wart",
+     "rate_per_hour": 100,
+     "conditions": "36 plots; mature wart drops 2-4 (wiki), grows in ~30+ min (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "soul_sand",
+      "count": 36
+     },
+     {
+      "item": "nether_wart",
+      "count": 36
+     }
+    ],
+    "notes": "typical build: 2 strips of 9x2 soul sand with a walk path. No water or light needed."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "any (build it at base)",
+    "location": "wart found in nether fortresses / bastions",
+    "mobs": [],
+    "stage": "mid (after the Nether)",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Collect soul sand and wart in the Nether.",
+    "Place soul sand at base.",
+    "Plant wart; harvest when red."
+   ],
+   "gotchas": [
+    "Needs soul sand, not soul soil.",
+    "Key brewing ingredient (awkward potion).",
+    "No light needed."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Nether_Wart"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-nether-wart.svg"
+  },
+  {
+   "n": 114,
+   "id": "basic-mushroom",
+   "category": "basic farm",
+   "title": "Mushroom farm (dark room)",
+   "url": "https://minecraft.wiki/w/Mushroom",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "red_mushroom",
+   "icon": "red_mushroom",
+   "stage": "early",
+   "short": "Dark enclosed room where mushrooms spread on their own.",
+   "outputs": [
+    {
+     "item": "red_mushroom",
+     "rate_per_hour": 10,
+     "conditions": "slow spread; mostly useful as a stew/dye source (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "brown_mushroom",
+     "rate_per_hour": 10,
+     "conditions": "same room (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "red_mushroom",
+      "count": 4
+     },
+     {
+      "item": "brown_mushroom",
+      "count": 4
+     },
+     {
+      "item": "cobblestone",
+      "count": 120,
+      "note": "walls and roof (estimate)"
+     }
+    ],
+    "notes": "typical build: a roofed room with light 12 or less; on mycelium/podzol they grow in any light."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any; mushrooms from swamps, caves, dark forests",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Build a dark roofed room.",
+    "Plant a few mushrooms on the floor.",
+    "Pick extras, leave some to spread."
+   ],
+   "gotchas": [
+    "Mushrooms spread only at light 12 or less (except on mycelium/podzol).",
+    "Bone meal on one in open space makes a huge mushroom.",
+    "Spread is slow."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Mushroom"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-mushroom.svg"
+  },
+  {
+   "n": 115,
+   "id": "basic-tree",
+   "category": "basic farm",
+   "title": "Tree farm (oak/birch)",
+   "url": "https://minecraft.wiki/w/Tree",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "wood",
+   "icon": "oak_log",
+   "stage": "early",
+   "short": "Rows of saplings 2+ apart; chop and replant.",
+   "outputs": [
+    {
+     "item": "oak_log",
+     "rate_per_hour": 60,
+     "conditions": "10 oak/birch trees, cut once each per ~hour (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "oak_sapling",
+      "count": 10,
+      "note": "or birch"
+     },
+     {
+      "item": "torch",
+      "count": 10,
+      "note": "for growth at night"
+     }
+    ],
+    "notes": "typical build: saplings on grass/dirt in a grid with 2-3 blocks between, open sky above. Birch stays straight and leaf-free trunk."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "flat grass/dirt, light 9+, room above (6+ blocks)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "axe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant saplings in a spaced grid.",
+    "Wait or use bone meal.",
+    "Chop logs, leaves drop saplings.",
+    "Replant."
+   ],
+   "gotchas": [
+    "Oak can grow into big oaks; birch is tidier.",
+    "Needs space above and light 9+.",
+    "Leaves also drop sticks and apples (oak)."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Tree"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-tree.svg"
+  },
+  {
+   "n": 116,
+   "id": "basic-tree-2x2",
+   "category": "basic farm",
+   "title": "Tree farm (2x2 spruce)",
+   "url": "https://minecraft.wiki/w/Tree",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "wood",
+   "icon": "spruce_log",
+   "stage": "early",
+   "short": "Four saplings in a square grow one giant tree.",
+   "outputs": [
+    {
+     "item": "spruce_log",
+     "rate_per_hour": 80,
+     "conditions": "one mega spruce gives a big pile of logs per grow (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "spruce_sapling",
+      "count": 4
+     },
+     {
+      "item": "bone_meal",
+      "count": 3,
+      "note": "optional, to grow at once (estimate)"
+     }
+    ],
+    "notes": "typical build: 2x2 saplings (spruce, jungle or dark oak). Dark oak only grows as 2x2."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "open area, lots of room above",
+    "mobs": [],
+    "stage": "early",
+    "tools": [
+     "axe",
+     "ladder or scaffolding for tall trees"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant four saplings in a square.",
+    "Bone-meal or wait.",
+    "Chop the 2x2 trunk from the base up."
+   ],
+   "gotchas": [
+    "Mega spruce turns nearby grass to podzol.",
+    "Dark oak must be 2x2.",
+    "Very tall; bring blocks to climb."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Tree"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-tree-2x2.svg"
+  },
+  {
+   "n": 117,
+   "id": "basic-cow-1x1",
+   "category": "basic farm",
+   "title": "Cow farm (1x1 pen)",
+   "url": "https://minecraft.wiki/w/Cow",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "cow",
+   "icon": "beef",
+   "stage": "early",
+   "short": "Cows crammed in a 1x1 hole; breed and kill from above.",
+   "outputs": [
+    {
+     "item": "beef",
+     "rate_per_hour": 40,
+     "conditions": "about 10 adults bred every 5 min (wiki cooldown), calves grow in 20 min (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "leather",
+     "rate_per_hour": 20,
+     "conditions": "0-2 per cow (wiki) (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "wheat",
+      "count": 20,
+      "note": "to lure and breed"
+     },
+     {
+      "item": "oak_slab",
+      "count": 2,
+      "note": "half-gap so you can hit over it"
+     },
+     {
+      "item": "oak_fence",
+      "count": 4,
+      "note": "optional rim"
+     }
+    ],
+    "notes": "typical build: a 1x1 hole 2 deep, slabs at the rim. Lure cows with wheat and push them in; babies stay, adults get killed. Many cows fit in one block."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "near your base",
+    "mobs": [
+     "2+ cows"
+    ],
+    "stage": "day 1",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 1x1 hole, 2 deep.",
+    "Lure cows in with wheat.",
+    "Feed wheat to breed.",
+    "Kill the adults from above."
+   ],
+   "gotchas": [
+    "More than 24 mobs in one block take cramming damage (gamerule maxEntityCramming).",
+    "Babies can't be bred; let them grow 20 min.",
+    "Milk the cows with a bucket for free milk."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Cow"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-cow-1x1.svg"
+  },
+  {
+   "n": 118,
+   "id": "basic-pig-1x1",
+   "category": "basic farm",
+   "title": "Pig farm (1x1 pen)",
+   "url": "https://minecraft.wiki/w/Pig",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "pig",
+   "icon": "porkchop",
+   "stage": "early",
+   "short": "Pigs packed in a 1x1 hole, bred with carrots.",
+   "outputs": [
+    {
+     "item": "porkchop",
+     "rate_per_hour": 40,
+     "conditions": "about 10 adults; 1-3 porkchop each (wiki) (rate estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "carrot",
+      "count": 20,
+      "note": "or potatoes / beetroots"
+     },
+     {
+      "item": "oak_slab",
+      "count": 2
+     }
+    ],
+    "notes": "typical build: same as the cow 1x1 hole."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "near base",
+    "mobs": [
+     "2+ pigs"
+    ],
+    "stage": "early",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 1x1 hole, 2 deep.",
+    "Lure pigs in with carrots.",
+    "Breed, wait, kill adults."
+   ],
+   "gotchas": [
+    "Pigs follow carrots, potatoes, beetroot.",
+    "Kill with fire aspect for cooked porkchop.",
+    "Cramming above 24."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Pig"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-pig-1x1.svg"
+  },
+  {
+   "n": 119,
+   "id": "basic-sheep",
+   "category": "basic farm",
+   "title": "Sheep farm (pen)",
+   "url": "https://minecraft.wiki/w/Sheep",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "wool",
+   "icon": "white_wool",
+   "stage": "early",
+   "short": "Fenced grass pen; shear sheep, wool regrows by eating grass.",
+   "outputs": [
+    {
+     "item": "white_wool",
+     "rate_per_hour": 60,
+     "conditions": "10 sheep sheared about every 6 min (estimate); 1-3 wool per shear (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "oak_fence",
+      "count": 32,
+      "note": "9x5 pen outline (estimate)"
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 1
+     },
+     {
+      "item": "shears",
+      "count": 1
+     },
+     {
+      "item": "wheat",
+      "count": 4
+     }
+    ],
+    "notes": "typical build: a fenced grass pen. Dye a sheep before breeding to get coloured lambs."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "grass ground so sheep can regrow wool",
+    "mobs": [
+     "2+ sheep"
+    ],
+    "stage": "day 1",
+    "tools": [
+     "shears (2 iron)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Fence a grass pen.",
+    "Lure sheep in with wheat.",
+    "Shear them; they regrow on grass.",
+    "Breed for more."
+   ],
+   "gotchas": [
+    "Pen floor must be grass.",
+    "Dye a sheep once; it stays that colour forever.",
+    "Killing gives 1 wool, shearing gives 1-3."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Sheep"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-sheep.svg"
+  },
+  {
+   "n": 120,
+   "id": "basic-chicken",
+   "category": "basic farm",
+   "title": "Chicken farm (pen)",
+   "url": "https://minecraft.wiki/w/Chicken",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "chicken",
+   "icon": "chicken",
+   "stage": "early",
+   "short": "Fenced pen; breed chickens with seeds, collect eggs.",
+   "outputs": [
+    {
+     "item": "feather",
+     "rate_per_hour": 20,
+     "conditions": "about 10 chickens; 0-2 feathers each (wiki) (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "egg",
+     "rate_per_hour": 80,
+     "conditions": "10 chickens, 1 egg each every 5-10 min (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "oak_fence",
+      "count": 32
+     },
+     {
+      "item": "oak_fence_gate",
+      "count": 1
+     },
+     {
+      "item": "wheat_seeds",
+      "count": 10,
+      "note": "any seeds"
+     }
+    ],
+    "notes": "typical build: fenced pen like the sheep pen."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "near base",
+    "mobs": [
+     "2+ chickens (or throw eggs)"
+    ],
+    "stage": "day 1",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Fence a small pen.",
+    "Lure chickens with seeds.",
+    "Breed and collect eggs/feathers."
+   ],
+   "gotchas": [
+    "Thrown eggs hatch a chick 1/8 of the time.",
+    "Feathers make arrows.",
+    "Chickens fall slowly; ok on ledges."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Chicken"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-chicken.svg"
+  },
+  {
+   "n": 121,
+   "id": "basic-egg",
+   "category": "basic farm",
+   "title": "Egg collector (hoppers)",
+   "url": "https://minecraft.wiki/w/Egg",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "egg",
+   "icon": "egg",
+   "stage": "early",
+   "short": "Chickens in 1x1 glass cells over hoppers into a chest.",
+   "outputs": [
+    {
+     "item": "egg",
+     "rate_per_hour": 64,
+     "conditions": "8 chickens, 1 egg each per 5-10 min (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "hopper",
+      "count": 8
+     },
+     {
+      "item": "chest",
+      "count": 1
+     },
+     {
+      "item": "glass",
+      "count": 24,
+      "note": "cell walls (estimate)"
+     },
+     {
+      "item": "wheat_seeds",
+      "count": 8
+     }
+    ],
+    "notes": "typical build: a line of 8 hoppers feeding one chest; each chicken stands on a hopper inside glass walls."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "base",
+    "mobs": [
+     "8 chickens"
+    ],
+    "stage": "early-mid (hoppers need 5 iron each)",
+    "tools": [
+     "none"
+    ],
+    "hard_materials": [
+     {
+      "item": "hopper",
+      "count": 8,
+      "note": "5 iron + chest each"
+     }
+    ]
+   },
+   "afk_spot": "any; eggs go to the chest",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place a chest, chain hoppers into it.",
+    "Wall each hopper with glass.",
+    "Put one chicken per cell."
+   ],
+   "gotchas": [
+    "Eggs go into cakes and pumpkin pie.",
+    "Hoppers cost 5 iron each.",
+    "Throw spare eggs to hatch more chickens."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Egg"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-egg.svg"
+  },
+  {
+   "n": 122,
+   "id": "basic-rabbit",
+   "category": "basic farm",
+   "title": "Rabbit farm (pen)",
+   "url": "https://minecraft.wiki/w/Rabbit",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "rabbit_hide",
+   "icon": "rabbit_hide",
+   "stage": "early",
+   "short": "Fenced pen; breed rabbits with carrots or dandelions.",
+   "outputs": [
+    {
+     "item": "rabbit_hide",
+     "rate_per_hour": 10,
+     "conditions": "10 rabbits; 0-1 hide, 0-1 meat, 10% foot (wiki) (rate estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "rabbit_foot",
+     "rate_per_hour": 2,
+     "conditions": "10% drop chance (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "oak_fence",
+      "count": 32
+     },
+     {
+      "item": "carrot",
+      "count": 10,
+      "note": "or dandelions / golden carrots"
+     }
+    ],
+    "notes": "typical build: fenced pen with a roof or fence high enough; rabbits hop."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "desert, snowy, flower forest... for rabbits",
+    "mobs": [
+     "2+ rabbits"
+    ],
+    "stage": "early",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Fence a pen.",
+    "Lure rabbits with carrots.",
+    "Breed, wait, kill adults."
+   ],
+   "gotchas": [
+    "Rabbits eat your carrot crops.",
+    "Rabbit foot is a brewing item (leaping).",
+    "4 hides make leather."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Rabbit"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-rabbit.svg"
+  },
+  {
+   "n": 123,
+   "id": "basic-honey",
+   "category": "basic farm",
+   "title": "Honey farm (hive + campfire)",
+   "url": "https://minecraft.wiki/w/Beehive",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.15+",
+   "version_notes": "",
+   "farm_type": "honey",
+   "icon": "honey_bottle",
+   "stage": "mid",
+   "short": "Bee hive with a campfire under it; bottle or shear safely.",
+   "outputs": [
+    {
+     "item": "honey_bottle",
+     "rate_per_hour": 3,
+     "conditions": "1 hive with 3 bees, flowers nearby (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "honeycomb",
+     "rate_per_hour": 9,
+     "conditions": "or shear instead: 3 comb per full hive (wiki); rate estimate",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "beehive",
+      "count": 1,
+      "note": "or a bee nest moved with silk touch"
+     },
+     {
+      "item": "campfire",
+      "count": 1
+     },
+     {
+      "item": "glass_bottle",
+      "count": 4
+     },
+     {
+      "item": "shears",
+      "count": 1
+     },
+     {
+      "item": "poppy",
+      "count": 6,
+      "note": "flowers"
+     }
+    ],
+    "notes": "typical build: hive on a post with a campfire within 5 blocks below (carpet can hide the flames). Flowers around."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "flowers nearby",
+    "mobs": [
+     "bees (lead them with a flower)"
+    ],
+    "stage": "mid",
+    "tools": [
+     "shears",
+     "glass bottles"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place hive, campfire under it.",
+    "Plant flowers around.",
+    "Wait for honey level 5 (dripping).",
+    "Bottle it or shear it."
+   ],
+   "gotchas": [
+    "Without the campfire bees attack.",
+    "Silk touch moves a nest with bees inside.",
+    "Honey blocks need 4 bottles."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Beehive"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-honey.svg"
+  },
+  {
+   "n": 124,
+   "id": "basic-fishing",
+   "category": "basic farm",
+   "title": "Fishing spot",
+   "url": "https://minecraft.wiki/w/Fishing",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "fish",
+   "icon": "cod",
+   "stage": "early",
+   "short": "Fish in open water with a rod; treasure needs open space.",
+   "outputs": [
+    {
+     "item": "cod",
+     "rate_per_hour": 150,
+     "conditions": "hand fishing, Lure helps (estimate); also salmon, junk and treasure",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "fishing_rod",
+      "count": 1
+     }
+    ],
+    "notes": "typical build: any pond; for treasure (books, saddles) the bobber needs a 5x4x5 area of open water/air (wiki)."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "water open to the sky (rain helps)",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "fishing rod (3 sticks, 2 string)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Craft a rod.",
+    "Cast into open water.",
+    "Reel in when the bobber dips."
+   ],
+   "gotchas": [
+    "Treasure needs open water around the bobber.",
+    "Rain makes bites faster.",
+    "Enchant Luck of the Sea and Lure."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Fishing"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-fishing.svg"
+  },
+  {
+   "n": 125,
+   "id": "basic-cobblestone",
+   "category": "basic farm",
+   "title": "Cobblestone generator",
+   "url": "https://minecraft.wiki/w/Tutorial:Cobblestone_farming",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "stone",
+   "icon": "cobblestone",
+   "stage": "early",
+   "short": "Lava flows into water; cobble reforms where you mine.",
+   "outputs": [
+    {
+     "item": "cobblestone",
+     "rate_per_hour": 800,
+     "conditions": "hand mining with an efficiency pick (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "lava_bucket",
+      "count": 1
+     },
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "cobblestone",
+      "count": 10,
+      "note": "walls (estimate)"
+     }
+    ],
+    "notes": "typical build: a trench: lava source, 1 gap, the cobble spot, 1 gap, water source; flows meet in the middle."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "any",
+    "mobs": [],
+    "stage": "early",
+    "tools": [
+     "pickaxe"
+    ],
+    "hard_materials": [
+     {
+      "item": "lava_bucket",
+      "count": 1,
+      "note": "needs a bucket (3 iron)"
+     }
+    ]
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 1-deep trench 5 long.",
+    "Lava at one end, water at the other.",
+    "Mine the cobble that forms."
+   ],
+   "gotchas": [
+    "Water touching a lava SOURCE makes obsidian.",
+    "Lava flowing down onto water makes stone.",
+    "Keep flammables away from the lava."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Tutorial:Cobblestone_farming"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-cobblestone.svg"
+  },
+  {
+   "n": 126,
+   "id": "basic-basalt",
+   "category": "basic farm",
+   "title": "Basalt generator",
+   "url": "https://minecraft.wiki/w/Basalt",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.16+",
+   "version_notes": "",
+   "farm_type": "stone",
+   "icon": "basalt",
+   "stage": "mid",
+   "short": "Lava over soul soil next to blue ice makes basalt.",
+   "outputs": [
+    {
+     "item": "basalt",
+     "rate_per_hour": 700,
+     "conditions": "hand mining (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "lava_bucket",
+      "count": 1
+     },
+     {
+      "item": "soul_soil",
+      "count": 1
+     },
+     {
+      "item": "blue_ice",
+      "count": 1
+     }
+    ],
+    "notes": "typical build: soul soil under the spot, blue ice beside it, lava flowing in from the other side."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "any",
+    "location": "any",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [
+     "pickaxe"
+    ],
+    "hard_materials": [
+     {
+      "item": "blue_ice",
+      "count": 1,
+      "note": "9 packed ice = 81 ice; found in icebergs"
+     }
+    ]
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Put soul soil one below the spot.",
+    "Blue ice beside the spot.",
+    "Lava flowing in from the other side.",
+    "Mine basalt."
+   ],
+   "gotchas": [
+    "Needs soul soil, not soul sand.",
+    "Without blue ice you get cobble or nothing.",
+    "Good bulk block for building."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Basalt"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-basalt.svg"
+  },
+  {
+   "n": 127,
+   "id": "basic-spawner",
+   "category": "basic farm",
+   "title": "Dungeon spawner grinder",
+   "url": "https://minecraft.wiki/w/Monster_Spawner",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "rotten_flesh",
+   "icon": "rotten_flesh",
+   "stage": "mid",
+   "short": "Dungeon spawner, water pushes mobs to a long drop.",
+   "outputs": [
+    {
+     "item": "rotten_flesh",
+     "rate_per_hour": 150,
+     "conditions": "zombie spawner; 10-40 s per spawn try, up to 4 mobs (wiki) (rate estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "good (from kills)",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2
+     },
+     {
+      "item": "cobblestone",
+      "count": 200,
+      "note": "drop shaft (estimate)"
+     },
+     {
+      "item": "stone_slab",
+      "count": 1
+     }
+    ],
+    "notes": "typical build: clear the dungeon to 9x9, water from the far walls pushes mobs into a 1x1 shaft about 22 blocks deep so they land nearly dead."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "a dungeon (mossy room with a spawner)",
+    "mobs": [
+     "zombie / skeleton / spider spawner"
+    ],
+    "stage": "mid",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "within 16 blocks of the spawner",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Find a dungeon spawner.",
+    "Water pushes mobs to one hole.",
+    "Dig a long drop shaft.",
+    "Hit them at the bottom."
+   ],
+   "gotchas": [
+    "Spawner only works with a player within 16 blocks.",
+    "Stops at 6+ nearby mobs; keep them moving.",
+    "Torches on top of the spawner keep it calm while you build."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Monster_Spawner"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-spawner.svg"
+  },
+  {
+   "n": 128,
+   "id": "basic-dark-room",
+   "category": "basic farm",
+   "title": "Dark room mob farm",
+   "url": "https://minecraft.wiki/w/Tutorial:Mob_farm",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.18+",
+   "version_notes": "",
+   "farm_type": "bone",
+   "icon": "bone",
+   "stage": "mid",
+   "short": "Big dark platform; water carries mobs to a drop.",
+   "outputs": [
+    {
+     "item": "bone",
+     "rate_per_hour": 100,
+     "conditions": "small build, depends on caves lit around it (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    },
+    {
+     "item": "rotten_flesh",
+     "rate_per_hour": 100,
+     "conditions": "(estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "good",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "cobblestone",
+      "count": 900,
+      "note": "platform, walls, roof (estimate)"
+     },
+     {
+      "item": "water_bucket",
+      "count": 8
+     },
+     {
+      "item": "stone_slab",
+      "count": 2
+     }
+    ],
+    "notes": "typical build: a roofed, fully dark platform with water streams to a central hole and long drop. Since 1.18 hostiles need light 0."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "high above or far from caves (light up nearby caves)",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [
+     "sword"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "at the kill spot under the platform",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Build a dark roofed platform.",
+    "Water streams into a central hole.",
+    "Long drop to a kill spot.",
+    "AFK about 24-32 blocks away."
+   ],
+   "gotchas": [
+    "Light must be 0 inside.",
+    "Mobs spawn 24+ blocks from you.",
+    "Unlit caves nearby steal spawns."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Tutorial:Mob_farm"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-dark-room.svg"
+  },
+  {
+   "n": 129,
+   "id": "basic-villager-breeder",
+   "category": "basic farm",
+   "title": "Villager breeder (simple)",
+   "url": "https://minecraft.wiki/w/Villager",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.14+",
+   "version_notes": "",
+   "farm_type": "villager",
+   "icon": "villager_spawn_egg",
+   "stage": "mid",
+   "short": "Two villagers, beds and a farmer feeding them crops.",
+   "outputs": [
+    {
+     "item": "villager",
+     "rate_per_hour": 6,
+     "conditions": "babies per hour while free beds exist (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "white_bed",
+      "count": 6,
+      "note": "one per villager plus spares"
+     },
+     {
+      "item": "composter",
+      "count": 1
+     },
+     {
+      "item": "water_bucket",
+      "count": 1
+     },
+     {
+      "item": "carrot",
+      "count": 12,
+      "note": "to start the crop"
+     }
+    ],
+    "notes": "typical build: two villagers in a room with a farmer job (composter) and a crop row; beds as the cap on how many babies."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "near a village",
+    "mobs": [
+     "2 villagers (one farmer)"
+    ],
+    "stage": "mid",
+    "tools": [
+     "boat/rails to move villagers"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Get 2 villagers into a room.",
+    "Give one a composter (farmer).",
+    "Plant crops; place free beds.",
+    "Babies appear while beds are free."
+   ],
+   "gotchas": [
+    "Each baby needs a free bed.",
+    "Villagers need 3 bread / 12 carrots each to breed.",
+    "Protect from zombies at night."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Villager"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-villager-breeder.svg"
+  },
+  {
+   "n": 130,
+   "id": "basic-iron-golem",
+   "category": "basic farm",
+   "title": "Iron golem farm (basic)",
+   "url": "https://minecraft.wiki/w/Iron_Golem",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.14+",
+   "version_notes": "",
+   "farm_type": "iron",
+   "icon": "iron_ingot",
+   "stage": "mid",
+   "short": "Three villagers, beds and a zombie; golems spawn in a pit.",
+   "outputs": [
+    {
+     "item": "iron_ingot",
+     "rate_per_hour": 175,
+     "conditions": "3 villagers; about the rate of record 27 (175/hr suffocation, 335/hr with lava)",
+     "source": "record 27 (ianxofour)"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "white_bed",
+      "count": 3
+     },
+     {
+      "item": "glass",
+      "count": 8
+     },
+     {
+      "item": "hopper",
+      "count": 1
+     },
+     {
+      "item": "chest",
+      "count": 1
+     },
+     {
+      "item": "oak_boat",
+      "count": 1,
+      "note": "keeps the zombie"
+     }
+    ],
+    "notes": "typical build: 3 villagers with beds, a zombie they can see, and a pit below where golems spawn and are killed. See record 27 for the day-1 design."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "village or anywhere with 3 villagers",
+    "mobs": [
+     "3 villagers",
+     "1 zombie"
+    ],
+    "stage": "mid",
+    "tools": [
+     "sword or lava"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Put 3 villagers with beds together.",
+    "Keep a zombie in their sight.",
+    "Dig a pit where golems spawn.",
+    "Kill golems; 3-5 iron each."
+   ],
+   "gotchas": [
+    "Golem drops 3-5 iron (wiki).",
+    "Villagers must sleep or work recently.",
+    "Spawn-proof blocks around."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Iron_Golem"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-iron-golem.svg"
+  },
+  {
+   "n": 131,
+   "id": "basic-composter",
+   "category": "basic farm",
+   "title": "Bone meal composter",
+   "url": "https://minecraft.wiki/w/Composter",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.14+",
+   "version_notes": "",
+   "farm_type": "bone meal",
+   "icon": "bone_meal",
+   "stage": "early",
+   "short": "Hopper feeds crops into a composter; bone meal comes out.",
+   "outputs": [
+    {
+     "item": "bone_meal",
+     "rate_per_hour": 10,
+     "conditions": "depends on spare crops fed in; seeds 30%/layer, 7 layers per bone meal (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "composter",
+      "count": 1
+     },
+     {
+      "item": "hopper",
+      "count": 2
+     },
+     {
+      "item": "chest",
+      "count": 2
+     }
+    ],
+    "notes": "typical build: chest > hopper > composter > hopper > chest, in a column."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "base",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": [
+     {
+      "item": "hopper",
+      "count": 2,
+      "note": "5 iron each"
+     }
+    ]
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place a chest on a hopper.",
+    "Hopper into the composter.",
+    "Hopper under it into a chest."
+   ],
+   "gotchas": [
+    "About 20+ seeds per bone meal.",
+    "Pumpkins, melons, cake fill faster.",
+    "Also a farmer job block."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Composter"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-composter.svg"
+  },
+  {
+   "n": 132,
+   "id": "basic-snow",
+   "category": "basic farm",
+   "title": "Snow golem snow farm",
+   "url": "https://minecraft.wiki/w/Snow_Golem",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "snow",
+   "icon": "snowball",
+   "stage": "mid",
+   "short": "Trapped snow golem leaves snow layers you shovel.",
+   "outputs": [
+    {
+     "item": "snowball",
+     "rate_per_hour": 300,
+     "conditions": "golem in a 1x1, you shovel layers repeatedly (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "snow_block",
+      "count": 2
+     },
+     {
+      "item": "carved_pumpkin",
+      "count": 1
+     },
+     {
+      "item": "glass",
+      "count": 6,
+      "note": "cell (estimate)"
+     }
+    ],
+    "notes": "typical build: snow golem in a 1-block cell under a roof; snow layer forms under it; shovel it (estimate)."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "not desert/badlands/savanna/Nether (it melts above temperature 1.0)",
+    "mobs": [
+     "snow golem"
+    ],
+    "stage": "mid",
+    "tools": [
+     "shovel"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Stack 2 snow blocks, carved pumpkin on top.",
+    "Trap the golem in a 1x1 cell with a roof.",
+    "Shovel the snow under it."
+   ],
+   "gotchas": [
+    "Rain and water hurt snow golems.",
+    "Snowballs make snow blocks (4 each).",
+    "Since 1.18 it leaves snow in every biome."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Snow_Golem"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-snow.svg"
+  },
+  {
+   "n": 133,
+   "id": "basic-ice",
+   "category": "basic farm",
+   "title": "Ice farm (manual)",
+   "url": "https://minecraft.wiki/w/Ice",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "ice",
+   "icon": "ice",
+   "stage": "mid",
+   "short": "Water pool in a cold biome freezes; silk-touch the ice.",
+   "outputs": [
+    {
+     "item": "ice",
+     "rate_per_hour": 100,
+     "conditions": "10x5 pool, regrows in cold biome (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2
+     }
+    ],
+    "notes": "typical build: a shallow pool open to the sky in a snowy/cold biome; water freezes at night."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "cold/snowy biome, open sky",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [
+     "silk touch pickaxe"
+    ],
+    "hard_materials": [
+     {
+      "item": "silk_touch_pickaxe",
+      "count": 1,
+      "note": "enchanting"
+     }
+    ]
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Make a shallow pool in a snowy biome.",
+    "Wait for it to freeze.",
+    "Mine with silk touch."
+   ],
+   "gotchas": [
+    "Without silk touch, breaking ice leaves water.",
+    "9 ice = packed ice, 9 packed = blue ice.",
+    "Light above 11 melts ice."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Ice"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-ice.svg"
+  },
+  {
+   "n": 134,
+   "id": "basic-flower-dye",
+   "category": "basic farm",
+   "title": "Flower dye farm",
+   "url": "https://minecraft.wiki/w/Flower",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "dye",
+   "icon": "yellow_dye",
+   "stage": "early",
+   "short": "Bone-meal tall flowers to copy them for dyes.",
+   "outputs": [
+    {
+     "item": "yellow_dye",
+     "rate_per_hour": 120,
+     "conditions": "sunflowers; 1 bone meal = 1 extra flower = 2 dye (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "sunflower",
+      "count": 4,
+      "note": "or lilac, rose bush, peony"
+     },
+     {
+      "item": "bone_meal",
+      "count": 64
+     }
+    ],
+    "notes": "typical build: tall flowers on grass. Bone meal on grass also grows the biome's small flowers."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "grass; flower forest has the most kinds",
+    "mobs": [],
+    "stage": "early",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Plant tall flowers on grass.",
+    "Bone-meal a tall flower.",
+    "Collect the copy it drops."
+   ],
+   "gotchas": [
+    "Only tall (2-block) flowers copy.",
+    "Small flowers: bone-meal grass.",
+    "Pair with the composter farm."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Flower"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-flower-dye.svg"
+  },
+  {
+   "n": 135,
+   "id": "basic-glow-berries",
+   "category": "basic farm",
+   "title": "Glow berry farm",
+   "url": "https://minecraft.wiki/w/Glow_Berries",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.17+",
+   "version_notes": "",
+   "farm_type": "glow_berries",
+   "icon": "glow_berries",
+   "stage": "mid",
+   "short": "Cave vines hanging from a ceiling; pick glowing berries.",
+   "outputs": [
+    {
+     "item": "glow_berries",
+     "rate_per_hour": 40,
+     "conditions": "8 vines (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "glow_berries",
+      "count": 8
+     },
+     {
+      "item": "stone",
+      "count": 16,
+      "note": "ceiling"
+     }
+    ],
+    "notes": "typical build: a ceiling row with vines planted under it, open space below."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "lush caves (for first berries)",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Build a ceiling.",
+    "Plant berries under it.",
+    "Vines grow down; right-click berries."
+   ],
+   "gotchas": [
+    "Berries also light the area.",
+    "Cut the top and the vine is gone.",
+    "Foxes eat them."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Glow_Berries"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-glow-berries.svg"
+  },
+  {
+   "n": 136,
+   "id": "basic-chorus",
+   "category": "basic farm",
+   "title": "Chorus fruit farm",
+   "url": "https://minecraft.wiki/w/Chorus_Plant",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "chorus_fruit",
+   "icon": "chorus_fruit",
+   "stage": "late",
+   "short": "Chorus flowers on end stone; break the plant, keep the flower.",
+   "outputs": [
+    {
+     "item": "chorus_fruit",
+     "rate_per_hour": 60,
+     "conditions": "5 plants (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "end_stone",
+      "count": 5
+     },
+     {
+      "item": "chorus_flower",
+      "count": 5
+     }
+    ],
+    "notes": "typical build: end stone blocks with space above (they grow tall and branch)."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "any (needs end stone)",
+    "location": "End islands for flowers",
+    "mobs": [],
+    "stage": "late (after the dragon)",
+    "tools": [
+     "axe"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Break chorus flowers on End islands.",
+    "Plant them on end stone.",
+    "Break the plant base; keep flowers."
+   ],
+   "gotchas": [
+    "Only grows on end stone.",
+    "Popped chorus makes purpur.",
+    "Eating fruit teleports you."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Chorus_Plant"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-chorus.svg"
+  },
+  {
+   "n": 137,
+   "id": "basic-turtle",
+   "category": "basic farm",
+   "title": "Turtle egg / scute farm",
+   "url": "https://minecraft.wiki/w/Turtle_Egg",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.13+",
+   "version_notes": "",
+   "farm_type": "turtle",
+   "icon": "turtle_scute",
+   "stage": "mid",
+   "short": "Turtles bred on their home beach lay eggs on sand.",
+   "outputs": [
+    {
+     "item": "turtle_scute",
+     "rate_per_hour": 4,
+     "conditions": "1 scute per baby growing up (wiki) (rate estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "seagrass",
+      "count": 10
+     },
+     {
+      "item": "shears",
+      "count": 1,
+      "note": "to get seagrass"
+     }
+    ],
+    "notes": "typical build: fence a bit of the turtles' own beach; sand area for eggs."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "the beach the turtles spawned on",
+    "mobs": [
+     "2 turtles"
+    ],
+    "stage": "mid",
+    "tools": [
+     "shears (seagrass)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Fence turtles on their home beach.",
+    "Feed seagrass to two.",
+    "One lays eggs on sand.",
+    "Babies drop scutes when grown."
+   ],
+   "gotchas": [
+    "They only lay on their home beach.",
+    "Zombies trample eggs.",
+    "Eggs hatch faster at night."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Turtle_Egg"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-turtle.svg"
+  },
+  {
+   "n": 138,
+   "id": "basic-froglight",
+   "category": "basic farm",
+   "title": "Froglight farm (basic)",
+   "url": "https://minecraft.wiki/w/Froglight",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.19+",
+   "version_notes": "",
+   "farm_type": "ochre_froglight",
+   "icon": "ochre_froglight",
+   "stage": "late",
+   "short": "Frogs eat small magma cubes and drop froglights.",
+   "outputs": [
+    {
+     "item": "ochre_froglight",
+     "rate_per_hour": 20,
+     "conditions": "1 per small magma cube eaten (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "lead",
+      "count": 3
+     },
+     {
+      "item": "slime_ball",
+      "count": 3,
+      "note": "to breed"
+     }
+    ],
+    "notes": "typical build: frogs leashed or boated to a Nether basalt delta with small magma cubes."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "nether",
+    "location": "basalt deltas (magma cubes)",
+    "mobs": [
+     "temperate, warm and cold frogs"
+    ],
+    "stage": "late",
+    "tools": [
+     "leads",
+     "boat"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Get 3 frog colours (tadpoles in different biomes).",
+    "Bring frogs to the Nether.",
+    "Let them eat small magma cubes."
+   ],
+   "gotchas": [
+    "Frog type sets the colour.",
+    "Only small magma cubes count.",
+    "Bringing frogs through a portal is fiddly."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Froglight"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-froglight.svg"
+  },
+  {
+   "n": 139,
+   "id": "basic-armadillo",
+   "category": "basic farm",
+   "title": "Armadillo scute pen",
+   "url": "https://minecraft.wiki/w/Armadillo_Scute",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.20.5+",
+   "version_notes": "",
+   "farm_type": "scute",
+   "icon": "armadillo_scute",
+   "stage": "mid",
+   "short": "Fenced armadillos drop scutes over time; brush for more.",
+   "outputs": [
+    {
+     "item": "armadillo_scute",
+     "rate_per_hour": 40,
+     "conditions": "5 armadillos, 1 scute each every 5-10 min (wiki)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "oak_fence",
+      "count": 24
+     },
+     {
+      "item": "spider_eye",
+      "count": 4,
+      "note": "to breed"
+     },
+     {
+      "item": "brush",
+      "count": 1,
+      "note": "optional"
+     }
+    ],
+    "notes": "typical build: a small fenced pen on grass; hoppers in the floor optional."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "savanna or badlands",
+    "mobs": [
+     "2+ armadillos"
+    ],
+    "stage": "mid",
+    "tools": [
+     "brush (optional)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Find armadillos in savanna.",
+    "Lead them into a pen.",
+    "Breed with spider eyes.",
+    "Collect scutes."
+   ],
+   "gotchas": [
+    "Brushing costs brush durability.",
+    "Scutes make wolf armor.",
+    "They roll up near players."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Armadillo_Scute"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-armadillo.svg"
+  },
+  {
+   "n": 140,
+   "id": "basic-water",
+   "category": "basic farm",
+   "title": "Infinite water source",
+   "url": "https://minecraft.wiki/w/Water",
+   "date": null,
+   "edition": "Java",
+   "versions": "all",
+   "version_notes": "",
+   "farm_type": "water_bucket",
+   "icon": "water_bucket",
+   "stage": "early",
+   "short": "A 2x2 pool refills; scoop forever.",
+   "outputs": [
+    {
+     "item": "water_bucket",
+     "rate_per_hour": 999,
+     "conditions": "refills instantly",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "water_bucket",
+      "count": 2
+     }
+    ],
+    "notes": "typical build: a 2x2 hole with 2 diagonal water sources; it fills to 4."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "not in the Nether",
+    "mobs": [],
+    "stage": "day 1",
+    "tools": [
+     "bucket"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Dig a 2x2 hole one deep.",
+    "Pour water in opposite corners.",
+    "Scoop from any block."
+   ],
+   "gotchas": [
+    "Sources need a solid block or source below.",
+    "3 in a line also works.",
+    "Water evaporates in the Nether."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Water"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-water.svg"
+  },
+  {
+   "n": 141,
+   "id": "basic-dripstone-lava",
+   "category": "basic farm",
+   "title": "Dripstone lava farm",
+   "url": "https://minecraft.wiki/w/Pointed_Dripstone",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.17+",
+   "version_notes": "",
+   "farm_type": "lava",
+   "icon": "lava_bucket",
+   "stage": "mid",
+   "short": "Lava above dripstone drips into a cauldron.",
+   "outputs": [
+    {
+     "item": "lava_bucket",
+     "rate_per_hour": 3,
+     "conditions": "one cauldron fills about every 19 min (wiki) (rate per cauldron)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "lava_bucket",
+      "count": 1
+     },
+     {
+      "item": "pointed_dripstone",
+      "count": 1
+     },
+     {
+      "item": "cauldron",
+      "count": 1
+     },
+     {
+      "item": "stone",
+      "count": 3
+     }
+    ],
+    "notes": "typical build: lava source on top of a block, dripstone hanging under that block, cauldron below."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "any",
+    "location": "dripstone caves for pointed dripstone",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [
+     "bucket"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place a block, lava on top.",
+    "Hang pointed dripstone under it.",
+    "Cauldron under the tip."
+   ],
+   "gotchas": [
+    "Lava source must be directly above.",
+    "Cauldron within 10 blocks below.",
+    "Build several for more."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Pointed_Dripstone"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-dripstone-lava.svg"
+  },
+  {
+   "n": 142,
+   "id": "basic-moss",
+   "category": "basic farm",
+   "title": "Moss farm",
+   "url": "https://minecraft.wiki/w/Moss_Block",
+   "date": null,
+   "edition": "Java",
+   "versions": "1.17+",
+   "version_notes": "",
+   "farm_type": "moss_block",
+   "icon": "moss_block",
+   "stage": "mid",
+   "short": "Bone-meal moss to spread it over stone.",
+   "outputs": [
+    {
+     "item": "moss_block",
+     "rate_per_hour": 200,
+     "conditions": "with plenty of bone meal (estimate)",
+     "source": "estimate from minecraft.wiki growth/drop rules"
+    }
+   ],
+   "xp": "none",
+   "materials_onscreen": {
+    "timestamp": null,
+    "items": [
+     {
+      "item": "moss_block",
+      "count": 1
+     },
+     {
+      "item": "stone",
+      "count": 25,
+      "note": "5x5 pad"
+     }
+    ],
+    "notes": "typical build: one moss in the centre of a stone pad."
+   },
+   "materials_litematic": null,
+   "materials_variants": [],
+   "requires": {
+    "dimension": "overworld",
+    "location": "lush caves or wandering trader for the first moss",
+    "mobs": [],
+    "stage": "mid",
+    "tools": [
+     "hoe (fast)"
+    ],
+    "hard_materials": []
+   },
+   "afk_spot": "none needed; harvest by hand",
+   "build_time": null,
+   "chapters": [],
+   "downloads": [],
+   "steps": [
+    "Place moss in a stone pad.",
+    "Bone-meal the centre moss.",
+    "Break the new moss, keep the centre."
+   ],
+   "gotchas": [
+    "Mined moss composts into more bone meal.",
+    "Spreads onto stone, dirt, deepslate.",
+    "Also grows azalea and grass."
+   ],
+   "sources": [
+    "minecraft.wiki: https://minecraft.wiki/w/Moss_Block"
+   ],
+   "confidence": "medium: standard community design; rates are estimates",
+   "pic": "pics/basic-moss.svg"
   }
  ]
 }

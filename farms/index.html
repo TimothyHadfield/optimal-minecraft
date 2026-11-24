@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Farms — Minecraft</title>
-  <meta name="description" content="Every ianxofour Minecraft farm: exact materials, requirements, rates and links." />
+  <meta name="description" content="Minecraft farms, tricks and villager trades: materials, prerequisites and early/mid/late stage." />
   <link rel="icon" href="../icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,221 +15,267 @@
     html, body { margin: 0; padding: 0; background: #1a1410; color: #f4ead5; }
     body { font-family: "VT323", "Courier New", monospace; font-size: 20px; line-height: 1.15; }
     a { color: #7cc242; }
+    button { font: inherit; color: inherit; }
     .pix { font-family: "Press Start 2P", monospace; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 8px max(12px, env(safe-area-inset-left)) 24px; }
-    .switch { display: flex; gap: 4px; max-width: 540px; margin: 0 auto 10px; }
-    .switch a { flex: 1; text-align: center; text-decoration: none; padding: 10px 8px; font-size: 10px; letter-spacing: 1.5px;
-      border: 2px solid #0a0805; background: #1f1813; color: #5a4a38; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); }
-    .switch a.on { background: #8b6f47; color: #f4ead5; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3); }
-    h1 { font-size: 18px; color: #7cc242; letter-spacing: 2px; text-align: center; margin: 6px 0 4px; text-shadow: 3px 3px 0 #0a0805; }
-    .sub { text-align: center; color: #8b7355; margin-bottom: 10px; letter-spacing: 1px; }
-    .panel { background: #2a221c; border: 2px solid #0a0805; padding: 10px;
-      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.06), inset -2px -2px 0 rgba(0,0,0,0.5), 4px 4px 0 rgba(0,0,0,0.4); }
-    .search { width: 100%; font: inherit; font-size: 22px; padding: 8px 10px; background: #0f0a07; color: #f4ead5;
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 8px max(10px, env(safe-area-inset-left)) 16px max(10px, env(safe-area-inset-right)); }
+    .bar { display: flex; gap: 4px; }
+    .bar > * { flex: 1; text-align: center; text-decoration: none; padding: 9px 6px; font-family: "Press Start 2P", monospace; font-size: 9px; letter-spacing: 1px;
+      border: 2px solid #0a0805; background: #1f1813; color: #6a5a48; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); cursor: pointer; }
+    .bar > .on { background: #8b6f47; color: #f4ead5; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3); }
+    .bar.tabs > .on { background: #7cc242; color: #0a0805; }
+    .top { max-width: 540px; margin: 0 auto 8px; }
+    .tools { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
+    .search { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 20px; padding: 6px 8px; background: #0f0a07; color: #f4ead5;
       border: 2px solid #0a0805; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); outline: none; }
     .search:focus { border-color: #7cc242; }
-    .cols { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .cols > *, .row .nm, td { min-width: 0; overflow-wrap: anywhere; }
-    h2 { overflow-wrap: anywhere; }
-    td.lb { white-space: nowrap; overflow-wrap: normal; width: 1%; }
-    h3 .muted { font-family: "VT323", monospace; letter-spacing: 0; }
-    @media (min-width: 860px) {
-      .cols { grid-template-columns: 380px 1fr; height: calc(100vh - 150px); }
-      .cols > * { min-height: 0; overflow-y: auto; }
-      .row .inline { display: none !important; }
+    .stages { display: flex; gap: 4px; }
+    .stages button { padding: 4px 8px; border: 2px solid #0a0805; background: #1f1813; color: #6a5a48; cursor: pointer; font-size: 18px; }
+    .stages button.on { color: #0a0805; }
+    .stages button.on[data-s="all"] { background: #f4ead5; }
+    .stages button.on[data-s="early"], .st-early { background: #7cc242; }
+    .stages button.on[data-s="mid"], .st-mid { background: #f0a830; }
+    .stages button.on[data-s="late"], .st-late { background: #c0392b; }
+    .chip-st { display: inline-block; padding: 0 5px; color: #0a0805; font-size: 15px; line-height: 18px; text-transform: uppercase; }
+    .main { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    @media (min-width: 900px) {
+      .main { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); height: calc(100vh - 140px); }
+      .main > * { min-height: 0; overflow-y: auto; }
+      #back { display: none; }
     }
-    @media (max-width: 859px) { #detail { display: none; } }
-    .list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
-    .row { background: #1f1813; border: 2px solid #0a0805; }
-    .row > button { all: unset; display: flex; gap: 8px; align-items: baseline; width: 100%; padding: 6px 8px; cursor: pointer; box-sizing: border-box; }
-    .row.on > button { background: #3a3024; }
-    .row .nm { flex: 1; min-width: 0; }
-    .row .vr { color: #8b7355; font-size: 17px; white-space: nowrap; }
-    .row .off { color: #c0392b; }
-    .tag { font-size: 16px; color: #a89880; }
-    .na { color: #5a4a38; }
-    h2 { font-size: 12px; color: #ffd54a; margin: 4px 0 8px; line-height: 1.6; }
-    h3 { font-family: "Press Start 2P", monospace; font-size: 9px; color: #7cc242; margin: 14px 0 6px; letter-spacing: 1px; }
-    table { border-collapse: collapse; width: 100%; }
-    td { padding: 1px 6px 1px 0; vertical-align: top; }
-    td.n { text-align: right; color: #ffd54a; white-space: nowrap; width: 1%; }
-    td.note { color: #a89880; font-size: 17px; }
-    .two { display: grid; grid-template-columns: 1fr; gap: 0 16px; }
-    @media (min-width: 1100px) { .two { grid-template-columns: 1fr 1fr; } }
-    ul { margin: 0; padding-left: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; align-content: start; }
+    .card { all: unset; cursor: pointer; display: block; background: #1f1813; border: 2px solid #0a0805; position: relative; min-width: 0; }
+    .card.on { border-color: #ffd54a; }
+    .card .pic { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #2a221c; }
+    .card .nm { display: flex; gap: 4px; align-items: center; padding: 3px 5px 4px; font-size: 17px; line-height: 1; min-width: 0; }
+    .card .nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .card .chip-st { position: absolute; top: 3px; right: 3px; }
+    .card .big { position: absolute; left: 4px; top: 4px; width: 28px; height: 28px; background: rgba(15,10,7,0.75); padding: 2px; }
+    .ic { width: 20px; height: 20px; image-rendering: pixelated; vertical-align: -4px; flex: none; }
+    .ic.l { width: 28px; height: 28px; }
+    .ic.xl { width: 40px; height: 40px; }
+    .panel { background: #2a221c; border: 2px solid #0a0805; padding: 10px; }
+    @media (max-width: 899px) {
+      #detail { position: fixed; inset: 0; z-index: 5; overflow-y: auto; padding: max(10px, env(safe-area-inset-top)) 12px 30px; transform: translateX(100%); transition: transform .2s; }
+      #detail.open { transform: none; }
+    }
+    #back { all: unset; cursor: pointer; font-family: "Press Start 2P", monospace; font-size: 10px; padding: 8px 10px; background: #8b6f47; border: 2px solid #0a0805; margin-bottom: 8px; display: inline-block; }
+    .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border: 2px solid #0a0805; background: #1f1813; }
+    .ttl { display: flex; gap: 8px; align-items: center; margin: 8px 0 2px; }
+    .ttl h2 { font-family: "Press Start 2P", monospace; font-size: 12px; line-height: 1.5; color: #ffd54a; margin: 0; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+    .one { color: #c8b89a; }
+    h3 { font-family: "Press Start 2P", monospace; font-size: 9px; color: #7cc242; margin: 12px 0 5px; letter-spacing: 1px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .it { display: inline-flex; align-items: center; gap: 4px; background: #1f1813; border: 2px solid #0a0805; padding: 1px 5px 1px 2px; font-size: 18px; max-width: 100%; }
+    .it b { color: #ffd54a; font-weight: normal; }
+    .it .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pre { all: unset; cursor: pointer; display: flex; align-items: center; gap: 6px; background: #1f1813; border: 2px solid #0a0805; padding: 3px 6px; margin-bottom: 4px; width: 100%; box-sizing: border-box; }
+    .pre .w { flex: 1; min-width: 0; }
+    .pre .why { color: #a89880; font-size: 16px; }
+    .dots { color: #ffd54a; letter-spacing: 1px; white-space: nowrap; font-size: 16px; }
+    .dots i { color: #4a3e30; font-style: normal; }
+    ol, ul { margin: 0; padding-left: 22px; }
     .muted { color: #a89880; font-size: 17px; }
-    .inline { padding: 4px 8px 10px; }
-    .seg { display: flex; gap: 4px; margin-bottom: 6px; }
-    .seg button { flex: 1; font: inherit; font-size: 9px; letter-spacing: 1px; padding: 8px; cursor: pointer; border: 2px solid #0a0805;
-      background: #1f1813; color: #5a4a38; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); }
-    .seg button.on { background: #7cc242; color: #0a0805; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.3); }
-    ol { margin: 0; padding-left: 22px; }
+    .more { all: unset; cursor: pointer; display: inline-block; margin-top: 12px; padding: 4px 10px; border: 2px solid #0a0805; background: #1f1813; font-size: 17px; }
+    .links a { margin-right: 12px; }
+    table { border-collapse: collapse; }
+    td { padding: 1px 6px 1px 0; vertical-align: middle; }
+    .trade { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 3px 0; border-bottom: 1px solid #1f1813; }
+    .trade .u { margin-left: auto; color: #a89880; font-size: 16px; }
+    .lv { color: #a89880; font-family: "VT323", monospace; letter-spacing: 0; font-size: 16px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav class="switch pix"><a href="../">HORSES</a><a class="on" href="./">FARMS</a></nav>
-    <h1 class="pix">FARMS</h1>
-    <div class="sub" id="sub">━━━ ianxofour ━━━</div>
-    <div class="cols">
-      <div>
-        <div class="seg pix" id="seg"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button></div>
-        <input class="search" id="q" placeholder="Search farm or item" autocomplete="off">
-        <div class="list" id="list"><div class="muted">Loading…</div></div>
-      </div>
-      <div class="panel" id="detail"><div class="muted">Pick a farm.</div></div>
+    <nav class="bar top"><a href="../">HORSES</a><a class="on" href="./">FARMS</a></nav>
+    <div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button></div>
+    <div class="tools">
+      <input class="search" id="q" placeholder="Search" autocomplete="off">
+      <div class="stages" id="stages"><button data-s="all" class="on">All</button><button data-s="early">Early</button><button data-s="mid">Mid</button><button data-s="late">Late</button></div>
+    </div>
+    <div class="main">
+      <div class="grid" id="grid"><div class="muted">Loading…</div></div>
+      <div class="panel" id="detail"><div class="muted">Pick one.</div></div>
     </div>
   </div>
 <script>
+const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-const nice = id => esc(String(id).replace(/^minecraft:/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()));
 const num = n => n == null ? '' : Number(n).toLocaleString();
-let FARMS = [], sel = null;
+const WIDE = () => matchMedia('(min-width: 900px)').matches;
 
-function short(f) { return f.title.replace(/^Minecraft Elegance:\s*/i, '').replace(/\s*(\(|,| - |\bJava\b).*$/, ''); }
-function shortVer(f) { const m = (f.versions || '').match(/\d[\d.]*(?:[-–]\d[\d.]*|\+)?/); return m ? m[0] : ''; }
-function mainRate(f) {
-  const o = (f.outputs || []).find(o => o.rate_per_hour != null);
-  return o ? `${num(o.rate_per_hour)} ${nice(o.item)}/h` : '';
+// ---- items + icons ----
+function itemId(s) {
+  s = String(s || '').toLowerCase().replace(/^minecraft:/, '').replace('<color>', 'white').replace('<biome_wood>', 'oak');
+  const m = s.match(/[a-z0-9_]+/); return m ? m[0] : '';
 }
-function matTable(items) {
-  if (!items || !items.length) return '<div class="na">None recorded</div>';
-  return '<table>' + items.map(i => `<tr><td class="n">${i.count == null ? '?' : num(i.count)}</td><td>${nice(i.item)}${i.note ? ` <span class="note">${esc(i.note)}</span>` : ''}</td></tr>`).join('') + '</table>';
+const niceName = s => String(s || '').replace(/^minecraft:/, '').replace(/<color>_/, 'any ').replace(/<biome_wood>_/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+const icon = (s, cls = '') => { const id = itemId(s); return id ? `<img class="ic ${cls}" src="icons/${id}.png" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : ''; };
+const chip = (item, count, extra) => `<span class="it" title="${esc(niceName(item))}">${icon(item)}${count != null && count !== '' ? `<b>${esc(count)}</b>` : ''}<span class="t">${esc(niceName(item))}${extra ? ' ' + esc(extra) : ''}</span></span>`;
+
+// ---- data ----
+let FARMS = [], TRICKS = [], TRADES = null, PLAN = {};
+let MODE = 'farms', STAGE = 'all', SEL = null, MORE = false;
+const key = e => e.n != null ? 'farm:' + e.n : 'trick:' + e.id;
+const plan = e => PLAN[key(e)] || {};
+function stageOf(e) {
+  const s = (plan(e).stage || e.stage || (e.requires || {}).stage || '').toLowerCase();
+  if (/^early|day ?1|day one/.test(s)) return 'early';
+  if (/^late|end|elytra/.test(s)) return 'late';
+  if (/^mid|nether/.test(s)) return 'mid';
+  return s.startsWith('early') ? 'early' : s.startsWith('late') ? 'late' : s ? 'mid' : 'mid';
 }
-function detail(f) {
-  const r = f.requires || {};
-  const lit = f.materials_litematic;
-  const litItems = lit && lit.items ? Object.entries(lit.items).map(([item, count]) => ({ item, count })) : null;
-  const on = f.materials_onscreen || {};
-  let h = `<h2 class="pix">${esc(short(f))}</h2>
-  <div class="muted">${esc(f.edition || 'Java')} ${esc(f.versions || '')} · ${esc(f.date || '')} · <a href="${esc(f.url)}" target="_blank" rel="noopener">Video ↗</a></div>
-  ${f.version_notes ? `<div class="muted">${esc(f.version_notes)}</div>` : ''}
-  <h3>MAKES</h3>
-  ${(f.outputs || []).length ? '<table>' + f.outputs.map(o => `<tr><td class="n">${o.rate_per_hour == null ? '' : num(o.rate_per_hour) + '/h'}</td><td>${nice(o.item)}${o.conditions ? ` <span class="note">${esc(o.conditions)}</span>` : ''}</td></tr>`).join('') + '</table>' : '<div class="na">—</div>'}
-  ${f.xp && f.xp !== 'none' ? `<div class="muted">XP: ${esc(f.xp)}</div>` : ''}
-  <h3>NEEDS</h3><table>
-   ${[['Where', [r.dimension, r.location].filter(Boolean).join(' · ')], ['Mobs', (r.mobs || []).join(', ')], ['Stage', r.stage], ['Tools', (r.tools || []).join(', ')]]
-      .filter(x => x[1]).map(x => `<tr><td class="note lb">${x[0]}</td><td>${esc(x[1])}</td></tr>`).join('')}
-  </table>
-  ${(r.hard_materials || []).length ? '<h3>HARD MATERIALS</h3><table>' + r.hard_materials.map(m => `<tr><td class="n">${m.count == null ? '' : num(m.count)}</td><td>${nice(m.item)} <span class="note">${esc(m.why_hard || '')}${m.farm_that_helps ? ' → ' + esc(m.farm_that_helps) + ' farm' : ''}</span></td></tr>`).join('') + '</table>' : ''}
-  <div class="two">
-    <div><h3>MATERIALS (VIDEO ${esc(on.timestamp || '')})</h3>${matTable(on.items)}${on.notes ? `<div class="muted">${esc(on.notes)}</div>` : ''}</div>
-    ${litItems ? `<div><h3>SCHEMATIC COUNT</h3><div class="muted">${esc(lit.file || '')}</div>${lit.differences || lit.parts ? `<div class="muted">${esc(typeof (lit.differences || lit.parts) === 'string' ? (lit.differences || lit.parts) : JSON.stringify(lit.differences || lit.parts))}</div>` : ''}${matTable(litItems)}${lit.entities && Object.keys(lit.entities).length ? `<div class="muted">Mobs: ${Object.entries(lit.entities).map(([k, v]) => v + ' ' + nice(k)).join(', ')}</div>` : ''}</div>` : ''}
-  </div>
-  ${(f.materials_variants || []).map(v => `<h3>${esc(v.name).toUpperCase()}</h3>${matTable(v.items)}`).join('')}
-  ${f.afk_spot ? `<h3>AFK</h3><div>${esc(f.afk_spot)}</div>` : ''}
-  ${(f.gotchas || []).length ? '<h3>WATCH OUT</h3><ul>' + f.gotchas.map(g => `<li>${esc(g)}</li>`).join('') + '</ul>' : ''}
-  ${(f.downloads || []).length ? '<h3>DOWNLOADS</h3><ul>' + f.downloads.map(d => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.kind)}</a></li>`).join('') + '</ul>' : ''}
-  ${f.confidence ? `<div class="muted" style="margin-top:12px">Sure? ${esc(f.confidence)}</div>` : ''}`;
+const nameOf = e => e.n != null ? (e.n > 100 ? e.title : e.title.replace(/^Minecraft Elegance:\s*/i, '').replace(/\s*(\(|,| - |\bJava\b).*$/, '')) : e.name;
+const iconOf = e => plan(e).icon || e.icon || (e.outputs || []).map(o => o.item).find(x => itemId(x)) || ((e.materials || [])[0] || {}).item || '';
+const picOf = e => plan(e).pic || e.pic || (e.n != null ? `pics/farm-${e.n}.jpg` : `pics/trick-${e.id}.svg`);
+const shortOf = e => plan(e).short || e.short || e.what || '';
+const byKey = k => k.startsWith('farm:') ? FARMS.find(f => 'farm:' + f.n === k) : TRICKS.find(t => 'trick:' + t.id === k);
+
+function entries() { return MODE === 'farms' ? FARMS : MODE === 'tricks' ? TRICKS : []; }
+function matches(e, q) { return !q || JSON.stringify(e).toLowerCase().replace(/_/g, ' ').includes(q); }
+
+function card(e) {
+  const st = stageOf(e);
+  return `<button class="card ${SEL === key(e) ? 'on' : ''}" data-k="${esc(key(e))}">
+    <img class="pic" src="${esc(picOf(e))}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+    <span class="big">${icon(iconOf(e), 'l')}</span>
+    <span class="chip-st st-${st}">${st}</span>
+    <span class="nm"><span>${esc(nameOf(e))}</span></span></button>`;
+}
+
+function dots(r) { r = Math.max(1, Math.min(5, +r || 1)); return `<span class="dots">${'■'.repeat(r)}<i>${'■'.repeat(5 - r)}</i></span>`; }
+
+function detail(e) {
+  const p = plan(e), st = stageOf(e), isFarm = e.n != null;
+  let h = `${WIDE() ? '' : '<button id="back">◀ BACK</button>'}
+  <img class="hero" src="${esc(picOf(e))}" alt="" onerror="this.style.display='none'">
+  <div class="ttl">${icon(iconOf(e), 'xl')}<h2>${esc(nameOf(e))}</h2><span class="chip-st st-${st}">${st}</span></div>
+  <div class="one">${esc(shortOf(e))}</div>`;
+  if (isFarm) {
+    const outs = (e.outputs || []).filter(o => itemId(o.item));
+    if (outs.length) h += `<h3>MAKES</h3><div class="chips">${outs.map(o => chip(o.item, o.rate_per_hour != null ? num(o.rate_per_hour) + '/h' : '')).join('')}</div>`;
+  } else if (e.why) h += `<h3>WHY</h3><div>${esc(e.why)}</div>`;
+  const pre = p.prereqs || [];
+  if (pre.length) h += `<h3>BUILD FIRST</h3>` + pre.slice().sort((a, b) => b.rating - a.rating).map(r => {
+    const t = byKey(r.ref); return `<button class="pre" data-go="${esc(r.ref)}">${icon(t ? iconOf(t) : r.item, 'l')}<span class="w">${esc(t ? nameOf(t) : r.ref)}<br><span class="why">${esc(r.why || '')}</span></span>${dots(r.rating)}</button>`;
+  }).join('');
+  const mats = isFarm ? ((e.materials_onscreen || {}).items || []) : (e.materials || []);
+  if (mats.length) h += `<h3>MATERIALS</h3><div class="chips">${mats.filter(m => itemId(m.item)).map(m => chip(m.item, m.count != null ? num(m.count) : '')).join('')}</div>`;
+  const r = e.requires || {};
+  const mobs = r.mobs || [];
+  if (mobs.length) h += `<h3>BRING</h3><div class="chips">${mobs.map(m => `<span class="it">${esc(m)}</span>`).join('')}</div>`;
+  if (r.location) h += `<h3>WHERE</h3><div>${esc(r.location)}</div>`;
+  const steps = p.steps || e.steps || [];
+  if (steps.length) h += `<h3>STEPS</h3><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>`;
+  const links = [];
+  if (e.url) links.push(`<a href="${esc(e.url)}" target="_blank" rel="noopener">Video ↗</a>`);
+  if (e.ianxofour_video) links.push(`<a href="${esc(e.ianxofour_video)}" target="_blank" rel="noopener">Video ↗</a>`);
+  (e.downloads || []).forEach(d => links.push(`<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.kind)} ↗</a>`));
+  if (links.length) h += `<div class="links" style="margin-top:10px">${links.join('')}</div>`;
+  h += `<button class="more" id="more">${MORE ? '− Less' : '+ More'}</button>`;
+  if (MORE) {
+    const x = [];
+    if (e.versions || e.version_notes) x.push(`<h3>VERSION</h3><div class="muted">${esc([e.edition, e.versions].filter(Boolean).join(' '))}${e.version_notes ? '<br>' + esc(e.version_notes) : ''}</div>`);
+    if (isFarm) {
+      const outs = e.outputs || [];
+      if (outs.some(o => o.conditions)) x.push(`<h3>RATE NOTES</h3><ul class="muted">${outs.filter(o => o.conditions).map(o => `<li>${esc(niceName(o.item))}: ${esc(o.conditions)}</li>`).join('')}</ul>`);
+      if ((r.hard_materials || []).length) x.push(`<h3>HARD MATERIALS</h3><div class="chips">${r.hard_materials.map(m => chip(m.item, m.count != null ? num(m.count) : '', m.farm_that_helps ? '→ ' + m.farm_that_helps : '')).join('')}</div>`);
+      const lit = e.materials_litematic;
+      if (lit && lit.items) x.push(`<h3>SCHEMATIC COUNT</h3><div class="chips">${Object.entries(lit.items).map(([k, v]) => chip(k, num(v))).join('')}</div><div class="muted">${esc(typeof lit.differences === 'string' ? lit.differences : '')}</div>`);
+      if ((e.materials_onscreen || {}).notes) x.push(`<div class="muted">${esc(e.materials_onscreen.notes)}</div>`);
+      (e.materials_variants || []).forEach(v => x.push(`<h3>${esc(String(v.name).toUpperCase())}</h3><div class="chips">${(v.items || []).filter(m => itemId(m.item)).map(m => chip(m.item, m.count != null ? num(m.count) : '')).join('')}</div>`));
+      if (e.afk_spot) x.push(`<h3>AFK</h3><div class="muted">${esc(e.afk_spot)}</div>`);
+    } else if (e.needs) x.push(`<h3>NEEDS</h3><div class="muted">${esc(e.needs)}</div>`);
+    if (e.what && !isFarm) x.push(`<h3>WHAT</h3><div class="muted">${esc(e.what)}</div>`);
+    if ((e.gotchas || []).length) x.push(`<h3>WATCH OUT</h3><ul class="muted">${e.gotchas.map(g => `<li>${esc(g)}</li>`).join('')}</ul>`);
+    if (e.version_notes && !isFarm) x.push(`<div class="muted">${esc(e.version_notes)}</div>`);
+    if ((e.sources || []).length && !isFarm) x.push(`<h3>SOURCES</h3><ul class="muted">${e.sources.map(s => /^https?:/.test(s) ? `<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, '').slice(0, 50))}</a></li>` : `<li>${esc(s)}</li>`).join('')}</ul>`);
+    if (e.confidence) x.push(`<div class="muted" style="margin-top:8px">Sure? ${esc(e.confidence)}</div>`);
+    h += x.join('');
+  }
   return h;
 }
-function trickDetail(t) {
-  return `<h2 class="pix">${esc(t.name)}</h2>
-  <div class="muted">${esc(t.category || '')} · ${esc(t.stage || '')}${t.ianxofour_video ? ` · <a href="${esc(t.ianxofour_video)}" target="_blank" rel="noopener">ianxofour video ↗</a>` : ''}</div>
-  <h3>WHAT</h3><div>${esc(t.what)}</div>
-  <h3>WHY</h3><div>${esc(t.why)}</div>
-  ${(t.steps || []).length ? '<h3>STEPS</h3><ol>' + t.steps.map(s => `<li>${esc(s)}</li>`).join('') + '</ol>' : ''}
-  ${(t.materials || []).length ? `<h3>MATERIALS</h3>${matTable(t.materials)}` : ''}
-  ${t.needs ? `<h3>NEEDS</h3><div>${esc(t.needs)}</div>` : ''}
-  ${t.version_notes ? `<div class="muted" style="margin-top:10px">${esc(t.version_notes)}</div>` : ''}
-  ${(t.sources || []).length ? '<h3>SOURCES</h3><ul>' + t.sources.map(s => `<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, '').slice(0, 60))}</a></li>`).join('') + '</ul>' : ''}
-  ${t.confidence ? `<div class="muted" style="margin-top:12px">Sure? ${esc(t.confidence)}</div>` : ''}`;
-}
-let MODE = 'farms', TRICKS = [], TRADES = null, selP = null;
-const stack = xs => (xs || []).map(x => `${x.count != null ? num(x.count) + (x.count_max != null && x.count_max !== x.count ? '–' + num(x.count_max) : '') + ' ' : ''}${nice(x.item)}`).join(' + ');
-function tradeRows(levels, q) {
-  return (levels || []).map(l => {
-    const ts = (l.trades || []).filter(t => !q || JSON.stringify(t).toLowerCase().replace(/_/g, ' ').includes(q));
-    if (!ts.length) return '';
-    return `<h3>${esc(String(l.level || l.name || '').toUpperCase())}${l.pick ? ` <span class="muted">· ${esc(l.pick)}</span>` : ''}</h3><table>` +
-      ts.map(t => `<tr><td>${stack(t.wants)} → <b style="color:#ffd54a">${stack(t.gives)}</b>${t.notes ? `<br><span class="note">${esc(t.notes)}</span>` : ''}</td>
-        <td class="note lb">${t.max_uses != null ? t.max_uses + '×' : ''}${t.xp != null ? ' · ' + t.xp + 'xp' : ''}</td></tr>`).join('') + '</table>';
-  }).join('');
-}
+
+// ---- trades ----
+const stack = xs => (xs || []).map(x => chip(x.item, x.count != null ? num(x.count) + (x.count_max != null && x.count_max !== x.count ? '–' + num(x.count_max) : '') : '')).join('<span class="muted">+</span>');
+const JOB = { armorer: 'blast_furnace', butcher: 'smoker', cartographer: 'cartography_table', cleric: 'brewing_stand', farmer: 'composter', fisherman: 'barrel', fletcher: 'fletching_table', leatherworker: 'cauldron', librarian: 'lectern', mason: 'stonecutter', shepherd: 'loom', toolsmith: 'smithing_table', weaponsmith: 'grindstone' };
 function tradeGroups() {
   if (!TRADES) return [];
-  const g = (TRADES.professions || []).map(p => ({ id: p.id, name: nice(p.id), sub: p.job_site ? nice(p.job_site) : '', levels: p.levels, notes: p.notes }));
-  const w = TRADES.wandering_trader;
-  if (w) g.push({ id: 'wandering_trader', name: 'Wandering Trader', sub: '', levels: w.groups, notes: w.notes });
-  (TRADES.experimental || []).forEach(e => g.push({ id: 'exp-' + e.profession, name: nice(e.profession) + ' (experimental)', sub: 'trade rebalance', levels: e.levels, notes: e.notes }));
-  g.push({ id: 'mechanics', name: 'How prices work', sub: '', mech: TRADES.mechanics });
+  const g = (TRADES.professions || []).map(p => ({ id: p.id, name: niceName(p.id), icon: p.job_site || JOB[p.id], levels: p.levels, notes: p.notes }));
+  if (TRADES.wandering_trader) g.push({ id: 'wandering_trader', name: 'Wandering Trader', icon: 'wandering_trader_spawn_egg', levels: TRADES.wandering_trader.groups, notes: TRADES.wandering_trader.notes });
+  (TRADES.experimental || []).forEach(e => g.push({ id: 'exp-' + e.profession, name: niceName(e.profession) + ' (exp.)', icon: JOB[String(e.profession).split(/[_ ]/)[0]] || 'book', levels: e.levels, notes: e.notes }));
+  g.push({ id: 'mechanics', name: 'Prices', icon: 'emerald', mech: TRADES.mechanics });
   return g;
 }
 function tradeDetail(p, q) {
-  if (p.mech) return `<h2 class="pix">HOW PRICES WORK</h2>` + (p.mech || []).map(m => `<h3>${esc(m.name).toUpperCase()}</h3><div>${esc(m.text)}</div>`).join('') +
-    (TRADES.meta ? `<div class="muted" style="margin-top:12px">Version ${esc(TRADES.meta.version)}. ${esc(TRADES.meta.rebalance || '')}</div>` : '');
-  return `<h2 class="pix">${esc(p.name)}</h2>${p.sub ? `<div class="muted">Job site: ${esc(p.sub)}</div>` : ''}${p.notes ? `<div class="muted">${esc(p.notes)}</div>` : ''}${tradeRows(p.levels, q) || '<div class="na">No match.</div>'}`;
+  let h = `${WIDE() ? '' : '<button id="back">◀ BACK</button>'}<div class="ttl">${icon(p.icon, 'xl')}<h2>${esc(p.name)}</h2></div>`;
+  if (p.mech) return h + p.mech.map(m => `<h3>${esc(m.name).toUpperCase()}</h3><div class="muted">${esc(m.text)}</div>`).join('');
+  h += (p.levels || []).map(l => {
+    const ts = (l.trades || []).filter(t => matches(t, q));
+    if (!ts.length) return '';
+    return `<h3>${esc(String(l.level || l.name || '').toUpperCase())} <span class="lv">${esc(l.pick || '')}</span></h3>` +
+      ts.map(t => `<div class="trade">${stack(t.wants)}<span>→</span>${stack(t.gives)}<span class="u">${t.max_uses != null ? t.max_uses + '×' : ''}</span></div>${MORE && t.notes ? `<div class="muted">${esc(t.notes)}</div>` : ''}`).join('');
+  }).join('');
+  h += `<button class="more" id="more">${MORE ? '− Less' : '+ More'}</button>${MORE && p.notes ? `<div class="muted">${esc(p.notes)}</div>` : ''}`;
+  return h;
 }
-function renderTrades() {
-  const q = document.getElementById('q').value.trim().toLowerCase();
-  const wide = matchMedia('(min-width: 860px)').matches;
-  const groups = tradeGroups().filter(p => !q || JSON.stringify(p).toLowerCase().replace(/_/g, ' ').includes(q));
-  if (q && !groups.some(p => p.id === selP) && groups.length && wide) selP = groups[0].id;
-  document.getElementById('list').innerHTML = groups.map(p => `
-    <div class="row ${selP === p.id ? 'on' : ''}"><button data-p="${esc(p.id)}">
-      <span class="nm">${esc(p.name)}${p.sub ? `<br><span class="tag">${esc(p.sub)}</span>` : ''}</span></button>
-      ${!wide && selP === p.id ? `<div class="inline">${tradeDetail(p, q)}</div>` : ''}
-    </div>`).join('') || `<div class="muted">${TRADES ? 'No match.' : 'Coming soon.'}</div>`;
-  const cur = groups.find(p => p.id === selP);
-  document.getElementById('detail').innerHTML = cur ? tradeDetail(cur, q) : '<div class="muted">Pick a villager.</div>';
-}
+
+// ---- render ----
 function render() {
-  if (MODE === 'tricks') return renderTricks();
-  if (MODE === 'trades') return renderTrades();
-  const q = document.getElementById('q').value.trim().toLowerCase();
-  const shown = FARMS.filter(f => !q || JSON.stringify([f.title, f.farm_type, f.outputs, f.materials_onscreen, f.materials_litematic]).toLowerCase().replace(/_/g, ' ').includes(q));
-  const wide = matchMedia('(min-width: 860px)').matches;
-  document.getElementById('list').innerHTML = shown.map(f => `
-    <div class="row ${sel === f.n ? 'on' : ''}"><button data-n="${f.n}">
-      <span class="nm">${esc(short(f))}${f.category && f.category !== 'farm' ? ` <span class="tag">(${esc(f.category)})</span>` : ''}<br><span class="tag">${esc(mainRate(f))}</span></span>
-      <span class="vr">${esc(shortVer(f))}</span></button>
-      ${!wide && sel === f.n ? `<div class="inline">${detail(f)}</div>` : ''}
-    </div>`).join('') || '<div class="muted">No match.</div>';
-  const cur = FARMS.find(f => f.n === sel);
-  document.getElementById('detail').innerHTML = cur ? detail(cur) : '<div class="muted">Pick a farm.</div>';
+  const q = $('q').value.trim().toLowerCase().replace(/_/g, ' ');
+  $('stages').style.display = MODE === 'trades' ? 'none' : '';
+  if (MODE === 'trades') {
+    const gs = tradeGroups().filter(p => matches(p, q));
+    $('grid').innerHTML = gs.map(p => `<button class="card ${SEL === 'tr:' + p.id ? 'on' : ''}" data-k="tr:${esc(p.id)}"><span class="nm">${icon(p.icon, 'l')}<span>${esc(p.name)}</span></span></button>`).join('') || '<div class="muted">No match.</div>';
+    if (WIDE() && !gs.some(p => 'tr:' + p.id === SEL) && gs.length) SEL = 'tr:' + gs[0].id;
+    const cur = gs.find(p => 'tr:' + p.id === SEL);
+    $('detail').innerHTML = cur ? tradeDetail(cur, q) : '';
+    return;
+  }
+  const list = entries().filter(e => (STAGE === 'all' || stageOf(e) === STAGE) && matches(e, q));
+  const order = { early: 0, mid: 1, late: 2 };
+  list.sort((a, b) => order[stageOf(a)] - order[stageOf(b)] || nameOf(a).localeCompare(nameOf(b)));
+  $('grid').innerHTML = list.map(card).join('') || '<div class="muted">No match.</div>';
+  if (WIDE() && !list.some(e => key(e) === SEL) && list.length) SEL = key(list[0]);
+  const cur = byKey(SEL || '');
+  $('detail').innerHTML = cur ? detail(cur) : '';
 }
-let selT = null;
-function renderTricks() {
-  const q = document.getElementById('q').value.trim().toLowerCase();
-  const wide = matchMedia('(min-width: 860px)').matches;
-  const shown = TRICKS.filter(t => !q || JSON.stringify(t).toLowerCase().replace(/_/g, ' ').includes(q));
-  document.getElementById('list').innerHTML = shown.map(t => `
-    <div class="row ${selT === t.id ? 'on' : ''}"><button data-t="${esc(t.id)}">
-      <span class="nm">${esc(t.name)}<br><span class="tag">${esc(t.category || '')}</span></span>
-      <span class="vr">${esc((t.stage || '').split(/[ (]/)[0])}</span></button>
-      ${!wide && selT === t.id ? `<div class="inline">${trickDetail(t)}</div>` : ''}
-    </div>`).join('') || `<div class="muted">${TRICKS.length ? 'No match.' : 'Coming soon.'}</div>`;
-  const cur = TRICKS.find(t => t.id === selT);
-  document.getElementById('detail').innerHTML = cur ? trickDetail(cur) : '<div class="muted">Pick a trick.</div>';
-}
-document.getElementById('seg').addEventListener('click', e => {
+function openDetail(open) { $('detail').classList.toggle('open', open); if (open) $('detail').scrollTop = 0; }
+
+$('tabs').addEventListener('click', e => {
   const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === MODE) return;
-  MODE = b.dataset.m;
-  document.querySelectorAll('#seg button').forEach(x => x.classList.toggle('on', x === b));
-  document.getElementById('q').placeholder = { farms: 'Search farm or item', tricks: 'Search tricks', trades: 'Search item or villager' }[MODE];
-  document.getElementById('q').value = '';
-  if (MODE === 'tricks' && selT == null && TRICKS.length && matchMedia('(min-width: 860px)').matches) selT = TRICKS[0].id;
-  if (MODE === 'trades' && selP == null && TRADES && matchMedia('(min-width: 860px)').matches) selP = tradeGroups()[0]?.id;
+  MODE = b.dataset.m; SEL = null; MORE = false; $('q').value = '';
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x === b));
+  openDetail(false); render();
+});
+$('stages').addEventListener('click', e => {
+  const b = e.target.closest('button[data-s]'); if (!b) return;
+  STAGE = b.dataset.s; document.querySelectorAll('#stages button').forEach(x => x.classList.toggle('on', x === b)); render();
+});
+$('grid').addEventListener('click', e => {
+  const c = e.target.closest('[data-k]'); if (!c) return;
+  SEL = c.dataset.k; MORE = false; render(); if (!WIDE()) openDetail(true);
+});
+const backStack = [];
+$('detail').addEventListener('click', e => {
+  if (e.target.closest('#back')) { const prev = backStack.pop(); if (prev) { SEL = prev; render(); } else openDetail(false); return; }
+  if (e.target.closest('#more')) { MORE = !MORE; const y = $('detail').scrollTop; render(); $('detail').scrollTop = y; return; }
+  const g = e.target.closest('[data-go]');
+  if (g && byKey(g.dataset.go)) {
+    const t = byKey(g.dataset.go); backStack.push(SEL);
+    const m = g.dataset.go.startsWith('farm:') ? 'farms' : 'tricks';
+    if (m !== MODE) { MODE = m; document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x.dataset.m === m)); }
+    STAGE = 'all'; document.querySelectorAll('#stages button').forEach(x => x.classList.toggle('on', x.dataset.s === 'all'));
+    SEL = key(t); MORE = false; render(); $('detail').scrollTop = 0;
+  }
+});
+$('q').addEventListener('input', render);
+let lastWide = WIDE(); addEventListener('resize', () => { if (WIDE() !== lastWide) { lastWide = WIDE(); render(); } });
+
+const get = (u, d) => fetch(u, { cache: 'no-cache' }).then(r => r.ok ? r.json() : d).catch(() => d);
+Promise.all([get('farms.json', { farms: [] }), get('tricks.json', { tricks: [] }), get('trades.json', null), get('plan.json', { entries: {} })]).then(([f, t, tr, p]) => {
+  FARMS = f.farms || []; TRICKS = t.tricks || []; TRADES = tr; PLAN = (p && p.entries) || {};
   render();
 });
-document.getElementById('list').addEventListener('click', e => {
-  const wide = matchMedia('(min-width: 860px)').matches;
-  const p = e.target.closest('button[data-p]');
-  if (p) { const id = p.dataset.p; selP = selP === id && !wide ? null : id; return render(); }
-  const t = e.target.closest('button[data-t]');
-  if (t) { const id = t.dataset.t; selT = selT === id && !wide ? null : id; return render(); }
-  const b = e.target.closest('button[data-n]'); if (!b) return;
-  const n = +b.dataset.n; sel = sel === n && !wide ? null : n; render();
-});
-fetch('trades.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => { TRADES = d; if (MODE === 'trades') render(); }).catch(() => {});
-fetch('tricks.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { tricks: [] }).then(d => { TRICKS = d.tricks || []; if (MODE === 'tricks') render(); }).catch(() => {});
-document.getElementById('q').addEventListener('input', render);
-addEventListener('resize', render);
-fetch('farms.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
-  FARMS = d.farms.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  if (matchMedia('(min-width: 860px)').matches && FARMS.length) sel = FARMS[0].n;
-  render();
-}).catch(() => { document.getElementById('list').innerHTML = '<div class="off">Could not load farms.json</div>'; });
 </script>
 </body>
 </html>
