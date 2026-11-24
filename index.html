@@ -606,6 +606,18 @@
           `}</style>
 
           <div style={{ maxWidth: 540, margin: '0 auto' }}>
+            {/* Minecraft section switch: Horses | Farms (farms/ is a plain page) */}
+            <div style={{ display: 'flex', gap: 4, marginBottom: 6, paddingTop: 8 }}>
+              {[['HORSES', null], ['FARMS', 'farms/']].map(([label, href]) => (
+                <a key={label} href={href || undefined} style={{
+                  flex: 1, textAlign: 'center', textDecoration: 'none', padding: '10px 8px',
+                  fontFamily: '"Press Start 2P", monospace', fontSize: 10, letterSpacing: 1.5,
+                  background: href ? '#1f1813' : '#8b6f47', color: href ? '#5a4a38' : '#f4ead5',
+                  border: '2px solid #0a0805',
+                  boxShadow: href ? 'inset 2px 2px 0 rgba(0,0,0,0.5)' : 'inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3)',
+                }}>{label}</a>
+              ))}
+            </div>
             {/* Header */}
             <div style={{ textAlign: 'center', marginBottom: 12, paddingTop: 8 }}>
               <div className="title-font" style={{ fontSize: 18, color: mode === 'perfect' ? '#7cc242' : '#c0392b', letterSpacing: 2, lineHeight: 1.6, textShadow: '3px 3px 0 #0a0805' }}>

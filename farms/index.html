@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farms — Minecraft</title>
+  <meta name="description" content="Every ianxofour Minecraft farm: exact materials, requirements, rates and links." />
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #1a1410; color: #f4ead5; }
+    body { font-family: "VT323", "Courier New", monospace; font-size: 20px; line-height: 1.15; }
+    a { color: #7cc242; }
+    .pix { font-family: "Press Start 2P", monospace; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 8px max(12px, env(safe-area-inset-left)) 24px; }
+    .switch { display: flex; gap: 4px; max-width: 540px; margin: 0 auto 10px; }
+    .switch a { flex: 1; text-align: center; text-decoration: none; padding: 10px 8px; font-size: 10px; letter-spacing: 1.5px;
+      border: 2px solid #0a0805; background: #1f1813; color: #5a4a38; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); }
+    .switch a.on { background: #8b6f47; color: #f4ead5; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3); }
+    h1 { font-size: 18px; color: #7cc242; letter-spacing: 2px; text-align: center; margin: 6px 0 4px; text-shadow: 3px 3px 0 #0a0805; }
+    .sub { text-align: center; color: #8b7355; margin-bottom: 10px; letter-spacing: 1px; }
+    .panel { background: #2a221c; border: 2px solid #0a0805; padding: 10px;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.06), inset -2px -2px 0 rgba(0,0,0,0.5), 4px 4px 0 rgba(0,0,0,0.4); }
+    .search { width: 100%; font: inherit; font-size: 22px; padding: 8px 10px; background: #0f0a07; color: #f4ead5;
+      border: 2px solid #0a0805; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); outline: none; }
+    .search:focus { border-color: #7cc242; }
+    .cols { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .cols > *, .row .nm, td { min-width: 0; overflow-wrap: anywhere; }
+    h2 { overflow-wrap: anywhere; }
+    td.lb { white-space: nowrap; overflow-wrap: normal; width: 1%; }
+    @media (min-width: 860px) {
+      .cols { grid-template-columns: 380px 1fr; height: calc(100vh - 150px); }
+      .cols > * { min-height: 0; overflow-y: auto; }
+      .row .inline { display: none !important; }
+    }
+    @media (max-width: 859px) { #detail { display: none; } }
+    .list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+    .row { background: #1f1813; border: 2px solid #0a0805; }
+    .row > button { all: unset; display: flex; gap: 8px; align-items: baseline; width: 100%; padding: 6px 8px; cursor: pointer; box-sizing: border-box; }
+    .row.on > button { background: #3a3024; }
+    .row .nm { flex: 1; min-width: 0; }
+    .row .vr { color: #8b7355; font-size: 17px; white-space: nowrap; }
+    .row .off { color: #c0392b; }
+    .tag { font-size: 16px; color: #a89880; }
+    .na { color: #5a4a38; }
+    h2 { font-size: 12px; color: #ffd54a; margin: 4px 0 8px; line-height: 1.6; }
+    h3 { font-family: "Press Start 2P", monospace; font-size: 9px; color: #7cc242; margin: 14px 0 6px; letter-spacing: 1px; }
+    table { border-collapse: collapse; width: 100%; }
+    td { padding: 1px 6px 1px 0; vertical-align: top; }
+    td.n { text-align: right; color: #ffd54a; white-space: nowrap; width: 1%; }
+    td.note { color: #a89880; font-size: 17px; }
+    .two { display: grid; grid-template-columns: 1fr; gap: 0 16px; }
+    @media (min-width: 1100px) { .two { grid-template-columns: 1fr 1fr; } }
+    ul { margin: 0; padding-left: 18px; }
+    .muted { color: #a89880; font-size: 17px; }
+    .inline { padding: 4px 8px 10px; }
+    .seg { display: flex; gap: 4px; margin-bottom: 6px; }
+    .seg button { flex: 1; font: inherit; font-size: 9px; letter-spacing: 1px; padding: 8px; cursor: pointer; border: 2px solid #0a0805;
+      background: #1f1813; color: #5a4a38; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); }
+    .seg button.on { background: #7cc242; color: #0a0805; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.3); }
+    ol { margin: 0; padding-left: 22px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="switch pix"><a href="../">HORSES</a><a class="on" href="./">FARMS</a></nav>
+    <h1 class="pix">FARMS</h1>
+    <div class="sub" id="sub">━━━ ianxofour ━━━</div>
+    <div class="cols">
+      <div>
+        <div class="seg pix" id="seg"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button></div>
+        <input class="search" id="q" placeholder="Search farm or item" autocomplete="off">
+        <div class="list" id="list"><div class="muted">Loading…</div></div>
+      </div>
+      <div class="panel" id="detail"><div class="muted">Pick a farm.</div></div>
+    </div>
+  </div>
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const nice = id => esc(String(id).replace(/^minecraft:/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()));
+const num = n => n == null ? '' : Number(n).toLocaleString();
+let FARMS = [], sel = null;
+
+function short(f) { return f.title.replace(/^Minecraft Elegance:\s*/i, '').replace(/\s*(\(|,| - |\bJava\b).*$/, ''); }
+function shortVer(f) { const m = (f.versions || '').match(/\d[\d.]*(?:[-–]\d[\d.]*|\+)?/); return m ? m[0] : ''; }
+function mainRate(f) {
+  const o = (f.outputs || []).find(o => o.rate_per_hour != null);
+  return o ? `${num(o.rate_per_hour)} ${nice(o.item)}/h` : '';
+}
+function matTable(items) {
+  if (!items || !items.length) return '<div class="na">None recorded</div>';
+  return '<table>' + items.map(i => `<tr><td class="n">${i.count == null ? '?' : num(i.count)}</td><td>${nice(i.item)}${i.note ? ` <span class="note">${esc(i.note)}</span>` : ''}</td></tr>`).join('') + '</table>';
+}
+function detail(f) {
+  const r = f.requires || {};
+  const lit = f.materials_litematic;
+  const litItems = lit && lit.items ? Object.entries(lit.items).map(([item, count]) => ({ item, count })) : null;
+  const on = f.materials_onscreen || {};
+  let h = `<h2 class="pix">${esc(short(f))}</h2>
+  <div class="muted">${esc(f.edition || 'Java')} ${esc(f.versions || '')} · ${esc(f.date || '')} · <a href="${esc(f.url)}" target="_blank" rel="noopener">Video ↗</a></div>
+  ${f.version_notes ? `<div class="muted">${esc(f.version_notes)}</div>` : ''}
+  <h3>MAKES</h3>
+  ${(f.outputs || []).length ? '<table>' + f.outputs.map(o => `<tr><td class="n">${o.rate_per_hour == null ? '' : num(o.rate_per_hour) + '/h'}</td><td>${nice(o.item)}${o.conditions ? ` <span class="note">${esc(o.conditions)}</span>` : ''}</td></tr>`).join('') + '</table>' : '<div class="na">—</div>'}
+  ${f.xp && f.xp !== 'none' ? `<div class="muted">XP: ${esc(f.xp)}</div>` : ''}
+  <h3>NEEDS</h3><table>
+   ${[['Where', [r.dimension, r.location].filter(Boolean).join(' · ')], ['Mobs', (r.mobs || []).join(', ')], ['Stage', r.stage], ['Tools', (r.tools || []).join(', ')]]
+      .filter(x => x[1]).map(x => `<tr><td class="note lb">${x[0]}</td><td>${esc(x[1])}</td></tr>`).join('')}
+  </table>
+  ${(r.hard_materials || []).length ? '<h3>HARD MATERIALS</h3><table>' + r.hard_materials.map(m => `<tr><td class="n">${m.count == null ? '' : num(m.count)}</td><td>${nice(m.item)} <span class="note">${esc(m.why_hard || '')}${m.farm_that_helps ? ' → ' + esc(m.farm_that_helps) + ' farm' : ''}</span></td></tr>`).join('') + '</table>' : ''}
+  <div class="two">
+    <div><h3>MATERIALS (VIDEO ${esc(on.timestamp || '')})</h3>${matTable(on.items)}${on.notes ? `<div class="muted">${esc(on.notes)}</div>` : ''}</div>
+    ${litItems ? `<div><h3>SCHEMATIC COUNT</h3><div class="muted">${esc(lit.file || '')}</div>${lit.differences || lit.parts ? `<div class="muted">${esc(typeof (lit.differences || lit.parts) === 'string' ? (lit.differences || lit.parts) : JSON.stringify(lit.differences || lit.parts))}</div>` : ''}${matTable(litItems)}${lit.entities && Object.keys(lit.entities).length ? `<div class="muted">Mobs: ${Object.entries(lit.entities).map(([k, v]) => v + ' ' + nice(k)).join(', ')}</div>` : ''}</div>` : ''}
+  </div>
+  ${(f.materials_variants || []).map(v => `<h3>${esc(v.name).toUpperCase()}</h3>${matTable(v.items)}`).join('')}
+  ${f.afk_spot ? `<h3>AFK</h3><div>${esc(f.afk_spot)}</div>` : ''}
+  ${(f.gotchas || []).length ? '<h3>WATCH OUT</h3><ul>' + f.gotchas.map(g => `<li>${esc(g)}</li>`).join('') + '</ul>' : ''}
+  ${(f.downloads || []).length ? '<h3>DOWNLOADS</h3><ul>' + f.downloads.map(d => `<li><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.kind)}</a></li>`).join('') + '</ul>' : ''}
+  ${f.confidence ? `<div class="muted" style="margin-top:12px">Sure? ${esc(f.confidence)}</div>` : ''}`;
+  return h;
+}
+function trickDetail(t) {
+  return `<h2 class="pix">${esc(t.name)}</h2>
+  <div class="muted">${esc(t.category || '')} · ${esc(t.stage || '')}${t.ianxofour_video ? ` · <a href="${esc(t.ianxofour_video)}" target="_blank" rel="noopener">ianxofour video ↗</a>` : ''}</div>
+  <h3>WHAT</h3><div>${esc(t.what)}</div>
+  <h3>WHY</h3><div>${esc(t.why)}</div>
+  ${(t.steps || []).length ? '<h3>STEPS</h3><ol>' + t.steps.map(s => `<li>${esc(s)}</li>`).join('') + '</ol>' : ''}
+  ${(t.materials || []).length ? `<h3>MATERIALS</h3>${matTable(t.materials)}` : ''}
+  ${t.needs ? `<h3>NEEDS</h3><div>${esc(t.needs)}</div>` : ''}
+  ${t.version_notes ? `<div class="muted" style="margin-top:10px">${esc(t.version_notes)}</div>` : ''}
+  ${(t.sources || []).length ? '<h3>SOURCES</h3><ul>' + t.sources.map(s => `<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, '').slice(0, 60))}</a></li>`).join('') + '</ul>' : ''}
+  ${t.confidence ? `<div class="muted" style="margin-top:12px">Sure? ${esc(t.confidence)}</div>` : ''}`;
+}
+let MODE = 'farms', TRICKS = [];
+function render() {
+  if (MODE === 'tricks') return renderTricks();
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const shown = FARMS.filter(f => !q || JSON.stringify([f.title, f.farm_type, f.outputs, f.materials_onscreen, f.materials_litematic]).toLowerCase().replace(/_/g, ' ').includes(q));
+  const wide = matchMedia('(min-width: 860px)').matches;
+  document.getElementById('list').innerHTML = shown.map(f => `
+    <div class="row ${sel === f.n ? 'on' : ''}"><button data-n="${f.n}">
+      <span class="nm">${esc(short(f))}${f.category && f.category !== 'farm' ? ` <span class="tag">(${esc(f.category)})</span>` : ''}<br><span class="tag">${esc(mainRate(f))}</span></span>
+      <span class="vr">${esc(shortVer(f))}</span></button>
+      ${!wide && sel === f.n ? `<div class="inline">${detail(f)}</div>` : ''}
+    </div>`).join('') || '<div class="muted">No match.</div>';
+  const cur = FARMS.find(f => f.n === sel);
+  document.getElementById('detail').innerHTML = cur ? detail(cur) : '<div class="muted">Pick a farm.</div>';
+}
+let selT = null;
+function renderTricks() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const wide = matchMedia('(min-width: 860px)').matches;
+  const shown = TRICKS.filter(t => !q || JSON.stringify(t).toLowerCase().replace(/_/g, ' ').includes(q));
+  document.getElementById('list').innerHTML = shown.map(t => `
+    <div class="row ${selT === t.id ? 'on' : ''}"><button data-t="${esc(t.id)}">
+      <span class="nm">${esc(t.name)}<br><span class="tag">${esc(t.category || '')}</span></span>
+      <span class="vr">${esc((t.stage || '').split(/[ (]/)[0])}</span></button>
+      ${!wide && selT === t.id ? `<div class="inline">${trickDetail(t)}</div>` : ''}
+    </div>`).join('') || `<div class="muted">${TRICKS.length ? 'No match.' : 'Coming soon.'}</div>`;
+  const cur = TRICKS.find(t => t.id === selT);
+  document.getElementById('detail').innerHTML = cur ? trickDetail(cur) : '<div class="muted">Pick a trick.</div>';
+}
+document.getElementById('seg').addEventListener('click', e => {
+  const b = e.target.closest('button[data-m]'); if (!b || b.dataset.m === MODE) return;
+  MODE = b.dataset.m;
+  document.querySelectorAll('#seg button').forEach(x => x.classList.toggle('on', x === b));
+  document.getElementById('q').placeholder = MODE === 'farms' ? 'Search farm or item' : 'Search tricks';
+  document.getElementById('q').value = '';
+  if (MODE === 'tricks' && selT == null && TRICKS.length && matchMedia('(min-width: 860px)').matches) selT = TRICKS[0].id;
+  render();
+});
+document.getElementById('list').addEventListener('click', e => {
+  const wide = matchMedia('(min-width: 860px)').matches;
+  const t = e.target.closest('button[data-t]');
+  if (t) { const id = t.dataset.t; selT = selT === id && !wide ? null : id; return render(); }
+  const b = e.target.closest('button[data-n]'); if (!b) return;
+  const n = +b.dataset.n; sel = sel === n && !wide ? null : n; render();
+});
+fetch('tricks.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { tricks: [] }).then(d => { TRICKS = d.tricks || []; if (MODE === 'tricks') render(); }).catch(() => {});
+document.getElementById('q').addEventListener('input', render);
+addEventListener('resize', render);
+fetch('farms.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
+  FARMS = d.farms.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  if (matchMedia('(min-width: 860px)').matches && FARMS.length) sel = FARMS[0].n;
+  render();
+}).catch(() => { document.getElementById('list').innerHTML = '<div class="off">Could not load farms.json</div>'; });
+</script>
+</body>
+</html>

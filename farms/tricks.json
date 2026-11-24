@@ -1,0 +1,1753 @@
+{
+ "meta": {
+  "edition": "Java",
+  "checked": "2026-11-24",
+  "note": "Actionable setups/tricks (not 'collect X' / 'find X'). Speeds from minecraft.wiki/w/Transportation. '(inferred)' marks values not read from a source.",
+  "main_reference": "https://minecraft.wiki"
+ },
+ "tricks": [
+  {
+   "id": "lava-cast-portal",
+   "name": "Bucket-cast a Nether portal (no diamond pick)",
+   "category": "exploration",
+   "what": "Build the obsidian frame in place by pouring lava into a mold and setting it with water, so you reach the Nether on day 1 without mining obsidian.",
+   "steps": [
+    "Find a surface lava pool (or ruined portal)",
+    "Make a mold of dirt/cobble for each of the 10 frame blocks",
+    "Pour lava into a slot, then water over it to turn it into obsidian; pick the water back up",
+    "Repeat for all 10 frame blocks (corners not needed)",
+    "Light with flint_and_steel or a fire charge"
+   ],
+   "why": "Skips the diamond pickaxe requirement; Nether access (gold, quartz, blaze rods, 8:1 travel) on day 1.",
+   "materials": [
+    {
+     "item": "water_bucket",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "bucket",
+     "count": 1,
+     "note": "for lava"
+    },
+    {
+     "item": "flint_and_steel",
+     "count": 1,
+     "note": "or fire_charge"
+    },
+    {
+     "item": "cobblestone",
+     "count": 20,
+     "note": "mold blocks (inferred)"
+    }
+   ],
+   "needs": "Iron for 2 buckets; a lava source.",
+   "stage": "day 1",
+   "version_notes": "Minimum frame is 4x5 with corners optional = 10 obsidian.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Nether_portal"
+   ],
+   "confidence": "high - standard, long-stable mechanic"
+  },
+  {
+   "id": "portal-linking-8to1",
+   "name": "Link portals with the 8:1 coordinate rule",
+   "category": "travel",
+   "what": "Divide Overworld X/Z by 8 to get the Nether spot (multiply by 8 going back) and build the matching portal there yourself so portals link exactly where you want.",
+   "steps": [
+    "Note Overworld portal X,Z (F3)",
+    "Divide by 8 for the Nether target",
+    "Build the Nether-side portal at those coordinates before travelling back through",
+    "Keep other portals far enough apart that they don't capture each other"
+   ],
+   "why": "1 Nether block = 8 Overworld blocks of travel; avoids portals linking to the wrong place or spawning in a cliff.",
+   "materials": [
+    {
+     "item": "obsidian",
+     "count": 10,
+     "note": "per portal"
+    }
+   ],
+   "needs": "Nether access.",
+   "stage": "mid (Nether)",
+   "version_notes": "Overworld search radius for an existing portal is 128 blocks, Nether 16 (wiki).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Nether_portal",
+    "https://minecraft.wiki/w/Transportation"
+   ],
+   "confidence": "high - core mechanic"
+  },
+  {
+   "id": "nether-roof-portal",
+   "name": "Portal to the Nether roof",
+   "category": "travel",
+   "what": "Break through the bedrock ceiling once, build a portal on the Nether roof, and use the flat, mob-free roof as your highway and farm site.",
+   "steps": [
+    "Get under the bedrock ceiling (top ~y 123-127)",
+    "Break one bedrock block (piston/TNT method, see 'bedrock-breaking') or pearl glitch",
+    "Climb onto the roof (y 128+) and build a portal there",
+    "Link an Overworld portal to it with the 8:1 rule so you arrive straight on the roof"
+   ],
+   "why": "No natural mob spawns on the roof, flat 8x travel, ideal place for ice/boat highways and many technical farms (ianxofour builds several there).",
+   "materials": [
+    {
+     "item": "obsidian",
+     "count": 10,
+     "note": ""
+    },
+    {
+     "item": "piston",
+     "count": 2,
+     "note": "for bedrock-breaking"
+    },
+    {
+     "item": "tnt",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Nether access; bedrock-breaking kit; 'nether roof' is not where the portal search puts you by default - must build the portal yourself.",
+   "stage": "mid (Nether)",
+   "version_notes": "Works in 1.21.x. Some servers (Paper) disable roof access by config.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Tutorial:Breaking_bedrock",
+    "https://minecraft.wiki/w/Nether_portal"
+   ],
+   "confidence": "high for mechanics; bedrock Y range from memory (medium)"
+  },
+  {
+   "id": "bedrock-breaking",
+   "name": "Break bedrock with pistons + TNT",
+   "category": "building",
+   "what": "Use an exploding-piston setup to delete a bedrock block, opening the Nether roof or the End exit portal area.",
+   "steps": [
+    "Place a piston facing up under the target bedrock (head into the bedrock)",
+    "Place TNT next to it and a lever on the piston",
+    "Light TNT, flick lever on/off at the right moment so the piston retracts as TNT explodes",
+    "The piston ends up flipped; retracting it removes the bedrock"
+   ],
+   "why": "One-time unlock for the Nether roof (and bedrock-breaking pistons for wither cages etc.).",
+   "materials": [
+    {
+     "item": "piston",
+     "count": 2,
+     "note": ""
+    },
+    {
+     "item": "tnt",
+     "count": 1,
+     "note": "per bedrock block"
+    },
+    {
+     "item": "lever",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "oak_trapdoor",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "obsidian",
+     "count": 1,
+     "note": "explosion-resistant block"
+    }
+   ],
+   "needs": "Gunpowder/sand for TNT; fast clicking.",
+   "stage": "mid (Nether)",
+   "version_notes": "Wiki tags the exploding-piston method as valid through 1.21. Headless-piston method (MC-27056) is the mass version.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Tutorial:Breaking_bedrock"
+   ],
+   "confidence": "medium-high - wiki lists it for 1.21; bug-based so could be fixed in a later version"
+  },
+  {
+   "id": "lava-lake-portal",
+   "name": "Portal next to a Nether lava ocean for fuel",
+   "category": "fuel",
+   "what": "Put a portal (or mark one) beside a Nether lava sea and scoop lava buckets in bulk to fuel furnaces.",
+   "steps": [
+    "Find a lava ocean (y ~31 sea level in Nether)",
+    "Build a small safe platform with a portal next to it",
+    "Fill buckets (stack many empty buckets in a shulker)",
+    "Use 1 lava bucket per 100 smelts"
+   ],
+   "why": "1 lava_bucket smelts 100 items vs 8 for coal; a lava ocean is effectively infinite.",
+   "materials": [
+    {
+     "item": "bucket",
+     "count": 16,
+     "note": "more = fewer trips (inferred)"
+    },
+    {
+     "item": "obsidian",
+     "count": 10,
+     "note": ""
+    },
+    {
+     "item": "fire_resistance potion",
+     "count": 1,
+     "note": "safety"
+    }
+   ],
+   "needs": "Nether access; ideally fire resistance.",
+   "stage": "mid (Nether)",
+   "version_notes": "Nether lava sea level is y 31 (inferred from memory).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Fuel"
+   ],
+   "confidence": "high for fuel numbers"
+  },
+  {
+   "id": "dripstone-lava-generator",
+   "name": "Dripstone lava cauldron generator",
+   "category": "fuel",
+   "what": "A lava source above a block with pointed dripstone under it slowly fills cauldrons below with lava; build many to get renewable lava in the Overworld.",
+   "steps": [
+    "Place lava source on top of a block",
+    "Hang pointed_dripstone under that block (tip down)",
+    "Put a cauldron under the tip (within 10 blocks, clear gap)",
+    "Build a row of these, ideally in loaded chunks; collect with a bucket (or a dispenser with empty buckets) - hoppers cannot empty cauldrons (inferred)"
+   ],
+   "why": "Renewable lava = renewable fuel (100 smelts per bucket) without Nether trips.",
+   "materials": [
+    {
+     "item": "pointed_dripstone",
+     "count": 1,
+     "note": "per unit"
+    },
+    {
+     "item": "cauldron",
+     "count": 1,
+     "note": "per unit"
+    },
+    {
+     "item": "lava_bucket",
+     "count": 1,
+     "note": "per unit, not consumed"
+    }
+   ],
+   "needs": "Dripstone caves (or wandering trader) for pointed_dripstone.",
+   "stage": "early",
+   "version_notes": "Lava: 15/256 chance per random tick to fill an empty cauldron; average refill nearly one MC day (~19+ min) per cauldron. Water version: 45/256 per level.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Pointed_Dripstone"
+   ],
+   "confidence": "high - numbers from wiki"
+  },
+  {
+   "id": "infinite-water-source",
+   "name": "Infinite water source (2x2 or 3-long)",
+   "category": "building",
+   "what": "Pour two water buckets into a 2x2 or 1x3 hole to create a water source you can scoop from forever.",
+   "steps": [
+    "Dig a 2x2 hole one deep",
+    "Pour water in opposite corners",
+    "Scoop endlessly"
+   ],
+   "why": "Endless water for farms, MLG buckets, portal casting, without walking to a river.",
+   "materials": [
+    {
+     "item": "water_bucket",
+     "count": 2,
+     "note": ""
+    }
+   ],
+   "needs": "2 buckets.",
+   "stage": "day 1",
+   "version_notes": "Water does not regenerate in the Nether (evaporates).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Water"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "early-horse",
+   "name": "Tame and saddle a horse early",
+   "category": "travel",
+   "what": "Tame a horse in plains/savanna by repeatedly mounting it, saddle it, and keep it near base; later breed for speed.",
+   "steps": [
+    "Find horses in plains/savanna",
+    "Mount repeatedly until hearts appear (feeding sugar/apples/wheat raises temper)",
+    "Put on a saddle (from chests/fishing/trading)",
+    "Use a lead to bring it home; breed with golden carrots for faster offspring"
+   ],
+   "why": "Fastest horses reach ~14.57 m/s vs 5.6 sprinting (about 2.6x), with jump boost for terrain.",
+   "materials": [
+    {
+     "item": "saddle",
+     "count": 1,
+     "note": "loot/fishing/leatherworker"
+    },
+    {
+     "item": "lead",
+     "count": 1,
+     "note": "optional"
+    },
+    {
+     "item": "golden_carrot",
+     "count": 2,
+     "note": "for breeding"
+    }
+   ],
+   "needs": "A saddle (structure chests, fishing, master leatherworker).",
+   "stage": "early",
+   "version_notes": "Saddles became craftable in 1.21.6 (3 leather + 1 iron ingot) (inferred - verify).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Transportation",
+    "https://minecraft.wiki/w/Horse"
+   ],
+   "confidence": "high for speed; medium for 1.21.6 saddle recipe"
+  },
+  {
+   "id": "water-skiing",
+   "name": "Water skiing behind a dolphin (ianxofour)",
+   "category": "exploration",
+   "what": "Leash a dolphin and get towed while swimming with Dolphin's Grace, covering 2200-3100 blocks per minute of ocean with no prep build.",
+   "steps": [
+    "Find a dolphin in an ocean",
+    "Attach a lead and swim/sprint to get Dolphin's Grace",
+    "Launch and steer by looking; surface to breathe without stopping",
+    "Watch for autosave lag that can snap the lead (every 5 min)"
+   ],
+   "why": "2200-3100 blocks/min (~37-52 b/s) early-game exploration to find jungles, mushroom fields, badlands.",
+   "materials": [
+    {
+     "item": "lead",
+     "count": 2,
+     "note": "wandering-trader llamas drop leads"
+    }
+   ],
+   "needs": "Leads (slime_ball + string or llama drops); an ocean.",
+   "stage": "early",
+   "version_notes": "Video tested Java 1.16-1.19; lead mechanics were reworked in 1.21.6 (inferred - not tested).",
+   "ianxofour_video": "https://www.youtube.com/watch?v=c9lvHXZ6Rlw",
+   "sources": [
+    "https://www.youtube.com/watch?v=c9lvHXZ6Rlw"
+   ],
+   "confidence": "medium - numbers from ianxofour's description; 1.21.6 leash changes may affect it"
+  },
+  {
+   "id": "ice-boat-highway",
+   "name": "Blue/packed ice boat highway in the Nether",
+   "category": "travel",
+   "what": "Lay a 1-wide ice track with walls on the Nether roof or in a tunnel and ride a boat along it.",
+   "steps": [
+    "Get ice (silk touch, wandering trader blue ice, or craft 9 ice->packed, 9 packed->blue)",
+    "Lay a straight track with side walls/slabs",
+    "Place boat and ride; use blue ice for max speed"
+   ],
+   "why": "Boat on blue ice ~72.73 m/s, ice ~40 m/s; in the Nether that's x8 Overworld distance.",
+   "materials": [
+    {
+     "item": "blue_ice",
+     "count": 1,
+     "note": "per block of track; packed_ice/ice cheaper but slower"
+    },
+    {
+     "item": "oak_boat",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Silk Touch (for ice) or crafting 81 ice per blue ice; Nether roof or tunnel.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Transportation",
+    "https://minecraft.wiki/w/Ice"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "nether-hub",
+   "name": "Nether hub with spoke tunnels",
+   "category": "travel",
+   "what": "Build one central Nether hub with tunnels (or ice roads) to each linked Overworld portal: base, farms, villages, End stronghold.",
+   "steps": [
+    "Pick hub at your base's /8 coords",
+    "Run straight tunnels on axes to each destination",
+    "Build each linked portal at exact /8 coordinates",
+    "Light/slab tunnels to stop spawns"
+   ],
+   "why": "Turns long Overworld trips into short Nether walks; one network for the whole world.",
+   "materials": [
+    {
+     "item": "obsidian",
+     "count": 10,
+     "note": "per portal"
+    },
+    {
+     "item": "torch",
+     "count": 64,
+     "note": "(inferred)"
+    }
+   ],
+   "needs": "Diamond pick or lava casting, Nether access.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Nether_portal"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "elytra-rockets",
+   "name": "Elytra + firework rocket travel",
+   "category": "travel",
+   "what": "Fly with elytra boosted by rockets; repair with Mending.",
+   "steps": [
+    "Get elytra from an End city ship",
+    "Craft rockets: 1 gunpowder + 1 paper = 3 rockets (flight 1)",
+    "Put Unbreaking III + Mending on elytra",
+    "Take off from height or jump+activate, then rocket"
+   ],
+   "why": "~33.5 m/s continuous rocket boost in any direction, ignoring terrain.",
+   "materials": [
+    {
+     "item": "elytra",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "firework_rocket",
+     "count": 64,
+     "note": "per long trip (inferred)"
+    }
+   ],
+   "needs": "End access, gunpowder source (creeper farm or trading).",
+   "stage": "late (End/elytra)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Transportation",
+    "https://minecraft.wiki/w/Firework_Rocket"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "end-gateway-hub",
+   "name": "Open End gateways (kill dragon / respawn dragon)",
+   "category": "exploration",
+   "what": "Each dragon kill opens a new end gateway; throw an ender pearl into one to reach the outer End islands (cities, elytra, shulkers).",
+   "steps": [
+    "Kill the dragon (see dragon trap)",
+    "Optionally respawn with 4 end_crystals for more gateways (up to 20)",
+    "Throw ender pearl into the gateway"
+   ],
+   "why": "Access to End cities = elytra + shulker shells (shulker boxes).",
+   "materials": [
+    {
+     "item": "ender_pearl",
+     "count": 2,
+     "note": ""
+    },
+    {
+     "item": "end_crystal",
+     "count": 4,
+     "note": "per respawn"
+    }
+   ],
+   "needs": "End access.",
+   "stage": "late (End/elytra)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/End_gateway"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "dragon-death-trap",
+   "name": "Ender Dragon Death Trap (ianxofour)",
+   "category": "combat",
+   "what": "Pillar to Y145, place an obsidian block at X0 Z0 above the exit portal with water on it; the perching dragon gets stuck and you shoot or punch it to death.",
+   "steps": [
+    "Destroy crystals as usual",
+    "Pillar up to Y145 with dirt, bridge to X0 Z0",
+    "Place obsidian at X0 Z0, remove last bridge block, place water on top",
+    "Wait for the dragon to perch/get caught, then shoot (Punch bow OK)"
+   ],
+   "why": "Among the safest and fastest dragon kills; reusable for respawned dragons.",
+   "materials": [
+    {
+     "item": "dirt",
+     "count": 195,
+     "note": ""
+    },
+    {
+     "item": "obsidian",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "water_bucket",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "bow",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "arrow",
+     "count": 80,
+     "note": ""
+    },
+    {
+     "item": "glass_bottle",
+     "count": 8,
+     "note": "optional for dragon's breath (inferred count)"
+    }
+   ],
+   "needs": "End access.",
+   "stage": "late (End/elytra)",
+   "version_notes": "Tested 1.16+, reported working from 1.14.2. Dragon more aggressive in 1.18+; invisibility potion (no armor) recommended.",
+   "ianxofour_video": "https://www.youtube.com/watch?v=dxGmt8_Vbgg",
+   "sources": [
+    "https://www.youtube.com/watch?v=dxGmt8_Vbgg"
+   ],
+   "confidence": "medium-high - from ianxofour's description; not confirmed for 1.21.x"
+  },
+  {
+   "id": "lazy-mob-switch",
+   "name": "Instant Lazy Mob Switch (ianxofour)",
+   "category": "other",
+   "what": "Trap mobs (e.g. silverfish from a stronghold spawner) in a lazy chunk next to a chunk loader; they count toward the mob cap but never despawn, so you can turn off hostile spawning on demand.",
+   "steps": [
+    "Pick a stronghold silverfish spawner site",
+    "Build the trap and chunk loader per the video/WDL",
+    "Stock the trap until mob cap fills",
+    "Turn on/off by loading/unloading the lazy chunk"
+   ],
+   "why": "Stops natural hostile spawns in a dimension (great for building, or boosting specific farms like raid/spawner farms).",
+   "materials": [
+    {
+     "item": "obsidian",
+     "count": 20,
+     "note": "chunk loader portals (inferred)"
+    },
+    {
+     "item": "hopper",
+     "count": 1,
+     "note": "(inferred)"
+    }
+   ],
+   "needs": "Stronghold, chunk loader knowledge. Affects all players in that dimension.",
+   "stage": "mid (Nether)",
+   "version_notes": "Java 1.17+. Vanilla-only; not for modified servers. Other mob options: shulkers, wardens, pillagers, vexes.",
+   "ianxofour_video": "https://www.youtube.com/watch?v=EDBesTQW9XM",
+   "sources": [
+    "https://www.youtube.com/watch?v=EDBesTQW9XM"
+   ],
+   "confidence": "medium - from video description; exact material list in video not extracted"
+  },
+  {
+   "id": "voidless-void-trading",
+   "name": "Voidless Void Trading (ianxofour)",
+   "category": "trading",
+   "what": "Use minecart tracks to move a villager out of loaded range (and back) so trades lock prices; you can trade with an un-restocked/cheap villager repeatedly.",
+   "steps": [
+    "Pick a site away from spawn chunks",
+    "Build villager track + player track (rails count differs SP vs server)",
+    "Lock in a discounted price, then send the villager away/back",
+    "Block the villager's eye box with glass/top slab"
+   ],
+   "why": "Keeps discounted prices locked (e.g. after curing/Hero) for bulk trading; works in any dimension, cheap early.",
+   "materials": [
+    {
+     "item": "rail",
+     "count": 114,
+     "note": "server example; varies"
+    },
+    {
+     "item": "powered_rail",
+     "count": 10,
+     "note": "(inferred)"
+    },
+    {
+     "item": "minecart",
+     "count": 2,
+     "note": ""
+    }
+   ],
+   "needs": "Villager with good trade; avoid spawn chunks.",
+   "stage": "mid (Nether)",
+   "version_notes": "Java 1.17-1.19; ianxofour notes unannounced changes in 1.19.4+ broke/changed it. Treat as unverified for 1.21.x; end gateway void trading is the standard alternative.",
+   "ianxofour_video": "https://www.youtube.com/watch?v=FGFoCfRaljM",
+   "sources": [
+    "https://www.youtube.com/watch?v=FGFoCfRaljM"
+   ],
+   "confidence": "low - author flagged it as affected by 1.19.4+ changes"
+  },
+  {
+   "id": "trading-hall",
+   "name": "Villager trading hall",
+   "category": "trading",
+   "what": "Put villagers in 1x1 cells with their workstation so you can trade with each from a corridor.",
+   "steps": [
+    "Breed/transport villagers (boat, minecart, rail)",
+    "Lock each in a cell with a workstation",
+    "Assign professions, reroll for good trades",
+    "Add a bed nearby is not required for trading"
+   ],
+   "why": "Mending/enchanted books, diamond gear, emeralds from crops/sticks in one place.",
+   "materials": [
+    {
+     "item": "lectern",
+     "count": 1,
+     "note": "per librarian"
+    },
+    {
+     "item": "glass",
+     "count": 64,
+     "note": "(inferred)"
+    }
+   ],
+   "needs": "Villagers; ideally zombie-cure them.",
+   "stage": "early",
+   "version_notes": "Villager Trade Rebalance experiment (biome-based librarian books) is opt-in; cartographer + wandering trader parts shipped in 1.21.5.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Villager_Trade_Rebalance",
+    "https://minecraft.wiki/w/Trading"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "librarian-reroll",
+   "name": "Reroll librarians for Mending",
+   "category": "enchanting",
+   "what": "Place and break a lectern next to an unemployed or never-traded librarian until it offers the book you want.",
+   "steps": [
+    "Put villager in a cell",
+    "Place lectern, check trades",
+    "If wrong, break lectern and re-place",
+    "Once the target book shows, trade once to lock it"
+   ],
+   "why": "Guaranteed Mending, Efficiency, Protection etc. at low cost; Mending on all gear.",
+   "materials": [
+    {
+     "item": "lectern",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "emerald",
+     "count": 38,
+     "note": "max book price (inferred typical)"
+    },
+    {
+     "item": "book",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "A villager; works only until you trade with it.",
+   "stage": "early",
+   "version_notes": "With the Trade Rebalance experiment on, books are biome-limited (Mending only from swamp master librarian).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Trading",
+    "https://minecraft.wiki/w/Villager_Trade_Rebalance"
+   ],
+   "confidence": "high (vanilla); price figure inferred"
+  },
+  {
+   "id": "zombie-cure-discount",
+   "name": "Zombie-cure villagers for big discounts",
+   "category": "trading",
+   "what": "Let a zombie convert a traded villager, then cure it with Weakness + golden apple to get permanent price discounts.",
+   "steps": [
+    "Trap villager; let a zombie infect it (Hard difficulty = guaranteed conversion)",
+    "Throw splash Weakness and feed a golden_apple",
+    "Wait 3-5 min (iron bars/beds nearby speed it slightly)",
+    "Trade at reduced prices (often 1 emerald)"
+   ],
+   "why": "Permanent discounts; trades like Mending for ~1 emerald (commonly reported).",
+   "materials": [
+    {
+     "item": "golden_apple",
+     "count": 1,
+     "note": "per cure"
+    },
+    {
+     "item": "splash_potion",
+     "count": 1,
+     "note": "of Weakness"
+    }
+   ],
+   "needs": "Brewing (fermented spider eye), gold, a zombie, Hard difficulty for 100% conversion.",
+   "stage": "mid (Nether)",
+   "version_notes": "Wiki: curing the same villager more than once gives no additional discount.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Zombie_Villager"
+   ],
+   "confidence": "high for mechanics; '1 emerald' result is commonly reported, not wiki-quoted"
+  },
+  {
+   "id": "villager-transport",
+   "name": "Move villagers by boat/minecart",
+   "category": "trading",
+   "what": "Trap a villager in a boat (works on land) or minecart to drag it to your trading hall.",
+   "steps": [
+    "Place boat in villager's path",
+    "Push/lure it in",
+    "Break and re-place the path or paddle on land/water to drag it home"
+   ],
+   "why": "Fast way to start a trading hall without building a breeder first.",
+   "materials": [
+    {
+     "item": "oak_boat",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "A village.",
+   "stage": "day 1",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Boat"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "enchanting-setup",
+   "name": "Enchanting table with 15 bookshelves",
+   "category": "enchanting",
+   "what": "Surround an enchanting table with 15 bookshelves one block away to unlock level-30 enchants.",
+   "steps": [
+    "Craft table (4 obsidian, 2 diamonds, 1 book)",
+    "Place 15 bookshelves with a 1-block air gap ring",
+    "Use lapis + 30 levels for best results; add anvil + grindstone"
+   ],
+   "why": "Level-30 enchants (Efficiency IV/Fortune III/Protection IV possible).",
+   "materials": [
+    {
+     "item": "enchanting_table",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "bookshelf",
+     "count": 15,
+     "note": "= 45 books"
+    },
+    {
+     "item": "lapis_lazuli",
+     "count": 64,
+     "note": "(inferred)"
+    }
+   ],
+   "needs": "Diamonds, obsidian, sugarcane + leather for books.",
+   "stage": "early",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Enchanting_Table"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "netherite-template-dupe",
+   "name": "Duplicate the netherite upgrade template",
+   "category": "other",
+   "what": "Copy your first netherite_upgrade_smithing_template so you never need another bastion.",
+   "steps": [
+    "Get 1 template (guaranteed in bastion treasure chest)",
+    "Craft template + netherrack + diamonds -> 2 templates",
+    "Keep one spare at all times"
+   ],
+   "why": "Each netherite piece needs a template; duping saves bastion runs.",
+   "materials": [
+    {
+     "item": "netherite_upgrade_smithing_template",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "diamond",
+     "count": 7,
+     "note": "(standard recipe; wiki fetch summary said 'a diamond')"
+    },
+    {
+     "item": "netherrack",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Bastion.",
+   "stage": "mid (Nether)",
+   "version_notes": "Since 1.20.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Smithing_Template"
+   ],
+   "confidence": "high - 7 diamonds from memory, yield 2 from wiki"
+  },
+  {
+   "id": "bed-mining-debris",
+   "name": "Bed/TNT mining for ancient debris",
+   "category": "other",
+   "what": "Strip-mine at the debris-rich Y level in the Nether and blow up walls with beds or TNT (debris is blast resistant and remains).",
+   "steps": [
+    "Go to Y ~15 in the Nether",
+    "Mine long tunnels",
+    "Place a bed in the wall and click it (explodes) or use TNT",
+    "Pick up exposed ancient_debris"
+   ],
+   "why": "Much faster netherite than hand mining.",
+   "materials": [
+    {
+     "item": "white_bed",
+     "count": 16,
+     "note": "(inferred)"
+    },
+    {
+     "item": "tnt",
+     "count": 16,
+     "note": "alt"
+    },
+    {
+     "item": "fire_resistance potion",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Wool or gunpowder; armor.",
+   "stage": "mid (Nether)",
+   "version_notes": "Best Y around 13-15 (from memory).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Ancient_Debris"
+   ],
+   "confidence": "medium - Y level from memory"
+  },
+  {
+   "id": "deepslate-diamond-level",
+   "name": "Branch-mine at the right Y for diamonds",
+   "category": "other",
+   "what": "Run branch tunnels near Y -58 (1.18+) with spacing, ideally with Fortune III.",
+   "steps": [
+    "Dig down to Y ~-58",
+    "Mine main tunnel with side branches every 3-4 blocks",
+    "Fortune III on ores"
+   ],
+   "why": "Highest diamond density; Fortune multiplies yield.",
+   "materials": [
+    {
+     "item": "iron_pickaxe",
+     "count": 1,
+     "note": "or better"
+    },
+    {
+     "item": "torch",
+     "count": 64,
+     "note": ""
+    }
+   ],
+   "needs": "Iron pickaxe.",
+   "stage": "early",
+   "version_notes": "1.18 changed ore distribution; diamonds most common near the bottom of the world.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Diamond_Ore"
+   ],
+   "confidence": "medium - exact best Y from memory"
+  },
+  {
+   "id": "bad-omen-raid",
+   "name": "Ominous bottle -> raid on demand",
+   "category": "combat",
+   "what": "Kill a raid captain outside a raid to get an ominous bottle, drink it, and enter a village to start a raid (totems, emeralds, Hero of the Village discounts).",
+   "steps": [
+    "Kill a banner-carrying pillager captain (outpost/patrol)",
+    "Pick up ominous_bottle",
+    "Drink, enter a village -> Raid Omen -> raid after 30 s",
+    "Win for Hero of the Village (trade discounts)"
+   ],
+   "why": "Totems of undying, emeralds, Hero discounts; feeds a raid farm.",
+   "materials": [
+    {
+     "item": "ominous_bottle",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Outpost or patrol; combat gear.",
+   "stage": "mid (Nether)",
+   "version_notes": "1.21 (24w13a): killing a captain no longer grants Bad Omen directly; it drops an ominous bottle (levels I-V). Bad Omen near a trial spawner becomes Trial Omen instead.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Bad_Omen"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "ominous-trial-chamber",
+   "name": "Trial chamber + trial/ominous keys",
+   "category": "combat",
+   "what": "Clear a trial chamber's spawners for trial keys to open vaults; with Bad Omen, ominous spawners/vaults give heavy core, enchanted books, better loot.",
+   "steps": [
+    "Find trial chamber (Y deep, 1.21)",
+    "Beat spawners -> trial_key",
+    "Open vaults",
+    "Drink ominous bottle near spawners for Trial Omen, beat ominous spawners for ominous_trial_key"
+   ],
+   "why": "Breeze rods (wind charges, mace), enchanted books, heavy core; each vault opens once per player.",
+   "materials": [
+    {
+     "item": "ominous_bottle",
+     "count": 1,
+     "note": "for ominous mode"
+    }
+   ],
+   "needs": "Decent armor; 1.21+.",
+   "stage": "early",
+   "version_notes": "Added 1.21. Trial Omen lasts 15 min x Bad Omen level.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Bad_Omen",
+    "https://minecraft.wiki/w/Trial_Chambers"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "mlg-water-bucket",
+   "name": "Water-bucket clutch (and boat/ladder variants)",
+   "category": "safety",
+   "what": "Place water (or a boat/scaffolding/ladder) just before landing to negate fall damage.",
+   "steps": [
+    "Hold water bucket",
+    "Look down, click just before impact",
+    "Pick water back up"
+   ],
+   "why": "Fast descent from pillars, the dragon trap, mountains; saves lives.",
+   "materials": [
+    {
+     "item": "water_bucket",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "None.",
+   "stage": "day 1",
+   "version_notes": "Water does not work in the Nether (use a boat, powder snow or hay).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Fall_damage"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "respawn-anchor-bed",
+   "name": "Set spawn points (bed / respawn anchor)",
+   "category": "safety",
+   "what": "Sleep in a bed at each new base and place a charged respawn anchor in the Nether so death doesn't send you back to world spawn.",
+   "steps": [
+    "Place and right-click a bed (sets spawn)",
+    "In Nether: craft respawn_anchor (6 crying obsidian + 3 glowstone), charge with glowstone",
+    "Never click a bed in the Nether/End or an anchor in the Overworld (explodes)"
+   ],
+   "why": "Short corpse runs; skip nights and avoid phantoms.",
+   "materials": [
+    {
+     "item": "white_bed",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "respawn_anchor",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "glowstone",
+     "count": 4,
+     "note": "charges"
+    }
+   ],
+   "needs": "Crying obsidian (bartering/ruined portals).",
+   "stage": "day 1",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Respawn_Anchor",
+    "https://minecraft.wiki/w/Bed"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "ender-chest-shulker",
+   "name": "Ender chest + shulker box logistics",
+   "category": "storage",
+   "what": "Carry an ender chest; fill shulker boxes with gear, blocks, rockets and empty buckets; stash shulkers in the ender chest.",
+   "steps": [
+    "Craft ender_chest (8 obsidian + eye of ender)",
+    "Get shulker shells (End city or shulker farm) -> shulker_box",
+    "Keep a kit shulker in ender chest",
+    "Mine with ender chest so death loses less"
+   ],
+   "why": "27 slots x 27 = 729 stacks portable; safe storage across locations.",
+   "materials": [
+    {
+     "item": "ender_chest",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "shulker_box",
+     "count": 1,
+     "note": "each = 2 shells + chest"
+    }
+   ],
+   "needs": "End access for shulkers (ianxofour has an instant shulker farm).",
+   "stage": "late (End/elytra)",
+   "version_notes": "Bundles became full release in 1.21.2 (early-game mini storage).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Ender_Chest",
+    "https://minecraft.wiki/w/Shulker_Box"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "sorting-system",
+   "name": "Hopper item sorter / storage room",
+   "category": "storage",
+   "what": "Build a hopper-line sorter with comparator filters that drops each item type into its own chest; add an overflow.",
+   "steps": [
+    "Build hopper line over filter slices",
+    "Fill each filter hopper with the item + 4 dummy items (standard design)",
+    "Chests under each filter; overflow at end"
+   ],
+   "why": "Farm output auto-organized; minutes saved every session.",
+   "materials": [
+    {
+     "item": "hopper",
+     "count": 2,
+     "note": "per slice (plus line)"
+    },
+    {
+     "item": "comparator",
+     "count": 1,
+     "note": "per slice"
+    },
+    {
+     "item": "redstone_torch",
+     "count": 1,
+     "note": "per slice"
+    },
+    {
+     "item": "chest",
+     "count": 2,
+     "note": "per slice"
+    }
+   ],
+   "needs": "Lots of iron (5 per hopper) - iron farm first.",
+   "stage": "mid (Nether)",
+   "version_notes": "1.21 crafter allows auto-crafting lines.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Tutorial:Item_sorting"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "pearl-stasis",
+   "name": "Ender pearl stasis chamber (teleport home)",
+   "category": "travel",
+   "what": "Hold a thrown pearl floating in a bubble column; flipping a trapdoor drops it to teleport you back from anywhere (if the pearl's chunks are loaded).",
+   "steps": [
+    "Build soul sand bubble column with a trapdoor on top",
+    "Throw pearl in so it hovers",
+    "Later trigger (lever/observer or a friend) to land it"
+   ],
+   "why": "Instant return to base/farm without portals.",
+   "materials": [
+    {
+     "item": "soul_sand",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "water_bucket",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "oak_trapdoor",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "ender_pearl",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Chunk loaded when triggered; same dimension (pearls cross dimensions in newer versions - inferred).",
+   "stage": "mid (Nether)",
+   "version_notes": "1.21.2 (24w37a): thrown pearls load chunks around them; pearl stops loading chunks when the thrower logs off.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Ender_Pearl"
+   ],
+   "confidence": "medium - chamber design is community-standard, not on wiki page"
+  },
+  {
+   "id": "bubble-elevator",
+   "name": "Bubble column elevator",
+   "category": "building",
+   "what": "Soul sand at the bottom of a water column pushes you up; magma pulls you down.",
+   "steps": [
+    "Build 1x1 shaft of glass/kelp-placed sources",
+    "Soul_sand at bottom (up) or magma_block (down)",
+    "Use kelp trick to make all sources"
+   ],
+   "why": "Fast vertical travel in bases, to the dragon trap (end stone version), and between farm layers.",
+   "materials": [
+    {
+     "item": "soul_sand",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "kelp",
+     "count": 1,
+     "note": "per block height (inferred)"
+    },
+    {
+     "item": "glass",
+     "count": 4,
+     "note": "per block height"
+    }
+   ],
+   "needs": "Soul sand (Nether).",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Bubble_Column"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "spawn-chunk-placement",
+   "name": "Place always-on farms in spawn chunks (and know they're small now)",
+   "category": "other",
+   "what": "Build compact always-active machines (sorters, iron, crop) in the 3x3 entity-processing spawn chunks.",
+   "steps": [
+    "Find world spawn (compass/F3)",
+    "Locate the chunk; build within the 3x3",
+    "Alternatively use a chunk loader or /gamerule spawnChunkRadius in SP"
+   ],
+   "why": "Farms keep running while you're elsewhere.",
+   "materials": [],
+   "needs": "Knowing spawn coords.",
+   "stage": "early",
+   "version_notes": "1.20.5: spawn chunks default 3x3 entity-processing (+ ring of 16 lazy chunks), down from 19x19; spawnChunkRadius gamerule default 2.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Spawn_chunk"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "afk-fishing",
+   "name": "AFK fishing spot (mending/books/saddles)",
+   "category": "xp",
+   "what": "Build an open-water fishing setup where a pressure plate/note-block trick reels automatically while holding use (autoclicker/held key).",
+   "steps": [
+    "Make a pool satisfying open water (5x4x5 around bobber of only water/air/lily pads)",
+    "Use a standard AFK design with item collection",
+    "Use Luck of the Sea III + Lure III + Mending rod"
+   ],
+   "why": "Treasure 5% -> 11.34% with LotS III: enchanted books, saddles, name tags; 1-6 XP per catch.",
+   "materials": [
+    {
+     "item": "fishing_rod",
+     "count": 1,
+     "note": "Mending/LotS III/Lure III"
+    },
+    {
+     "item": "hopper",
+     "count": 2,
+     "note": "(inferred)"
+    }
+   ],
+   "needs": "Open water; holding right-click (game setting or held key).",
+   "stage": "early",
+   "version_notes": "Open-water rule since 1.16 nerfed old 1x1 AFK farms; open-water farms still function (wiki doesn't address AFK explicitly).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Fishing"
+   ],
+   "confidence": "medium - mechanics high; still-viable claim is community knowledge"
+  },
+  {
+   "id": "furnace-array",
+   "name": "Super-smelter (furnace array)",
+   "category": "fuel",
+   "what": "Hopper-fed row of furnaces sharing input, fuel and output chests.",
+   "steps": [
+    "Place 8-16 furnaces in a row",
+    "Hopper minecart / hopper line splits input on top, fuel from side",
+    "Output hoppers into a chest"
+   ],
+   "why": "Smelts stacks in seconds-per-item divided by furnace count; pairs with lava/kelp fuel.",
+   "materials": [
+    {
+     "item": "furnace",
+     "count": 16,
+     "note": ""
+    },
+    {
+     "item": "hopper",
+     "count": 32,
+     "note": "(inferred)"
+    },
+    {
+     "item": "chest",
+     "count": 3,
+     "note": ""
+    }
+   ],
+   "needs": "Iron for hoppers.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Tutorial:Super_smelter"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "dried-kelp-fuel",
+   "name": "Dried kelp block fuel loop",
+   "category": "fuel",
+   "what": "Smelt kelp into dried kelp, craft blocks; each block smelts 20 items (net positive fuel).",
+   "steps": [
+    "Collect kelp",
+    "Smelt -> dried_kelp",
+    "9 -> dried_kelp_block",
+    "Use as fuel"
+   ],
+   "why": "Renewable fuel from oceans before a lava source; 20 smelts per block.",
+   "materials": [
+    {
+     "item": "kelp",
+     "count": 64,
+     "note": ""
+    }
+   ],
+   "needs": "Ocean.",
+   "stage": "early",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Fuel"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "beacon-haste",
+   "name": "Beacon with Haste II at the mining base",
+   "category": "other",
+   "what": "Kill the Wither, place a beacon on a full pyramid, choose Haste II (or Speed) for instant mining.",
+   "steps": [
+    "Kill Wither -> nether_star",
+    "Build pyramid (e.g. 164 blocks for tier 4 - iron/gold/emerald/diamond/netherite)",
+    "Select Haste + Haste II (tier 4)"
+   ],
+   "why": "Haste II + Efficiency V netherite pick insta-mines stone, massively speeds digging perimeters for farms.",
+   "materials": [
+    {
+     "item": "beacon",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "iron_block",
+     "count": 164,
+     "note": "full 4-tier pyramid"
+    }
+   ],
+   "needs": "Nether star; iron farm.",
+   "stage": "late (End/elytra)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Beacon"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "wither-cage",
+   "name": "Trap the Wither under bedrock",
+   "category": "combat",
+   "what": "Spawn the Wither where it can't move or blow up its surroundings (e.g. under the End exit portal bedrock or Nether ceiling) and kill it with a Smite sword.",
+   "steps": [
+    "Prepare Smite V sword, potions",
+    "Build soul sand + skulls so the Wither spawns with its head in bedrock",
+    "Kill it while it's stuck"
+   ],
+   "why": "Safe, repeatable nether stars for beacons.",
+   "materials": [
+    {
+     "item": "wither_skeleton_skull",
+     "count": 3,
+     "note": ""
+    },
+    {
+     "item": "soul_sand",
+     "count": 4,
+     "note": ""
+    }
+   ],
+   "needs": "Wither skulls (fortress).",
+   "stage": "late (End/elytra)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Wither"
+   ],
+   "confidence": "medium - exact cage designs vary by version; verify on a video before using"
+  },
+  {
+   "id": "boat-mob-transport",
+   "name": "Boat / minecart mob transport",
+   "category": "other",
+   "what": "Pull mobs (villagers, zombies for curing, a pillager for raid farms) in boats or minecarts.",
+   "steps": [
+    "Get mob into boat",
+    "Paddle or place-and-break track to drag",
+    "Use leads for passive mobs"
+   ],
+   "why": "Starts trading halls, zombie-cure stations, iron farms without breeding.",
+   "materials": [
+    {
+     "item": "oak_boat",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "lead",
+     "count": 2,
+     "note": ""
+    }
+   ],
+   "needs": "None.",
+   "stage": "day 1",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Boat"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "strider-lava-travel",
+   "name": "Ride a strider across Nether lava",
+   "category": "travel",
+   "what": "Saddle a strider and steer it with a warped fungus on a stick to cross lava oceans.",
+   "steps": [
+    "Find strider",
+    "Put saddle on",
+    "Craft warped_fungus_on_a_stick",
+    "Ride across lava"
+   ],
+   "why": "Safe lava crossing (7.34 m/s boosted) without fire resistance.",
+   "materials": [
+    {
+     "item": "saddle",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "warped_fungus_on_a_stick",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Saddle.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Transportation"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "happy-ghast-platform",
+   "name": "Grow a happy ghast (flying build platform)",
+   "category": "building",
+   "what": "Waterlog a dried ghast block, grow the ghastling (feed snowballs), harness it, and use it as a flying platform for up to 4 players.",
+   "steps": [
+    "Get dried_ghast (soul sand valley)",
+    "Waterlog it ~20 min",
+    "Grow ghastling 20 min (each snowball -10% remaining time)",
+    "Craft harness, mount"
+   ],
+   "why": "Hovering scaffold for building tall farms/perimeters; ~3.6 m/s flight (slow travel).",
+   "materials": [
+    {
+     "item": "dried_ghast",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "snowball",
+     "count": 16,
+     "note": "(inferred)"
+    },
+    {
+     "item": "harness",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Java 1.21.6+.",
+   "stage": "mid (Nether)",
+   "version_notes": "Added 1.21.6.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Happy_Ghast"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "trident-riptide",
+   "name": "Riptide trident travel in rain/water",
+   "category": "travel",
+   "what": "Use a Riptide trident to launch yourself in rain or water; combine with elytra.",
+   "steps": [
+    "Get trident (drowned)",
+    "Enchant Riptide III",
+    "Hold and release while in rain/water"
+   ],
+   "why": "Fast launches; rain + elytra rocket-free flight.",
+   "materials": [
+    {
+     "item": "trident",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Drowned trident drop.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Trident"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "wind-charge-mobility",
+   "name": "Wind charges for jumps and fall saving",
+   "category": "travel",
+   "what": "Throw wind charges at your feet to launch up; mace + wind charges for combat.",
+   "steps": [
+    "Get breeze_rod from trial chambers",
+    "Craft 4 wind_charge per rod",
+    "Throw at ground to launch"
+   ],
+   "why": "Climb cliffs, cross gaps, start elytra flights without rockets.",
+   "materials": [
+    {
+     "item": "wind_charge",
+     "count": 16,
+     "note": ""
+    }
+   ],
+   "needs": "Trial chamber breezes.",
+   "stage": "early",
+   "version_notes": "1.21+.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Wind_Charge"
+   ],
+   "confidence": "medium - fall-damage interaction not checked"
+  },
+  {
+   "id": "fire-res-brewing",
+   "name": "Brewing station with key potions",
+   "category": "safety",
+   "what": "Set up brewing stand + water source; brew fire resistance, night vision, slow falling, weakness (for curing).",
+   "steps": [
+    "Get blaze rods (fuel + stand)",
+    "Nether wart farm",
+    "Brew awkward potions -> magma cream (fire res), etc."
+   ],
+   "why": "Fire resistance makes Nether/lava work safe; weakness enables zombie curing.",
+   "materials": [
+    {
+     "item": "brewing_stand",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "blaze_powder",
+     "count": 8,
+     "note": ""
+    },
+    {
+     "item": "nether_wart",
+     "count": 16,
+     "note": ""
+    }
+   ],
+   "needs": "Fortress for blaze rods + nether wart.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Brewing"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "spawnproof-perimeter",
+   "name": "Spawn-proof / light the base area",
+   "category": "safety",
+   "what": "Light the base and use slabs/carpet so hostile mobs don't spawn near your farms and storage.",
+   "steps": [
+    "Light areas to block light 1+ (hostiles need 0 in 1.18+)",
+    "Bottom slabs or glass on dark surfaces",
+    "Fence or wall the base"
+   ],
+   "why": "Safety and keeps mob cap free for mob farms.",
+   "materials": [
+    {
+     "item": "torch",
+     "count": 64,
+     "note": ""
+    }
+   ],
+   "needs": "None.",
+   "stage": "early",
+   "version_notes": "1.18+: hostile mobs need block light 0 to spawn.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Light"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "cartographer-maps",
+   "name": "Buy explorer/village maps from cartographers",
+   "category": "exploration",
+   "what": "Trade with a cartographer for maps that point to structures (ocean monument, woodland mansion, trial chambers, biome villages).",
+   "steps": [
+    "Get a cartography_table villager",
+    "Level it up",
+    "Buy the map you need"
+   ],
+   "why": "Direct route to monuments/mansions/trial chambers instead of searching.",
+   "materials": [
+    {
+     "item": "emerald",
+     "count": 14,
+     "note": "approx per map (inferred)"
+    },
+    {
+     "item": "compass",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Emeralds.",
+   "stage": "early",
+   "version_notes": "1.21.5 shipped biome-dependent cartographer maps (village maps by biome, jungle/swamp explorer maps, trial explorer map).",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Villager_Trade_Rebalance"
+   ],
+   "confidence": "high for availability; price inferred"
+  },
+  {
+   "id": "seed-map-planning",
+   "name": "Plan with a seed map (Chunkbase) and stronghold finder",
+   "category": "exploration",
+   "what": "Use your world seed with Chunkbase to locate slime chunks, strongholds, villages, biomes and structures before travelling; triangulate the stronghold with two eye throws.",
+   "steps": [
+    "/seed in single player",
+    "Open chunkbase.com app",
+    "Plan portal links and farm locations (slime chunks, ocean monuments, witch huts)"
+   ],
+   "why": "Turns 'finding X' into direct travel; essential for picking ianxofour farm sites.",
+   "materials": [
+    {
+     "item": "ender_eye",
+     "count": 2,
+     "note": "for triangulation"
+    }
+   ],
+   "needs": "Seed access (SP or server owner). Some consider it cheating.",
+   "stage": "day 1",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://www.chunkbase.com/",
+    "https://strongholdfinder.com/"
+   ],
+   "confidence": "high - tools referenced in ianxofour's mob switch description"
+  },
+  {
+   "id": "hero-of-village",
+   "name": "Win a raid for Hero of the Village discounts",
+   "category": "trading",
+   "what": "Defeat a raid at your trading hall village to get Hero of the Village, then do bulk buying while it lasts.",
+   "steps": [
+    "Get Bad Omen (ominous bottle)",
+    "Trigger raid at your village",
+    "Win",
+    "Trade immediately while the effect lasts"
+   ],
+   "why": "Temporary extra discounts stacked on top of curing discounts.",
+   "materials": [
+    {
+     "item": "ominous_bottle",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Defended village.",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Hero_of_the_Village"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "lodestone-compass",
+   "name": "Lodestone compasses for base navigation (incl. Nether)",
+   "category": "travel",
+   "what": "Place a lodestone at key points and link compasses so they point there in any dimension.",
+   "steps": [
+    "Craft lodestone (chiseled stone bricks + netherite ingot)",
+    "Right-click with compass"
+   ],
+   "why": "Compasses that work in the Nether to find your portal hub.",
+   "materials": [
+    {
+     "item": "lodestone",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "compass",
+     "count": 1,
+     "note": ""
+    }
+   ],
+   "needs": "Netherite ingot (recipe changed in 1.21.5 to use iron ingot - inferred, verify).",
+   "stage": "mid (Nether)",
+   "version_notes": "",
+   "ianxofour_video": null,
+   "sources": [
+    "https://minecraft.wiki/w/Lodestone"
+   ],
+   "confidence": "medium - recent recipe change not verified"
+  },
+  {
+   "id": "elytra-towing",
+   "name": "Elytra 'ride share' tow from water (ianxofour)",
+   "category": "travel",
+   "what": "Take off from water with Dolphin's Grace + Depth Strider while towing a saddled pig/player on a lead, sharing one elytra.",
+   "steps": [
+    "Open elytra while swimming on surface, looking up slightly",
+    "Accelerate with Dolphin's Grace (or a rocket to ~28 b/s)",
+    "Pitch to -35 degrees and fire rockets"
+   ],
+   "why": "Multiple players share one set of wings; fun more than optimal.",
+   "materials": [
+    {
+     "item": "elytra",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "lead",
+     "count": 1,
+     "note": ""
+    },
+    {
+     "item": "saddle",
+     "count": 1,
+     "note": "on a pig"
+    }
+   ],
+   "needs": "Elytra, rockets.",
+   "stage": "late (End/elytra)",
+   "version_notes": "1.16-1.19 era; dangerous.",
+   "ianxofour_video": "https://www.youtube.com/watch?v=c9lvHXZ6Rlw",
+   "sources": [
+    "https://www.youtube.com/watch?v=c9lvHXZ6Rlw",
+    "https://screenrant.com/minecraft-ride-share-airborne-elytra-pigs/"
+   ],
+   "confidence": "medium - from ianxofour description"
+  },
+  {
+   "id": "tnt-duper-quarry",
+   "name": "TNT duper for digging perimeters / tunnel bores",
+   "category": "building",
+   "what": "Build a slime-and-coral TNT duper that copies one TNT forever; use it in flying machines or world eaters to clear huge areas for farms.",
+   "steps": [
+    "Follow a known 1.21 duper design",
+    "Mount on a flying machine for a tunnel bore or world eater",
+    "Use for nether roof perimeters, slime/witch perimeters"
+   ],
+   "why": "Clears perimeters for mob farms without hand-digging; powers ianxofour-style big builds.",
+   "materials": [
+    {
+     "item": "tnt",
+     "count": 1,
+     "note": "duped thereafter"
+    },
+    {
+     "item": "slime_block",
+     "count": 4,
+     "note": "(inferred)"
+    },
+    {
+     "item": "observer",
+     "count": 2,
+     "note": "(inferred)"
+    },
+    {
+     "item": "brain_coral_fan",
+     "count": 1,
+     "note": "any coral fan (inferred)"
+    }
+   ],
+   "needs": "Slime, redstone knowledge.",
+   "stage": "mid (Nether)",
+   "version_notes": "TNT duping has long been left in Java (old ticket closed Invalid); a 25w02a snapshot report said observer changes broke some dupers - verify current design.",
+   "ianxofour_video": null,
+   "sources": [
+    "https://bugs-legacy.mojang.com/browse/MC-129193",
+    "https://bugs-legacy.mojang.com/browse/MC-279475"
+   ],
+   "confidence": "low-medium - no 2026 source confirming current status"
+  }
+ ]
+}

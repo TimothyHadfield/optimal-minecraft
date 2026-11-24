@@ -16,6 +16,10 @@ which two horses to breed. Used on iPhone and laptop.
 - `horse_calculator.jsx`: older stand-alone version (an `export default` React component).
   Not loaded by the site. Kept as history; don't edit it expecting the site to change.
 - `docs/screenshots/`: images used by `README.md`.
+- `farms/index.html`: the Farms section (plain JS, no Babel): list + detail, Farms/Tricks toggle,
+  search. Data: `farms/farms.json` (27 ianxofour videos, one record each) and `farms/tricks.json`.
+  `docs/farms-catalogue.md`: the video catalogue with every download link and source.
+- Both pages carry a HORSES | FARMS switch at the top.
 - Git-ignored: `stable*.json` (Tim's exported stables, personal data), `minecraft_horse.jsx`
   (duplicate of horse_calculator.jsx), `.claude/`.
 
