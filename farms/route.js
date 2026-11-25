@@ -5,7 +5,7 @@
 (function () {
   const css = `
 #route { margin-top: 8px; }
-#route .rg { margin-bottom: 10px; break-inside: avoid-column; }
+#route .rg { margin-bottom: 10px; } /* groups may flow across columns so the columns come out even */
 #route .rm { display: inline-flex; align-items: center; gap: 5px; margin: 0 0 5px; padding: 1px 7px 1px 3px; border: 2px solid #ffd54a; color: #ffd54a; font-family: "Pixelify Sans", monospace; font-size: 15px; background: #1a1410; }
 #route .rs { all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 7px; width: 100%; min-height: 40px; padding: 4px 7px; margin-bottom: 4px; background: #1f1813; border: 2px solid #0a0805; break-inside: avoid; }
 #route button.rs { cursor: pointer; }
