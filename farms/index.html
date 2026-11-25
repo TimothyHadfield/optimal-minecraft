@@ -23,6 +23,7 @@
       border: 2px solid #0a0805; background: #1f1813; color: #a89880; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.5); cursor: pointer; }
     .bar > .on { background: #8b6f47; color: #f4ead5; box-shadow: inset 2px 2px 0 rgba(255,255,255,0.2), inset -2px -2px 0 rgba(0,0,0,0.3); }
     .bar.tabs > .on { background: #7cc242; color: #0a0805; }
+    @media (max-width: 480px) { .bar.tabs > * { min-width: 0; padding: 9px 0; letter-spacing: 0; } } /* five tabs fit 393 px */
     .hdr { display: flex; align-items: center; gap: 4px; }
     .hdr .bar { flex: 1; min-width: 0; }
     .home { flex: none; padding: 4px 6px 4px 0; text-decoration: none; font-family: "Pixelify Sans", monospace; font-size: 18px; line-height: 1; color: #8b7355; }
@@ -88,7 +89,7 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="hdr"><a class="home" href="../" aria-label="Home">◀</a><div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button><button data-m="chart">CHART</button></div></div>
+    <div class="hdr"><a class="home" href="../" aria-label="Home">◀</a><div class="bar tabs" id="tabs"><button data-m="farms" class="on">FARMS</button><button data-m="tricks">TRICKS</button><button data-m="trades">TRADES</button><button data-m="chart">CHART</button><button data-m="route">ROUTE</button></div></div>
     <div class="tools">
       <input class="search" id="q" placeholder="Search" autocomplete="off">
       <div class="stages" id="stages"><button data-s="all" class="on">All</button><button data-s="early">Early</button><button data-s="mid">Mid</button><button data-s="late">Late</button></div>
@@ -98,6 +99,7 @@
       <div class="panel" id="detail"><div class="muted">Pick one.</div></div>
     </div>
     <div id="chart" hidden></div>
+    <div id="route" hidden></div>
   </div>
 <script>
 const $ = id => document.getElementById(id);
@@ -225,10 +227,13 @@ function tradeDetail(p, q) {
 function render() {
   const q = $('q').value.trim().toLowerCase().replace(/_/g, ' ');
   $('stages').style.display = MODE === 'trades' ? 'none' : '';
-  document.querySelector('.tools').style.display = MODE === 'chart' ? 'none' : ''; // the chart has only the core farms: no search or stage filter
+  const own = MODE === 'chart' || MODE === 'route'; // chart and route have their own fixed lists: no search or stage filter
+  document.querySelector('.tools').style.display = own ? 'none' : '';
   $('chart').hidden = MODE !== 'chart';
-  document.querySelector('.main').style.display = MODE === 'chart' ? 'none' : '';
+  $('route').hidden = MODE !== 'route';
+  document.querySelector('.main').style.display = own ? 'none' : '';
   if (MODE === 'chart') { if (window.drawChart) window.drawChart(); return; }
+  if (MODE === 'route') { if (window.drawRoute) window.drawRoute(); return; }
   if (MODE === 'trades') {
     const gs = tradeGroups().filter(p => matches(p, q));
     $('grid').innerHTML = gs.map(p => `<button class="card ${SEL === 'tr:' + p.id ? 'on' : ''}" data-k="tr:${esc(p.id)}"><span class="nm">${icon(p.icon, 'l')}<span>${esc(p.name)}</span></span></button>`).join('') || '<div class="muted">No match.</div>';
@@ -250,12 +255,12 @@ function render() {
 }
 function openDetail(open) { $('detail').classList.toggle('open', open); if (open) $('detail').scrollTop = 0; }
 const setTab = m => { MODE = m; document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x.dataset.m === m)); };
-// from the CHART tab: open one farm or trick in its own tab (BACK on a phone returns to the chart)
-function openEntry(k) {
+// from the CHART or ROUTE tab: open one farm or trick in its own tab (BACK on a phone returns to that tab)
+function openEntry(k, from = 'chart') {
   if (!byKey(k)) return;
   setTab(k.startsWith('farm:') ? 'farms' : 'tricks');
   STAGE = 'all'; document.querySelectorAll('#stages button').forEach(x => x.classList.toggle('on', x.dataset.s === 'all'));
-  $('q').value = ''; SEL = k; MORE = false; backStack.length = 0; FROM_CHART = true;
+  $('q').value = ''; SEL = k; MORE = false; backStack.length = 0; FROM_CHART = from;
   render();
   const c = document.querySelector('#grid .card.on'); if (c) c.scrollIntoView({ block: 'nearest' });
   if (!WIDE()) openDetail(true);
@@ -280,7 +285,7 @@ $('detail').addEventListener('click', e => {
   if (e.target.closest('#back')) {
     const prev = backStack.pop();
     if (prev) { SEL = prev; render(); }
-    else { openDetail(false); if (FROM_CHART) { FROM_CHART = false; setTab('chart'); render(); } }
+    else { openDetail(false); if (FROM_CHART) { const m = FROM_CHART; FROM_CHART = false; setTab(m); render(); } }
     return;
   }
   if (e.target.closest('#more')) { MORE = !MORE; const y = $('detail').scrollTop; render(); $('detail').scrollTop = y; return; }
@@ -304,5 +309,6 @@ Promise.all([get('farms.json', { farms: [] }), get('tricks.json', { tricks: [] }
 });
 </script>
 <script type="module" src="chart.js"></script>
+<script src="route.js"></script>
 </body>
 </html>
